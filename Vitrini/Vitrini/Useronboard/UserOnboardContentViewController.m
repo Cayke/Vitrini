@@ -18,7 +18,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    //self.view.backgroundColor = [UIColor blackColor];
+    UIPageControl *pageControl = [UIPageControl appearance];
+    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
+    pageControl.backgroundColor = [UIColor whiteColor];
+    
+//    _imageView.backgroundColor = [UIColor blackColor];
     self.imageView.image = [UIImage imageNamed:self.imageName];
 }
 
