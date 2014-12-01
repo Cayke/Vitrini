@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C2878601A28E17600CC7DD2 /* UserOnboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C28785F1A28E17600CC7DD2 /* UserOnboardViewController.m */; };
+		5C2878631A28E39700CC7DD2 /* CustomSegueTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2878621A28E39700CC7DD2 /* CustomSegueTransition.m */; };
+		5C2878651A28E61F00CC7DD2 /* UserOnboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C2878641A28E61F00CC7DD2 /* UserOnboard.storyboard */; };
+		5C3A62771A28F6B60004B2DA /* UserOnboardContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3A62761A28F6B60004B2DA /* UserOnboardContentViewController.m */; };
 		92891CDC1A28D80F002F6678 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CDB1A28D80F002F6678 /* main.m */; };
 		92891CDF1A28D80F002F6678 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CDE1A28D80F002F6678 /* AppDelegate.m */; };
 		92891CE21A28D80F002F6678 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CE11A28D80F002F6678 /* ViewController.m */; };
 		92891CE51A28D80F002F6678 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92891CE31A28D80F002F6678 /* Main.storyboard */; };
 		92891CE71A28D80F002F6678 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92891CE61A28D80F002F6678 /* Images.xcassets */; };
-		92891CEA1A28D80F002F6678 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92891CE81A28D80F002F6678 /* LaunchScreen.xib */; };
 		92891CF61A28D80F002F6678 /* VitriniTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CF51A28D80F002F6678 /* VitriniTests.m */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +30,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C28785E1A28E17600CC7DD2 /* UserOnboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserOnboardViewController.h; sourceTree = "<group>"; };
+		5C28785F1A28E17600CC7DD2 /* UserOnboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserOnboardViewController.m; sourceTree = "<group>"; };
+		5C2878611A28E39700CC7DD2 /* CustomSegueTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSegueTransition.h; sourceTree = "<group>"; };
+		5C2878621A28E39700CC7DD2 /* CustomSegueTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSegueTransition.m; sourceTree = "<group>"; };
+		5C2878641A28E61F00CC7DD2 /* UserOnboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserOnboard.storyboard; sourceTree = "<group>"; };
+		5C3A62751A28F6B60004B2DA /* UserOnboardContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserOnboardContentViewController.h; sourceTree = "<group>"; };
+		5C3A62761A28F6B60004B2DA /* UserOnboardContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserOnboardContentViewController.m; sourceTree = "<group>"; };
 		92891CD61A28D80F002F6678 /* Vitrini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vitrini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92891CDA1A28D80F002F6678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92891CDB1A28D80F002F6678 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -36,7 +46,6 @@
 		92891CE11A28D80F002F6678 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		92891CE41A28D80F002F6678 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92891CE61A28D80F002F6678 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		92891CE91A28D80F002F6678 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		92891CEF1A28D80F002F6678 /* VitriniTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VitriniTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92891CF41A28D80F002F6678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92891CF51A28D80F002F6678 /* VitriniTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VitriniTests.m; sourceTree = "<group>"; };
@@ -81,13 +90,19 @@
 		92891CD81A28D80F002F6678 /* Vitrini */ = {
 			isa = PBXGroup;
 			children = (
+				5C2878611A28E39700CC7DD2 /* CustomSegueTransition.h */,
+				5C2878621A28E39700CC7DD2 /* CustomSegueTransition.m */,
 				92891CDD1A28D80F002F6678 /* AppDelegate.h */,
 				92891CDE1A28D80F002F6678 /* AppDelegate.m */,
+				92891CE31A28D80F002F6678 /* Main.storyboard */,
 				92891CE01A28D80F002F6678 /* ViewController.h */,
 				92891CE11A28D80F002F6678 /* ViewController.m */,
-				92891CE31A28D80F002F6678 /* Main.storyboard */,
+				5C2878641A28E61F00CC7DD2 /* UserOnboard.storyboard */,
+				5C28785E1A28E17600CC7DD2 /* UserOnboardViewController.h */,
+				5C28785F1A28E17600CC7DD2 /* UserOnboardViewController.m */,
+				5C3A62751A28F6B60004B2DA /* UserOnboardContentViewController.h */,
+				5C3A62761A28F6B60004B2DA /* UserOnboardContentViewController.m */,
 				92891CE61A28D80F002F6678 /* Images.xcassets */,
-				92891CE81A28D80F002F6678 /* LaunchScreen.xib */,
 				92891CD91A28D80F002F6678 /* Supporting Files */,
 			);
 			path = Vitrini;
@@ -200,7 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92891CE51A28D80F002F6678 /* Main.storyboard in Resources */,
-				92891CEA1A28D80F002F6678 /* LaunchScreen.xib in Resources */,
+				5C2878651A28E61F00CC7DD2 /* UserOnboard.storyboard in Resources */,
 				92891CE71A28D80F002F6678 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,7 +234,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C2878631A28E39700CC7DD2 /* CustomSegueTransition.m in Sources */,
 				92891CE21A28D80F002F6678 /* ViewController.m in Sources */,
+				5C2878601A28E17600CC7DD2 /* UserOnboardViewController.m in Sources */,
+				5C3A62771A28F6B60004B2DA /* UserOnboardContentViewController.m in Sources */,
 				92891CDF1A28D80F002F6678 /* AppDelegate.m in Sources */,
 				92891CDC1A28D80F002F6678 /* main.m in Sources */,
 			);
@@ -250,14 +268,6 @@
 				92891CE41A28D80F002F6678 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		92891CE81A28D80F002F6678 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				92891CE91A28D80F002F6678 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -376,6 +386,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = VitriniTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vitrini.app/Vitrini";
@@ -391,6 +402,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = VitriniTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vitrini.app/Vitrini";

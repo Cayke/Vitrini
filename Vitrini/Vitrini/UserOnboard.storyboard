@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tJP-vN-hUi">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Page View Controller-->
+        <scene sceneID="2Zo-FL-xqs">
+            <objects>
+                <pageViewController storyboardIdentifier="UserOnboardPageViewControllerID" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="fSe-bm-26u" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EqB-V5-MX4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1623" y="-27"/>
+        </scene>
+        <!--User Onboard Content View Controller-->
+        <scene sceneID="hME-MG-ZOZ">
+            <objects>
+                <viewController storyboardIdentifier="UserOnboardContentViewControllerID" id="5cj-g9-KIh" customClass="UserOnboardContentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tgm-uj-jeB"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fiw-0h-3eH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cpH-ud-ZSf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Rd-Nm-1wR">
+                                <rect key="frame" x="21" y="60" width="559" height="540"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4Rd-Nm-1wR" secondAttribute="height" multiplier="30:29" id="z1h-Ey-N7G"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="4Rd-Nm-1wR" secondAttribute="centerX" id="g5c-73-9fi"/>
+                            <constraint firstItem="4Rd-Nm-1wR" firstAttribute="top" secondItem="tgm-uj-jeB" secondAttribute="top" constant="40" id="tiv-oE-Has"/>
+                            <constraint firstItem="Fiw-0h-3eH" firstAttribute="top" secondItem="4Rd-Nm-1wR" secondAttribute="bottom" id="u4M-Eb-C3l"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="4Rd-Nm-1wR" id="2jc-bK-hln"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BnD-Y2-iDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1629" y="700"/>
+        </scene>
+        <!--User Onboard View Controller-->
+        <scene sceneID="ZI8-2X-8Np">
+            <objects>
+                <viewController storyboardIdentifier="UserOnboardViewControllerID" id="tJP-vN-hUi" customClass="UserOnboardViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nCa-1k-XUV"/>
+                        <viewControllerLayoutGuide type="bottom" id="YeU-Nz-l1p"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZZZ-iL-bhG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDR-NE-1sh">
+                                <rect key="frame" x="281" y="570" width="39" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Qh5-kc-86z"/>
+                                    <constraint firstAttribute="width" constant="39" id="gZg-Qz-KQT"/>
+                                </constraints>
+                                <state key="normal" title="Pular">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pular:" destination="tJP-vN-hUi" eventType="touchUpInside" id="6X8-B5-dn4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="RDR-NE-1sh" secondAttribute="centerX" id="fvJ-Vj-qc3"/>
+                            <constraint firstItem="YeU-Nz-l1p" firstAttribute="top" secondItem="RDR-NE-1sh" secondAttribute="bottom" id="i0Q-oW-AgI"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k1c-zA-g10" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="941" y="337"/>
+        </scene>
+    </scenes>
+</document>
