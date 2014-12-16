@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VIInitControl.h"
 
 @interface UserOnboardViewController : UIViewController <UIPageViewControllerDataSource>
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (strong, nonatomic) NSArray *pageImages;
+@property (strong, nonatomic) VIInitControl *initiControl;
 
 - (IBAction)pular:(id)sender;
+
+
 
 @end

@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		5C2878631A28E39700CC7DD2 /* CustomSegueTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2878621A28E39700CC7DD2 /* CustomSegueTransition.m */; };
+		5C83EA7A1A407008007988AA /* VIMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C83EA791A407008007988AA /* VIMainViewController.m */; };
+		5C83EA7D1A4071A1007988AA /* VIMainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C83EA7C1A4071A1007988AA /* VIMainMenu.m */; };
+		5C83EA831A408E90007988AA /* VIMainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C83EA821A408E90007988AA /* VIMainViewController.storyboard */; };
+		5C83EA8A1A409EE1007988AA /* VIInitControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C83EA891A409EE1007988AA /* VIInitControl.m */; };
 		5CE349BC1A2CF42100F1DC17 /* UserOnboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE349B71A2CF42100F1DC17 /* UserOnboard.storyboard */; };
 		5CE349BD1A2CF42100F1DC17 /* UserOnboardContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE349B91A2CF42100F1DC17 /* UserOnboardContentViewController.m */; };
 		5CE349BE1A2CF42100F1DC17 /* UserOnboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE349BB1A2CF42100F1DC17 /* UserOnboardViewController.m */; };
 		92891CDC1A28D80F002F6678 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CDB1A28D80F002F6678 /* main.m */; };
 		92891CDF1A28D80F002F6678 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CDE1A28D80F002F6678 /* AppDelegate.m */; };
-		92891CE21A28D80F002F6678 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CE11A28D80F002F6678 /* ViewController.m */; };
-		92891CE51A28D80F002F6678 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92891CE31A28D80F002F6678 /* Main.storyboard */; };
 		92891CE71A28D80F002F6678 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92891CE61A28D80F002F6678 /* Images.xcassets */; };
 		92891CF61A28D80F002F6678 /* VitriniTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CF51A28D80F002F6678 /* VitriniTests.m */; };
 /* End PBXBuildFile section */
@@ -32,6 +34,13 @@
 /* Begin PBXFileReference section */
 		5C2878611A28E39700CC7DD2 /* CustomSegueTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSegueTransition.h; sourceTree = "<group>"; };
 		5C2878621A28E39700CC7DD2 /* CustomSegueTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSegueTransition.m; sourceTree = "<group>"; };
+		5C83EA781A407008007988AA /* VIMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMainViewController.h; sourceTree = "<group>"; };
+		5C83EA791A407008007988AA /* VIMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIMainViewController.m; sourceTree = "<group>"; };
+		5C83EA7B1A4071A1007988AA /* VIMainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMainMenu.h; sourceTree = "<group>"; };
+		5C83EA7C1A4071A1007988AA /* VIMainMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIMainMenu.m; sourceTree = "<group>"; };
+		5C83EA821A408E90007988AA /* VIMainViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VIMainViewController.storyboard; sourceTree = "<group>"; };
+		5C83EA881A409EE1007988AA /* VIInitControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIInitControl.h; sourceTree = "<group>"; };
+		5C83EA891A409EE1007988AA /* VIInitControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIInitControl.m; sourceTree = "<group>"; };
 		5CE349B71A2CF42100F1DC17 /* UserOnboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserOnboard.storyboard; sourceTree = "<group>"; };
 		5CE349B81A2CF42100F1DC17 /* UserOnboardContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserOnboardContentViewController.h; sourceTree = "<group>"; };
 		5CE349B91A2CF42100F1DC17 /* UserOnboardContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserOnboardContentViewController.m; sourceTree = "<group>"; };
@@ -42,9 +51,6 @@
 		92891CDB1A28D80F002F6678 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		92891CDD1A28D80F002F6678 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		92891CDE1A28D80F002F6678 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		92891CE01A28D80F002F6678 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		92891CE11A28D80F002F6678 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		92891CE41A28D80F002F6678 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92891CE61A28D80F002F6678 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		92891CEF1A28D80F002F6678 /* VitriniTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VitriniTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92891CF41A28D80F002F6678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,10 +79,10 @@
 			isa = PBXGroup;
 			children = (
 				5CE349B71A2CF42100F1DC17 /* UserOnboard.storyboard */,
-				5CE349B81A2CF42100F1DC17 /* UserOnboardContentViewController.h */,
-				5CE349B91A2CF42100F1DC17 /* UserOnboardContentViewController.m */,
 				5CE349BA1A2CF42100F1DC17 /* UserOnboardViewController.h */,
 				5CE349BB1A2CF42100F1DC17 /* UserOnboardViewController.m */,
+				5CE349B81A2CF42100F1DC17 /* UserOnboardContentViewController.h */,
+				5CE349B91A2CF42100F1DC17 /* UserOnboardContentViewController.m */,
 			);
 			path = Useronboard;
 			sourceTree = "<group>";
@@ -107,9 +113,13 @@
 				5CE349B61A2CF42100F1DC17 /* Useronboard */,
 				92891CDD1A28D80F002F6678 /* AppDelegate.h */,
 				92891CDE1A28D80F002F6678 /* AppDelegate.m */,
-				92891CE31A28D80F002F6678 /* Main.storyboard */,
-				92891CE01A28D80F002F6678 /* ViewController.h */,
-				92891CE11A28D80F002F6678 /* ViewController.m */,
+				5C83EA881A409EE1007988AA /* VIInitControl.h */,
+				5C83EA891A409EE1007988AA /* VIInitControl.m */,
+				5C83EA821A408E90007988AA /* VIMainViewController.storyboard */,
+				5C83EA781A407008007988AA /* VIMainViewController.h */,
+				5C83EA791A407008007988AA /* VIMainViewController.m */,
+				5C83EA7B1A4071A1007988AA /* VIMainMenu.h */,
+				5C83EA7C1A4071A1007988AA /* VIMainMenu.m */,
 				92891CE61A28D80F002F6678 /* Images.xcassets */,
 				92891CD91A28D80F002F6678 /* Supporting Files */,
 			);
@@ -222,7 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92891CE51A28D80F002F6678 /* Main.storyboard in Resources */,
+				5C83EA831A408E90007988AA /* VIMainViewController.storyboard in Resources */,
 				5CE349BC1A2CF42100F1DC17 /* UserOnboard.storyboard in Resources */,
 				92891CE71A28D80F002F6678 /* Images.xcassets in Resources */,
 			);
@@ -242,12 +252,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C83EA7D1A4071A1007988AA /* VIMainMenu.m in Sources */,
 				5C2878631A28E39700CC7DD2 /* CustomSegueTransition.m in Sources */,
 				5CE349BE1A2CF42100F1DC17 /* UserOnboardViewController.m in Sources */,
-				92891CE21A28D80F002F6678 /* ViewController.m in Sources */,
 				5CE349BD1A2CF42100F1DC17 /* UserOnboardContentViewController.m in Sources */,
 				92891CDF1A28D80F002F6678 /* AppDelegate.m in Sources */,
 				92891CDC1A28D80F002F6678 /* main.m in Sources */,
+				5C83EA8A1A409EE1007988AA /* VIInitControl.m in Sources */,
+				5C83EA7A1A407008007988AA /* VIMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,17 +280,6 @@
 			targetProxy = 92891CF01A28D80F002F6678 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		92891CE31A28D80F002F6678 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				92891CE41A28D80F002F6678 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		92891CF71A28D80F002F6678 /* Debug */ = {

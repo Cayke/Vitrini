@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "VIInitControl.h"
 
 @interface AppDelegate ()
 
@@ -15,8 +16,18 @@
 @implementation AppDelegate
 
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    VIInitControl *control = [[VIInitControl alloc] init];
+    control.appDelegate = self;
+    [control start];
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
