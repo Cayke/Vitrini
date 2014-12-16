@@ -15,6 +15,9 @@
 
 @implementation AppDelegate
 
+//
+// COMENTARIO RIHELDO
+//
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
