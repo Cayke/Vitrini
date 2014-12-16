@@ -94,8 +94,8 @@
     
     _table.viewForBaselineLayout.backgroundColor = [UIColor clearColor];
     
-    // margem
-    UIEdgeInsets inset = UIEdgeInsetsMake((self.frame.size.height/2), 0, 100, 0);
+    // inicia a table view no meio
+    UIEdgeInsets inset = UIEdgeInsetsMake((self.frame.size.height/4), 0, 100, 0);
     _table.contentInset = inset;
 }
 

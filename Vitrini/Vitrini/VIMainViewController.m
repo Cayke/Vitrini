@@ -28,11 +28,14 @@
     CGFloat bottom = self.view.bounds.size.height;
     CGFloat width = self.view.bounds.size.width;
     
-    int btnWidth = 100;
-    int btnHeight = 100;
+    int btnWidth = 120;
+    int btnHeight = 120;
     
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(width/2-(btnWidth/2), bottom-(btnHeight/2), btnWidth, btnHeight)];
-    view.backgroundColor = [UIColor redColor];
+    view.backgroundColor = [UIColor colorWithRed:25.0f/255.0f
+                                           green:47.0f/255.0f
+                                            blue:70.0f/255.0f
+                                           alpha:1.0f];
     
     // deixar circular
     [view.layer setCornerRadius:(btnWidth/2)];
@@ -88,8 +91,8 @@
     UIViewController *vc1;
 //    vc1.view.backgroundColor = [UIColor yellowColor];
     
-    UIStoryboard *userOnboard = [UIStoryboard storyboardWithName:@"VIConfig" bundle:nil];
-    vc1 = [userOnboard instantiateViewControllerWithIdentifier:@"table"];
+    UIStoryboard *userOnboard = [UIStoryboard storyboardWithName:@"main" bundle:nil];
+    vc1 = [userOnboard instantiateViewControllerWithIdentifier:@"vitrini"];
 //    [self.appDelegate.window setRootViewController:userOnboardViewController];//[self presentViewController:userOnboardViewController animated:YES completion:nil];
     vc1.title = @"Configuracoes";
     
