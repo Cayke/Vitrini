@@ -85,29 +85,33 @@
 
 - (void)initWithViewControllers
 {
-    UIViewController *vc1 = [[UIViewController alloc]init];
-    vc1.view.backgroundColor = [UIColor yellowColor];
-    vc1.title = @"tela amarela";
+    UIViewController *vc1;
+//    vc1.view.backgroundColor = [UIColor yellowColor];
+    
+    UIStoryboard *userOnboard = [UIStoryboard storyboardWithName:@"VIConfig" bundle:nil];
+    vc1 = [userOnboard instantiateViewControllerWithIdentifier:@"table"];
+//    [self.appDelegate.window setRootViewController:userOnboardViewController];//[self presentViewController:userOnboardViewController animated:YES completion:nil];
+    vc1.title = @"Configuracoes";
     
     UIViewController *vc2 = [[UIViewController alloc]init];
     vc2.view.backgroundColor = [UIColor blueColor];
-    vc2.title = @"tela azul";
+    vc2.title = @"Meu Perfil";
     
     UIViewController *vc3 = [[UIViewController alloc]init];
     vc3.view.backgroundColor = [UIColor brownColor];
-    vc3.title = @"tela marrom";
+    vc3.title = @"Meus Likes";
     
     UIViewController *vc4 = [[UIViewController alloc]init];
     vc4.view.backgroundColor = [UIColor purpleColor];
-    vc4.title = @"tela rosa";
+    vc4.title = @"Novidades";
     
     UIViewController *vc5 = [[UIViewController alloc]init];
     vc5.view.backgroundColor = [UIColor purpleColor];
-    vc5.title = @"tela rosa 2";
+    vc5.title = @"Cátalogo";
     
     UIViewController *vc6 = [[UIViewController alloc]init];
     vc6.view.backgroundColor = [UIColor purpleColor];
-    vc6.title = @"tela rosa 3";
+    vc6.title = @"Vitrini";
     
     self.viewControllers = @[vc1, vc2, vc3, vc4, vc5, vc6];
 }

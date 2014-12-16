@@ -12,6 +12,7 @@
 		5C83EA7D1A4071A1007988AA /* VIMainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C83EA7C1A4071A1007988AA /* VIMainMenu.m */; };
 		5C83EA831A408E90007988AA /* VIMainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C83EA821A408E90007988AA /* VIMainViewController.storyboard */; };
 		5C83EA8A1A409EE1007988AA /* VIInitControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C83EA891A409EE1007988AA /* VIInitControl.m */; };
+		5CAA45A51A40AA5000B51507 /* VIConfig.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CAA45A41A40AA5000B51507 /* VIConfig.storyboard */; };
 		5CE349BC1A2CF42100F1DC17 /* UserOnboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE349B71A2CF42100F1DC17 /* UserOnboard.storyboard */; };
 		5CE349BD1A2CF42100F1DC17 /* UserOnboardContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE349B91A2CF42100F1DC17 /* UserOnboardContentViewController.m */; };
 		5CE349BE1A2CF42100F1DC17 /* UserOnboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE349BB1A2CF42100F1DC17 /* UserOnboardViewController.m */; };
@@ -41,6 +42,7 @@
 		5C83EA821A408E90007988AA /* VIMainViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VIMainViewController.storyboard; sourceTree = "<group>"; };
 		5C83EA881A409EE1007988AA /* VIInitControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIInitControl.h; sourceTree = "<group>"; };
 		5C83EA891A409EE1007988AA /* VIInitControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIInitControl.m; sourceTree = "<group>"; };
+		5CAA45A41A40AA5000B51507 /* VIConfig.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = VIConfig.storyboard; path = Vitrini/config/VIConfig.storyboard; sourceTree = "<group>"; };
 		5CE349B71A2CF42100F1DC17 /* UserOnboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserOnboard.storyboard; sourceTree = "<group>"; };
 		5CE349B81A2CF42100F1DC17 /* UserOnboardContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserOnboardContentViewController.h; sourceTree = "<group>"; };
 		5CE349B91A2CF42100F1DC17 /* UserOnboardContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserOnboardContentViewController.m; sourceTree = "<group>"; };
@@ -75,6 +77,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5CAA45A61A40AA6A00B51507 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				5CAA45A41A40AA5000B51507 /* VIConfig.storyboard */,
+			);
+			name = Config;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		5CE349B61A2CF42100F1DC17 /* Useronboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +122,7 @@
 				5C2878611A28E39700CC7DD2 /* CustomSegueTransition.h */,
 				5C2878621A28E39700CC7DD2 /* CustomSegueTransition.m */,
 				5CE349B61A2CF42100F1DC17 /* Useronboard */,
+				5CAA45A61A40AA6A00B51507 /* Config */,
 				92891CDD1A28D80F002F6678 /* AppDelegate.h */,
 				92891CDE1A28D80F002F6678 /* AppDelegate.m */,
 				5C83EA881A409EE1007988AA /* VIInitControl.h */,
@@ -235,6 +247,7 @@
 				5C83EA831A408E90007988AA /* VIMainViewController.storyboard in Resources */,
 				5CE349BC1A2CF42100F1DC17 /* UserOnboard.storyboard in Resources */,
 				92891CE71A28D80F002F6678 /* Images.xcassets in Resources */,
+				5CAA45A51A40AA5000B51507 /* VIConfig.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
