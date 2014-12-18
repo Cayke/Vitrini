@@ -10,6 +10,8 @@
 
 @interface VIMainViewController ()
 
+@property (nonatomic, strong) UIView *menuView;
+
 @end
 
 @implementation VIMainViewController
@@ -18,6 +20,7 @@
     [super viewDidLoad];
     
     self.tabBar.hidden = YES;
+
     
     // adicionar o menu principal
     _mainMenu = [[VIMainMenu alloc]initWithVITabBarVC:self andFrame:self.view.layer.bounds];
@@ -31,22 +34,22 @@
     int btnWidth = 120;
     int btnHeight = 120;
     
-    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(width/2-(btnWidth/2), bottom-(btnHeight/2), btnWidth, btnHeight)];
-    view.backgroundColor = [UIColor colorWithRed:25.0f/255.0f
-                                           green:47.0f/255.0f
-                                            blue:70.0f/255.0f
-                                           alpha:1.0f];
+    _menuView = [[UIView alloc]initWithFrame:CGRectMake(width/2-(btnWidth/2), bottom-(btnHeight/2), btnWidth, btnHeight)];
+    _menuView.backgroundColor = [UIColor colorWithRed:25.0f/255.0f
+                                                green:47.0f/255.0f
+                                                 blue:70.0f/255.0f
+                                                alpha:0.0f];
     
     // deixar circular
-    [view.layer setCornerRadius:(btnWidth/2)];
-    view.layer.masksToBounds = NO;
+    [_menuView.layer setCornerRadius:(btnWidth/2)];
+    _menuView.layer.masksToBounds = NO;
     
     // adicionar na subview
-    [self.view addSubview:view];
+    [self.view addSubview:_menuView];
     
     
     UITapGestureRecognizer *click = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(clicou)];
-    [view addGestureRecognizer:click];
+    [_menuView addGestureRecognizer:click];
     
     [self organizeViewControllers];
     
@@ -63,14 +66,32 @@
     // subir menu
     if (_mainMenu.hidden) {
         [_mainMenu showMenu];
+        _menuView.backgroundColor = [UIColor colorWithRed:25.0f/255.0f
+                                                    green:47.0f/255.0f
+                                                     blue:70.0f/255.0f
+                                                    alpha:1.0f];
     } else {
-        [_mainMenu hideMenu];;
+        [_mainMenu hideMenu];
+        _menuView.backgroundColor = [UIColor colorWithRed:25.0f/255.0f
+                                                    green:47.0f/255.0f
+                                                     blue:70.0f/255.0f
+                                                    alpha:0.0f];
     }
 }
 
 -(void)changeVCtoIndex:(NSUInteger)index{
     self.selectedViewController = self.viewControllers[index];
+
     [self organizeViewControllers];
+    
+    NSLog(@"%lu",(unsigned long)index);
+    
+    
+    NSLog(@"%@",    self.selectedViewController.title );
+    _menuView.backgroundColor = [UIColor colorWithRed:0.0f/255.0f
+                                                green:0.0f/255.0f
+                                                 blue:70.0f/255.0f
+                                                alpha:0.0f];
 }
 
 -(void)organizeViewControllers{
@@ -91,7 +112,7 @@
     UIViewController *vc1;
 //    vc1.view.backgroundColor = [UIColor yellowColor];
     
-    UIStoryboard *userOnboard = [UIStoryboard storyboardWithName:@"main" bundle:nil];
+    UIStoryboard *userOnboard = [UIStoryboard storyboardWithName:@"michas" bundle:nil];
     vc1 = [userOnboard instantiateViewControllerWithIdentifier:@"vitrini"];
 //    [self.appDelegate.window setRootViewController:userOnboardViewController];//[self presentViewController:userOnboardViewController animated:YES completion:nil];
     vc1.title = @"Configuracoes";
@@ -100,8 +121,7 @@
     vc2.view.backgroundColor = [UIColor blueColor];
     vc2.title = @"Meu Perfil";
     
-    UIViewController *vc3 = [[UIViewController alloc]init];
-    vc3.view.backgroundColor = [UIColor brownColor];
+    UIViewController *vc3 = [userOnboard instantiateViewControllerWithIdentifier:@"gostei"];
     vc3.title = @"Meus Likes";
     
     UIViewController *vc4 = [[UIViewController alloc]init];
