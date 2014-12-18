@@ -31,7 +31,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Kft-CJ-BkR" kind="show" id="ndc-Vd-ACE"/>
+                                    <segue destination="Kft-CJ-BkR" kind="presentation" modalTransitionStyle="crossDissolve" id="ndc-Vd-ACE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -49,10 +49,10 @@
             </objects>
             <point key="canvasLocation" x="57" y="194"/>
         </scene>
-        <!--View Controller-->
+        <!--Michas View Controller-->
         <scene sceneID="Zqg-uE-ge0">
             <objects>
-                <viewController storyboardIdentifier="verde" id="Kft-CJ-BkR" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="verde" id="Kft-CJ-BkR" customClass="MichasViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hhq-aw-MiI"/>
                         <viewControllerLayoutGuide type="bottom" id="3dx-XK-Iux"/>
@@ -75,7 +75,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="DHe-LJ-8S8" kind="show" id="YTb-Xl-eGC"/>
+                                    <action selector="voltarFiltro:" destination="Kft-CJ-BkR" eventType="touchUpInside" id="ZAm-rn-e0K"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -92,9 +92,40 @@
             </objects>
             <point key="canvasLocation" x="723" y="194"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="u1B-jN-yXo">
+            <objects>
+                <viewController storyboardIdentifier="gostei" id="SYb-EP-adV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DUp-Wm-tmD"/>
+                        <viewControllerLayoutGuide type="bottom" id="e7R-Tu-XhB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="F4n-Ph-KPh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tela_gostei" translatesAutoresizingMaskIntoConstraints="NO" id="T8c-Tn-ZUj">
+                                <rect key="frame" x="-20" y="20" width="640" height="580"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="e7R-Tu-XhB" firstAttribute="top" secondItem="T8c-Tn-ZUj" secondAttribute="bottom" id="3oe-0Z-DCg"/>
+                            <constraint firstAttribute="centerX" secondItem="T8c-Tn-ZUj" secondAttribute="centerX" id="KcH-2u-4kU"/>
+                            <constraint firstItem="T8c-Tn-ZUj" firstAttribute="top" secondItem="F4n-Ph-KPh" secondAttribute="topMargin" constant="20" id="iFB-ss-JgS"/>
+                            <constraint firstAttribute="centerX" secondItem="T8c-Tn-ZUj" secondAttribute="centerX" id="pup-ES-fdv"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zgh-6S-zzI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="57" y="902"/>
+        </scene>
     </scenes>
     <resources>
         <image name="tela_filtro" width="640" height="1100"/>
+        <image name="tela_gostei" width="640" height="1100"/>
         <image name="tela_vitrini" width="640" height="1100"/>
     </resources>
 </document>
