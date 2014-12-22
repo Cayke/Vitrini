@@ -3,7 +3,7 @@
 //  Vitrini
 //
 //  Created by Paulo Magalhães Germano on 12/16/14.
-//  Copyright (c) 2014 Willian Pinho. All rights reserved.
+//  Copyright (c) 2014 Vitrini. All rights reserved.
 //
 
 #import "VIMainMenu.h"
@@ -119,8 +119,8 @@
         cell.textLabel.textColor = [UIColor whiteColor];
         cell.textLabel.textAlignment = UITextAlignmentCenter;
     }
-    
-    cell.textLabel.text = [self.viTabBarVC.viewControllers[indexPath.row] title];
+
+    cell.textLabel.text = [self.viTabBarVC.viewControllers[indexPath.row] itemMenuTitle];
     
     return cell;
 }

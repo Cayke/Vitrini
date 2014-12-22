@@ -3,7 +3,7 @@
 //  Vitrini
 //
 //  Created by Paulo Magalhães Germano on 12/16/14.
-//  Copyright (c) 2014 Willian Pinho. All rights reserved.
+//  Copyright (c) 2014 Vitrini. All rights reserved.
 //
 
 #import "VIMainViewController.h"
@@ -90,28 +90,40 @@
 
 - (void)initViewControllers
 {
+    ////
+    ////
+    //// IMPORTANTE - IMPORTANTE - IMPORTANTE - IMPORTANTE
+    ////
+    //// Um contrato foi definido para as viewControllers que irão aparecer no menu seguirem
+    //// Caso o contrato nao for implementado, o app nao funciona
+    ////
+    //// O protocolo <VIViewControllerMenuItemProtocol> tem que funcionar
+    //// Está dentro da classe VIProtocol.h
+    ////
+    ////
+    
     VICardsViewController *vc1 = [[VICardsViewController alloc]init];
     
-    UIViewController *vc2 = [[UIViewController alloc]init];
-    vc2.view.backgroundColor = [UIColor blueColor];
-    vc2.title = @"Meu Perfil";
-
-//    UIViewController *vc3 = [ instantiateViewControllerWithIdentifier:@"gostei"];
-//    vc3.title = @"Meus Likes";
+//    UIViewController *vc2 = [[UIViewController alloc]init];
+//    vc2.view.backgroundColor = [UIColor blueColor];
+//    vc2.title = @"Meu Perfil";
+//
+////    UIViewController *vc3 = [ instantiateViewControllerWithIdentifier:@"gostei"];
+////    vc3.title = @"Meus Likes";
+//    
+//    UIViewController *vc4 = [[UIViewController alloc]init];
+//    vc4.view.backgroundColor = [UIColor purpleColor];
+//    vc4.title = @"Novidades";
+//    
+//    UIViewController *vc5 = [[UIViewController alloc]init];
+//    vc5.view.backgroundColor = [UIColor purpleColor];
+//    vc5.title = @"Cátalogo";
+//    
+//    UIViewController *vc6 = [[UIViewController alloc]init];
+//    vc6.view.backgroundColor = [UIColor purpleColor];
+//    vc6.title = @"Vitrini";
     
-    UIViewController *vc4 = [[UIViewController alloc]init];
-    vc4.view.backgroundColor = [UIColor purpleColor];
-    vc4.title = @"Novidades";
-    
-    UIViewController *vc5 = [[UIViewController alloc]init];
-    vc5.view.backgroundColor = [UIColor purpleColor];
-    vc5.title = @"Cátalogo";
-    
-    UIViewController *vc6 = [[UIViewController alloc]init];
-    vc6.view.backgroundColor = [UIColor purpleColor];
-    vc6.title = @"Vitrini";
-    
-    self.viewControllers = @[vc1, vc2, vc4, vc5, vc6];
+    self.viewControllers = @[vc1];
 }
 
 /*

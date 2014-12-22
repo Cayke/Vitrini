@@ -3,7 +3,7 @@
 //  Vitrini
 //
 //  Created by Riheldo Melo Santos on 19/12/14.
-//  Copyright (c) 2014 Willian Pinho. All rights reserved.
+//  Copyright (c) 2014 Vitrini. All rights reserved.
 //
 
 #import "VICardsViewController.h"
@@ -46,6 +46,10 @@
     status.backgroundColor = [UIColor colorWithRed:247/255.0f green:247/255.0f blue:247/255.0f alpha:1.0f];
     
     [self.view addSubview:status];
+}
+
+-(NSString *)itemMenuTitle{
+    return @"Vitrini";
 }
 
 @end

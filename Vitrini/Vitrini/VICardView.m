@@ -3,7 +3,7 @@
 //  Vitrini
 //
 //  Created by Riheldo Melo Santos on 19/12/14.
-//  Copyright (c) 2014 Willian Pinho. All rights reserved.
+//  Copyright (c) 2014 Vitrini. All rights reserved.
 //
 
 #define ACTION_MARGIN 120 //%%% distance from center where the action applies. Higher = swipe further in order for the action to be called

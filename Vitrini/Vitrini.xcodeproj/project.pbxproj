@@ -43,6 +43,7 @@
 		B3B6CF641A44C45C00C07383 /* img5.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF5D1A44C45C00C07383 /* img5.png */; };
 		B3B6CF651A44C45C00C07383 /* img6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF5E1A44C45C00C07383 /* img6.jpg */; };
 		B3B6CF661A44C45C00C07383 /* img7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF5F1A44C45C00C07383 /* img7.jpg */; };
+		B3B6CF6F1A487A9600C07383 /* VIProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B6CF6E1A487A9600C07383 /* VIProtocol.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,8 @@
 		B3B6CF5D1A44C45C00C07383 /* img5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img5.png; sourceTree = "<group>"; };
 		B3B6CF5E1A44C45C00C07383 /* img6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img6.jpg; sourceTree = "<group>"; };
 		B3B6CF5F1A44C45C00C07383 /* img7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img7.jpg; sourceTree = "<group>"; };
+		B3B6CF6D1A487A9600C07383 /* VIProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIProtocol.h; sourceTree = "<group>"; };
+		B3B6CF6E1A487A9600C07383 /* VIProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIProtocol.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +193,7 @@
 				B3B6CF301A44A8DA00C07383 /* Cartoes */,
 				5CAA45A61A40AA6A00B51507 /* Config */,
 				B3B6CF311A44B7E400C07383 /* Menu */,
+				B3B6CF701A487AB700C07383 /* Protocolos */,
 				B3B6CF321A44B8F300C07383 /* Models */,
 				5C83EA881A409EE1007988AA /* VIInitControl.h */,
 				5C83EA891A409EE1007988AA /* VIInitControl.m */,
@@ -294,6 +298,15 @@
 				B3B6CF5F1A44C45C00C07383 /* img7.jpg */,
 			);
 			name = "Imagens para teste";
+			sourceTree = "<group>";
+		};
+		B3B6CF701A487AB700C07383 /* Protocolos */ = {
+			isa = PBXGroup;
+			children = (
+				B3B6CF6D1A487A9600C07383 /* VIProtocol.h */,
+				B3B6CF6E1A487A9600C07383 /* VIProtocol.m */,
+			);
+			name = Protocolos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,6 +434,7 @@
 				5CE349BD1A2CF42100F1DC17 /* UserOnboardContentViewController.m in Sources */,
 				B3B6CF441A44C21A00C07383 /* VIProductStore.m in Sources */,
 				92891CDF1A28D80F002F6678 /* AppDelegate.m in Sources */,
+				B3B6CF6F1A487A9600C07383 /* VIProtocol.m in Sources */,
 				B3B6CF381A44BAC600C07383 /* VICardsViewController.m in Sources */,
 				92891CDC1A28D80F002F6678 /* main.m in Sources */,
 				5C83EA8A1A409EE1007988AA /* VIInitControl.m in Sources */,

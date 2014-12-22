@@ -3,7 +3,7 @@
 //  Vitrini
 //
 //  Created by Willian Pinho on 11/28/14.
-//  Copyright (c) 2014 Willian Pinho. All rights reserved.
+//  Copyright (c) 2014 Vitrini. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
