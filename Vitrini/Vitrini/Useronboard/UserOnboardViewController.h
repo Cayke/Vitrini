@@ -17,6 +17,4 @@
 
 - (IBAction)pular:(id)sender;
 
-
-
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "VIMainViewController.h"
+#import "VICardsViewController.h"
 
 @interface VIMainViewController ()
 
@@ -27,6 +28,7 @@
     
     [self.view addSubview:_mainMenu];
     
+    
     // botao da view
     CGFloat bottom = self.view.bounds.size.height;
     CGFloat width = self.view.bounds.size.width;
@@ -35,10 +37,7 @@
     int btnHeight = 120;
     
     _menuView = [[UIView alloc]initWithFrame:CGRectMake(width/2-(btnWidth/2), bottom-(btnHeight/2), btnWidth, btnHeight)];
-    _menuView.backgroundColor = [UIColor colorWithRed:25.0f/255.0f
-                                                green:47.0f/255.0f
-                                                 blue:70.0f/255.0f
-                                                alpha:0.0f];
+    _menuView.backgroundColor = [UIColor colorWithRed:23.0f/255.0 green:48.0f/255.0f blue:71.0f/255.0f alpha:1.0];
     
     // deixar circular
     [_menuView.layer setCornerRadius:(btnWidth/2)];
@@ -53,7 +52,7 @@
     
     [self organizeViewControllers];
     
-    [self initWithViewControllers];
+    [self initViewControllers];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,32 +65,14 @@
     // subir menu
     if (_mainMenu.hidden) {
         [_mainMenu showMenu];
-        _menuView.backgroundColor = [UIColor colorWithRed:25.0f/255.0f
-                                                    green:47.0f/255.0f
-                                                     blue:70.0f/255.0f
-                                                    alpha:1.0f];
+        
     } else {
         [_mainMenu hideMenu];
-        _menuView.backgroundColor = [UIColor colorWithRed:25.0f/255.0f
-                                                    green:47.0f/255.0f
-                                                     blue:70.0f/255.0f
-                                                    alpha:0.0f];
     }
 }
 
 -(void)changeVCtoIndex:(NSUInteger)index{
     self.selectedViewController = self.viewControllers[index];
-
-    [self organizeViewControllers];
-    
-    NSLog(@"%lu",(unsigned long)index);
-    
-    
-    NSLog(@"%@",    self.selectedViewController.title );
-    _menuView.backgroundColor = [UIColor colorWithRed:0.0f/255.0f
-                                                green:0.0f/255.0f
-                                                 blue:70.0f/255.0f
-                                                alpha:0.0f];
 }
 
 -(void)organizeViewControllers{
@@ -107,22 +88,16 @@
     //    self.viewControllers = [NSArray arrayWithArray:newVCsArray];
 }
 
-- (void)initWithViewControllers
+- (void)initViewControllers
 {
-    UIViewController *vc1;
-//    vc1.view.backgroundColor = [UIColor yellowColor];
-    
-    UIStoryboard *userOnboard = [UIStoryboard storyboardWithName:@"michas" bundle:nil];
-    vc1 = [userOnboard instantiateViewControllerWithIdentifier:@"vitrini"];
-//    [self.appDelegate.window setRootViewController:userOnboardViewController];//[self presentViewController:userOnboardViewController animated:YES completion:nil];
-    vc1.title = @"Configuracoes";
+    VICardsViewController *vc1 = [[VICardsViewController alloc]init];
     
     UIViewController *vc2 = [[UIViewController alloc]init];
     vc2.view.backgroundColor = [UIColor blueColor];
     vc2.title = @"Meu Perfil";
-    
-    UIViewController *vc3 = [userOnboard instantiateViewControllerWithIdentifier:@"gostei"];
-    vc3.title = @"Meus Likes";
+
+//    UIViewController *vc3 = [ instantiateViewControllerWithIdentifier:@"gostei"];
+//    vc3.title = @"Meus Likes";
     
     UIViewController *vc4 = [[UIViewController alloc]init];
     vc4.view.backgroundColor = [UIColor purpleColor];
@@ -136,7 +111,7 @@
     vc6.view.backgroundColor = [UIColor purpleColor];
     vc6.title = @"Vitrini";
     
-    self.viewControllers = @[vc1, vc2, vc3, vc4, vc5, vc6];
+    self.viewControllers = @[vc1, vc2, vc4, vc5, vc6];
 }
 
 /*

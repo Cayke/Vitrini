@@ -21,6 +21,28 @@
 		92891CDF1A28D80F002F6678 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CDE1A28D80F002F6678 /* AppDelegate.m */; };
 		92891CE71A28D80F002F6678 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92891CE61A28D80F002F6678 /* Images.xcassets */; };
 		92891CF61A28D80F002F6678 /* VitriniTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CF51A28D80F002F6678 /* VitriniTests.m */; };
+		B3B6CF351A44B91900C07383 /* VIProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B6CF341A44B91900C07383 /* VIProduct.m */; };
+		B3B6CF381A44BAC600C07383 /* VICardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B6CF371A44BAC600C07383 /* VICardsViewController.m */; };
+		B3B6CF3B1A44BBAA00C07383 /* VIDraggableCardsView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B6CF3A1A44BBAA00C07383 /* VIDraggableCardsView.m */; };
+		B3B6CF3E1A44BC2800C07383 /* VICardView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B6CF3D1A44BC2800C07383 /* VICardView.m */; };
+		B3B6CF411A44BCA600C07383 /* VISignView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B6CF401A44BCA600C07383 /* VISignView.m */; };
+		B3B6CF441A44C21A00C07383 /* VIProductStore.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B6CF431A44C21A00C07383 /* VIProductStore.m */; };
+		B3B6CF4F1A44C41A00C07383 /* infoBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF461A44C41A00C07383 /* infoBtn.png */; };
+		B3B6CF501A44C41A00C07383 /* infoBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF471A44C41A00C07383 /* infoBtn@2x.png */; };
+		B3B6CF511A44C41A00C07383 /* infoBtn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF481A44C41A00C07383 /* infoBtn@3x.png */; };
+		B3B6CF521A44C41A00C07383 /* notBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF491A44C41A00C07383 /* notBtn.png */; };
+		B3B6CF531A44C41A00C07383 /* notBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF4A1A44C41A00C07383 /* notBtn@2x.png */; };
+		B3B6CF541A44C41A00C07383 /* notBtn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF4B1A44C41A00C07383 /* notBtn@3x.png */; };
+		B3B6CF551A44C41A00C07383 /* yesBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF4C1A44C41A00C07383 /* yesBtn.png */; };
+		B3B6CF561A44C41A00C07383 /* yesBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF4D1A44C41A00C07383 /* yesBtn@2x.png */; };
+		B3B6CF571A44C41A00C07383 /* yesBtn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF4E1A44C41A00C07383 /* yesBtn@3x.png */; };
+		B3B6CF601A44C45C00C07383 /* img1.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF591A44C45C00C07383 /* img1.png */; };
+		B3B6CF611A44C45C00C07383 /* img2.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF5A1A44C45C00C07383 /* img2.png */; };
+		B3B6CF621A44C45C00C07383 /* img3.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF5B1A44C45C00C07383 /* img3.png */; };
+		B3B6CF631A44C45C00C07383 /* img4.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF5C1A44C45C00C07383 /* img4.png */; };
+		B3B6CF641A44C45C00C07383 /* img5.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF5D1A44C45C00C07383 /* img5.png */; };
+		B3B6CF651A44C45C00C07383 /* img6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF5E1A44C45C00C07383 /* img6.jpg */; };
+		B3B6CF661A44C45C00C07383 /* img7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF5F1A44C45C00C07383 /* img7.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +82,34 @@
 		92891CEF1A28D80F002F6678 /* VitriniTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VitriniTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92891CF41A28D80F002F6678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92891CF51A28D80F002F6678 /* VitriniTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VitriniTests.m; sourceTree = "<group>"; };
+		B3B6CF331A44B91900C07383 /* VIProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIProduct.h; sourceTree = "<group>"; };
+		B3B6CF341A44B91900C07383 /* VIProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIProduct.m; sourceTree = "<group>"; };
+		B3B6CF361A44BAC600C07383 /* VICardsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VICardsViewController.h; path = Vitrini/VICardsViewController.h; sourceTree = "<group>"; };
+		B3B6CF371A44BAC600C07383 /* VICardsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VICardsViewController.m; path = Vitrini/VICardsViewController.m; sourceTree = "<group>"; };
+		B3B6CF391A44BBAA00C07383 /* VIDraggableCardsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VIDraggableCardsView.h; path = Vitrini/VIDraggableCardsView.h; sourceTree = "<group>"; };
+		B3B6CF3A1A44BBAA00C07383 /* VIDraggableCardsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VIDraggableCardsView.m; path = Vitrini/VIDraggableCardsView.m; sourceTree = "<group>"; };
+		B3B6CF3C1A44BC2700C07383 /* VICardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VICardView.h; path = Vitrini/VICardView.h; sourceTree = "<group>"; };
+		B3B6CF3D1A44BC2800C07383 /* VICardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VICardView.m; path = Vitrini/VICardView.m; sourceTree = "<group>"; };
+		B3B6CF3F1A44BCA600C07383 /* VISignView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VISignView.h; path = Vitrini/VISignView.h; sourceTree = "<group>"; };
+		B3B6CF401A44BCA600C07383 /* VISignView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VISignView.m; path = Vitrini/VISignView.m; sourceTree = "<group>"; };
+		B3B6CF421A44C21A00C07383 /* VIProductStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIProductStore.h; sourceTree = "<group>"; };
+		B3B6CF431A44C21A00C07383 /* VIProductStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIProductStore.m; sourceTree = "<group>"; };
+		B3B6CF461A44C41A00C07383 /* infoBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = infoBtn.png; sourceTree = "<group>"; };
+		B3B6CF471A44C41A00C07383 /* infoBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "infoBtn@2x.png"; sourceTree = "<group>"; };
+		B3B6CF481A44C41A00C07383 /* infoBtn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "infoBtn@3x.png"; sourceTree = "<group>"; };
+		B3B6CF491A44C41A00C07383 /* notBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notBtn.png; sourceTree = "<group>"; };
+		B3B6CF4A1A44C41A00C07383 /* notBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notBtn@2x.png"; sourceTree = "<group>"; };
+		B3B6CF4B1A44C41A00C07383 /* notBtn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notBtn@3x.png"; sourceTree = "<group>"; };
+		B3B6CF4C1A44C41A00C07383 /* yesBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yesBtn.png; sourceTree = "<group>"; };
+		B3B6CF4D1A44C41A00C07383 /* yesBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yesBtn@2x.png"; sourceTree = "<group>"; };
+		B3B6CF4E1A44C41A00C07383 /* yesBtn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yesBtn@3x.png"; sourceTree = "<group>"; };
+		B3B6CF591A44C45C00C07383 /* img1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img1.png; sourceTree = "<group>"; };
+		B3B6CF5A1A44C45C00C07383 /* img2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img2.png; sourceTree = "<group>"; };
+		B3B6CF5B1A44C45C00C07383 /* img3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img3.png; sourceTree = "<group>"; };
+		B3B6CF5C1A44C45C00C07383 /* img4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img4.png; sourceTree = "<group>"; };
+		B3B6CF5D1A44C45C00C07383 /* img5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img5.png; sourceTree = "<group>"; };
+		B3B6CF5E1A44C45C00C07383 /* img6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img6.jpg; sourceTree = "<group>"; };
+		B3B6CF5F1A44C45C00C07383 /* img7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img7.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,20 +182,20 @@
 		92891CD81A28D80F002F6678 /* Vitrini */ = {
 			isa = PBXGroup;
 			children = (
+				B3B6CF581A44C42B00C07383 /* Imagens para teste */,
 				5C6F1ED51A41B3920040E213 /* michas  */,
-				5C2878611A28E39700CC7DD2 /* CustomSegueTransition.h */,
-				5C2878621A28E39700CC7DD2 /* CustomSegueTransition.m */,
-				5CE349B61A2CF42100F1DC17 /* Useronboard */,
-				5CAA45A61A40AA6A00B51507 /* Config */,
 				92891CDD1A28D80F002F6678 /* AppDelegate.h */,
 				92891CDE1A28D80F002F6678 /* AppDelegate.m */,
+				5CE349B61A2CF42100F1DC17 /* Useronboard */,
+				B3B6CF301A44A8DA00C07383 /* Cartoes */,
+				5CAA45A61A40AA6A00B51507 /* Config */,
+				B3B6CF311A44B7E400C07383 /* Menu */,
+				B3B6CF321A44B8F300C07383 /* Models */,
 				5C83EA881A409EE1007988AA /* VIInitControl.h */,
 				5C83EA891A409EE1007988AA /* VIInitControl.m */,
-				5C83EA781A407008007988AA /* VIMainViewController.h */,
-				5C83EA791A407008007988AA /* VIMainViewController.m */,
-				5C83EA7B1A4071A1007988AA /* VIMainMenu.h */,
-				5C83EA7C1A4071A1007988AA /* VIMainMenu.m */,
 				92891CE61A28D80F002F6678 /* Images.xcassets */,
+				5C2878611A28E39700CC7DD2 /* CustomSegueTransition.h */,
+				5C2878621A28E39700CC7DD2 /* CustomSegueTransition.m */,
 				92891CD91A28D80F002F6678 /* Supporting Files */,
 			);
 			path = Vitrini;
@@ -175,6 +225,75 @@
 				92891CF41A28D80F002F6678 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B3B6CF301A44A8DA00C07383 /* Cartoes */ = {
+			isa = PBXGroup;
+			children = (
+				B3B6CF451A44C3F100C07383 /* Img */,
+				B3B6CF361A44BAC600C07383 /* VICardsViewController.h */,
+				B3B6CF371A44BAC600C07383 /* VICardsViewController.m */,
+				B3B6CF391A44BBAA00C07383 /* VIDraggableCardsView.h */,
+				B3B6CF3A1A44BBAA00C07383 /* VIDraggableCardsView.m */,
+				B3B6CF3C1A44BC2700C07383 /* VICardView.h */,
+				B3B6CF3D1A44BC2800C07383 /* VICardView.m */,
+				B3B6CF3F1A44BCA600C07383 /* VISignView.h */,
+				B3B6CF401A44BCA600C07383 /* VISignView.m */,
+			);
+			name = Cartoes;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		B3B6CF311A44B7E400C07383 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				5C83EA781A407008007988AA /* VIMainViewController.h */,
+				5C83EA791A407008007988AA /* VIMainViewController.m */,
+				5C83EA7B1A4071A1007988AA /* VIMainMenu.h */,
+				5C83EA7C1A4071A1007988AA /* VIMainMenu.m */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		B3B6CF321A44B8F300C07383 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B3B6CF331A44B91900C07383 /* VIProduct.h */,
+				B3B6CF341A44B91900C07383 /* VIProduct.m */,
+				B3B6CF421A44C21A00C07383 /* VIProductStore.h */,
+				B3B6CF431A44C21A00C07383 /* VIProductStore.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		B3B6CF451A44C3F100C07383 /* Img */ = {
+			isa = PBXGroup;
+			children = (
+				B3B6CF461A44C41A00C07383 /* infoBtn.png */,
+				B3B6CF471A44C41A00C07383 /* infoBtn@2x.png */,
+				B3B6CF481A44C41A00C07383 /* infoBtn@3x.png */,
+				B3B6CF491A44C41A00C07383 /* notBtn.png */,
+				B3B6CF4A1A44C41A00C07383 /* notBtn@2x.png */,
+				B3B6CF4B1A44C41A00C07383 /* notBtn@3x.png */,
+				B3B6CF4C1A44C41A00C07383 /* yesBtn.png */,
+				B3B6CF4D1A44C41A00C07383 /* yesBtn@2x.png */,
+				B3B6CF4E1A44C41A00C07383 /* yesBtn@3x.png */,
+			);
+			name = Img;
+			sourceTree = "<group>";
+		};
+		B3B6CF581A44C42B00C07383 /* Imagens para teste */ = {
+			isa = PBXGroup;
+			children = (
+				B3B6CF591A44C45C00C07383 /* img1.png */,
+				B3B6CF5A1A44C45C00C07383 /* img2.png */,
+				B3B6CF5B1A44C45C00C07383 /* img3.png */,
+				B3B6CF5C1A44C45C00C07383 /* img4.png */,
+				B3B6CF5D1A44C45C00C07383 /* img5.png */,
+				B3B6CF5E1A44C45C00C07383 /* img6.jpg */,
+				B3B6CF5F1A44C45C00C07383 /* img7.jpg */,
+			);
+			name = "Imagens para teste";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,10 +376,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3B6CF541A44C41A00C07383 /* notBtn@3x.png in Resources */,
 				5CE349BC1A2CF42100F1DC17 /* UserOnboard.storyboard in Resources */,
+				B3B6CF531A44C41A00C07383 /* notBtn@2x.png in Resources */,
+				B3B6CF561A44C41A00C07383 /* yesBtn@2x.png in Resources */,
+				B3B6CF501A44C41A00C07383 /* infoBtn@2x.png in Resources */,
+				B3B6CF521A44C41A00C07383 /* notBtn.png in Resources */,
+				B3B6CF571A44C41A00C07383 /* yesBtn@3x.png in Resources */,
+				B3B6CF661A44C45C00C07383 /* img7.jpg in Resources */,
 				92891CE71A28D80F002F6678 /* Images.xcassets in Resources */,
+				B3B6CF551A44C41A00C07383 /* yesBtn.png in Resources */,
+				B3B6CF601A44C45C00C07383 /* img1.png in Resources */,
+				B3B6CF4F1A44C41A00C07383 /* infoBtn.png in Resources */,
+				B3B6CF641A44C45C00C07383 /* img5.png in Resources */,
+				B3B6CF621A44C45C00C07383 /* img3.png in Resources */,
+				B3B6CF631A44C45C00C07383 /* img4.png in Resources */,
+				B3B6CF611A44C45C00C07383 /* img2.png in Resources */,
+				B3B6CF651A44C45C00C07383 /* img6.jpg in Resources */,
 				5CAA45A51A40AA5000B51507 /* VIConfig.storyboard in Resources */,
 				5C6F1ED41A41B3180040E213 /* michas.storyboard in Resources */,
+				B3B6CF511A44C41A00C07383 /* infoBtn@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,14 +413,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3B6CF3E1A44BC2800C07383 /* VICardView.m in Sources */,
 				5C83EA7D1A4071A1007988AA /* VIMainMenu.m in Sources */,
+				B3B6CF411A44BCA600C07383 /* VISignView.m in Sources */,
 				5C2878631A28E39700CC7DD2 /* CustomSegueTransition.m in Sources */,
 				5CE349BE1A2CF42100F1DC17 /* UserOnboardViewController.m in Sources */,
 				5CE349BD1A2CF42100F1DC17 /* UserOnboardContentViewController.m in Sources */,
+				B3B6CF441A44C21A00C07383 /* VIProductStore.m in Sources */,
 				92891CDF1A28D80F002F6678 /* AppDelegate.m in Sources */,
+				B3B6CF381A44BAC600C07383 /* VICardsViewController.m in Sources */,
 				92891CDC1A28D80F002F6678 /* main.m in Sources */,
 				5C83EA8A1A409EE1007988AA /* VIInitControl.m in Sources */,
 				5C83EA7A1A407008007988AA /* VIMainViewController.m in Sources */,
+				B3B6CF3B1A44BBAA00C07383 /* VIDraggableCardsView.m in Sources */,
+				B3B6CF351A44B91900C07383 /* VIProduct.m in Sources */,
 				5C6F1ED21A41B2820040E213 /* MichasViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
