@@ -299,8 +299,6 @@
     
     self.alpha = factor-0.2;
     
-    NSLog(@"%f",factor);
-    
     CGFloat inverseFactor = 0;
     if (factor < 1.0) {
         inverseFactor = 1 - factor;

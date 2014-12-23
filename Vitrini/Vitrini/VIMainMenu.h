@@ -20,6 +20,8 @@
 
 - (instancetype)initWithVITabBarVC:(VIMainViewController *)vitabbarvc andFrame:(CGRect)frame;
 
+-(void)installIconsOnMenu;
+
 -(void)showMenu;
 
 -(void)hideMenu;

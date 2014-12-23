@@ -52,4 +52,7 @@
     return @"Vitrini";
 }
 
+-(UIImage *)itemMenuIcon{
+    return [UIImage imageNamed:@"img1.png"];
+}
 @end

@@ -36,7 +36,6 @@
 
 - (void)goToLogin
 {
-    NSLog(@"goTologin");
     [self goToMainApp];
     
 }

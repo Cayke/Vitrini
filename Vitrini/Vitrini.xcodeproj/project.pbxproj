@@ -44,6 +44,7 @@
 		B3B6CF651A44C45C00C07383 /* img6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF5E1A44C45C00C07383 /* img6.jpg */; };
 		B3B6CF661A44C45C00C07383 /* img7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF5F1A44C45C00C07383 /* img7.jpg */; };
 		B3B6CF6F1A487A9600C07383 /* VIProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B6CF6E1A487A9600C07383 /* VIProtocol.m */; };
+		B3B6CF721A48AEE400C07383 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF711A48AEE400C07383 /* menu.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		B3B6CF5F1A44C45C00C07383 /* img7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img7.jpg; sourceTree = "<group>"; };
 		B3B6CF6D1A487A9600C07383 /* VIProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIProtocol.h; sourceTree = "<group>"; };
 		B3B6CF6E1A487A9600C07383 /* VIProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIProtocol.m; sourceTree = "<group>"; };
+		B3B6CF711A48AEE400C07383 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +253,7 @@
 		B3B6CF311A44B7E400C07383 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				B3B6CF711A48AEE400C07383 /* menu.png */,
 				5C83EA781A407008007988AA /* VIMainViewController.h */,
 				5C83EA791A407008007988AA /* VIMainViewController.m */,
 				5C83EA7B1A4071A1007988AA /* VIMainMenu.h */,
@@ -404,6 +407,7 @@
 				B3B6CF641A44C45C00C07383 /* img5.png in Resources */,
 				B3B6CF621A44C45C00C07383 /* img3.png in Resources */,
 				B3B6CF631A44C45C00C07383 /* img4.png in Resources */,
+				B3B6CF721A48AEE400C07383 /* menu.png in Resources */,
 				B3B6CF611A44C45C00C07383 /* img2.png in Resources */,
 				B3B6CF651A44C45C00C07383 /* img6.jpg in Resources */,
 				5CAA45A51A40AA5000B51507 /* VIConfig.storyboard in Resources */,

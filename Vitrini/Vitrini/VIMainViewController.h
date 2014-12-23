@@ -14,6 +14,7 @@
 @interface VIMainViewController : UITabBarController
 
 @property VIMainMenu *mainMenu;
+@property (nonatomic) UIView *menuView;
 
 -(void)changeVCtoIndex:(NSUInteger)index;
 
