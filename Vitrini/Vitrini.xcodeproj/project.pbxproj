@@ -44,7 +44,13 @@
 		B3B6CF651A44C45C00C07383 /* img6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF5E1A44C45C00C07383 /* img6.jpg */; };
 		B3B6CF661A44C45C00C07383 /* img7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF5F1A44C45C00C07383 /* img7.jpg */; };
 		B3B6CF6F1A487A9600C07383 /* VIProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B6CF6E1A487A9600C07383 /* VIProtocol.m */; };
-		B3B6CF721A48AEE400C07383 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF711A48AEE400C07383 /* menu.png */; };
+		B3B6CF831A48FCAE00C07383 /* Vitrini.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF7D1A48FCAE00C07383 /* Vitrini.png */; };
+		B3B6CF841A48FCAE00C07383 /* Vitrini@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF7E1A48FCAE00C07383 /* Vitrini@1x.png */; };
+		B3B6CF851A48FCAE00C07383 /* Vitrini@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF7F1A48FCAE00C07383 /* Vitrini@2x.png */; };
+		B3B6CF881A48FDD300C07383 /* VIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B6CF871A48FDD300C07383 /* VIColor.m */; };
+		B3B6CF8C1A49003F00C07383 /* CloseMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF891A49003F00C07383 /* CloseMenu.png */; };
+		B3B6CF8D1A49003F00C07383 /* CloseMenu@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF8A1A49003F00C07383 /* CloseMenu@1x.png */; };
+		B3B6CF8E1A49003F00C07383 /* CloseMenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF8B1A49003F00C07383 /* CloseMenu@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,7 +120,14 @@
 		B3B6CF5F1A44C45C00C07383 /* img7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img7.jpg; sourceTree = "<group>"; };
 		B3B6CF6D1A487A9600C07383 /* VIProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIProtocol.h; sourceTree = "<group>"; };
 		B3B6CF6E1A487A9600C07383 /* VIProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIProtocol.m; sourceTree = "<group>"; };
-		B3B6CF711A48AEE400C07383 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		B3B6CF7D1A48FCAE00C07383 /* Vitrini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vitrini.png; sourceTree = "<group>"; };
+		B3B6CF7E1A48FCAE00C07383 /* Vitrini@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Vitrini@1x.png"; sourceTree = "<group>"; };
+		B3B6CF7F1A48FCAE00C07383 /* Vitrini@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Vitrini@2x.png"; sourceTree = "<group>"; };
+		B3B6CF861A48FDD300C07383 /* VIColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIColor.h; sourceTree = "<group>"; };
+		B3B6CF871A48FDD300C07383 /* VIColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIColor.m; sourceTree = "<group>"; };
+		B3B6CF891A49003F00C07383 /* CloseMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseMenu.png; sourceTree = "<group>"; };
+		B3B6CF8A1A49003F00C07383 /* CloseMenu@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CloseMenu@1x.png"; sourceTree = "<group>"; };
+		B3B6CF8B1A49003F00C07383 /* CloseMenu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CloseMenu@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +200,7 @@
 		92891CD81A28D80F002F6678 /* Vitrini */ = {
 			isa = PBXGroup;
 			children = (
+				B3B6CF791A48FAF600C07383 /* Imagens */,
 				B3B6CF581A44C42B00C07383 /* Imagens para teste */,
 				5C6F1ED51A41B3920040E213 /* michas  */,
 				92891CDD1A28D80F002F6678 /* AppDelegate.h */,
@@ -253,7 +267,6 @@
 		B3B6CF311A44B7E400C07383 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				B3B6CF711A48AEE400C07383 /* menu.png */,
 				5C83EA781A407008007988AA /* VIMainViewController.h */,
 				5C83EA791A407008007988AA /* VIMainViewController.m */,
 				5C83EA7B1A4071A1007988AA /* VIMainMenu.h */,
@@ -269,6 +282,8 @@
 				B3B6CF341A44B91900C07383 /* VIProduct.m */,
 				B3B6CF421A44C21A00C07383 /* VIProductStore.h */,
 				B3B6CF431A44C21A00C07383 /* VIProductStore.m */,
+				B3B6CF861A48FDD300C07383 /* VIColor.h */,
+				B3B6CF871A48FDD300C07383 /* VIColor.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -310,6 +325,19 @@
 				B3B6CF6E1A487A9600C07383 /* VIProtocol.m */,
 			);
 			name = Protocolos;
+			sourceTree = "<group>";
+		};
+		B3B6CF791A48FAF600C07383 /* Imagens */ = {
+			isa = PBXGroup;
+			children = (
+				B3B6CF891A49003F00C07383 /* CloseMenu.png */,
+				B3B6CF8A1A49003F00C07383 /* CloseMenu@1x.png */,
+				B3B6CF8B1A49003F00C07383 /* CloseMenu@2x.png */,
+				B3B6CF7D1A48FCAE00C07383 /* Vitrini.png */,
+				B3B6CF7E1A48FCAE00C07383 /* Vitrini@1x.png */,
+				B3B6CF7F1A48FCAE00C07383 /* Vitrini@2x.png */,
+			);
+			name = Imagens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,13 +421,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3B6CF541A44C41A00C07383 /* notBtn@3x.png in Resources */,
+				B3B6CF851A48FCAE00C07383 /* Vitrini@2x.png in Resources */,
 				5CE349BC1A2CF42100F1DC17 /* UserOnboard.storyboard in Resources */,
 				B3B6CF531A44C41A00C07383 /* notBtn@2x.png in Resources */,
 				B3B6CF561A44C41A00C07383 /* yesBtn@2x.png in Resources */,
 				B3B6CF501A44C41A00C07383 /* infoBtn@2x.png in Resources */,
+				B3B6CF8C1A49003F00C07383 /* CloseMenu.png in Resources */,
 				B3B6CF521A44C41A00C07383 /* notBtn.png in Resources */,
 				B3B6CF571A44C41A00C07383 /* yesBtn@3x.png in Resources */,
 				B3B6CF661A44C45C00C07383 /* img7.jpg in Resources */,
+				B3B6CF8E1A49003F00C07383 /* CloseMenu@2x.png in Resources */,
+				B3B6CF8D1A49003F00C07383 /* CloseMenu@1x.png in Resources */,
 				92891CE71A28D80F002F6678 /* Images.xcassets in Resources */,
 				B3B6CF551A44C41A00C07383 /* yesBtn.png in Resources */,
 				B3B6CF601A44C45C00C07383 /* img1.png in Resources */,
@@ -407,8 +439,9 @@
 				B3B6CF641A44C45C00C07383 /* img5.png in Resources */,
 				B3B6CF621A44C45C00C07383 /* img3.png in Resources */,
 				B3B6CF631A44C45C00C07383 /* img4.png in Resources */,
-				B3B6CF721A48AEE400C07383 /* menu.png in Resources */,
 				B3B6CF611A44C45C00C07383 /* img2.png in Resources */,
+				B3B6CF831A48FCAE00C07383 /* Vitrini.png in Resources */,
+				B3B6CF841A48FCAE00C07383 /* Vitrini@1x.png in Resources */,
 				B3B6CF651A44C45C00C07383 /* img6.jpg in Resources */,
 				5CAA45A51A40AA5000B51507 /* VIConfig.storyboard in Resources */,
 				5C6F1ED41A41B3180040E213 /* michas.storyboard in Resources */,
@@ -444,6 +477,7 @@
 				5C83EA8A1A409EE1007988AA /* VIInitControl.m in Sources */,
 				5C83EA7A1A407008007988AA /* VIMainViewController.m in Sources */,
 				B3B6CF3B1A44BBAA00C07383 /* VIDraggableCardsView.m in Sources */,
+				B3B6CF881A48FDD300C07383 /* VIColor.m in Sources */,
 				B3B6CF351A44B91900C07383 /* VIProduct.m in Sources */,
 				5C6F1ED21A41B2820040E213 /* MichasViewController.m in Sources */,
 			);

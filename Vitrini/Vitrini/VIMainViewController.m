@@ -8,6 +8,7 @@
 
 #import "VIMainViewController.h"
 #import "VICardsViewController.h"
+#import "VIColor.h"
 
 @implementation VIMainViewController
 
@@ -56,7 +57,7 @@
     int btnHeight = 120;
     
     _menuView = [[UIView alloc]initWithFrame:CGRectMake(width/2-(btnWidth/2), bottom-(btnHeight/2), btnWidth, btnHeight)];
-    _menuView.backgroundColor = [UIColor colorWithRed:23.0f/255.0 green:48.0f/255.0f blue:71.0f/255.0f alpha:1.0];
+    _menuView.backgroundColor = [VIColor primaryColor];
     
     // deixar circular
     [_menuView.layer setCornerRadius:(btnWidth/2)];
@@ -67,7 +68,6 @@
     
     // adicionar icone no circulo
     [_mainMenu installIconsOnMenu];
-    
     
     
     UITapGestureRecognizer *click = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(clicou)];

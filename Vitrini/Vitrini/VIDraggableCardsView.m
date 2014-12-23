@@ -8,6 +8,7 @@
 
 #import "VIDraggableCardsView.h"
 #import "VIProductStore.h"
+#import "VIColor.h"
 
 #define PARALLAX_BACK_VALUE 10
 
@@ -107,17 +108,14 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
 
 // adicionar informacoes na tela
 -(void)setupFrontView
-{
-    // cor da paleta
-    UIColor * linesColor = [UIColor colorWithRed:247/255.0f green:247/255.0f blue:247/255.0f alpha:1.0f];
-    
+{   
     // linhas
     UIView *firstLine = [[UIView alloc]initWithFrame:CGRectMake(92, 448, 50, 2)];
-    firstLine.backgroundColor = linesColor;
+    firstLine.backgroundColor = [VIColor whiteViColor];
     [self addSubview:firstLine];
     
     UIView *secondLine = [[UIView alloc]initWithFrame:CGRectMake(176, 448, 51, 2)];
-    secondLine.backgroundColor = linesColor;
+    secondLine.backgroundColor = [VIColor whiteViColor];
     [self addSubview:secondLine];
     
     // botao de sim

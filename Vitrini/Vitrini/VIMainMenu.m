@@ -101,7 +101,7 @@
     menuIconFrame = CGRectMake(40, 14, menuIconWidth, menuIconHeight);
     menuIconFrameOut = CGRectMake(40, 80, menuIconWidth, menuIconHeight);
     menuIcon = [[UIImageView alloc]initWithFrame:menuIconFrameOut];
-    menuIcon.image = [UIImage imageNamed:@"menu.png"];
+    menuIcon.image = [UIImage imageNamed:@"CloseMenu.png"];
     menuIcon.alpha = 1.0;
     [self.viTabBarVC.menuView addSubview:menuIcon];
     
@@ -118,10 +118,12 @@
 
 -(void)fadeMenuItemIn{
     // substituir o item atual da viewcontroller pelo item do menu
-    [UIView animateWithDuration:ANIMATION_TIME_MENU_ITEM delay:0.1 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+    [UIView animateWithDuration:0.1 delay:0.1 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
         menuIcon.alpha = 1.0f;
         actualVcIcon.alpha = 0.0f;
         
+    } completion:nil];
+    [UIView animateWithDuration:ANIMATION_TIME_MENU_ITEM delay:0.1 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
         actualVcIcon.frame = menuIconFrameOut;
         menuIcon.frame = menuIconFrame;
         
@@ -129,10 +131,12 @@
 }
 -(void)fadeMenuItemOut{
     // substituir o item do menu pelo da viewcontroller
-    [UIView animateWithDuration:ANIMATION_TIME_MENU_ITEM delay:0.1 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+    [UIView animateWithDuration:0.1 delay:0.1 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
         menuIcon.alpha = 0.0f;
         actualVcIcon.alpha = 1.0f;
-        
+
+    } completion:nil];
+    [UIView animateWithDuration:ANIMATION_TIME_MENU_ITEM delay:0.1 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
         actualVcIcon.frame = menuIconFrame;
         menuIcon.frame = menuIconFrameOut;
         
