@@ -9,7 +9,9 @@
 #import "VIMainMenu.h"
 
 #define ANIMATION_TIME 0.5f
-#define ANIMATION_TIME_MENU_ITEM 0.3f
+#define ANIMATION_TIME_MENU_ITEM_MOV 0.3f
+#define ANIMATION_TIME_MENU_ITEM_ALPHA 0.1f
+#define DELAY_MENU_ANIMATION 0.1F
 
 @implementation VIMainMenu {
     UIImageView *menuIcon;
@@ -118,12 +120,12 @@
 
 -(void)fadeMenuItemIn{
     // substituir o item atual da viewcontroller pelo item do menu
-    [UIView animateWithDuration:0.1 delay:0.1 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+    [UIView animateWithDuration:ANIMATION_TIME_MENU_ITEM_ALPHA delay:DELAY_MENU_ANIMATION options:UIViewAnimationOptionBeginFromCurrentState animations:^{
         menuIcon.alpha = 1.0f;
         actualVcIcon.alpha = 0.0f;
         
     } completion:nil];
-    [UIView animateWithDuration:ANIMATION_TIME_MENU_ITEM delay:0.1 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+    [UIView animateWithDuration:ANIMATION_TIME_MENU_ITEM_MOV delay:DELAY_MENU_ANIMATION options:UIViewAnimationOptionBeginFromCurrentState animations:^{
         actualVcIcon.frame = menuIconFrameOut;
         menuIcon.frame = menuIconFrame;
         
@@ -131,12 +133,12 @@
 }
 -(void)fadeMenuItemOut{
     // substituir o item do menu pelo da viewcontroller
-    [UIView animateWithDuration:0.1 delay:0.1 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+    [UIView animateWithDuration:ANIMATION_TIME_MENU_ITEM_ALPHA delay:DELAY_MENU_ANIMATION options:UIViewAnimationOptionBeginFromCurrentState animations:^{
         menuIcon.alpha = 0.0f;
         actualVcIcon.alpha = 1.0f;
 
     } completion:nil];
-    [UIView animateWithDuration:ANIMATION_TIME_MENU_ITEM delay:0.1 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+    [UIView animateWithDuration:ANIMATION_TIME_MENU_ITEM_MOV delay:DELAY_MENU_ANIMATION options:UIViewAnimationOptionBeginFromCurrentState animations:^{
         actualVcIcon.frame = menuIconFrame;
         menuIcon.frame = menuIconFrameOut;
         

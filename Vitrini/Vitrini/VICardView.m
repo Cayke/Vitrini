@@ -212,6 +212,7 @@
         [UIView animateWithDuration:0.3
                          animations:^{
                              [self resetCard];
+                             [self.delegate resetBackCard];
                          }];
     }
 }

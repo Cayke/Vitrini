@@ -265,4 +265,10 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
     return nil;
 }
 
+-(void)resetBackCard{
+    [UIView animateWithDuration:0.4 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        [[self waitingCard] animationBeingSecondCardWithFirstCardFactor:0.0f];
+    } completion:nil];
+}
+
 @end

@@ -19,6 +19,9 @@
 
 -(void)swipingViewDistanceFromCenter:(CGPoint)point;
 -(void)cancelSwiping;
+
+-(void)resetBackCard;
+
 @end
 
 
