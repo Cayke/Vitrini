@@ -108,30 +108,75 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
 
 // adicionar informacoes na tela
 -(void)setupFrontView
-{   
+{
+    CGFloat dimensionBtn = 69.0f;
+    CGFloat dimensionBtnInfo = 36.0f;
+    CGFloat marginToWall = 24.0f;
+    CGFloat marginToBottom = 120.0f;
+    
+    CGFloat posX, posY, width, height;
+    
+    //
+    //// calcular posicoes da primeira linha
+    //
+    posX = marginToWall + dimensionBtn - 1;
+    width = (self.frame.size.width/2 - dimensionBtnInfo/2) - posX;
+    posY = self.frame.size.height - marginToBottom;
+    
     // linhas
-    UIView *firstLine = [[UIView alloc]initWithFrame:CGRectMake(92, 448, 50, 2)];
+    UIView *firstLine = [[UIView alloc]initWithFrame:CGRectMake(posX, posY-1, width, 2)];
     firstLine.backgroundColor = [VIColor whiteViColor];
     [self addSubview:firstLine];
     
-    UIView *secondLine = [[UIView alloc]initWithFrame:CGRectMake(176, 448, 51, 2)];
+    //
+    //// calcular posicoes da segunda linha
+    //
+    posX = self.frame.size.width/2 + dimensionBtnInfo/2 - 1;
+    width += 1;
+    posY = self.frame.size.height - marginToBottom;
+    
+    UIView *secondLine = [[UIView alloc]initWithFrame:CGRectMake(posX, posY-1, width, 2)];
     secondLine.backgroundColor = [VIColor whiteViColor];
     [self addSubview:secondLine];
     
+    //
+    //// calcular posicoes do botao SIM
+    //
+    posX = self.frame.size.width - dimensionBtn - marginToWall;
+    width = dimensionBtn;
+    height = dimensionBtn;
+    posY = self.frame.size.height - marginToBottom - dimensionBtn/2;
+    
     // botao de sim
-    yesButton = [[UIButton alloc]initWithFrame:CGRectMake(24, 415, 69, 69)];
+    yesButton = [[UIButton alloc]initWithFrame:CGRectMake(posX, posY, dimensionBtn, dimensionBtn)];
     [yesButton setImage:[UIImage imageNamed:@"notBtn.png"] forState:UIControlStateNormal];
     [yesButton addTarget:self action:@selector(clickToswipeLeft) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:yesButton];
     
+    //
+    //// calcular posicoes do botao NAO
+    //
+    posX = marginToWall;
+    width = dimensionBtn;
+    height = dimensionBtn;
+    posY = self.frame.size.height - marginToBottom - dimensionBtn/2;
+    
     // botao de nao
-    noButton = [[UIButton alloc]initWithFrame:CGRectMake(226, 415, 69, 69)];
+    noButton = [[UIButton alloc]initWithFrame:CGRectMake(posX, posY, dimensionBtn, dimensionBtn)];
     [noButton setImage:[UIImage imageNamed:@"yesBtn.png"] forState:UIControlStateNormal];
     [noButton addTarget:self action:@selector(clickToswipeRight) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:noButton];
     
+    //
+    //// calcular posicoes do botao INFO
+    //
+    posX = self.frame.size.width/2 - dimensionBtnInfo/2;
+    width = dimensionBtnInfo;
+    height = dimensionBtnInfo;
+    posY = self.frame.size.height - marginToBottom - dimensionBtnInfo/2;
+    
     // botao info
-    infoButton = [[UIButton alloc]initWithFrame:CGRectMake(141, 431, 36, 36)];
+    infoButton = [[UIButton alloc]initWithFrame:CGRectMake(posX, posY, dimensionBtnInfo, dimensionBtnInfo)];
     [infoButton setImage:[UIImage imageNamed:@"infoBtn.png"] forState:UIControlStateNormal];
     [self addSubview:infoButton];
 }
