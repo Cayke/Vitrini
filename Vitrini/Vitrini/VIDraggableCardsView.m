@@ -142,7 +142,7 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
     //
     //// calcular posicoes do botao SIM
     //
-    posX = self.frame.size.width - dimensionBtn - marginToWall;
+    posX = marginToWall;
     width = dimensionBtn;
     height = dimensionBtn;
     posY = self.frame.size.height - marginToBottom - dimensionBtn/2;
@@ -156,7 +156,7 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
     //
     //// calcular posicoes do botao NAO
     //
-    posX = marginToWall;
+    posX = self.frame.size.width - dimensionBtn - marginToWall;
     width = dimensionBtn;
     height = dimensionBtn;
     posY = self.frame.size.height - marginToBottom - dimensionBtn/2;
