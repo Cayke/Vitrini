@@ -8,10 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+@class VIProduct;
+
 @interface VIProductStore : NSObject
 
 @property (nonatomic) NSMutableArray *products;
 
 +(instancetype)sharedStore;
+
+-(NSArray*)likedProducts;
+-(VIProduct*)nextProduct;
 
 @end

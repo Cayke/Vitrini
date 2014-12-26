@@ -13,13 +13,8 @@
 #define PARALLAX_BACK_VALUE 10
 
 @implementation VIDraggableCardsView {
-    NSInteger cardsLoadedIndex; //%%% the index of the card you have loaded into the loadedCards array last
+    //NSInteger cardsLoadedIndex; //%%% the index of the card you have loaded into the loadedCards array last
     NSMutableArray *loadedCards; //%%% the array of card loaded (change max_buffer_size to increase or decrease the number of cards this holds)
-    
-    UIButton* menuButton;
-    UIButton* messageButton;
-    UIButton* checkButton;
-    UIButton* xButton;
     
     UIButton *infoButton;
     UIButton *yesButton;
@@ -30,9 +25,6 @@
 static const int MAX_BUFFER_SIZE = 2; //%%% max number of cards loaded at any given time, must be greater than 1
 static float CARD_HEIGHT = 386; //%%% height of the draggable card
 static float CARD_WIDTH = 290; //%%% width of the draggable card
-
-@synthesize exampleCardPhotos; //%%% all the labels I'm using as example data at the moment
-@synthesize allCards;//%%% all the cards
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -49,11 +41,8 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
         
         [super layoutSubviews];
         
-        exampleCardPhotos = [VIProductStore sharedStore].products;
-        
         loadedCards = [[NSMutableArray alloc] init];
-        allCards = [[NSMutableArray alloc] init];
-        cardsLoadedIndex = 0;
+        //cardsLoadedIndex = 0;
         
         [self loadCards];
         
@@ -181,13 +170,21 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
     [self addSubview:infoButton];
 }
 
-#warning include own card customization here!
-//%%% creates a card and returns it.  This should be customized to fit your needs.
+//%%% creates a card and returns it.
 // use "index" to indicate where the information should be pulled.  If this doesn't apply to you, feel free
 // to get rid of it (eg: if you are building cards from data from the internet)
 -(VICardView *)createDraggableViewWithDataAtIndex:(NSInteger)index
 {
-    VICardView *draggableView = [[VICardView alloc]initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT)andProduct:[exampleCardPhotos objectAtIndex:index]];
+    VICardView *draggableView = [[VICardView alloc]initWithFrame:self.frame andProduct:[[VIProductStore sharedStore] nextProduct]];
+    
+    draggableView.delegate = self;
+    draggableView.alpha = 0.0;
+    
+    return draggableView;
+}
+
+-(VICardView*)createCardWithProduct:(VIProduct*)product{
+    VICardView *draggableView = [[VICardView alloc]initWithFrame:self.frame andProduct:product];
     
     draggableView.delegate = self;
     draggableView.alpha = 0.0;
@@ -198,33 +195,53 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
 //%%% loads all the cards and puts the first x in the "loaded cards" array
 -(void)loadCards
 {
-    if([exampleCardPhotos count] > 0) {
-        NSInteger numLoadedCardsCap =(([exampleCardPhotos count] > MAX_BUFFER_SIZE)?MAX_BUFFER_SIZE:[exampleCardPhotos count]);
-        //%%% if the buffer size is greater than the data size, there will be an array error, so this makes sure that doesn't happen
-        
-        //%%% loops through the exampleCardsLabels array to create a card for each label.  This should be customized by removing "exampleCardLabels" with your own array of data
-        for (int i = 0; i<[exampleCardPhotos count]; i++) {
-            VICardView* newCard = [self createDraggableViewWithDataAtIndex:i];
-            [allCards addObject:newCard];
-            
-            if (i<numLoadedCardsCap) {
-                //%%% adds a small number of cards to be loaded
-                [loadedCards addObject:newCard];
+    [self fillCardBuffer];
+    
+//    if([exampleCardPhotos count] > 0) {
+//        NSInteger numLoadedCardsCap =(([exampleCardPhotos count] > MAX_BUFFER_SIZE)?MAX_BUFFER_SIZE:[exampleCardPhotos count]);
+//        //%%% if the buffer size is greater than the data size, there will be an array error, so this makes sure that doesn't happen
+//        
+//        //%%% loops through the exampleCardsLabels array to create a card for each label.  This should be customized by removing "exampleCardLabels" with your own array of data
+//        for (int i = 0; i<[exampleCardPhotos count]; i++) {
+//            VICardView* newCard = [self createDraggableViewWithDataAtIndex:i];
+//            [allCards addObject:newCard];
+//            
+//            if (i<numLoadedCardsCap) {
+//                //%%% adds a small number of cards to be loaded
+//                [loadedCards addObject:newCard];
+//            }
+//        }
+//        
+//        //%%% displays the small number of loaded cards dictated by MAX_BUFFER_SIZE so that not all the cards
+//        // are showing at once and clogging a ton of data
+//        for (int i = 0; i<[loadedCards count]; i++) {
+//            if (i>0) {
+//                [self insertSubview:[loadedCards objectAtIndex:i] belowSubview:[loadedCards objectAtIndex:i-1]];
+//            } else {
+//                [self addSubview:[loadedCards objectAtIndex:i]];
+//            }
+//            [[self presentedCard]normalize];
+//            [self presentedCard].alpha = 1.0;
+//            [self changeBackgroundBlur];
+//            cardsLoadedIndex++; //%%% we loaded a card into loaded cards, so we have to increment
+//        }
+//    }
+    
+    [self addSubview:[loadedCards objectAtIndex:1]];
+    [self addSubview:[loadedCards objectAtIndex:0]];
+    [[self presentedCard]normalize];
+    [self presentedCard].alpha = 1.0;
+    [self changeBackgroundBlur];
+}
+
+-(void)fillCardBuffer{
+    NSUInteger qtdOfCardsInBuffer = [loadedCards count];
+    if (qtdOfCardsInBuffer < MAX_BUFFER_SIZE) {
+        for (NSUInteger i = qtdOfCardsInBuffer; i < MAX_BUFFER_SIZE; i++) {
+            VIProduct *nextProduct = [[VIProductStore sharedStore]nextProduct];
+            if (nextProduct) {
+                [loadedCards addObject:[self createCardWithProduct:nextProduct]];
             }
-        }
-        
-        //%%% displays the small number of loaded cards dictated by MAX_BUFFER_SIZE so that not all the cards
-        // are showing at once and clogging a ton of data
-        for (int i = 0; i<[loadedCards count]; i++) {
-            if (i>0) {
-                [self insertSubview:[loadedCards objectAtIndex:i] belowSubview:[loadedCards objectAtIndex:i-1]];
-            } else {
-                [self addSubview:[loadedCards objectAtIndex:i]];
-            }
-            [[self presentedCard]normalize];
-            [self presentedCard].alpha = 1.0;
-            [self changeBackgroundBlur];
-            cardsLoadedIndex++; //%%% we loaded a card into loaded cards, so we have to increment
         }
     }
 }
@@ -248,11 +265,21 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
     
     [loadedCards removeObjectAtIndex:0]; //%%% card was swiped, so it's no longer a "loaded card"
     
-    if (cardsLoadedIndex < [allCards count]) { //%%% if we haven't reached the end of all cards, put another into the loaded cards
-        [loadedCards addObject:[allCards objectAtIndex:cardsLoadedIndex]];
-        cardsLoadedIndex++;//%%% loaded a card, so have to increment count
-        [self insertSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-1)] belowSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-2)]];
+    [self fillCardBuffer];
+    
+    if ([self waitingCard]) {
+        // existe cartoes para serem mostrados
+        [self insertSubview:loadedCards[1] belowSubview:loadedCards[0]];
+        [[self presentedCard]normalize];
+        [self presentedCard].alpha = 1.0;
+        [self changeBackgroundBlur];
     }
+    
+//    if (cardsLoadedIndex < [allCards count]) { //%%% if we haven't reached the end of all cards, put another into the loaded cards
+//        [loadedCards addObject:[allCards objectAtIndex:cardsLoadedIndex]];
+//        cardsLoadedIndex++;//%%% loaded a card, so have to increment count
+//        [self insertSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-1)] belowSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-2)]];
+//    }
     
     [self changeBackgroundBlur];
 }

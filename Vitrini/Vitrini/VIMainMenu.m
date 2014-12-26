@@ -107,6 +107,7 @@
     menuIcon.alpha = 1.0;
     [self.viTabBarVC.menuView addSubview:menuIcon];
     
+    actualVcIcon = [[UIImageView alloc]initWithFrame:menuIconFrame];
     [self setActualViewControllerMenuImageItem];
     [_viTabBarVC.menuView addSubview:actualVcIcon];
 }
@@ -114,7 +115,6 @@
 -(void)setActualViewControllerMenuImageItem{
     // menu icon
     UIViewController <VIViewControllerMenuItemProtocol> *vc = (UIViewController <VIViewControllerMenuItemProtocol> *) _viTabBarVC.selectedViewController;
-    actualVcIcon = [[UIImageView alloc]initWithFrame:menuIconFrame];
     actualVcIcon.image = [vc itemMenuIcon];
 }
 

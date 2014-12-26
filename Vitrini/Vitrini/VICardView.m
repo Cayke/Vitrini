@@ -74,10 +74,10 @@
     
     CGFloat posX, posY, width, height;
     
-    posX = 0;
     width = image.size.width*size.width;
     height = image.size.height*size.height;
     
+    posX = CGRectGetMidX(self.frame) - width/2;
     posY = CGRectGetMidY(self.frame) - height/2;
     
     CGFloat correction = PARALLAX_CARD_VALUE/2;
@@ -227,7 +227,7 @@
 //%%% called when a swipe exceeds the ACTION_MARGIN to the right
 -(void)rightAction
 {
-    CGPoint finishPoint = CGPointMake(500, 2*yFromCenter +self.originalPoint.y);
+    CGPoint finishPoint = CGPointMake(600, 2*yFromCenter +self.originalPoint.y);
     [UIView animateWithDuration:0.3
                      animations:^{
                          self.center = finishPoint;
@@ -236,12 +236,13 @@
                      }];
     
     [delegate cardSwipedRight:self];
+    _product.liked = YES;
 }
 
 //%%% called when a swip exceeds the ACTION_MARGIN to the left
 -(void)leftAction
 {
-    CGPoint finishPoint = CGPointMake(-500, 2*yFromCenter +self.originalPoint.y);
+    CGPoint finishPoint = CGPointMake(-600, 2*yFromCenter +self.originalPoint.y);
     [UIView animateWithDuration:0.3
                      animations:^{
                          self.center = finishPoint;
@@ -250,6 +251,7 @@
                      }];
     
     [delegate cardSwipedLeft:self];
+    _product.liked = NO;
 }
 
 -(void)rightClickAction
@@ -259,7 +261,7 @@
         signView.alpha = 1;
     }];
     
-    CGPoint finishPoint = CGPointMake(600, self.center.y);
+    CGPoint finishPoint = CGPointMake(700, self.center.y);
     [UIView animateWithDuration:0.4
                      animations:^{
                          self.center = finishPoint;
@@ -270,7 +272,7 @@
                      }];
     
     [delegate cardSwipedRight:self];
-    
+    _product.liked = YES;
     NSLog(@"YES");
 }
 
@@ -281,7 +283,7 @@
         signView.alpha = 1;
     }];
     
-    CGPoint finishPoint = CGPointMake(-600, self.center.y);
+    CGPoint finishPoint = CGPointMake(-700, self.center.y);
     [UIView animateWithDuration:0.5
                      animations:^{
                          self.center = finishPoint;
@@ -292,7 +294,7 @@
                      }];
     
     [delegate cardSwipedLeft:self];
-    
+    _product.liked = NO;
     NSLog(@"NO");
 }
 

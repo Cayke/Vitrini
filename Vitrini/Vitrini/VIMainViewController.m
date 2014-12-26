@@ -7,8 +7,10 @@
 //
 
 #import "VIMainViewController.h"
-#import "VICardsViewController.h"
 #import "VIColor.h"
+
+#import "VICardsViewController.h"
+#import "VILikedsViewController.h"
 
 @implementation VIMainViewController
 
@@ -92,6 +94,9 @@
     
     VICardsViewController *vc1 = [[VICardsViewController alloc]init];
     
+    //VILikedsViewController *vc2 = [[VILikedsViewController alloc]init];
+    UIStoryboard *likeds = [UIStoryboard storyboardWithName:@"Likeds" bundle:nil];
+    VILikedsViewController *likedsVC = (VILikedsViewController*)[likeds instantiateInitialViewController];
     
     
 //    UIViewController *vc2 = [[UIViewController alloc]init];
@@ -113,7 +118,7 @@
 //    vc6.view.backgroundColor = [UIColor purpleColor];
 //    vc6.title = @"Vitrini";
     
-    self.viewControllers = @[vc1];
+    self.viewControllers = @[vc1, likedsVC];
 }
 
 

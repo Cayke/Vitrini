@@ -13,5 +13,6 @@
 
 @property (nonatomic) NSString *name;
 @property (nonatomic) UIImage *photo;
+@property (nonatomic) BOOL liked;
 
 @end

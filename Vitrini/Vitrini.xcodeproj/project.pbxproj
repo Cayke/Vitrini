@@ -51,6 +51,14 @@
 		B3B6CF8C1A49003F00C07383 /* CloseMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF891A49003F00C07383 /* CloseMenu.png */; };
 		B3B6CF8D1A49003F00C07383 /* CloseMenu@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF8A1A49003F00C07383 /* CloseMenu@1x.png */; };
 		B3B6CF8E1A49003F00C07383 /* CloseMenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF8B1A49003F00C07383 /* CloseMenu@2x.png */; };
+		B3B6CF911A4B56CD00C07383 /* VILikedsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B6CF901A4B56CD00C07383 /* VILikedsViewController.m */; };
+		B3B6CF941A4B56F100C07383 /* Likeds.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF931A4B56F100C07383 /* Likeds.storyboard */; };
+		B3B6CF9A1A4C4A8500C07383 /* img8.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF951A4C4A8500C07383 /* img8.png */; };
+		B3B6CF9B1A4C4A8500C07383 /* img9.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF961A4C4A8500C07383 /* img9.png */; };
+		B3B6CF9C1A4C4A8500C07383 /* img10.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF971A4C4A8500C07383 /* img10.png */; };
+		B3B6CF9D1A4C4A8500C07383 /* img11.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF981A4C4A8500C07383 /* img11.png */; };
+		B3B6CF9E1A4C4A8500C07383 /* img12.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF991A4C4A8500C07383 /* img12.png */; };
+		B3B6CFA01A4D19E600C07383 /* degrade.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF9F1A4D19E600C07383 /* degrade.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +136,15 @@
 		B3B6CF891A49003F00C07383 /* CloseMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseMenu.png; sourceTree = "<group>"; };
 		B3B6CF8A1A49003F00C07383 /* CloseMenu@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CloseMenu@1x.png"; sourceTree = "<group>"; };
 		B3B6CF8B1A49003F00C07383 /* CloseMenu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CloseMenu@2x.png"; sourceTree = "<group>"; };
+		B3B6CF8F1A4B56CD00C07383 /* VILikedsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VILikedsViewController.h; path = Vitrini/VILikedsViewController.h; sourceTree = "<group>"; };
+		B3B6CF901A4B56CD00C07383 /* VILikedsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VILikedsViewController.m; path = Vitrini/VILikedsViewController.m; sourceTree = "<group>"; };
+		B3B6CF931A4B56F100C07383 /* Likeds.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Likeds.storyboard; sourceTree = "<group>"; };
+		B3B6CF951A4C4A8500C07383 /* img8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img8.png; sourceTree = "<group>"; };
+		B3B6CF961A4C4A8500C07383 /* img9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img9.png; sourceTree = "<group>"; };
+		B3B6CF971A4C4A8500C07383 /* img10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img10.png; sourceTree = "<group>"; };
+		B3B6CF981A4C4A8500C07383 /* img11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img11.png; sourceTree = "<group>"; };
+		B3B6CF991A4C4A8500C07383 /* img12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img12.png; sourceTree = "<group>"; };
+		B3B6CF9F1A4D19E600C07383 /* degrade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = degrade.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +224,7 @@
 				92891CDE1A28D80F002F6678 /* AppDelegate.m */,
 				5CE349B61A2CF42100F1DC17 /* Useronboard */,
 				B3B6CF301A44A8DA00C07383 /* Cartoes */,
+				B3B6CF921A4B56D200C07383 /* Likeds */,
 				5CAA45A61A40AA6A00B51507 /* Config */,
 				B3B6CF311A44B7E400C07383 /* Menu */,
 				B3B6CF701A487AB700C07383 /* Protocolos */,
@@ -314,6 +332,11 @@
 				B3B6CF5D1A44C45C00C07383 /* img5.png */,
 				B3B6CF5E1A44C45C00C07383 /* img6.jpg */,
 				B3B6CF5F1A44C45C00C07383 /* img7.jpg */,
+				B3B6CF951A4C4A8500C07383 /* img8.png */,
+				B3B6CF961A4C4A8500C07383 /* img9.png */,
+				B3B6CF971A4C4A8500C07383 /* img10.png */,
+				B3B6CF981A4C4A8500C07383 /* img11.png */,
+				B3B6CF991A4C4A8500C07383 /* img12.png */,
 			);
 			name = "Imagens para teste";
 			sourceTree = "<group>";
@@ -336,8 +359,20 @@
 				B3B6CF7D1A48FCAE00C07383 /* Vitrini.png */,
 				B3B6CF7E1A48FCAE00C07383 /* Vitrini@1x.png */,
 				B3B6CF7F1A48FCAE00C07383 /* Vitrini@2x.png */,
+				B3B6CF9F1A4D19E600C07383 /* degrade.png */,
 			);
 			name = Imagens;
+			sourceTree = "<group>";
+		};
+		B3B6CF921A4B56D200C07383 /* Likeds */ = {
+			isa = PBXGroup;
+			children = (
+				B3B6CF8F1A4B56CD00C07383 /* VILikedsViewController.h */,
+				B3B6CF901A4B56CD00C07383 /* VILikedsViewController.m */,
+				B3B6CF931A4B56F100C07383 /* Likeds.storyboard */,
+			);
+			name = Likeds;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,13 +471,20 @@
 				B3B6CF551A44C41A00C07383 /* yesBtn.png in Resources */,
 				B3B6CF601A44C45C00C07383 /* img1.png in Resources */,
 				B3B6CF4F1A44C41A00C07383 /* infoBtn.png in Resources */,
+				B3B6CF9A1A4C4A8500C07383 /* img8.png in Resources */,
+				B3B6CF9B1A4C4A8500C07383 /* img9.png in Resources */,
+				B3B6CFA01A4D19E600C07383 /* degrade.png in Resources */,
 				B3B6CF641A44C45C00C07383 /* img5.png in Resources */,
+				B3B6CF9D1A4C4A8500C07383 /* img11.png in Resources */,
+				B3B6CF941A4B56F100C07383 /* Likeds.storyboard in Resources */,
+				B3B6CF9C1A4C4A8500C07383 /* img10.png in Resources */,
 				B3B6CF621A44C45C00C07383 /* img3.png in Resources */,
 				B3B6CF631A44C45C00C07383 /* img4.png in Resources */,
 				B3B6CF611A44C45C00C07383 /* img2.png in Resources */,
 				B3B6CF831A48FCAE00C07383 /* Vitrini.png in Resources */,
 				B3B6CF841A48FCAE00C07383 /* Vitrini@1x.png in Resources */,
 				B3B6CF651A44C45C00C07383 /* img6.jpg in Resources */,
+				B3B6CF9E1A4C4A8500C07383 /* img12.png in Resources */,
 				5CAA45A51A40AA5000B51507 /* VIConfig.storyboard in Resources */,
 				5C6F1ED41A41B3180040E213 /* michas.storyboard in Resources */,
 				B3B6CF511A44C41A00C07383 /* infoBtn@3x.png in Resources */,
@@ -478,6 +520,7 @@
 				5C83EA7A1A407008007988AA /* VIMainViewController.m in Sources */,
 				B3B6CF3B1A44BBAA00C07383 /* VIDraggableCardsView.m in Sources */,
 				B3B6CF881A48FDD300C07383 /* VIColor.m in Sources */,
+				B3B6CF911A4B56CD00C07383 /* VILikedsViewController.m in Sources */,
 				B3B6CF351A44B91900C07383 /* VIProduct.m in Sources */,
 				5C6F1ED21A41B2820040E213 /* MichasViewController.m in Sources */,
 			);

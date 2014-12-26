@@ -28,7 +28,7 @@
 }
 
 +(instancetype)sharedStore{
-    const VIProductStore *store = nil;
+    static VIProductStore *store = nil;
     
     if (!store) {
         // inicializar loja
@@ -52,6 +52,48 @@
         product.photo = [UIImage imageNamed:[NSString stringWithFormat:@"img%d.jpg",i]];
         [_products addObject:product];
     }
+    for (int i = 8; i < 13; i++) {
+        product = [[VIProduct alloc]init];
+        product.photo = [UIImage imageNamed:[NSString stringWithFormat:@"img%d.png",i]];
+        [_products addObject:product];
+    }
+    for (int i = 1; i < 6; i++) {
+        product = [[VIProduct alloc]init];
+        product.photo = [UIImage imageNamed:[NSString stringWithFormat:@"img%d.png",i]];
+        [_products addObject:product];
+    }
+    for (int i = 6; i < 8; i++) {
+        product = [[VIProduct alloc]init];
+        product.photo = [UIImage imageNamed:[NSString stringWithFormat:@"img%d.jpg",i]];
+        [_products addObject:product];
+    }
+    for (int i = 8; i < 13; i++) {
+        product = [[VIProduct alloc]init];
+        product.photo = [UIImage imageNamed:[NSString stringWithFormat:@"img%d.png",i]];
+        [_products addObject:product];
+    }
+}
+
+-(NSArray *)likedProducts{
+    NSMutableArray *mutArray = [[NSMutableArray alloc]init];
+    
+    for (VIProduct *p in _products) {
+        if (p.liked) {
+            [mutArray addObject:p];
+        }
+    }
+    
+    NSArray *a =  [NSArray arrayWithArray:mutArray];
+    return a;
+}
+
+-(VIProduct *)nextProduct{
+    static NSUInteger productIndex = 0;
+    if (productIndex >= [_products count]) {
+        return nil;
+    }
+    productIndex++;
+    return _products[productIndex-1];
 }
 
 @end

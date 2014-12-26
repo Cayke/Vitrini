@@ -10,4 +10,17 @@
 
 @implementation VIProduct
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _liked = NO;
+    }
+    return self;
+}
+
+-(void)dealloc{
+    NSLog(@"desalocou");
+}
+
 @end
