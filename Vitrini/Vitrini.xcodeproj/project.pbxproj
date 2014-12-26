@@ -57,7 +57,6 @@
 		B3B6CF9B1A4C4A8500C07383 /* img9.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF961A4C4A8500C07383 /* img9.png */; };
 		B3B6CF9C1A4C4A8500C07383 /* img10.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF971A4C4A8500C07383 /* img10.png */; };
 		B3B6CF9D1A4C4A8500C07383 /* img11.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF981A4C4A8500C07383 /* img11.png */; };
-		B3B6CF9E1A4C4A8500C07383 /* img12.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF991A4C4A8500C07383 /* img12.png */; };
 		B3B6CFA01A4D19E600C07383 /* degrade.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF9F1A4D19E600C07383 /* degrade.png */; };
 /* End PBXBuildFile section */
 
@@ -143,7 +142,6 @@
 		B3B6CF961A4C4A8500C07383 /* img9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img9.png; sourceTree = "<group>"; };
 		B3B6CF971A4C4A8500C07383 /* img10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img10.png; sourceTree = "<group>"; };
 		B3B6CF981A4C4A8500C07383 /* img11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img11.png; sourceTree = "<group>"; };
-		B3B6CF991A4C4A8500C07383 /* img12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img12.png; sourceTree = "<group>"; };
 		B3B6CF9F1A4D19E600C07383 /* degrade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = degrade.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -336,7 +334,6 @@
 				B3B6CF961A4C4A8500C07383 /* img9.png */,
 				B3B6CF971A4C4A8500C07383 /* img10.png */,
 				B3B6CF981A4C4A8500C07383 /* img11.png */,
-				B3B6CF991A4C4A8500C07383 /* img12.png */,
 			);
 			name = "Imagens para teste";
 			sourceTree = "<group>";
@@ -484,7 +481,6 @@
 				B3B6CF831A48FCAE00C07383 /* Vitrini.png in Resources */,
 				B3B6CF841A48FCAE00C07383 /* Vitrini@1x.png in Resources */,
 				B3B6CF651A44C45C00C07383 /* img6.jpg in Resources */,
-				B3B6CF9E1A4C4A8500C07383 /* img12.png in Resources */,
 				5CAA45A51A40AA5000B51507 /* VIConfig.storyboard in Resources */,
 				5C6F1ED41A41B3180040E213 /* michas.storyboard in Resources */,
 				B3B6CF511A44C41A00C07383 /* infoBtn@3x.png in Resources */,

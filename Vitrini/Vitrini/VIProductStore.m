@@ -52,7 +52,7 @@
         product.photo = [UIImage imageNamed:[NSString stringWithFormat:@"img%d.jpg",i]];
         [_products addObject:product];
     }
-    for (int i = 8; i < 13; i++) {
+    for (int i = 8; i < 12; i++) {
         product = [[VIProduct alloc]init];
         product.photo = [UIImage imageNamed:[NSString stringWithFormat:@"img%d.png",i]];
         [_products addObject:product];
@@ -67,7 +67,7 @@
         product.photo = [UIImage imageNamed:[NSString stringWithFormat:@"img%d.jpg",i]];
         [_products addObject:product];
     }
-    for (int i = 8; i < 13; i++) {
+    for (int i = 8; i < 12; i++) {
         product = [[VIProduct alloc]init];
         product.photo = [UIImage imageNamed:[NSString stringWithFormat:@"img%d.png",i]];
         [_products addObject:product];
