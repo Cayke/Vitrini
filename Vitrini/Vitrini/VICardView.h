@@ -10,9 +10,13 @@
 #import "VISignView.h"
 #import "VIProduct.h"
 
+#define DELAY_OF_CARD_ANIMATION 0.2
+
+
 // protocolo para o delegate que vai receber essa classe
 @protocol DraggableViewDelegate <NSObject>
-@property (nonatomic)  BOOL clickIsAvailable;
+@property (nonatomic) BOOL clickIsAvailable;
+@property (nonatomic) BOOL clickEvent;
 
 -(void)cardSwipedLeft:(UIView *)card;
 -(void)cardSwipedRight:(UIView *)card;

@@ -18,9 +18,10 @@
 @property (retain,nonatomic)NSArray* exampleCardPhotos; //%%% the labels the cards
 @property (retain,nonatomic)NSMutableArray* allCards; //%%% the labels the cards
 
-@property (nonatomic)  BOOL clickIsAvailable;
+@property (nonatomic) BOOL clickIsAvailable;
+@property (nonatomic) BOOL clickEvent;
 
-@property (nonatomic) UIImageView *background;
+@property (nonatomic) BOOL waitingNewProducts;
 
 // metodos
 -(VICardView*)presentedCard;

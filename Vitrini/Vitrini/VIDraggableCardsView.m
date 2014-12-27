@@ -19,6 +19,9 @@
     UIButton *infoButton;
     UIButton *yesButton;
     UIButton *noButton;
+    
+    UIImageView *backgroundStatic;
+    UIImageView *backgroundAnimat;
 }
 //this makes it so only two cards are loaded at a time to
 //avoid performance and memory costs
@@ -34,6 +37,8 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
         [self setupBackgroundView];
         
         self.clickIsAvailable = YES;
+        self.clickEvent = YES;
+        self.waitingNewProducts = NO;
         
         CARD_HEIGHT = self.frame.size.height;
         CARD_WIDTH = self.frame.size.width;
@@ -56,9 +61,15 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
     
     CGFloat correctionParallax = PARALLAX_BACK_VALUE/2;
     
-    _background = [[UIImageView alloc]initWithFrame:CGRectMake(self.frame.origin.x-correctionParallax, self.frame.origin.y-correctionParallax, self.frame.size.width + PARALLAX_BACK_VALUE, self.frame.size.height + PARALLAX_BACK_VALUE)];
-    _background.contentMode = UIViewContentModeScaleAspectFill;
-    [self addSubview:_background];
+    CGRect backgroundFrame = CGRectMake(self.frame.origin.x-correctionParallax, self.frame.origin.y-correctionParallax, self.frame.size.width + PARALLAX_BACK_VALUE, self.frame.size.height + PARALLAX_BACK_VALUE);
+    
+    backgroundStatic = [[UIImageView alloc]initWithFrame:backgroundFrame];
+    backgroundAnimat = [[UIImageView alloc]initWithFrame:backgroundFrame];
+    backgroundStatic.contentMode = UIViewContentModeScaleAspectFill;
+    backgroundAnimat.contentMode = UIViewContentModeScaleAspectFill;
+    [self addSubview:backgroundStatic];
+    [self addSubview:backgroundAnimat];
+    [backgroundAnimat setAlpha:0.0f];
     
     // blur background
     UIBlurEffect *blurEffect;
@@ -92,7 +103,8 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
     group.motionEffects = @[horizontalMotionEffect, verticalMotionEffect];
     
     // Add both effects to your view
-    [_background addMotionEffect:group];
+    [backgroundStatic addMotionEffect:group];
+    [backgroundAnimat addMotionEffect:group];
 }
 
 // adicionar informacoes na tela
@@ -241,6 +253,13 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
             VIProduct *nextProduct = [[VIProductStore sharedStore]nextProduct];
             if (nextProduct) {
                 [loadedCards addObject:[self createCardWithProduct:nextProduct]];
+            } else {
+                // nao tem proximo produto
+                if ([loadedCards count]==0) {
+                    // nao tem produto a ser mostrado
+                    NSLog(@"Esperando produtos");
+                    self.waitingNewProducts = YES;
+                }
             }
         }
     }
@@ -272,7 +291,6 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
         [self insertSubview:loadedCards[1] belowSubview:loadedCards[0]];
         [[self presentedCard]normalize];
         [self presentedCard].alpha = 1.0;
-        [self changeBackgroundBlur];
     }
     
 //    if (cardsLoadedIndex < [allCards count]) { //%%% if we haven't reached the end of all cards, put another into the loaded cards
@@ -282,6 +300,7 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
 //    }
     
     [self changeBackgroundBlur];
+    _clickEvent = YES;
 }
 
 //%%% when you hit the right button, this is called and substitutes the swipe
@@ -306,11 +325,21 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
 
 -(void)changeBackgroundBlur{
     VICardView *cardView = [loadedCards firstObject];
-    _background.image = cardView.product.photo;
-    [_background setAlpha:0.0];
-    [UIView animateWithDuration:0.4 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        [_background setAlpha:1.0];
-    } completion:nil];
+
+    [backgroundAnimat setAlpha:0.0f];
+    [backgroundAnimat setImage: cardView.product.photo];
+    
+    CGFloat delay = DELAY_OF_CARD_ANIMATION;
+    if (!_clickEvent) {
+        delay = 0.0;
+    }
+
+    [UIView animateWithDuration:0.4 delay:delay options:UIViewAnimationOptionCurveEaseOut animations:^{
+        [backgroundAnimat setAlpha:1.0f];
+    } completion:^(BOOL complete){
+        [backgroundStatic setImage:cardView.product.photo];
+        [backgroundAnimat setAlpha:1.0f];
+    }];
     
     [self presentedCard].alpha = 1.0;
 }

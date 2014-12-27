@@ -205,8 +205,10 @@
 - (void)afterSwipeAction
 {
     if (xFromCenter > ACTION_MARGIN) {
+        [delegate setClickEvent:NO];
         [self rightAction];
     } else if (xFromCenter < -ACTION_MARGIN) {
+        [delegate setClickEvent:NO];
         [self leftAction];
     } else { //%%% resets the card
         [UIView animateWithDuration:0.3
@@ -262,8 +264,10 @@
     }];
     
     CGPoint finishPoint = CGPointMake(700, self.center.y);
-    [UIView animateWithDuration:0.4
-                     animations:^{
+    [UIView animateKeyframesWithDuration: 0.4
+                                   delay: DELAY_OF_CARD_ANIMATION
+                                 options: UIViewKeyframeAnimationOptionBeginFromCurrentState
+                              animations:^{
                          self.center = finishPoint;
                          self.transform = CGAffineTransformMakeRotation(1);
                      }completion:^(BOOL complete){
@@ -284,8 +288,10 @@
     }];
     
     CGPoint finishPoint = CGPointMake(-700, self.center.y);
-    [UIView animateWithDuration:0.5
-                     animations:^{
+    [UIView animateKeyframesWithDuration: 0.4
+                                   delay: DELAY_OF_CARD_ANIMATION
+                                 options: UIViewKeyframeAnimationOptionBeginFromCurrentState
+                              animations:^{
                          self.center = finishPoint;
                          self.transform = CGAffineTransformMakeRotation(-1);
                      }completion:^(BOOL complete){
@@ -323,7 +329,14 @@
 }
 
 -(void)normalize{
-    [UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+    CGFloat delay = DELAY_OF_CARD_ANIMATION;
+    CGFloat animationTime = 0.4f;
+    if (!delegate.clickEvent) {
+        delay = 0.0;
+        animationTime = 0.2f;
+    }
+    
+    [UIView animateWithDuration:animationTime delay:delay options:UIViewAnimationOptionBeginFromCurrentState animations:^{
         [_imageView setFrame:_originalImageViewFrame];
         self.alpha = 1.0;
     } completion:nil];
