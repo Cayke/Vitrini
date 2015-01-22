@@ -125,12 +125,6 @@
 {
     NSLog(@"tap plus");
     
-    //    UIStoryboard *userOnboard = [UIStoryboard storyboardWithName:@"UserOnboard" bundle:nil];
-    //    UserOnboardViewController *userOnboardViewController = (UserOnboardViewController *)[userOnboard instantiateViewControllerWithIdentifier:@"UserOnboardViewControllerID"];
-    //    [self.appDelegate.window setRootViewController:userOnboardViewController];
-    //    userOnboardViewController.initiControl = self;
-    
-    
     UIStoryboard *loginStoryboard = [UIStoryboard storyboardWithName:@"VILoginStoryboard" bundle:nil];
     VIRegisterViewController *registerVC = (VIRegisterViewController *) [loginStoryboard instantiateViewControllerWithIdentifier:@"Register"];
     [self presentViewController:registerVC animated:YES completion:nil];

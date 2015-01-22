@@ -32,7 +32,7 @@
 }
 
 -(UIImage *)itemMenuIcon{
-    return [UIImage imageNamed:@"img1.png"];
+    return [UIImage imageNamed:@"Icon_meuslikes_Menu"];
 }
 
 -(NSString *)itemMenuTitle{

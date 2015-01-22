@@ -10,6 +10,8 @@
 #import <UIKit/UIKit.h>
 
 @protocol VIViewControllerMenuItemProtocol
+
+@required
 // icone para menu
 -(UIImage*)itemMenuIcon;
 // nome para menu

@@ -11,6 +11,7 @@
 
 #import "VICardsViewController.h"
 #import "VILikedsViewController.h"
+#import "VICatalogViewController.h"
 
 @implementation VIMainViewController
 
@@ -94,9 +95,14 @@
     
     VICardsViewController *vc1 = [[VICardsViewController alloc]init];
     
-    //VILikedsViewController *vc2 = [[VILikedsViewController alloc]init];
     UIStoryboard *likeds = [UIStoryboard storyboardWithName:@"Likeds" bundle:nil];
     VILikedsViewController *likedsVC = (VILikedsViewController*)[likeds instantiateInitialViewController];
+    
+    UIStoryboard *catalog = [UIStoryboard storyboardWithName:@"Catalog" bundle:nil];
+    VICatalogViewController *catalogVC = (VICatalogViewController *) [catalog instantiateInitialViewController];
+    
+    
+    
     
     
 //    UIViewController *vc2 = [[UIViewController alloc]init];
@@ -118,7 +124,7 @@
 //    vc6.view.backgroundColor = [UIColor purpleColor];
 //    vc6.title = @"Vitrini";
     
-    self.viewControllers = @[vc1, likedsVC];
+    self.viewControllers = @[vc1, likedsVC, catalogVC];
 }
 
 
