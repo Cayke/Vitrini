@@ -12,6 +12,7 @@
 #import "VICardsViewController.h"
 #import "VILikedsViewController.h"
 #import "VICatalogViewController.h"
+#import "VIFeedViewController.h"
 
 @implementation VIMainViewController
 
@@ -101,7 +102,8 @@
     UIStoryboard *catalog = [UIStoryboard storyboardWithName:@"Catalog" bundle:nil];
     VICatalogViewController *catalogVC = (VICatalogViewController *) [catalog instantiateInitialViewController];
     
-    
+    UIStoryboard *feed = [UIStoryboard storyboardWithName:@"Feed" bundle:nil];
+    VIFeedViewController *feedVC = (VIFeedViewController *) [feed instantiateInitialViewController];
     
     
     
@@ -124,7 +126,7 @@
 //    vc6.view.backgroundColor = [UIColor purpleColor];
 //    vc6.title = @"Vitrini";
     
-    self.viewControllers = @[vc1, likedsVC, catalogVC];
+    self.viewControllers = @[vc1, likedsVC, catalogVC, feedVC];
 }
 
 
