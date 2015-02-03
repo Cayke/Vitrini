@@ -37,6 +37,8 @@
 		5CE349BC1A2CF42100F1DC17 /* UserOnboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE349B71A2CF42100F1DC17 /* UserOnboard.storyboard */; };
 		5CE349BD1A2CF42100F1DC17 /* UserOnboardContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE349B91A2CF42100F1DC17 /* UserOnboardContentViewController.m */; };
 		5CE349BE1A2CF42100F1DC17 /* UserOnboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE349BB1A2CF42100F1DC17 /* UserOnboardViewController.m */; };
+		5CE3DE3F1A81021A00F0CC92 /* VIStoreProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE3DE3E1A81021A00F0CC92 /* VIStoreProfileViewController.m */; };
+		5CE3DE411A81022900F0CC92 /* VIStoreProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE3DE401A81022900F0CC92 /* VIStoreProfile.storyboard */; };
 		92891CDC1A28D80F002F6678 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CDB1A28D80F002F6678 /* main.m */; };
 		92891CDF1A28D80F002F6678 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CDE1A28D80F002F6678 /* AppDelegate.m */; };
 		92891CE71A28D80F002F6678 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92891CE61A28D80F002F6678 /* Images.xcassets */; };
@@ -134,6 +136,9 @@
 		5CE349B91A2CF42100F1DC17 /* UserOnboardContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserOnboardContentViewController.m; sourceTree = "<group>"; };
 		5CE349BA1A2CF42100F1DC17 /* UserOnboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserOnboardViewController.h; sourceTree = "<group>"; };
 		5CE349BB1A2CF42100F1DC17 /* UserOnboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserOnboardViewController.m; sourceTree = "<group>"; };
+		5CE3DE3D1A81021A00F0CC92 /* VIStoreProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VIStoreProfileViewController.h; path = StoreProfile/VIStoreProfileViewController.h; sourceTree = "<group>"; };
+		5CE3DE3E1A81021A00F0CC92 /* VIStoreProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VIStoreProfileViewController.m; path = StoreProfile/VIStoreProfileViewController.m; sourceTree = "<group>"; };
+		5CE3DE401A81022900F0CC92 /* VIStoreProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = VIStoreProfile.storyboard; path = StoreProfile/VIStoreProfile.storyboard; sourceTree = "<group>"; };
 		92891CD61A28D80F002F6678 /* Vitrini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vitrini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92891CDA1A28D80F002F6678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92891CDB1A28D80F002F6678 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -294,6 +299,16 @@
 			path = Useronboard;
 			sourceTree = "<group>";
 		};
+		5CE3DE301A80FDB400F0CC92 /* StoreProfile */ = {
+			isa = PBXGroup;
+			children = (
+				5CE3DE401A81022900F0CC92 /* VIStoreProfile.storyboard */,
+				5CE3DE3D1A81021A00F0CC92 /* VIStoreProfileViewController.h */,
+				5CE3DE3E1A81021A00F0CC92 /* VIStoreProfileViewController.m */,
+			);
+			name = StoreProfile;
+			sourceTree = "<group>";
+		};
 		92891CCD1A28D80F002F6678 = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +333,7 @@
 			children = (
 				92891CDD1A28D80F002F6678 /* AppDelegate.h */,
 				92891CDE1A28D80F002F6678 /* AppDelegate.m */,
+				5CE3DE301A80FDB400F0CC92 /* StoreProfile */,
 				B3B6CF791A48FAF600C07383 /* Imagens */,
 				B3B6CF581A44C42B00C07383 /* Imagens para teste */,
 				5C6F1ED51A41B3920040E213 /* michas  */,
@@ -578,6 +594,7 @@
 				279A816F1A70651D003E50D7 /* Icon_catalogo_Menu.png in Resources */,
 				92891CE71A28D80F002F6678 /* Images.xcassets in Resources */,
 				279A81711A706553003E50D7 /* Icon_meuslikes_Menu.png in Resources */,
+				5CE3DE411A81022900F0CC92 /* VIStoreProfile.storyboard in Resources */,
 				B3B6CF551A44C41A00C07383 /* yesBtn.png in Resources */,
 				2781FF261A6EDBFA009FFAA5 /* Vitrini_Login__0001_Logo.png in Resources */,
 				B3B6CF601A44C45C00C07383 /* img1.png in Resources */,
@@ -630,6 +647,7 @@
 				5C2878631A28E39700CC7DD2 /* CustomSegueTransition.m in Sources */,
 				5CE349BE1A2CF42100F1DC17 /* UserOnboardViewController.m in Sources */,
 				5CE349BD1A2CF42100F1DC17 /* UserOnboardContentViewController.m in Sources */,
+				5CE3DE3F1A81021A00F0CC92 /* VIStoreProfileViewController.m in Sources */,
 				B3B6CF441A44C21A00C07383 /* VIProductStore.m in Sources */,
 				92891CDF1A28D80F002F6678 /* AppDelegate.m in Sources */,
 				B3B6CF6F1A487A9600C07383 /* VIProtocol.m in Sources */,
