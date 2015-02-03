@@ -336,8 +336,22 @@
                                               ) {
                               /* handle the result */
                               
-                              [self seeIfThereIsMoreLikes:result];
-                              
+                              dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                                  //Call your function or whatever work that needs to be done
+                                  //Code in this part is run on a background thread
+                                  [self seeIfThereIsMoreLikes:result];
+                                  
+                                  
+                                  dispatch_async(dispatch_get_main_queue(), ^(void) {
+                                      //Stop your activity indicator or anything else with the GUI
+                                      //Code here is run on the main thread
+                                      NSLog(@"pegou todos os likes");
+                                      //tratar algo se precisar
+                                      //enviar os likes para o servidor
+                                      
+                                  });
+                              });
+                              //****************************************************
                           }];
     
 }

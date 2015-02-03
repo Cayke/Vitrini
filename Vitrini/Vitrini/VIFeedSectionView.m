@@ -22,14 +22,22 @@
 
 -(void) createLayout
 {
+    //criar botao foto loja
+    UIButton *buttonStore = [[UIButton alloc]initWithFrame:CGRectMake(8, 7, 30, 30)];
+    
+    [self addSubview:buttonStore];
+    
     //add fotinha loja
-    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(8, 7, 30, 30)];
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
     imageView.image = [UIImage imageNamed:@"profile_feed_temp"];
     //botar foto redonda
     imageView.layer.cornerRadius = imageView.frame.size.width/2;
     imageView.clipsToBounds = YES;
     
-    [self addSubview:imageView];
+    //adicionar imageview ao button
+    [buttonStore addSubview:imageView];
+    [buttonStore setShowsTouchWhenHighlighted:YES];
+    [buttonStore addTarget:self action:@selector(goToStorePage) forControlEvents:UIControlEventTouchUpInside];
     
     //adicionar nome da loja
     UILabel *labelName = [[UILabel alloc]initWithFrame:CGRectMake(50, 12, 200, 20)];
@@ -39,6 +47,12 @@
     
     //linha seguinte para section nao ficar "transparente"
     //self.backgroundColor = [UIColor whiteColor];
+
+    
 }
 
+-(void) goToStorePage
+{
+    NSLog(@"go to store page");
+}
 @end
