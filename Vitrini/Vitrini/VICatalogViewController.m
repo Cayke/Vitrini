@@ -82,7 +82,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     VICatalogTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VICatalogTableViewCell"];
-    cell.imageView.image = [_arrayWithImages objectAtIndex:indexPath.row];
+    cell.iconImageView.image = [_arrayWithImages objectAtIndex:indexPath.row];
     cell.labelName.text = [_arrayCategorys objectAtIndex:indexPath.row];
     
     return cell;

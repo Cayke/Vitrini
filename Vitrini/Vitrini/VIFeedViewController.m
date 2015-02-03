@@ -8,6 +8,9 @@
 
 #import "VIFeedViewController.h"
 #import "VIFeedTableViewCell.h"
+#import "VIFeedSectionView.h"
+
+#define sectionHeight 45
 
 @interface VIFeedViewController ()
 
@@ -53,6 +56,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     VIFeedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"feedCell"];
+    cell.productImage.image = [UIImage imageNamed:@"feed_temp"];
     return cell;
 }
 
@@ -61,10 +65,24 @@
     return 3;
 }
 
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    return @"rivaldo";
+    VIFeedSectionView *view = [[VIFeedSectionView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, sectionHeight)];
+    
+    return view;
 }
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return sectionHeight;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return self.view.frame.size.width +10;
+}
+
 
 
 
