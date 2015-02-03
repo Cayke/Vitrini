@@ -9,6 +9,7 @@
 #import "VIDraggableCardsView.h"
 #import "VIProductStore.h"
 #import "VIColor.h"
+#import "VICardInfoViewController.h"
 
 #define PARALLAX_BACK_VALUE 10
 
@@ -178,6 +179,7 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
     
     // botao info
     infoButton = [[UIButton alloc]initWithFrame:CGRectMake(posX, posY, dimensionBtnInfo, dimensionBtnInfo)];
+    [infoButton addTarget:self action:@selector(infoButton:) forControlEvents:UIControlEventTouchUpInside];
     [infoButton setImage:[UIImage imageNamed:@"infoBtn.png"] forState:UIControlStateNormal];
     [self addSubview:infoButton];
 }
@@ -372,4 +374,9 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
     } completion:nil];
 }
 
+- (IBAction)infoButton:(id)sender {
+    UIStoryboard *infoProduct = [UIStoryboard storyboardWithName:@"Cards" bundle:nil];
+    VICardInfoViewController *cardInfoViewController = (VICardInfoViewController *)[infoProduct instantiateViewControllerWithIdentifier:@"VICardInfoViewController"];
+    [self.VICardsVC presentViewController:cardInfoViewController animated:YES completion:nil];
+}
 @end
