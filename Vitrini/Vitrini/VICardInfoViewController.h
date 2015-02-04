@@ -17,4 +17,6 @@
 @property NSString *titleText;
 @property NSString *imageFile;
 
+- (IBAction)back:(id)sender;
+
 @end
