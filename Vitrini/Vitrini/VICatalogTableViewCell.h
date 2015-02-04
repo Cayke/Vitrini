@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface VICatalogTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *labelName;
 
 @end

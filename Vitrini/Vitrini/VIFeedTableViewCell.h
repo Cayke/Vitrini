@@ -10,4 +10,8 @@
 
 @interface VIFeedTableViewCell : UITableViewCell
 
+
+@property (weak, nonatomic) IBOutlet UIImageView *productImage;
+
+
 @end
