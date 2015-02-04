@@ -12,5 +12,6 @@
 @interface VIFeedViewController : UIViewController <VIViewControllerMenuItemProtocol,UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic) UIRefreshControl *refresh;
 
 @end
