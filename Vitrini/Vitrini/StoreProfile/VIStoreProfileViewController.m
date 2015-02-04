@@ -34,4 +34,14 @@
 }
 */
 
+-(UIImage *)itemMenuIcon
+{
+    return [UIImage imageNamed:@"Icon_feed_Menu"];
+}
+
+-(NSString *)itemMenuTitle
+{
+    return @"Store";
+}
+
 @end

@@ -7,7 +7,7 @@
         <!--Store Profile View Controller-->
         <scene sceneID="6mV-7g-svi">
             <objects>
-                <viewController storyboardIdentifier="VIStoreProfileViewControllerID" id="GF0-gv-Aum" customClass="VIStoreProfileViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VIStoreProfileViewControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GF0-gv-Aum" customClass="VIStoreProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Sdw-l0-zMn"/>
                         <viewControllerLayoutGuide type="bottom" id="pLQ-9s-uds"/>

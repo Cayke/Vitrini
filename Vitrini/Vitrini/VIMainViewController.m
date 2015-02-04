@@ -13,7 +13,6 @@
 #import "VILikedsViewController.h"
 #import "VICatalogViewController.h"
 #import "VIFeedViewController.h"
-
 #import "VIStoreProfileViewController.h"
 
 @implementation VIMainViewController
@@ -107,8 +106,8 @@
     UIStoryboard *feed = [UIStoryboard storyboardWithName:@"Feed" bundle:nil];
     VIFeedViewController *feedVC = (VIFeedViewController *) [feed instantiateInitialViewController];
     
-    UIStoryboard *store = [UIStoryboard storyboardWithName:@"Store" bundle:nil];
-    VIFeedViewController *storeVC = (VIFeedViewController *) [store instantiateInitialViewController];
+    UIStoryboard *store = [UIStoryboard storyboardWithName:@"VIStoreProfile" bundle:nil];
+    VIStoreProfileViewController *storeVC = (VIStoreProfileViewController *) [store instantiateInitialViewController];
     
     
     
@@ -131,7 +130,7 @@
 //    vc6.view.backgroundColor = [UIColor purpleColor];
 //    vc6.title = @"Vitrini";
     
-    self.viewControllers = @[vc1, likedsVC, catalogVC, feedVC];
+    self.viewControllers = @[vc1, likedsVC, catalogVC, feedVC, storeVC];
 }
 
 
