@@ -14,6 +14,8 @@
 #import "VICatalogViewController.h"
 #import "VIFeedViewController.h"
 
+#import "VIStoreProfileViewController.h"
+
 @implementation VIMainViewController
 
 - (void)viewDidLoad {
@@ -104,6 +106,9 @@
     
     UIStoryboard *feed = [UIStoryboard storyboardWithName:@"Feed" bundle:nil];
     VIFeedViewController *feedVC = (VIFeedViewController *) [feed instantiateInitialViewController];
+    
+    UIStoryboard *store = [UIStoryboard storyboardWithName:@"Store" bundle:nil];
+    VIFeedViewController *storeVC = (VIFeedViewController *) [store instantiateInitialViewController];
     
     
     
