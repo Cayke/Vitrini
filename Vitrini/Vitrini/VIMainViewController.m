@@ -13,6 +13,7 @@
 #import "VILikedsViewController.h"
 #import "VICatalogViewController.h"
 #import "VIFeedViewController.h"
+#import "VIStoreProfileViewController.h"
 #import "VIProfileViewController.h"
 
 @implementation VIMainViewController
@@ -106,6 +107,8 @@
     UIStoryboard *feed = [UIStoryboard storyboardWithName:@"Feed" bundle:nil];
     VIFeedViewController *feedVC = (VIFeedViewController *) [feed instantiateInitialViewController];
     
+    UIStoryboard *store = [UIStoryboard storyboardWithName:@"VIStoreProfile" bundle:nil];
+    VIStoreProfileViewController *storeVC = (VIStoreProfileViewController *) [store instantiateInitialViewController];
     UIStoryboard *profile = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
     VIProfileViewController *profileVC = (VIProfileViewController *) [profile instantiateInitialViewController];
     
@@ -130,7 +133,7 @@
 //    vc6.view.backgroundColor = [UIColor purpleColor];
 //    vc6.title = @"Vitrini";
     
-    self.viewControllers = @[vc1, likedsVC, catalogVC, feedVC, profileVC];
+    self.viewControllers = @[vc1, likedsVC, catalogVC, feedVC, profileVC,storeVC]; //depois apagar esse storevc... nao deveria estar aqui
 }
 
 
