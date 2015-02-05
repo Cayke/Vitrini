@@ -7,6 +7,7 @@
 //
 
 #import "VIFeedSectionView.h"
+#import "VIStoreProfileViewController.h"
 
 
 @implementation VIFeedSectionView
@@ -54,5 +55,8 @@
 -(void) goToStorePage
 {
     NSLog(@"go to store page");
+    UIStoryboard *store = [UIStoryboard storyboardWithName:@"VIStoreProfile" bundle:nil];
+    VIStoreProfileViewController *storeVC = (VIStoreProfileViewController *) [store instantiateInitialViewController];
+    [self.feedVC presentViewController:storeVC animated:YES completion:nil];
 }
 @end

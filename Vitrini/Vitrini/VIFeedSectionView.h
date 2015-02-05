@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VIFeedViewController.h"
 
 @interface VIFeedSectionView : UIView
+
+@property (nonatomic, weak) VIFeedViewController *feedVC;
 
 @end

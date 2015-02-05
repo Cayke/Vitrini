@@ -14,7 +14,7 @@
 @implementation VIInitControl
 
 -(void)start {
-    [self goToUserOnboard];
+    [self goToMainApp];
 }
 
 - (void)goToMainApp
