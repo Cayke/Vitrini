@@ -32,6 +32,10 @@
 		279A81771A706D54003E50D7 /* fundo vitrini.png in Resources */ = {isa = PBXBuildFile; fileRef = 279A81761A706D54003E50D7 /* fundo vitrini.png */; };
 		279A817A1A7085C6003E50D7 /* VICatalogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 279A81791A7085C6003E50D7 /* VICatalogTableViewCell.m */; };
 		279A81821A70921C003E50D7 /* catalogo_temp.png in Resources */ = {isa = PBXBuildFile; fileRef = 279A81811A70921C003E50D7 /* catalogo_temp.png */; };
+		279D46771A82FE630075AEB8 /* VIProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 279D46761A82FE630075AEB8 /* VIProfileTableViewCell.m */; };
+		27A8B87C1A824B4200226278 /* VIProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A8B87B1A824B4200226278 /* VIProfileViewController.m */; };
+		27A8B87E1A824BB100226278 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27A8B87D1A824BB100226278 /* Profile.storyboard */; };
+		27A8B8821A82578400226278 /* zegatao.png in Resources */ = {isa = PBXBuildFile; fileRef = 27A8B8811A82578400226278 /* zegatao.png */; };
 		5C2878631A28E39700CC7DD2 /* CustomSegueTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2878621A28E39700CC7DD2 /* CustomSegueTransition.m */; };
 		5C6F1ED21A41B2820040E213 /* MichasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F1ED11A41B2820040E213 /* MichasViewController.m */; };
 		5C6F1ED41A41B3180040E213 /* michas.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C6F1ED31A41B3180040E213 /* michas.storyboard */; };
@@ -132,6 +136,12 @@
 		279A81781A7085C6003E50D7 /* VICatalogTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VICatalogTableViewCell.h; sourceTree = "<group>"; };
 		279A81791A7085C6003E50D7 /* VICatalogTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VICatalogTableViewCell.m; sourceTree = "<group>"; };
 		279A81811A70921C003E50D7 /* catalogo_temp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = catalogo_temp.png; sourceTree = "<group>"; };
+		279D46751A82FE630075AEB8 /* VIProfileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIProfileTableViewCell.h; sourceTree = "<group>"; };
+		279D46761A82FE630075AEB8 /* VIProfileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIProfileTableViewCell.m; sourceTree = "<group>"; };
+		27A8B87A1A824B4200226278 /* VIProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIProfileViewController.h; sourceTree = "<group>"; };
+		27A8B87B1A824B4200226278 /* VIProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIProfileViewController.m; sourceTree = "<group>"; };
+		27A8B87D1A824BB100226278 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		27A8B8811A82578400226278 /* zegatao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zegatao.png; sourceTree = "<group>"; };
 		5C2878611A28E39700CC7DD2 /* CustomSegueTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSegueTransition.h; sourceTree = "<group>"; };
 		5C2878621A28E39700CC7DD2 /* CustomSegueTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSegueTransition.m; sourceTree = "<group>"; };
 		5C6F1ED01A41B2820040E213 /* MichasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MichasViewController.h; sourceTree = "<group>"; };
@@ -290,6 +300,19 @@
 			name = Catalogo;
 			sourceTree = "<group>";
 		};
+		27A8B8791A824AE300226278 /* Profile/Settings */ = {
+			isa = PBXGroup;
+			children = (
+				27A8B8811A82578400226278 /* zegatao.png */,
+				27A8B87A1A824B4200226278 /* VIProfileViewController.h */,
+				27A8B87B1A824B4200226278 /* VIProfileViewController.m */,
+				279D46751A82FE630075AEB8 /* VIProfileTableViewCell.h */,
+				279D46761A82FE630075AEB8 /* VIProfileTableViewCell.m */,
+				27A8B87D1A824BB100226278 /* Profile.storyboard */,
+			);
+			name = Profile/Settings;
+			sourceTree = "<group>";
+		};
 		5C6F1ED51A41B3920040E213 /* michas  */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +389,7 @@
 				5CAA45A61A40AA6A00B51507 /* Config */,
 				279A816A1A706300003E50D7 /* Catalogo */,
 				277BD88D1A80037300AC887A /* Feed */,
+				27A8B8791A824AE300226278 /* Profile/Settings */,
 				B3B6CF311A44B7E400C07383 /* Menu */,
 				B3B6CF701A487AB700C07383 /* Protocolos */,
 				B3B6CF321A44B8F300C07383 /* Models */,
@@ -616,6 +640,7 @@
 				B3B6CF661A44C45C00C07383 /* img7.jpg in Resources */,
 				B3B6CF8E1A49003F00C07383 /* CloseMenu@2x.png in Resources */,
 				B3B6CF8D1A49003F00C07383 /* CloseMenu@1x.png in Resources */,
+				27A8B87E1A824BB100226278 /* Profile.storyboard in Resources */,
 				2781FF281A6F0D7C009FFAA5 /* Vitrini_Login__0006_Facebook.png in Resources */,
 				279A816F1A70651D003E50D7 /* Icon_catalogo_Menu.png in Resources */,
 				92891CE71A28D80F002F6678 /* Images.xcassets in Resources */,
@@ -640,6 +665,7 @@
 				2781FF231A6ED803009FFAA5 /* Vitrini_Login__0002_Icom.png in Resources */,
 				B3B6CF611A44C45C00C07383 /* img2.png in Resources */,
 				B3B6CF831A48FCAE00C07383 /* Vitrini.png in Resources */,
+				27A8B8821A82578400226278 /* zegatao.png in Resources */,
 				B3B6CF841A48FCAE00C07383 /* Vitrini@1x.png in Resources */,
 				B3B6CF651A44C45C00C07383 /* img6.jpg in Resources */,
 				2781FF1F1A6ED6E6009FFAA5 /* VILoginStoryboard.storyboard in Resources */,
@@ -674,6 +700,7 @@
 				92D96E681A80FCB8009BC061 /* VICardInfoViewController.m in Sources */,
 				2781FF1A1A6ED47F009FFAA5 /* VILoginViewController.m in Sources */,
 				5C83EA7D1A4071A1007988AA /* VIMainMenu.m in Sources */,
+				279D46771A82FE630075AEB8 /* VIProfileTableViewCell.m in Sources */,
 				277BD8951A80089600AC887A /* VIFeedTableViewCell.m in Sources */,
 				B3B6CF411A44BCA600C07383 /* VISignView.m in Sources */,
 				5C2878631A28E39700CC7DD2 /* CustomSegueTransition.m in Sources */,
@@ -693,6 +720,7 @@
 				B3B6CF911A4B56CD00C07383 /* VILikedsViewController.m in Sources */,
 				B3B6CF351A44B91900C07383 /* VIProduct.m in Sources */,
 				5C6F1ED21A41B2820040E213 /* MichasViewController.m in Sources */,
+				27A8B87C1A824B4200226278 /* VIProfileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
