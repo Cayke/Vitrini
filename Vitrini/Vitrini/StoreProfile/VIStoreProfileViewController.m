@@ -66,11 +66,8 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // Configure the cell
     
-    UILabel *label = (UILabel *)[cell viewWithTag:101];
-    
-    label.text = [self.dataArray objectAtIndex:indexPath.row];
-    
-    NSLog(@"%@ \n %@", [self.dataArray objectAtIndex:indexPath.row], label.text);
+//    UILabel *label = (UILabel *)[cell viewWithTag:101];
+//    label.text = [self.dataArray objectAtIndex:indexPath.row];
     
     cell.backgroundColor = [UIColor redColor];
     
