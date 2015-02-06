@@ -8,13 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VICardInfoViewController : UIViewController
+@interface VICardInfoViewController : UIViewController <UIPageViewControllerDataSource>
 
+@property (nonatomic) UIPageViewController *pageViewController;
+@property (nonatomic) NSArray *pageImages;
 
-@property (weak, nonatomic) IBOutlet UIImageView *photoProduct;
-
-@property NSUInteger pageIndex;
-@property NSString *titleText;
-@property NSString *imageFile;
 
 @end

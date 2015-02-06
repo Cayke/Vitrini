@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		270BF8761A84288F00D261A1 /* VIFilterCollectionFooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 270BF8751A84288F00D261A1 /* VIFilterCollectionFooterCollectionReusableView.m */; };
+		277A5E9E1A84F40600C14619 /* VICardInfoContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 277A5E9D1A84F40600C14619 /* VICardInfoContentViewController.m */; };
 		277B370D1A80F3D80081C796 /* VIFeedSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 277B370C1A80F3D80081C796 /* VIFeedSectionView.m */; };
 		277B37111A8103D10081C796 /* profile_feed_temp.png in Resources */ = {isa = PBXBuildFile; fileRef = 277B37101A8103D10081C796 /* profile_feed_temp.png */; };
 		277B37151A815D720081C796 /* feed_temp.png in Resources */ = {isa = PBXBuildFile; fileRef = 277B37141A815D720081C796 /* feed_temp.png */; };
@@ -113,6 +114,8 @@
 /* Begin PBXFileReference section */
 		270BF8741A84288F00D261A1 /* VIFilterCollectionFooterCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIFilterCollectionFooterCollectionReusableView.h; sourceTree = "<group>"; };
 		270BF8751A84288F00D261A1 /* VIFilterCollectionFooterCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIFilterCollectionFooterCollectionReusableView.m; sourceTree = "<group>"; };
+		277A5E9C1A84F40600C14619 /* VICardInfoContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VICardInfoContentViewController.h; sourceTree = "<group>"; };
+		277A5E9D1A84F40600C14619 /* VICardInfoContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VICardInfoContentViewController.m; sourceTree = "<group>"; };
 		277B370B1A80F3D80081C796 /* VIFeedSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIFeedSectionView.h; sourceTree = "<group>"; };
 		277B370C1A80F3D80081C796 /* VIFeedSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIFeedSectionView.m; sourceTree = "<group>"; };
 		277B37101A8103D10081C796 /* profile_feed_temp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_feed_temp.png; sourceTree = "<group>"; };
@@ -477,9 +480,11 @@
 				B3B6CF3D1A44BC2800C07383 /* VICardView.m */,
 				B3B6CF3F1A44BCA600C07383 /* VISignView.h */,
 				B3B6CF401A44BCA600C07383 /* VISignView.m */,
-				92D96E601A7FEBF6009BC061 /* Cards.storyboard */,
 				92D96E661A80FCB8009BC061 /* VICardInfoViewController.h */,
 				92D96E671A80FCB8009BC061 /* VICardInfoViewController.m */,
+				277A5E9C1A84F40600C14619 /* VICardInfoContentViewController.h */,
+				277A5E9D1A84F40600C14619 /* VICardInfoContentViewController.m */,
+				92D96E601A7FEBF6009BC061 /* Cards.storyboard */,
 			);
 			name = Cartoes;
 			path = ..;
@@ -733,6 +738,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2781FF2D1A6F2C0C009FFAA5 /* VIRegisterViewController.m in Sources */,
+				277A5E9E1A84F40600C14619 /* VICardInfoContentViewController.m in Sources */,
 				279A816D1A706366003E50D7 /* VICatalogViewController.m in Sources */,
 				277B370D1A80F3D80081C796 /* VIFeedSectionView.m in Sources */,
 				277BD8901A80053900AC887A /* VIFeedViewController.m in Sources */,
