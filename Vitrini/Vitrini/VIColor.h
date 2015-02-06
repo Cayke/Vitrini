@@ -12,5 +12,6 @@
 
 +(UIColor*)primaryColor;
 +(UIColor*)whiteViColor;
++(UIColor*) redVIColor;
 
 @end
