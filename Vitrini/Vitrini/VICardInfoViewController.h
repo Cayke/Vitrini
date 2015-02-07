@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VICardInfoViewController : UIViewController <UIPageViewControllerDataSource>
+@interface VICardInfoViewController : UIViewController <UIPageViewControllerDataSource,UIPageViewControllerDelegate>
 
 @property (nonatomic) UIPageViewController *pageViewController;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControlNB;
 @property (nonatomic) NSArray *pageImages;
 
+@property (weak, nonatomic) IBOutlet UINavigationBar *customNavigationBar;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *pageControlCenter;
 
 @end

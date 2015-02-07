@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "VIInitControl.h"
+#import "VIColor.h"
 #import <FacebookSDK/FacebookSDK.h>
 
 @interface AppDelegate ()
@@ -31,7 +32,6 @@
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    
     
     return YES;
 }

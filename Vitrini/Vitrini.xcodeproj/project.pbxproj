@@ -45,12 +45,9 @@
 		27A8B87E1A824BB100226278 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27A8B87D1A824BB100226278 /* Profile.storyboard */; };
 		27A8B8821A82578400226278 /* zegatao.png in Resources */ = {isa = PBXBuildFile; fileRef = 27A8B8811A82578400226278 /* zegatao.png */; };
 		5C2878631A28E39700CC7DD2 /* CustomSegueTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2878621A28E39700CC7DD2 /* CustomSegueTransition.m */; };
-		5C6F1ED21A41B2820040E213 /* MichasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F1ED11A41B2820040E213 /* MichasViewController.m */; };
-		5C6F1ED41A41B3180040E213 /* michas.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C6F1ED31A41B3180040E213 /* michas.storyboard */; };
 		5C83EA7A1A407008007988AA /* VIMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C83EA791A407008007988AA /* VIMainViewController.m */; };
 		5C83EA7D1A4071A1007988AA /* VIMainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C83EA7C1A4071A1007988AA /* VIMainMenu.m */; };
 		5C83EA8A1A409EE1007988AA /* VIInitControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C83EA891A409EE1007988AA /* VIInitControl.m */; };
-		5CAA45A51A40AA5000B51507 /* VIConfig.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CAA45A41A40AA5000B51507 /* VIConfig.storyboard */; };
 		5CE349BC1A2CF42100F1DC17 /* UserOnboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE349B71A2CF42100F1DC17 /* UserOnboard.storyboard */; };
 		5CE349BD1A2CF42100F1DC17 /* UserOnboardContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE349B91A2CF42100F1DC17 /* UserOnboardContentViewController.m */; };
 		5CE349BE1A2CF42100F1DC17 /* UserOnboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE349BB1A2CF42100F1DC17 /* UserOnboardViewController.m */; };
@@ -164,16 +161,12 @@
 		27A8B8811A82578400226278 /* zegatao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zegatao.png; sourceTree = "<group>"; };
 		5C2878611A28E39700CC7DD2 /* CustomSegueTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSegueTransition.h; sourceTree = "<group>"; };
 		5C2878621A28E39700CC7DD2 /* CustomSegueTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSegueTransition.m; sourceTree = "<group>"; };
-		5C6F1ED01A41B2820040E213 /* MichasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MichasViewController.h; sourceTree = "<group>"; };
-		5C6F1ED11A41B2820040E213 /* MichasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MichasViewController.m; sourceTree = "<group>"; };
-		5C6F1ED31A41B3180040E213 /* michas.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = michas.storyboard; sourceTree = "<group>"; };
 		5C83EA781A407008007988AA /* VIMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMainViewController.h; sourceTree = "<group>"; };
 		5C83EA791A407008007988AA /* VIMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIMainViewController.m; sourceTree = "<group>"; };
 		5C83EA7B1A4071A1007988AA /* VIMainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMainMenu.h; sourceTree = "<group>"; };
 		5C83EA7C1A4071A1007988AA /* VIMainMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIMainMenu.m; sourceTree = "<group>"; };
 		5C83EA881A409EE1007988AA /* VIInitControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIInitControl.h; sourceTree = "<group>"; };
 		5C83EA891A409EE1007988AA /* VIInitControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIInitControl.m; sourceTree = "<group>"; };
-		5CAA45A41A40AA5000B51507 /* VIConfig.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = VIConfig.storyboard; path = Vitrini/config/VIConfig.storyboard; sourceTree = "<group>"; };
 		5CE349B71A2CF42100F1DC17 /* UserOnboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserOnboard.storyboard; sourceTree = "<group>"; };
 		5CE349B81A2CF42100F1DC17 /* UserOnboardContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserOnboardContentViewController.h; sourceTree = "<group>"; };
 		5CE349B91A2CF42100F1DC17 /* UserOnboardContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserOnboardContentViewController.m; sourceTree = "<group>"; };
@@ -351,25 +344,6 @@
 			name = Profile/Settings;
 			sourceTree = "<group>";
 		};
-		5C6F1ED51A41B3920040E213 /* michas  */ = {
-			isa = PBXGroup;
-			children = (
-				5C6F1ED01A41B2820040E213 /* MichasViewController.h */,
-				5C6F1ED11A41B2820040E213 /* MichasViewController.m */,
-				5C6F1ED31A41B3180040E213 /* michas.storyboard */,
-			);
-			name = "michas ";
-			sourceTree = "<group>";
-		};
-		5CAA45A61A40AA6A00B51507 /* Config */ = {
-			isa = PBXGroup;
-			children = (
-				5CAA45A41A40AA5000B51507 /* VIConfig.storyboard */,
-			);
-			name = Config;
-			path = ..;
-			sourceTree = "<group>";
-		};
 		5CE349B61A2CF42100F1DC17 /* Useronboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -419,12 +393,10 @@
 				5CE3DE301A80FDB400F0CC92 /* StoreProfile */,
 				B3B6CF791A48FAF600C07383 /* Imagens */,
 				B3B6CF581A44C42B00C07383 /* Imagens para teste */,
-				5C6F1ED51A41B3920040E213 /* michas  */,
 				2781FF161A6ED427009FFAA5 /* Login */,
 				5CE349B61A2CF42100F1DC17 /* Useronboard */,
 				B3B6CF301A44A8DA00C07383 /* Cartoes */,
 				B3B6CF921A4B56D200C07383 /* Likeds */,
-				5CAA45A61A40AA6A00B51507 /* Config */,
 				279A816A1A706300003E50D7 /* Catalogo */,
 				277BD88D1A80037300AC887A /* Feed */,
 				27A8B8791A824AE300226278 /* Profile/Settings */,
@@ -715,8 +687,6 @@
 				B3B6CF651A44C45C00C07383 /* img6.jpg in Resources */,
 				2781FF1F1A6ED6E6009FFAA5 /* VILoginStoryboard.storyboard in Resources */,
 				277B37151A815D720081C796 /* feed_temp.png in Resources */,
-				5CAA45A51A40AA5000B51507 /* VIConfig.storyboard in Resources */,
-				5C6F1ED41A41B3180040E213 /* michas.storyboard in Resources */,
 				277BD8921A80055A00AC887A /* Feed.storyboard in Resources */,
 				B3B6CF511A44C41A00C07383 /* infoBtn@3x.png in Resources */,
 				277B37111A8103D10081C796 /* profile_feed_temp.png in Resources */,
@@ -768,7 +738,6 @@
 				B3B6CF881A48FDD300C07383 /* VIColor.m in Sources */,
 				B3B6CF911A4B56CD00C07383 /* VILikedsViewController.m in Sources */,
 				B3B6CF351A44B91900C07383 /* VIProduct.m in Sources */,
-				5C6F1ED21A41B2820040E213 /* MichasViewController.m in Sources */,
 				27A8B87C1A824B4200226278 /* VIProfileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
