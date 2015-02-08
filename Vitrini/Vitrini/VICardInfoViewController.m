@@ -59,7 +59,54 @@
 }
 */
 
-- (IBAction)back:(id)sender {
+-(UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
+{
+    NSUInteger index = ((VICardInfoContentViewController*) viewController).pageIndex;
+    
+    if ((index == 0)||(index == NSNotFound)) {
+        return nil;
+    }
+    
+    index --;
+    return [self viewControllerAtIndex:index];
+}
+
+-(UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
+{
+    NSUInteger index = ((VICardInfoContentViewController*) viewController).pageIndex;
+    
+    if (index == NSNotFound) {
+        return nil;
+    }
+    
+    index ++;
+    
+    return [self viewControllerAtIndex:index];
     
 }
+
+-(VICardInfoContentViewController *) viewControllerAtIndex:(NSUInteger) index
+{
+    if (([self.pageImages count] == 0) || (index >= [self.pageImages count])) {
+        return nil;
+    }
+    
+    VICardInfoContentViewController *pageContentVC = [self.storyboard instantiateViewControllerWithIdentifier:@"VICardInfoContentViewControllerID"];
+    pageContentVC.imageFile = self.pageImages[index];
+    pageContentVC.pageIndex = index;
+    
+    return pageContentVC;
+    
+}
+
+-(NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController{
+    return [self.pageImages count];
+}
+
+-(NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
+{
+    return 0;
+}
+
+
 @end
