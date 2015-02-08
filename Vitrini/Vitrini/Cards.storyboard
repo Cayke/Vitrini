@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OSp-4g-yTT">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Card Info View Controller-->
@@ -13,7 +14,7 @@
                         <viewControllerLayoutGuide type="bottom" id="N0x-xV-GA3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4rW-wX-l1q">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mwn-Cr-keV">
@@ -30,19 +31,33 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="4P6-TC-FE9" secondAttribute="centerX" id="AAe-qf-Ia9"/>
+                            <constraint firstItem="e1X-n3-UHM" firstAttribute="leading" secondItem="4rW-wX-l1q" secondAttribute="leadingMargin" constant="-16" id="swQ-I6-ooi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="e1X-n3-UHM" secondAttribute="trailing" constant="-16" id="ucd-2l-pxA"/>
+                            <constraint firstItem="e1X-n3-UHM" firstAttribute="top" secondItem="Tna-2L-qR2" secondAttribute="bottom" id="yKd-ti-QKf"/>
+                            <constraint firstItem="4P6-TC-FE9" firstAttribute="centerY" secondItem="e1X-n3-UHM" secondAttribute="centerY" id="zOp-f6-eyj"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="customNavigationBar" destination="e1X-n3-UHM" id="Rig-ZY-d9e"/>
+                        <outlet property="pageControlNB" destination="4P6-TC-FE9" id="EG7-kI-jOl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1f6-q0-bfx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-410" y="-173"/>
+            <point key="canvasLocation" x="-512.5" y="-173.5"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="qj9-P7-Ihc">
             <objects>
-                <pageViewController storyboardIdentifier="UIPageViewControllerID" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="DiI-rz-dD4" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="UIPageViewControllerID" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="DiI-rz-dD4" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="518-O9-62M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="499" y="-173"/>
+            <point key="canvasLocation" x="62.5" y="-173.5"/>
         </scene>
         <!--Card Info Content View Controller-->
         <scene sceneID="Qpp-1J-TtA">
@@ -56,16 +71,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O5F-Bi-vnG">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O5F-Bi-vnG">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="O5F-Bi-vnG" firstAttribute="bottom" secondItem="1oi-7Q-iiX" secondAttribute="top" id="4VG-Xn-ouR"/>
-                            <constraint firstItem="O5F-Bi-vnG" firstAttribute="top" secondItem="xdl-zm-uDu" secondAttribute="bottom" id="E1X-O2-mSd"/>
-                            <constraint firstItem="O5F-Bi-vnG" firstAttribute="leading" secondItem="OfD-Ow-NZd" secondAttribute="leading" id="hvw-nq-F4w"/>
-                            <constraint firstAttribute="centerX" secondItem="O5F-Bi-vnG" secondAttribute="centerX" id="kju-8j-a5A"/>
+                            <constraint firstAttribute="trailing" secondItem="O5F-Bi-vnG" secondAttribute="trailing" id="526-Dk-IHv"/>
+                            <constraint firstItem="1oi-7Q-iiX" firstAttribute="top" secondItem="O5F-Bi-vnG" secondAttribute="bottom" id="W2V-Pz-H24"/>
+                            <constraint firstItem="O5F-Bi-vnG" firstAttribute="leading" secondItem="OfD-Ow-NZd" secondAttribute="leading" id="ffx-fC-AYL"/>
+                            <constraint firstItem="O5F-Bi-vnG" firstAttribute="top" secondItem="xdl-zm-uDu" secondAttribute="bottom" id="qbW-pk-z9q"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -75,7 +90,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eHo-An-amV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="499.5" y="599.5"/>
+            <point key="canvasLocation" x="62.5" y="597.5"/>
         </scene>
     </scenes>
 </document>

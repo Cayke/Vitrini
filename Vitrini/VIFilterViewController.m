@@ -40,7 +40,7 @@
     
     // status
     UIView *status = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
-    status.backgroundColor = [VIColor whiteViColor];
+    status.backgroundColor = [VIColor whiteVIColor];
     
     [self.view addSubview:status];
     

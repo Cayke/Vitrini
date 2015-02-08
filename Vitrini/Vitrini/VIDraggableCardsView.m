@@ -127,7 +127,7 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
     
     // linhas
     UIView *firstLine = [[UIView alloc]initWithFrame:CGRectMake(posX, posY-1, width, 2)];
-    firstLine.backgroundColor = [VIColor whiteViColor];
+    firstLine.backgroundColor = [VIColor whiteVIColor];
     [self addSubview:firstLine];
     
     //
@@ -138,7 +138,7 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
     posY = self.frame.size.height - marginToBottom;
     
     UIView *secondLine = [[UIView alloc]initWithFrame:CGRectMake(posX, posY-1, width, 2)];
-    secondLine.backgroundColor = [VIColor whiteViColor];
+    secondLine.backgroundColor = [VIColor whiteVIColor];
     [self addSubview:secondLine];
     
     //

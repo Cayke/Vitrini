@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     UIView *statusBar = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
-    statusBar.backgroundColor = [VIColor whiteViColor];
+    statusBar.backgroundColor = [VIColor whiteVIColor];
     [self.view addSubview:statusBar];
 }
 

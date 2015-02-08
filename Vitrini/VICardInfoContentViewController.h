@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
 
 
-@property NSUInteger pageIndex;
+@property int pageIndex;
 @property NSString *titleText;
 @property NSString *imageFile;
 
