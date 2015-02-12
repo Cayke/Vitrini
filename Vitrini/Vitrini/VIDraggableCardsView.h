@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "VICardView.h"
+#import "VICardsViewController.h"
 
 @interface VIDraggableCardsView : UIView <DraggableViewDelegate>
 
@@ -22,6 +23,8 @@
 @property (nonatomic) BOOL clickEvent;
 
 @property (nonatomic) BOOL waitingNewProducts;
+
+@property (nonatomic,weak) VICardsViewController *VICardsVC;
 
 // metodos
 -(VICardView*)presentedCard;

@@ -342,4 +342,8 @@
     } completion:nil];
 }
 
+-(void)informationOfProduct {
+    
+}
+
 @end

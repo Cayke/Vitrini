@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="c0k-Qd-Iyo">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Catalog View Controller-->
+        <scene sceneID="fbj-yY-T4A">
+            <objects>
+                <viewController id="c0k-Qd-Iyo" customClass="VICatalogViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2jh-fG-Khf"/>
+                        <viewControllerLayoutGuide type="bottom" id="dnc-Bd-RaV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2em-jR-x8S">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fundo vitrini.png" translatesAutoresizingMaskIntoConstraints="NO" id="K1A-DC-4nG">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="70" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="A8D-35-rA5">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VICatalogTableViewCell" id="LxB-ga-lgV" customClass="VICatalogTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LxB-ga-lgV" id="AFb-Q8-3CL">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="catalogo_temp.png" translatesAutoresizingMaskIntoConstraints="NO" id="n5h-Cb-zcT">
+                                                    <rect key="frame" x="8" y="10" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="Y02-9O-y6B"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZrW-Pg-eaT">
+                                                    <rect key="frame" x="84" y="10" width="283" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="n5h-Cb-zcT" firstAttribute="leading" secondItem="AFb-Q8-3CL" secondAttribute="leadingMargin" id="BUW-CG-Rjo"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="n5h-Cb-zcT" secondAttribute="bottom" constant="1.5" id="CWA-tG-Ze1"/>
+                                                <constraint firstItem="n5h-Cb-zcT" firstAttribute="top" secondItem="ZrW-Pg-eaT" secondAttribute="top" id="dre-re-zao"/>
+                                                <constraint firstItem="n5h-Cb-zcT" firstAttribute="bottom" secondItem="ZrW-Pg-eaT" secondAttribute="bottom" id="qRr-7k-SPR"/>
+                                                <constraint firstItem="ZrW-Pg-eaT" firstAttribute="trailing" secondItem="AFb-Q8-3CL" secondAttribute="trailingMargin" id="uKG-DT-afY"/>
+                                                <constraint firstItem="ZrW-Pg-eaT" firstAttribute="leading" secondItem="n5h-Cb-zcT" secondAttribute="trailing" constant="26" id="uc7-5X-0Rq"/>
+                                                <constraint firstItem="n5h-Cb-zcT" firstAttribute="top" secondItem="AFb-Q8-3CL" secondAttribute="topMargin" constant="2" id="ucr-Et-kpf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="iconImageView" destination="n5h-Cb-zcT" id="uSK-a1-jjM"/>
+                                            <outlet property="labelName" destination="ZrW-Pg-eaT" id="RoM-B5-3gX"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="A8D-35-rA5" firstAttribute="top" secondItem="K1A-DC-4nG" secondAttribute="top" id="5AG-hg-7f0"/>
+                            <constraint firstItem="K1A-DC-4nG" firstAttribute="top" secondItem="2jh-fG-Khf" secondAttribute="bottom" id="Xl9-aA-h9X"/>
+                            <constraint firstItem="K1A-DC-4nG" firstAttribute="bottom" secondItem="dnc-Bd-RaV" secondAttribute="top" id="jhi-ru-FT2"/>
+                            <constraint firstItem="A8D-35-rA5" firstAttribute="bottom" secondItem="dnc-Bd-RaV" secondAttribute="top" id="rXf-qd-6iF"/>
+                            <constraint firstAttribute="trailing" secondItem="K1A-DC-4nG" secondAttribute="trailing" id="tI2-LD-kjh"/>
+                            <constraint firstItem="A8D-35-rA5" firstAttribute="leading" secondItem="K1A-DC-4nG" secondAttribute="leading" id="vOx-HA-dQO"/>
+                            <constraint firstItem="K1A-DC-4nG" firstAttribute="leading" secondItem="2em-jR-x8S" secondAttribute="leading" id="wdA-QS-QhW"/>
+                            <constraint firstItem="A8D-35-rA5" firstAttribute="trailing" secondItem="K1A-DC-4nG" secondAttribute="trailing" id="yXO-QR-nF2"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="imageViewBackground" destination="K1A-DC-4nG" id="REh-mn-qIM"/>
+                        <outlet property="tableView" destination="A8D-35-rA5" id="rlQ-Bp-H6z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8md-WJ-aKu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-207.5" y="-167.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="catalogo_temp.png" width="64" height="64"/>
+        <image name="fundo vitrini.png" width="1024" height="1024"/>
+    </resources>
+</document>

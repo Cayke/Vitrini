@@ -10,7 +10,15 @@
 
 @interface VIColor : UIColor
 
-+(UIColor*)primaryColor;
-+(UIColor*)whiteViColor;
++(UIColor*)blackVIColor; //cor de texto,fundo claro
++(UIColor*)blueVIColor; //cor principal 2
++(UIColor*)darkGrayVIColor; //variacao cor principal 2
++(UIColor*)redVIColor; //cor principal 1
++(UIColor*)lightRedVIColor; //variacao cor principal 1
++(UIColor*)grayVIColor; //cor extra 1
++(UIColor*)lightGrayVIColor; //cor extra 2
++(UIColor*)darkWhiteVIColor; //cor extra 3
++(UIColor*)whiteVIColor; // cor de texto, fundo escuro
+
 
 @end

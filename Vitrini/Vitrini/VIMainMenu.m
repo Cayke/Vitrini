@@ -178,7 +178,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
         cell.backgroundColor = [UIColor clearColor];
         cell.textLabel.textColor = [UIColor whiteColor];
-        cell.textLabel.textAlignment = UITextAlignmentCenter;
+        cell.textLabel.textAlignment = NSTextAlignmentCenter;
     }
 
     cell.textLabel.text = [self.viTabBarVC.viewControllers[indexPath.row] itemMenuTitle];

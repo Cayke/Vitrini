@@ -11,6 +11,9 @@
 
 #import "VICardsViewController.h"
 #import "VILikedsViewController.h"
+#import "VICatalogViewController.h"
+#import "VIFeedViewController.h"
+#import "VIProfileViewController.h"
 
 @implementation VIMainViewController
 
@@ -59,7 +62,7 @@
     int btnHeight = 120;
     
     _menuView = [[UIView alloc]initWithFrame:CGRectMake(width/2-(btnWidth/2), bottom-(btnHeight/2), btnWidth, btnHeight)];
-    _menuView.backgroundColor = [VIColor primaryColor];
+    _menuView.backgroundColor = [VIColor blueVIColor];
     
     // deixar circular
     [_menuView.layer setCornerRadius:(btnWidth/2)];
@@ -94,31 +97,19 @@
     
     VICardsViewController *vc1 = [[VICardsViewController alloc]init];
     
-    //VILikedsViewController *vc2 = [[VILikedsViewController alloc]init];
     UIStoryboard *likeds = [UIStoryboard storyboardWithName:@"Likeds" bundle:nil];
     VILikedsViewController *likedsVC = (VILikedsViewController*)[likeds instantiateInitialViewController];
     
+    UIStoryboard *catalog = [UIStoryboard storyboardWithName:@"Catalog" bundle:nil];
+    VICatalogViewController *catalogVC = (VICatalogViewController *) [catalog instantiateInitialViewController];
     
-//    UIViewController *vc2 = [[UIViewController alloc]init];
-//    vc2.view.backgroundColor = [UIColor blueColor];
-//    vc2.title = @"Meu Perfil";
-//
-////    UIViewController *vc3 = [ instantiateViewControllerWithIdentifier:@"gostei"];
-////    vc3.title = @"Meus Likes";
-//    
-//    UIViewController *vc4 = [[UIViewController alloc]init];
-//    vc4.view.backgroundColor = [UIColor purpleColor];
-//    vc4.title = @"Novidades";
-//    
-//    UIViewController *vc5 = [[UIViewController alloc]init];
-//    vc5.view.backgroundColor = [UIColor purpleColor];
-//    vc5.title = @"Cátalogo";
-//    
-//    UIViewController *vc6 = [[UIViewController alloc]init];
-//    vc6.view.backgroundColor = [UIColor purpleColor];
-//    vc6.title = @"Vitrini";
+    UIStoryboard *feed = [UIStoryboard storyboardWithName:@"Feed" bundle:nil];
+    VIFeedViewController *feedVC = (VIFeedViewController *) [feed instantiateInitialViewController];
     
-    self.viewControllers = @[vc1, likedsVC];
+    UIStoryboard *profile = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
+    VIProfileViewController *profileVC = (VIProfileViewController *) [profile instantiateInitialViewController];
+    
+    self.viewControllers = @[vc1, likedsVC, catalogVC, feedVC, profileVC,];
 }
 
 

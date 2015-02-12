@@ -8,6 +8,7 @@
 
 #import "VIInitControl.h"
 #import "VIMainViewController.h"
+#import "VILoginViewController.h"
 #import "UserOnboardViewController.h"
 
 @implementation VIInitControl
@@ -27,8 +28,7 @@
     
     UIStoryboard *userOnboard = [UIStoryboard storyboardWithName:@"UserOnboard" bundle:nil];
     UserOnboardViewController *userOnboardViewController = (UserOnboardViewController *)[userOnboard instantiateViewControllerWithIdentifier:@"UserOnboardViewControllerID"];
-    [self.appDelegate.window setRootViewController:userOnboardViewController];//[self presentViewController:userOnboardViewController animated:YES completion:nil];
-    
+    [self.appDelegate.window setRootViewController:userOnboardViewController];    
     userOnboardViewController.initiControl = self;
     
     NSLog(@"appDelegate > chama UserOnboardViewControllerID");
@@ -36,7 +36,11 @@
 
 - (void)goToLogin
 {
-    [self goToMainApp];
+    UIStoryboard *login = [UIStoryboard storyboardWithName:@"VILoginStoryboard" bundle:nil];
+    VILoginViewController *loginVC = (VILoginViewController *) [login instantiateInitialViewController];
+    loginVC.initiControl = self;
+    
+    [self.appDelegate.window setRootViewController:loginVC];
     
 }
 

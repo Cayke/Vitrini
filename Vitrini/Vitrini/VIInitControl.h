@@ -15,5 +15,6 @@
 
 - (void)start;
 - (void)goToLogin;
+- (void)goToMainApp;
 
 @end
