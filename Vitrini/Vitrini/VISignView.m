@@ -12,9 +12,16 @@
 
 @synthesize imageView;
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)frameOfImage
 {
-    self = [super initWithFrame:frame];
+    CGFloat size = 120.0;
+    
+    CGFloat posy = frameOfImage.origin.y;
+    CGFloat disw = frameOfImage.size.width;
+    CGFloat dish = frameOfImage.size.height;
+    
+    CGRect signFrame = CGRectMake((disw/2)-(size/2), ((dish/2)+posy)-(size/2), size, size);
+    self = [super initWithFrame:signFrame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
         imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"noButton"]];
@@ -33,8 +40,10 @@
     
     if(mode == GGOverlayViewModeLeft) {
         imageView.image = [UIImage imageNamed:@"noButton"];
+        self.backgroundColor = [UIColor redColor];
     } else {
         imageView.image = [UIImage imageNamed:@"yesButton"];
+        self.backgroundColor = [UIColor greenColor];
     }
 }
 
