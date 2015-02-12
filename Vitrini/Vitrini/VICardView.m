@@ -193,9 +193,9 @@
 -(void)updateOverlay:(CGFloat)distance
 {
     if (distance > 0) {
-        signView.mode = GGOverlayViewModeRight;
+        [signView setMode:GGOverlayViewModeRight andIsDragging:YES];
     } else {
-        signView.mode = GGOverlayViewModeLeft;
+        [signView setMode:GGOverlayViewModeLeft andIsDragging:YES];
     }
     
     signView.alpha = MIN(fabsf(distance)/100, 1.0);
@@ -258,7 +258,7 @@
 
 -(void)rightClickAction
 {
-    signView.mode = GGOverlayViewModeRight;
+    [signView setMode:GGOverlayViewModeRight andIsDragging:NO];
     [UIView animateWithDuration:0.1 animations:^{
         signView.alpha = 1;
     }];
@@ -282,7 +282,7 @@
 
 -(void)leftClickAction
 {
-    signView.mode = GGOverlayViewModeLeft;
+    [signView setMode:GGOverlayViewModeLeft andIsDragging:NO];
     [UIView animateWithDuration:0.1 animations:^{
         signView.alpha = 1;
     }];

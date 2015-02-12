@@ -16,6 +16,9 @@ typedef NS_ENUM(NSUInteger , GGOverlayViewMode) {
 @interface VISignView : UIView
 
 @property (nonatomic) GGOverlayViewMode mode;
+@property (nonatomic) BOOL wasDragging;
 @property (nonatomic, strong) UIImageView *imageView;
+
+-(void)setMode:(GGOverlayViewMode)mode andIsDragging:(BOOL)isDregging;
 
 @end
