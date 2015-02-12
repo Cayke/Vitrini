@@ -61,7 +61,7 @@
 }
 
 -(UIImage *)itemMenuIcon{
-    return [UIImage imageNamed:@"Vitrini.png"];
+    return [UIImage imageNamed:@"Vitrini_Vitrini_icon.png"];
 }
 
 -(void) filterTapDetected

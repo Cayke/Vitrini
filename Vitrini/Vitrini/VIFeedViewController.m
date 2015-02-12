@@ -45,7 +45,7 @@
 
 -(UIImage *)itemMenuIcon
 {
-    return [UIImage imageNamed:@"Icon_feed_Menu"];
+    return [UIImage imageNamed:@"Vitrini_novidades_icon"];
 }
 
 -(NSString *)itemMenuTitle
