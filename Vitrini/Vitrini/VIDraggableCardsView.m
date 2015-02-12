@@ -16,6 +16,8 @@
     //NSInteger cardsLoadedIndex; //%%% the index of the card you have loaded into the loadedCards array last
     NSMutableArray *loadedCards; //%%% the array of card loaded (change max_buffer_size to increase or decrease the number of cards this holds)
     
+    UIView *firstLine;
+    UIView *secondLine;
     UIButton *infoButton;
     UIButton *yesButton;
     UIButton *noButton;
@@ -125,7 +127,7 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
     posY = self.frame.size.height - marginToBottom;
     
     // linhas
-    UIView *firstLine = [[UIView alloc]initWithFrame:CGRectMake(posX, posY-1, width, 2)];
+    firstLine = [[UIView alloc]initWithFrame:CGRectMake(posX, posY-1, width, 2)];
     firstLine.backgroundColor = [VIColor whiteViColor];
     [self addSubview:firstLine];
     
@@ -136,7 +138,7 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
     width += 1;
     posY = self.frame.size.height - marginToBottom;
     
-    UIView *secondLine = [[UIView alloc]initWithFrame:CGRectMake(posX, posY-1, width, 2)];
+    secondLine = [[UIView alloc]initWithFrame:CGRectMake(posX, posY-1, width, 2)];
     secondLine.backgroundColor = [VIColor whiteViColor];
     [self addSubview:secondLine];
     
@@ -257,8 +259,7 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
                 // nao tem proximo produto
                 if ([loadedCards count]==0) {
                     // nao tem produto a ser mostrado
-                    NSLog(@"Esperando produtos");
-                    self.waitingNewProducts = YES;
+                    [self waitNewProducts];
                 }
             }
         }
@@ -326,22 +327,22 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
 -(void)changeBackgroundBlur{
     VICardView *cardView = [loadedCards firstObject];
 
-    [backgroundAnimat setAlpha:0.0f];
-    [backgroundAnimat setImage: cardView.product.photo];
-    
-    CGFloat delay = DELAY_OF_CARD_ANIMATION;
-    if (!_clickEvent) {
-        delay = 0.0;
+    if (cardView) {
+        [backgroundAnimat setAlpha:0.0f];
+        [backgroundAnimat setImage: cardView.product.photo];
+        
+        CGFloat delay = DELAY_OF_CARD_ANIMATION;
+        if (!_clickEvent) {
+            delay = 0.0;
+        }
+        
+        [UIView animateWithDuration:0.4 delay:delay options:UIViewAnimationOptionCurveEaseOut animations:^{
+            [backgroundAnimat setAlpha:1.0f];
+        } completion:^(BOOL complete){
+            [backgroundStatic setImage:cardView.product.photo];
+            [backgroundAnimat setAlpha:1.0f];
+        }];
     }
-
-    [UIView animateWithDuration:0.4 delay:delay options:UIViewAnimationOptionCurveEaseOut animations:^{
-        [backgroundAnimat setAlpha:1.0f];
-    } completion:^(BOOL complete){
-        [backgroundStatic setImage:cardView.product.photo];
-        [backgroundAnimat setAlpha:1.0f];
-    }];
-    
-    [self presentedCard].alpha = 1.0;
 }
 
 -(void)swipingViewDistanceFromCenter:(CGPoint)point{
@@ -370,6 +371,48 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
     [UIView animateWithDuration:0.4 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         [[self waitingCard] animationBeingSecondCardWithFirstCardFactor:0.0f];
     } completion:nil];
+}
+
+// esperar resposta de novos produtos da store
+-(void)waitNewProducts{
+    self.waitingNewProducts = YES;
+    [self hiddeControlls];
+}
+
+-(void)hiddeControlls{
+    CGFloat delay = DELAY_OF_CARD_ANIMATION + 0.2f;
+    if (!_clickEvent) {
+        delay = 0.1f;
+    }
+    [UIView animateWithDuration: 0.4f
+                          delay: delay
+                        options: UIViewAnimationOptionBeginFromCurrentState
+                     animations:^{
+                         firstLine.alpha = 0.0f;
+                         secondLine.alpha = 0.0f;
+                         infoButton.alpha = 0.0f;
+                         yesButton.alpha = 0.0f;
+                         noButton.alpha = 0.0f;
+                         backgroundStatic.alpha = 0.0f;
+                         backgroundAnimat.alpha = 0.0f;
+                     }
+                     completion:nil];
+}
+
+-(void)showControlls{
+    [UIView animateWithDuration: 0.2f
+                          delay: 0.0f
+                        options: UIViewAnimationOptionBeginFromCurrentState
+                     animations:^{
+                         firstLine.alpha = 1.0f;
+                         secondLine.alpha = 1.0f;
+                         infoButton.alpha = 1.0f;
+                         yesButton.alpha = 1.0f;
+                         noButton.alpha = 1.0f;
+                         backgroundStatic.alpha = 1.0f;
+                         backgroundAnimat.alpha = 1.0f;
+                     }
+                     completion:nil];
 }
 
 @end
