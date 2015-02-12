@@ -8,23 +8,28 @@
 
 #import "VISignView.h"
 
-@implementation VISignView
+@implementation VISignView {
+    CGFloat size;
+    CGFloat posy;
+    CGFloat disw;
+    CGFloat dish;
+}
 
 @synthesize imageView;
 
 - (id)initWithFrame:(CGRect)frameOfImage
 {
-    CGFloat size = 120.0;
+    size = 160;
     
-    CGFloat posy = frameOfImage.origin.y;
-    CGFloat disw = frameOfImage.size.width;
-    CGFloat dish = frameOfImage.size.height;
+    posy = frameOfImage.origin.y;
+    disw = frameOfImage.size.width;
+    dish = frameOfImage.size.height;
     
     CGRect signFrame = CGRectMake((disw/2)-(size/2), ((dish/2)+posy)-(size/2), size, size);
     self = [super initWithFrame:signFrame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
-        imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"noButton"]];
+        imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"noSign"]];
         [self addSubview:imageView];
     }
     return self;
@@ -32,25 +37,20 @@
 
 -(void)setMode:(GGOverlayViewMode)mode
 {
-    if (_mode == mode) {
-        return;
-    }
     
     _mode = mode;
     
     if(mode == GGOverlayViewModeLeft) {
-        imageView.image = [UIImage imageNamed:@"noButton"];
-        self.backgroundColor = [UIColor redColor];
+        imageView.image = [UIImage imageNamed:@"noSign"];
     } else {
-        imageView.image = [UIImage imageNamed:@"yesButton"];
-        self.backgroundColor = [UIColor greenColor];
+        imageView.image = [UIImage imageNamed:@"yesSign"];
     }
 }
 
 -(void)layoutSubviews
 {
     [super layoutSubviews];
-    imageView.frame = CGRectMake(50, 50, 100, 100);
+    imageView.frame = CGRectMake(0,0, size, size);
 }
 
 @end
