@@ -8,7 +8,6 @@
         <!--Card Info View Controller-->
         <scene sceneID="OIg-yl-3mO">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1f6-q0-bfx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="VICardInfoViewControllerID" id="OSp-4g-yTT" customClass="VICardInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tna-2L-qR2"/>
@@ -29,10 +28,6 @@
                                 <color key="pageIndicatorTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hkc-JC-pWb">
-                                <rect key="frame" x="0.0" y="64" width="375" height="375"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YMA-t4-YeV">
                                 <rect key="frame" x="0.0" y="447" width="375" height="220"/>
                                 <connections>
@@ -55,6 +50,7 @@
                         <outlet property="pageControlNB" destination="4P6-TC-FE9" id="EG7-kI-jOl"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1f6-q0-bfx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-860.5" y="-291.5"/>
         </scene>

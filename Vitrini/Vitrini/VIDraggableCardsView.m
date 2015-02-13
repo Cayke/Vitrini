@@ -181,9 +181,16 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
     
     // botao info
     infoButton = [[UIButton alloc]initWithFrame:CGRectMake(posX, posY, dimensionBtnInfo, dimensionBtnInfo)];
-    [infoButton addTarget:self action:@selector(infoButton) forControlEvents:UIControlEventTouchUpInside];
+    [infoButton addTarget:self action:@selector(goToInfo) forControlEvents:UIControlEventTouchUpInside];
     [infoButton setImage:[UIImage imageNamed:@"infoBtn.png"] forState:UIControlStateNormal];
     [self addSubview:infoButton];
+}
+
+-(void) goToInfo
+{
+    UIStoryboard *cards = [UIStoryboard storyboardWithName:@"Cards" bundle:nil];
+    VICardInfoViewController *info = [cards instantiateViewControllerWithIdentifier:@"VICardInfoViewControllerID"];
+    [self.VICardsVC presentViewController:info animated:YES completion:nil];
 }
 
 //%%% creates a card and returns it.
