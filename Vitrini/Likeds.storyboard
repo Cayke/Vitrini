@@ -19,6 +19,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qn9-l7-8iT">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="EfK-GA-Awi">
                                     <size key="itemSize" width="230" height="239"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -37,9 +38,9 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="230" height="239"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="degrade.png" translatesAutoresizingMaskIntoConstraints="NO" id="X6W-Hj-pl2">
-                                                    <rect key="frame" x="0.0" y="168" width="230" height="71"/>
+                                                    <rect key="frame" x="0.0" y="159" width="230" height="80"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="71" id="GuV-2E-AIm"/>
+                                                        <constraint firstAttribute="height" constant="80" id="GuV-2E-AIm"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>

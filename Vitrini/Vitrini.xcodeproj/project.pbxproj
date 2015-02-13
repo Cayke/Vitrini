@@ -62,6 +62,8 @@
 		92891CDF1A28D80F002F6678 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CDE1A28D80F002F6678 /* AppDelegate.m */; };
 		92891CE71A28D80F002F6678 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92891CE61A28D80F002F6678 /* Images.xcassets */; };
 		92891CF61A28D80F002F6678 /* VitriniTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CF51A28D80F002F6678 /* VitriniTests.m */; };
+		92ADB6511A88336B00EA76B1 /* VICardInfoContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92ADB6501A88336B00EA76B1 /* VICardInfoContainerViewController.m */; };
+		92ADB6571A88438C00EA76B1 /* VICardInfoInformationOfTheSelectedItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92ADB6561A88438C00EA76B1 /* VICardInfoInformationOfTheSelectedItemViewController.m */; };
 		92D96E611A7FEBF6009BC061 /* Cards.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92D96E601A7FEBF6009BC061 /* Cards.storyboard */; };
 		92D96E681A80FCB8009BC061 /* VICardInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D96E671A80FCB8009BC061 /* VICardInfoViewController.m */; };
 		B3B6CF351A44B91900C07383 /* VIProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B6CF341A44B91900C07383 /* VIProduct.m */; };
@@ -195,6 +197,10 @@
 		92891CEF1A28D80F002F6678 /* VitriniTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VitriniTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92891CF41A28D80F002F6678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92891CF51A28D80F002F6678 /* VitriniTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VitriniTests.m; sourceTree = "<group>"; };
+		92ADB64F1A88336B00EA76B1 /* VICardInfoContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VICardInfoContainerViewController.h; path = Vitrini/VICardInfoContainerViewController.h; sourceTree = "<group>"; };
+		92ADB6501A88336B00EA76B1 /* VICardInfoContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VICardInfoContainerViewController.m; path = Vitrini/VICardInfoContainerViewController.m; sourceTree = "<group>"; };
+		92ADB6551A88438C00EA76B1 /* VICardInfoInformationOfTheSelectedItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VICardInfoInformationOfTheSelectedItemViewController.h; path = Vitrini/VICardInfoInformationOfTheSelectedItemViewController.h; sourceTree = "<group>"; };
+		92ADB6561A88438C00EA76B1 /* VICardInfoInformationOfTheSelectedItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VICardInfoInformationOfTheSelectedItemViewController.m; path = Vitrini/VICardInfoInformationOfTheSelectedItemViewController.m; sourceTree = "<group>"; };
 		92D96E601A7FEBF6009BC061 /* Cards.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Cards.storyboard; path = Vitrini/Cards.storyboard; sourceTree = "<group>"; };
 		92D96E661A80FCB8009BC061 /* VICardInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VICardInfoViewController.h; path = Vitrini/VICardInfoViewController.h; sourceTree = "<group>"; };
 		92D96E671A80FCB8009BC061 /* VICardInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VICardInfoViewController.m; path = Vitrini/VICardInfoViewController.m; sourceTree = "<group>"; };
@@ -472,6 +478,10 @@
 				277A5E9C1A84F40600C14619 /* VICardInfoContentViewController.h */,
 				277A5E9D1A84F40600C14619 /* VICardInfoContentViewController.m */,
 				92D96E601A7FEBF6009BC061 /* Cards.storyboard */,
+				92ADB64F1A88336B00EA76B1 /* VICardInfoContainerViewController.h */,
+				92ADB6501A88336B00EA76B1 /* VICardInfoContainerViewController.m */,
+				92ADB6551A88438C00EA76B1 /* VICardInfoInformationOfTheSelectedItemViewController.h */,
+				92ADB6561A88438C00EA76B1 /* VICardInfoInformationOfTheSelectedItemViewController.m */,
 			);
 			name = Cartoes;
 			path = ..;
@@ -747,8 +757,10 @@
 				5CE349BE1A2CF42100F1DC17 /* UserOnboardViewController.m in Sources */,
 				5CE349BD1A2CF42100F1DC17 /* UserOnboardContentViewController.m in Sources */,
 				5CE3DE3F1A81021A00F0CC92 /* VIStoreProfileViewController.m in Sources */,
+				92ADB6511A88336B00EA76B1 /* VICardInfoContainerViewController.m in Sources */,
 				278AFBCD1A83A9CD0002BB23 /* VIFilterViewController.m in Sources */,
 				B3B6CF441A44C21A00C07383 /* VIProductStore.m in Sources */,
+				92ADB6571A88438C00EA76B1 /* VICardInfoInformationOfTheSelectedItemViewController.m in Sources */,
 				92891CDF1A28D80F002F6678 /* AppDelegate.m in Sources */,
 				B3B6CF6F1A487A9600C07383 /* VIProtocol.m in Sources */,
 				B3B6CF381A44BAC600C07383 /* VICardsViewController.m in Sources */,

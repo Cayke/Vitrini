@@ -17,4 +17,7 @@
 @property (weak, nonatomic) IBOutlet UINavigationBar *customNavigationBar;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *pageControlCenter;
 
+- (IBAction)back:(id)sender;
+
+
 @end

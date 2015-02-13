@@ -125,7 +125,7 @@
     [imageview addMotionEffect:group];
     
     // colocar overlay na view (overlay = img que aparece quando se esta arrastando o cartao)
-    signView = [[VISignView alloc]initWithFrame:CGRectMake(self.frame.size.width/2-100, CGRectGetMidY(self.frame)-100, 100, 100)];
+    signView = [[VISignView alloc]initWithFrame:_originalImageViewFrame];
     signView.alpha = 0;
     [self addSubview:signView];
 }
@@ -198,7 +198,7 @@
         signView.mode = GGOverlayViewModeLeft;
     }
     
-    signView.alpha = MIN(fabsf(distance)/100, 0.8);
+    signView.alpha = MIN(fabsf(distance)/100, 1.0);
 }
 
 //%%% called when the card is let go
