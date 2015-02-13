@@ -61,7 +61,7 @@
 
 -(UIImage *)itemMenuIcon
 {
-    return [UIImage imageNamed:@"Icon_catalogo_Menu"];
+    return [UIImage imageNamed:@"Vitrini_catalogos_icon"];
 }
 
 -(NSString *)itemMenuTitle

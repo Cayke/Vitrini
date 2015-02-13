@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5EO-9s-MKA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5EO-9s-MKA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -52,77 +53,98 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vitrini_Login__0001_Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="ld3-tS-Cfb">
-                                <rect key="frame" x="137" y="629" width="100" height="30"/>
+                                <rect key="frame" x="138" y="629" width="100" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="TGp-ZJ-7e6"/>
                                     <constraint firstAttribute="height" constant="30" id="gdD-4c-bg9"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YdP-Ol-WHn">
-                                <rect key="frame" x="91" y="358" width="192" height="30"/>
+                                <rect key="frame" x="82" y="359" width="212" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="mHU-sT-gvl"/>
-                                    <constraint firstAttribute="width" constant="192" id="snY-Nk-aLT"/>
+                                    <constraint firstAttribute="width" constant="212" id="snY-Nk-aLT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Senha" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MOo-My-uIa">
-                                <rect key="frame" x="91" y="396" width="192" height="30"/>
+                                <rect key="frame" x="82" y="397" width="212" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="a54-13-5jT"/>
-                                    <constraint firstAttribute="width" constant="192" id="i71-i6-odw"/>
+                                    <constraint firstAttribute="width" constant="212" id="i71-i6-odw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vitrini_Login__0002_Icom.png" translatesAutoresizingMaskIntoConstraints="NO" id="Rmb-BF-3mM">
-                                <rect key="frame" x="122" y="138" width="100" height="130"/>
+                                <rect key="frame" x="123" y="139" width="100" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="a9m-tE-DCd"/>
                                     <constraint firstAttribute="height" constant="130" id="xia-Wz-6pn"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Vitrini_Login__0006_Facebook.png" translatesAutoresizingMaskIntoConstraints="NO" id="Bna-9w-z2d">
-                                <rect key="frame" x="263" y="434" width="20" height="20"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KO4-SY-44Z">
+                                <rect key="frame" x="82" y="435" width="212" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="QBL-9B-K7x"/>
-                                    <constraint firstAttribute="height" constant="20" id="sCm-gQ-zXL"/>
+                                    <constraint firstAttribute="height" constant="30" id="Low-sz-FB6"/>
+                                    <constraint firstAttribute="width" constant="212" id="suV-ET-FH1"/>
                                 </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vitrini_Login__0007_Conta.png" translatesAutoresizingMaskIntoConstraints="NO" id="P92-pi-Emp">
-                                <rect key="frame" x="236" y="434" width="20" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                <state key="normal" title="Esqueceu sua senha?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7a-W9-LGE">
+                                <rect key="frame" x="82" y="500" width="106" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="Kr5-Xj-3wE"/>
-                                    <constraint firstAttribute="width" constant="20" id="UGa-Dg-eeK"/>
+                                    <constraint firstAttribute="height" constant="40" id="Csi-OG-K9J"/>
+                                    <constraint firstAttribute="width" constant="106" id="i3Y-K7-qgm"/>
                                 </constraints>
-                            </imageView>
+                                <state key="normal" backgroundImage="Vitrini_NewAccountpart1_icon.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mxj-90-0mB">
+                                <rect key="frame" x="188" y="500" width="106" height="40"/>
+                                <state key="normal" backgroundImage="Vitrini_NewAccountpart2_icon.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="MOo-My-uIa" firstAttribute="top" secondItem="YdP-Ol-WHn" secondAttribute="bottom" constant="8" id="1lc-1q-Kav"/>
-                            <constraint firstItem="Bna-9w-z2d" firstAttribute="leading" secondItem="P92-pi-Emp" secondAttribute="trailing" constant="8" id="5DT-3B-kSd"/>
-                            <constraint firstItem="Bna-9w-z2d" firstAttribute="top" secondItem="MOo-My-uIa" secondAttribute="bottom" constant="8" id="6HR-Vl-gIj"/>
+                            <constraint firstItem="X7a-W9-LGE" firstAttribute="top" secondItem="KO4-SY-44Z" secondAttribute="bottom" constant="35" id="79h-yI-3sd"/>
                             <constraint firstAttribute="centerX" secondItem="MOo-My-uIa" secondAttribute="centerX" id="7kQ-Bx-czW"/>
+                            <constraint firstItem="X7a-W9-LGE" firstAttribute="leading" secondItem="KO4-SY-44Z" secondAttribute="leading" id="Dlz-0k-psv"/>
+                            <constraint firstItem="mxj-90-0mB" firstAttribute="leading" secondItem="X7a-W9-LGE" secondAttribute="trailing" id="Hy6-wj-fRO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QkS-Zm-Yqk" secondAttribute="trailing" constant="-16" id="IEh-ac-T6P"/>
                             <constraint firstAttribute="centerX" secondItem="YdP-Ol-WHn" secondAttribute="centerX" id="OuK-I3-DdV"/>
+                            <constraint firstItem="mxj-90-0mB" firstAttribute="firstBaseline" secondItem="X7a-W9-LGE" secondAttribute="firstBaseline" id="U8A-vt-Nz1"/>
                             <constraint firstItem="X2Y-Di-wa9" firstAttribute="top" secondItem="ld3-tS-Cfb" secondAttribute="bottom" constant="8" id="YEK-cg-EqK"/>
                             <constraint firstItem="QkS-Zm-Yqk" firstAttribute="top" secondItem="TOx-1C-Nls" secondAttribute="topMargin" constant="20" id="bGq-Yu-qXx"/>
-                            <constraint firstItem="Bna-9w-z2d" firstAttribute="leading" secondItem="P92-pi-Emp" secondAttribute="trailing" constant="8" id="biW-oI-Azf"/>
                             <constraint firstAttribute="centerX" secondItem="ld3-tS-Cfb" secondAttribute="centerX" id="dSt-WE-4ji"/>
                             <constraint firstItem="X2Y-Di-wa9" firstAttribute="top" secondItem="QkS-Zm-Yqk" secondAttribute="bottom" id="eWv-te-5w5"/>
                             <constraint firstAttribute="centerY" secondItem="Rmb-BF-3mM" secondAttribute="centerY" constant="130" id="fgd-hV-0uk"/>
-                            <constraint firstAttribute="centerX" secondItem="P92-pi-Emp" secondAttribute="centerX" constant="-58" id="gJj-TR-7A7"/>
-                            <constraint firstItem="P92-pi-Emp" firstAttribute="top" secondItem="MOo-My-uIa" secondAttribute="bottom" constant="8" id="k70-P6-ff8"/>
+                            <constraint firstItem="X7a-W9-LGE" firstAttribute="bottom" secondItem="mxj-90-0mB" secondAttribute="bottom" id="gSo-iW-6NN"/>
+                            <constraint firstItem="KO4-SY-44Z" firstAttribute="top" secondItem="MOo-My-uIa" secondAttribute="bottom" constant="8" id="h8L-tD-y4T"/>
+                            <constraint firstItem="mxj-90-0mB" firstAttribute="top" secondItem="X7a-W9-LGE" secondAttribute="top" id="hp3-xK-Iy4"/>
+                            <constraint firstItem="mxj-90-0mB" firstAttribute="trailing" secondItem="KO4-SY-44Z" secondAttribute="trailing" id="iuc-oc-ULu"/>
                             <constraint firstAttribute="centerX" secondItem="Rmb-BF-3mM" secondAttribute="centerX" constant="15" id="oBD-x5-hcH"/>
                             <constraint firstItem="QkS-Zm-Yqk" firstAttribute="leading" secondItem="TOx-1C-Nls" secondAttribute="leadingMargin" constant="-16" id="pci-0s-yXU"/>
                             <constraint firstAttribute="centerY" secondItem="YdP-Ol-WHn" secondAttribute="centerY" constant="-40" id="tcH-kT-sdr"/>
+                            <constraint firstItem="X7a-W9-LGE" firstAttribute="baseline" secondItem="mxj-90-0mB" secondAttribute="baseline" id="uGW-DC-Ej3"/>
+                            <constraint firstAttribute="centerX" secondItem="KO4-SY-44Z" secondAttribute="centerX" id="xNX-JU-lD3"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="buttonFacebook" destination="Bna-9w-z2d" id="TH6-1N-4ub"/>
-                        <outlet property="buttonNewAcc" destination="P92-pi-Emp" id="0gj-St-OAf"/>
+                        <outlet property="buttonForgotPass" destination="KO4-SY-44Z" id="HYA-ub-lmU"/>
+                        <outlet property="buttonLogFace" destination="X7a-W9-LGE" id="Gyl-Aj-0zY"/>
+                        <outlet property="buttonLogNewAcc" destination="mxj-90-0mB" id="dYG-4v-CZ9"/>
+                        <outlet property="constraintVerticalSpaceLoginFB" destination="79h-yI-3sd" id="5q7-KG-CRy"/>
                         <outlet property="imageViewBackground" destination="QkS-Zm-Yqk" id="LhI-pJ-Dim"/>
                         <outlet property="textFieldEmail" destination="YdP-Ol-WHn" id="HGI-7J-ANq"/>
                         <outlet property="textFieldSenha" destination="MOo-My-uIa" id="Sjd-Ys-lVY"/>
@@ -136,8 +158,8 @@
     <resources>
         <image name="Vitrini_Login__0001_Logo.png" width="164" height="32"/>
         <image name="Vitrini_Login__0002_Icom.png" width="207" height="267"/>
-        <image name="Vitrini_Login__0006_Facebook.png" width="14" height="24"/>
-        <image name="Vitrini_Login__0007_Conta.png" width="24" height="24"/>
         <image name="Vitrini_Login__0008_BG.png" width="536" height="952"/>
+        <image name="Vitrini_NewAccountpart1_icon.png" width="364" height="133"/>
+        <image name="Vitrini_NewAccountpart2_icon.png" width="364" height="133"/>
     </resources>
 </document>

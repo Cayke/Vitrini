@@ -73,24 +73,30 @@
     tapSenha.numberOfTapsRequired = 1;
     [_textFieldSenha addGestureRecognizer:tapSenha];
     
-    UITapGestureRecognizer *tapPlus = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapPlus)];
-    tapPlus.delaysTouchesBegan = YES;
-    tapPlus.numberOfTapsRequired = 1;
-    _buttonNewAcc.userInteractionEnabled = YES;
-    [_buttonNewAcc addGestureRecognizer:tapPlus];
+    _textFieldEmail.alpha = 0.95;
+    _textFieldSenha.alpha = 0.95;
     
-    UITapGestureRecognizer *tapFb = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapFacebook)];
-    tapFb.delaysTouchesBegan = YES;
-    tapFb.numberOfTapsRequired = 1;
-    _buttonFacebook.userInteractionEnabled = YES;
-    [_buttonFacebook addGestureRecognizer:tapFb];
+    //editar constraint para de acordo com iphone
+    if (self.view.frame.size.height <600) {
+        _constraintVerticalSpaceLoginFB.constant = 10;
+    }
+    else
+    {
+        _constraintVerticalSpaceLoginFB.constant= 35;
+    }
+    
+    
     // ------------- fim efeitos visuais
+    
+    [_buttonLogFace addTarget:self action:@selector(tapFacebook) forControlEvents:UIControlEventTouchUpInside];
+    [_buttonLogNewAcc addTarget:self action:@selector(tapPlus) forControlEvents:UIControlEventTouchUpInside];
     
     //---------- delegates
     _textFieldSenha.delegate = self;
     _textFieldEmail.delegate = self;
     //---------- fim delegates
     
+                                                                                                                                                                                        
 }
 
 

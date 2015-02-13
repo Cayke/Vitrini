@@ -16,8 +16,12 @@
 @property (weak, nonatomic) IBOutlet UITextField *textFieldEmail;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldSenha;
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewBackground;
-@property (weak, nonatomic) IBOutlet UIImageView *buttonFacebook;
-@property (weak, nonatomic) IBOutlet UIImageView *buttonNewAcc;
+@property (weak, nonatomic) IBOutlet UIButton *buttonForgotPass;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintVerticalSpaceLoginFB;
+@property (weak, nonatomic) IBOutlet UIButton *buttonLogFace;
+@property (weak, nonatomic) IBOutlet UIButton *buttonLogNewAcc;
+
+
 
 //dados necessarios login FB : nome, id,email,celular,cidade...
 @property (nonatomic) NSString *fbName;
