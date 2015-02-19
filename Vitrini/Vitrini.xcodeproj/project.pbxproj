@@ -15,6 +15,10 @@
 		2714F57A1A8CD3E000C3C240 /* Vitrini_Config_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2714F5791A8CD3E000C3C240 /* Vitrini_Config_icon.png */; };
 		2714F57D1A8CD9C600C3C240 /* Vitrini_NewAccountpart1_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2714F57C1A8CD9C600C3C240 /* Vitrini_NewAccountpart1_icon.png */; };
 		2714F57F1A8CD9CC00C3C240 /* Vitrini_NewAccountpart2_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2714F57E1A8CD9CC00C3C240 /* Vitrini_NewAccountpart2_icon.png */; };
+		2761A5071A960FE90009395C /* VIResponseType.m in Sources */ = {isa = PBXBuildFile; fileRef = 2761A5061A960FE90009395C /* VIResponseType.m */; };
+		2761A50A1A9610030009395C /* VISymbolsPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2761A5091A9610030009395C /* VISymbolsPackage.m */; };
+		2761A50D1A96100E0009395C /* VIServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2761A50C1A96100E0009395C /* VIServer.m */; };
+		2761A5101A96101C0009395C /* VIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 2761A50F1A96101C0009395C /* VIResponse.m */; };
 		277A5E9E1A84F40600C14619 /* VICardInfoContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 277A5E9D1A84F40600C14619 /* VICardInfoContentViewController.m */; };
 		277B370D1A80F3D80081C796 /* VIFeedSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 277B370C1A80F3D80081C796 /* VIFeedSectionView.m */; };
 		277B37111A8103D10081C796 /* profile_feed_temp.png in Resources */ = {isa = PBXBuildFile; fileRef = 277B37101A8103D10081C796 /* profile_feed_temp.png */; };
@@ -132,6 +136,14 @@
 		2714F57B1A8CD56300C3C240 /* coolvetica rg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "coolvetica rg.ttf"; sourceTree = "<group>"; };
 		2714F57C1A8CD9C600C3C240 /* Vitrini_NewAccountpart1_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vitrini_NewAccountpart1_icon.png; sourceTree = "<group>"; };
 		2714F57E1A8CD9CC00C3C240 /* Vitrini_NewAccountpart2_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vitrini_NewAccountpart2_icon.png; sourceTree = "<group>"; };
+		2761A5051A960FE90009395C /* VIResponseType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIResponseType.h; sourceTree = "<group>"; };
+		2761A5061A960FE90009395C /* VIResponseType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIResponseType.m; sourceTree = "<group>"; };
+		2761A5081A9610030009395C /* VISymbolsPackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISymbolsPackage.h; sourceTree = "<group>"; };
+		2761A5091A9610030009395C /* VISymbolsPackage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISymbolsPackage.m; sourceTree = "<group>"; };
+		2761A50B1A96100E0009395C /* VIServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIServer.h; sourceTree = "<group>"; };
+		2761A50C1A96100E0009395C /* VIServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIServer.m; sourceTree = "<group>"; };
+		2761A50E1A96101C0009395C /* VIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIResponse.h; sourceTree = "<group>"; };
+		2761A50F1A96101C0009395C /* VIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIResponse.m; sourceTree = "<group>"; };
 		277A5E9C1A84F40600C14619 /* VICardInfoContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VICardInfoContentViewController.h; sourceTree = "<group>"; };
 		277A5E9D1A84F40600C14619 /* VICardInfoContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VICardInfoContentViewController.m; sourceTree = "<group>"; };
 		277B370B1A80F3D80081C796 /* VIFeedSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIFeedSectionView.h; sourceTree = "<group>"; };
@@ -519,6 +531,14 @@
 				B3B6CF431A44C21A00C07383 /* VIProductStore.m */,
 				B3B6CF861A48FDD300C07383 /* VIColor.h */,
 				B3B6CF871A48FDD300C07383 /* VIColor.m */,
+				2761A5051A960FE90009395C /* VIResponseType.h */,
+				2761A5061A960FE90009395C /* VIResponseType.m */,
+				2761A5081A9610030009395C /* VISymbolsPackage.h */,
+				2761A5091A9610030009395C /* VISymbolsPackage.m */,
+				2761A50B1A96100E0009395C /* VIServer.h */,
+				2761A50C1A96100E0009395C /* VIServer.m */,
+				2761A50E1A96101C0009395C /* VIResponse.h */,
+				2761A50F1A96101C0009395C /* VIResponse.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -764,6 +784,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2781FF2D1A6F2C0C009FFAA5 /* VIRegisterViewController.m in Sources */,
+				2761A5101A96101C0009395C /* VIResponse.m in Sources */,
 				277A5E9E1A84F40600C14619 /* VICardInfoContentViewController.m in Sources */,
 				279A816D1A706366003E50D7 /* VICatalogViewController.m in Sources */,
 				277B370D1A80F3D80081C796 /* VIFeedSectionView.m in Sources */,
@@ -777,6 +798,8 @@
 				279D46771A82FE630075AEB8 /* VIProfileTableViewCell.m in Sources */,
 				277BD8951A80089600AC887A /* VIFeedTableViewCell.m in Sources */,
 				B3B6CF411A44BCA600C07383 /* VISignView.m in Sources */,
+				2761A5071A960FE90009395C /* VIResponseType.m in Sources */,
+				2761A50D1A96100E0009395C /* VIServer.m in Sources */,
 				5C2878631A28E39700CC7DD2 /* CustomSegueTransition.m in Sources */,
 				5CE349BE1A2CF42100F1DC17 /* UserOnboardViewController.m in Sources */,
 				5CE349BD1A2CF42100F1DC17 /* UserOnboardContentViewController.m in Sources */,
@@ -791,6 +814,7 @@
 				92891CDC1A28D80F002F6678 /* main.m in Sources */,
 				5C83EA8A1A409EE1007988AA /* VIInitControl.m in Sources */,
 				5C83EA7A1A407008007988AA /* VIMainViewController.m in Sources */,
+				2761A50A1A9610030009395C /* VISymbolsPackage.m in Sources */,
 				279A817A1A7085C6003E50D7 /* VICatalogTableViewCell.m in Sources */,
 				B3B6CF3B1A44BBAA00C07383 /* VIDraggableCardsView.m in Sources */,
 				B3B6CF881A48FDD300C07383 /* VIColor.m in Sources */,
