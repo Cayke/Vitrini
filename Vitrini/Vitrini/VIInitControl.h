@@ -13,8 +13,9 @@
 
 @property(nonatomic, weak)AppDelegate *appDelegate;
 
-- (void)start;
-- (void)goToLogin;
-- (void)goToMainApp;
++ (void)start;
++ (void)goToLogin;
++ (void)goToMainApp;
++ (void)goToUserOnBoard;
 
 @end

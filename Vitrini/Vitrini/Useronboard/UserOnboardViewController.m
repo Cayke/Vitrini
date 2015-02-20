@@ -116,7 +116,7 @@
 //    [self dismissViewControllerAnimated:YES completion:nil];
     NSLog(@"Vou pra uma outra controller");
     
-    [self.initiControl goToLogin];
+    [VIInitControl goToLogin];
     
 //    VIMainViewController *mainTabBarVC = [[VIMainViewController alloc]init];
 //    [self.window setRootViewController:mainTabBarVC];

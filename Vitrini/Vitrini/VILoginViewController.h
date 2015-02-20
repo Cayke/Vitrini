@@ -30,6 +30,7 @@
 @property (nonatomic) NSString *fbBirthday;
 @property (nonatomic) NSString *fbCidade;
 @property (nonatomic) NSString *fbGender;
+@property (nonatomic) NSString *fbPictureUrl;
 
 
 

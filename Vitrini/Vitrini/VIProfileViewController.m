@@ -8,6 +8,9 @@
 
 #import "VIProfileViewController.h"
 #import "VIProfileTableViewCell.h"
+#import "VIUser.h"
+#import "VIStorage.h"
+#import "VIInitControl.h"
 
 @interface VIProfileViewController ()
 
@@ -31,14 +34,14 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 -(UIImage *)itemMenuIcon
 {
@@ -64,8 +67,9 @@
 
 -(void) designPhotos
 {
-    _photoImageView.image = [UIImage imageNamed:@"zegatao"];
-    _backgroundImageView.image = [UIImage imageNamed:@"zegatao"];
+    VIUser *user = [[VIStorage sharedStorage]getUser];
+    _photoImageView.image = [UIImage imageWithData:user.image];
+    _backgroundImageView.image = [UIImage imageWithData:user.image];
     
     //botar foto redonda
     _photoImageView.layer.cornerRadius = self.view.frame.size.height * 0.17/2;
@@ -87,7 +91,7 @@
     [_backgroundImageView addSubview:blurEffectView];
     
     //botar nome da pessoa
-    _labelName.text = @"Cayke";
+    _labelName.text = user.name;
     
 }
 
@@ -110,4 +114,27 @@
     _rowsTableView = [[NSArray alloc]initWithObjects:@"Teste", @"aqui vem algo", @"hueee", nil];
 }
 
+- (IBAction)logOut:(id)sender {
+//    UIActionSheet *ac = [[UIActionSheet alloc]initWithTitle:@"Tem certeza que deseja sair?" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Sair", nil];
+//    [ac showFromTabBar:self.tabBarController.tabBar];
+    
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Tem certeza que deseja sair?" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *logout = [UIAlertAction actionWithTitle:@"Sair" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        [self logOut];
+    }];
+    [actionSheet addAction:logout];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancelar" style:UIAlertActionStyleCancel handler:nil];
+    [actionSheet addAction:cancel];
+    
+    
+    [self presentViewController:actionSheet animated:YES completion:nil];
+}
+
+-(void) logOut;
+{
+    //apagar user do Storage e da plist
+    [[VIStorage sharedStorage]logOutUser];
+}
 @end
