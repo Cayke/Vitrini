@@ -54,6 +54,8 @@
 		279D46771A82FE630075AEB8 /* VIProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 279D46761A82FE630075AEB8 /* VIProfileTableViewCell.m */; };
 		27A8B87C1A824B4200226278 /* VIProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A8B87B1A824B4200226278 /* VIProfileViewController.m */; };
 		27A8B87E1A824BB100226278 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27A8B87D1A824BB100226278 /* Profile.storyboard */; };
+		27CA104C1A9B63D600429F37 /* VIStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CA104B1A9B63D600429F37 /* VIStore.m */; };
+		27CA104F1A9B648D00429F37 /* VILocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CA104E1A9B648D00429F37 /* VILocation.m */; };
 		5C2878631A28E39700CC7DD2 /* CustomSegueTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2878621A28E39700CC7DD2 /* CustomSegueTransition.m */; };
 		5C8335201A9B2E5B006B3294 /* VIStoreProfileHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C83351F1A9B2E5B006B3294 /* VIStoreProfileHeaderCollectionReusableView.m */; };
 		5C83EA7A1A407008007988AA /* VIMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C83EA791A407008007988AA /* VIMainViewController.m */; };
@@ -195,6 +197,10 @@
 		27A8B87A1A824B4200226278 /* VIProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIProfileViewController.h; sourceTree = "<group>"; };
 		27A8B87B1A824B4200226278 /* VIProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIProfileViewController.m; sourceTree = "<group>"; };
 		27A8B87D1A824BB100226278 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		27CA104A1A9B63D600429F37 /* VIStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIStore.h; sourceTree = "<group>"; };
+		27CA104B1A9B63D600429F37 /* VIStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIStore.m; sourceTree = "<group>"; };
+		27CA104D1A9B648D00429F37 /* VILocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VILocation.h; sourceTree = "<group>"; };
+		27CA104E1A9B648D00429F37 /* VILocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VILocation.m; sourceTree = "<group>"; };
 		5C2878611A28E39700CC7DD2 /* CustomSegueTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSegueTransition.h; sourceTree = "<group>"; };
 		5C2878621A28E39700CC7DD2 /* CustomSegueTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSegueTransition.m; sourceTree = "<group>"; };
 		5C83351E1A9B2E5B006B3294 /* VIStoreProfileHeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VIStoreProfileHeaderCollectionReusableView.h; path = StoreProfile/VIStoreProfileHeaderCollectionReusableView.h; sourceTree = "<group>"; };
@@ -533,6 +539,8 @@
 		B3B6CF321A44B8F300C07383 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				27CA104A1A9B63D600429F37 /* VIStore.h */,
+				27CA104B1A9B63D600429F37 /* VIStore.m */,
 				B3B6CF331A44B91900C07383 /* VIProduct.h */,
 				B3B6CF341A44B91900C07383 /* VIProduct.m */,
 				B3B6CF421A44C21A00C07383 /* VIProductStore.h */,
@@ -551,6 +559,8 @@
 				279B4BB11A9767B300470FC9 /* VIStorage.m */,
 				279B4BB31A9767CD00470FC9 /* VIUser.h */,
 				279B4BB41A9767CD00470FC9 /* VIUser.m */,
+				27CA104D1A9B648D00429F37 /* VILocation.h */,
+				27CA104E1A9B648D00429F37 /* VILocation.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -810,6 +820,7 @@
 				279D46771A82FE630075AEB8 /* VIProfileTableViewCell.m in Sources */,
 				5C8335201A9B2E5B006B3294 /* VIStoreProfileHeaderCollectionReusableView.m in Sources */,
 				277BD8951A80089600AC887A /* VIFeedTableViewCell.m in Sources */,
+				27CA104F1A9B648D00429F37 /* VILocation.m in Sources */,
 				279B4BB21A9767B300470FC9 /* VIStorage.m in Sources */,
 				B3B6CF411A44BCA600C07383 /* VISignView.m in Sources */,
 				2761A5071A960FE90009395C /* VIResponseType.m in Sources */,
@@ -818,6 +829,7 @@
 				5CE349BE1A2CF42100F1DC17 /* UserOnboardViewController.m in Sources */,
 				5CE349BD1A2CF42100F1DC17 /* UserOnboardContentViewController.m in Sources */,
 				5CE3DE3F1A81021A00F0CC92 /* VIStoreProfileViewController.m in Sources */,
+				27CA104C1A9B63D600429F37 /* VIStore.m in Sources */,
 				92ADB6511A88336B00EA76B1 /* VICardInfoContainerViewController.m in Sources */,
 				278AFBCD1A83A9CD0002BB23 /* VIFilterViewController.m in Sources */,
 				B3B6CF441A44C21A00C07383 /* VIProductStore.m in Sources */,

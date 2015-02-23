@@ -93,4 +93,14 @@
 //////// PUBLICOS ////////
 //////////////////////////
 
+-(VIResponse *)registerWithEmail:(NSString *)email andPassword:(NSString *)pass andFacebookID:(NSString *)fbID andName:(NSString *)name andCity:(NSString *)city andBirthday:(NSString *)birthday andGender:(NSString *)gender
+{
+    return nil;
+}
+
+-(VIResponse *)loginWithEmail:(NSString *)email andPassword:(NSString *)pass andFacebookID:(NSString *)fbID
+{
+    return nil;
+}
+
 @end

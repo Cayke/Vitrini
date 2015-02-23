@@ -12,7 +12,12 @@
 @interface VIProduct : NSObject
 
 @property (nonatomic) NSString *name;
-@property (nonatomic) UIImage *photo;
+@property (nonatomic) NSString *descricao;
+@property (nonatomic) double Valor;
+@property (nonatomic) NSArray *images;
 @property (nonatomic) BOOL liked;
+
+//todo apagar
+@property (nonatomic) UIImage *photo;
 
 @end
