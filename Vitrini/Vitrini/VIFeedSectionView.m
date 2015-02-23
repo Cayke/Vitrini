@@ -59,4 +59,5 @@
     VIStoreProfileViewController *storeVC = (VIStoreProfileViewController *) [store instantiateInitialViewController];
     [self.feedVC presentViewController:storeVC animated:YES completion:nil];
 }
+
 @end
