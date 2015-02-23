@@ -298,9 +298,8 @@
     [self getInfo];
     [self getLikes];
     
-//    [self goToStorePage];
+    [VIInitControl goToMainApp];
     
-    [self.initiControl goToMainApp];
 }
 
 -(void) goToStorePage
