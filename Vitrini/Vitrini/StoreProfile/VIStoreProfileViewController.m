@@ -48,12 +48,6 @@ static NSString * const reuseIdentifier = @"Cell";
                              self.navigationBar.alpha = 1.0;
                          }];
                      }];
-
-//    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back_arrow.png"]
-//                                                                   style:UIBarButtonItemStyleBordered
-//                                                                  target:self
-//                                                                  action:@selector(backAction)];
-//    self.navigationBar.topItem.leftBarButtonItem = backButton;
 }
 
 
