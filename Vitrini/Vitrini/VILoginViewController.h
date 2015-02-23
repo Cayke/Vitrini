@@ -11,7 +11,6 @@
 
 @interface VILoginViewController : UIViewController <UITextFieldDelegate>
 
-@property (nonatomic) VIInitControl *initiControl;
 
 @property (weak, nonatomic) IBOutlet UITextField *textFieldEmail;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldSenha;
