@@ -9,6 +9,8 @@
 #import "VILoginViewController.h"
 #import "VIRegisterViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import "VIUser.h"
+#import "VIStorage.h"
 
 #import "VIStoreProfileViewController.h"
 
@@ -98,7 +100,7 @@
     _textFieldEmail.delegate = self;
     //---------- fim delegates
     
-                                                                                                                                                                                        
+    
 }
 
 
@@ -225,7 +227,7 @@
             [alertView dismissWithClickedButtonIndex:0 animated:YES];
             
             //tratar algo se precisar
-            [_initiControl goToMainApp];
+            [VIInitControl goToMainApp];
             
         });
     });
@@ -322,6 +324,7 @@
 
 -(void) getInfo
 {
+    //pedir info do user
     [FBRequestConnection startWithGraphPath:@"/me"
                                  parameters:nil
                                  HTTPMethod:@"GET"
@@ -339,7 +342,47 @@
                               _fbCidade = [[result objectForKey:@"location"] objectForKey:@"name"];
                               _fbGender = [result objectForKey:@"gender"];
                               
+                              //pegar foto pessoa
+                              NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                                                      @"false", @"redirect",
+                                                      @"large", @"type",
+                                                      nil
+                                                      ];
+                              /* make the API call */
+                              [FBRequestConnection startWithGraphPath:@"/me/picture"
+                                                           parameters:params
+                                                           HTTPMethod:@"GET"
+                                                    completionHandler:^(
+                                                                        FBRequestConnection *connection,
+                                                                        id result,
+                                                                        NSError *error
+                                                                        ) {
+                                                        /* handle the result */
+                                                        NSDictionary *dic = [[NSDictionary alloc]initWithDictionary:[result objectForKey:@"data"]];
+                                                        
+                                                        _fbPictureUrl = [dic objectForKey:@"url"];
+                                                        
+                                                        //criar user
+                                                        VIUser *user = [[VIUser alloc]init];
+                                                        user.name = _fbName;
+                                                        user.email = _fbEmail;
+                                                        user.gender = _fbGender;
+                                                        user.birthday = _fbBirthday;
+                                                        user.city = _fbCidade;
+                                                        user.image = [NSData dataWithContentsOfURL:[NSURL URLWithString:_fbPictureUrl]];
+                                                        
+                                                        //salvar user
+                                                        [[VIStorage sharedStorage]setUser:user];
+                                                        [[VIStorage sharedStorage]saveUser];
+                                                    }];
+                              
+                              
                           }];
+    
+
+    
+    
+    
 }
 
 -(void) getLikes

@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (weak, nonatomic) IBOutlet UILabel *labelName;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+- (IBAction)logOut:(id)sender;
 
 //constraints
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightBackground;

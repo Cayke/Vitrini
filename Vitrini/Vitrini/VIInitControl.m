@@ -10,37 +10,45 @@
 #import "VIMainViewController.h"
 #import "VILoginViewController.h"
 #import "UserOnboardViewController.h"
+#import "VIStorage.h"
+#import "AppDelegate.h"
 
 @implementation VIInitControl
 
--(void)start {
-    [self goToLogin];
++(void)start {
+    if ([[VIStorage sharedStorage]initUserFromDevice]) {
+        [self goToMainApp];
+    }
+    else
+    {
+        [self goToUserOnBoard];
+    }
 }
 
-- (void)goToMainApp
++ (void)goToMainApp
 {
     VIMainViewController *mainTabBarVC = [[VIMainViewController alloc]init];
-    [self.appDelegate.window setRootViewController:mainTabBarVC];
+    AppDelegate *appDelegate = (AppDelegate *) [UIApplication sharedApplication].delegate;
+    [appDelegate.window setRootViewController:mainTabBarVC];
 }
 
-- (void)goToUserOnboard
++ (void)goToUserOnBoard
 {
     
     UIStoryboard *userOnboard = [UIStoryboard storyboardWithName:@"UserOnboard" bundle:nil];
     UserOnboardViewController *userOnboardViewController = (UserOnboardViewController *)[userOnboard instantiateViewControllerWithIdentifier:@"UserOnboardViewControllerID"];
-    [self.appDelegate.window setRootViewController:userOnboardViewController];    
-    userOnboardViewController.initiControl = self;
     
-    NSLog(@"appDelegate > chama UserOnboardViewControllerID");
+    AppDelegate *appDelegate = (AppDelegate *) [UIApplication sharedApplication].delegate;
+    [appDelegate.window setRootViewController:userOnboardViewController];
 }
 
-- (void)goToLogin
++ (void)goToLogin
 {
     UIStoryboard *login = [UIStoryboard storyboardWithName:@"VILoginStoryboard" bundle:nil];
     VILoginViewController *loginVC = (VILoginViewController *) [login instantiateInitialViewController];
-    loginVC.initiControl = self;
     
-    [self.appDelegate.window setRootViewController:loginVC];
+    AppDelegate *appDelegate = (AppDelegate *) [UIApplication sharedApplication].delegate;
+    [appDelegate.window setRootViewController:loginVC];
     
 }
 
