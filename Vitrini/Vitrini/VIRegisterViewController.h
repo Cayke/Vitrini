@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VIRegisterViewController : UIViewController
+@interface VIRegisterViewController : UIViewController <UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
+@property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end

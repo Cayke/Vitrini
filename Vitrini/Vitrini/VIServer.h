@@ -23,7 +23,13 @@
                    andPassword:(NSString *) pass
                  andFacebookID:(NSString *) fbID;
 
+-(VIResponse *) sendUser:(NSString *) email
+              likesArray:(NSArray *) likes;
 
+-(VIResponse *) getLikedsFromUser:(NSString *) email;
 
+-(VIResponse *) getCategories;
+
+-(VIResponse *) getUserFeed:(NSString *) email;
 
 @end

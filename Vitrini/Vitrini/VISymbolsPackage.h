@@ -23,6 +23,9 @@
 *productReviewLike,
 *liked,
 *notLiked,
-*code;
+*code,
+*gender,
+*birthday,
+*image;
 
 @end

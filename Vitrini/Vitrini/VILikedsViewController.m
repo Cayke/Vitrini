@@ -7,9 +7,10 @@
 //
 
 #import "VILikedsViewController.h"
-
+#import "VIResponse.h"
+#import "VIStorage.h"
 #import "VIColor.h"
-
+#import "VIServer.h"
 #import "VIProductStore.h"
 #import "VIProduct.h"
 
@@ -19,11 +20,20 @@
 
 @implementation VILikedsViewController
 
+//todo : botar para os produtos do like serem os do _arrayWithProducts
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     UIView *statusBar = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
     statusBar.backgroundColor = [VIColor whiteVIColor];
     [self.view addSubview:statusBar];
+    
+    [self getLikeds];
+    
+    //adicionar refresh control. para poder atualizar os likes pela table view
+    _refresh = [[UIRefreshControl alloc]init];
+    [_refresh addTarget:self action:@selector(getLikeds) forControlEvents:UIControlEventValueChanged];
+    [_collectionView addSubview:_refresh];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,6 +49,38 @@
     return @"Likeds";
 }
 
+-(void) getLikeds
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    [_activityIndicator startAnimating];
+    //---------------------------------
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //Call your function or whatever work that needs to be done
+        //Code in this part is run on a background thread
+        VIServer *server = [[VIServer alloc]init];
+        VIResponse *response = [server getLikedsFromUser:[VIStorage sharedStorage].user.email];
+        
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            //Stop your activity indicator or anything else with the GUI
+            //Code here is run on the main thread
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            [_activityIndicator stopAnimating];
+            [_refresh endRefreshing];
+            
+            //tratar algo se precisar
+            if (response.status == VIRequestSuccess) {
+                _arrayWithProducts = [NSArray arrayWithArray:response.value];
+                [_collectionView reloadData];
+            }
+            else {
+                UIAlertView *alerta = [[UIAlertView alloc]initWithTitle:@"Erro de conexao" message:@"Conecte-se a internet e tente novamente" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                [alerta show];
+            }
+            
+        });
+    });
+}
 /*
 #pragma mark - Navigation
 

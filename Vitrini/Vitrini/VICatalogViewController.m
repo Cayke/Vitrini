@@ -8,6 +8,8 @@
 
 #import "VICatalogViewController.h"
 #import "VICatalogTableViewCell.h"
+#import "VIResponse.h"
+#import "VIServer.h"
 
 @interface VICatalogViewController ()
 
@@ -71,10 +73,40 @@
 
 -(void) initCategorysArray
 {
+    _arrayCategorys = [[NSArray alloc]initWithObjects:@"Sapatos",@"Calcas", @"Vestidos", @"Saias", nil];
+    _arrayWithImages = [[NSArray alloc]initWithObjects:[UIImage imageNamed:@"catalogo_temp"],[UIImage imageNamed:@"catalogo_temp"], [UIImage imageNamed:@"catalogo_temp"], [UIImage imageNamed:@"catalogo_temp"], nil];
+
+    
     //TODO
     //pegar esses dados do servidor
-    _arrayCategorys = [[NSArray alloc]initWithObjects:@"Sapatos",@"Calcas", @"Vestidos", @"Saias", nil];
-    _arrayWithImages = [[NSArray alloc]initWithObjects:[UIImage imageNamed:@"catalogo_temp"],[UIImage imageNamed:@"catalogo_temp"], [UIImage imageNamed:@"catalogo_temp"], [UIImage imageNamed:@"catalogo_temp"], nil];}
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    //---------------------------------
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //Call your function or whatever work that needs to be done
+        //Code in this part is run on a background thread
+        VIServer *server = [[VIServer alloc]init];
+        VIResponse *response = [server getCategories];
+        
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            //Stop your activity indicator or anything else with the GUI
+            //Code here is run on the main thread
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            
+            //tratar algo se precisar
+            if (response.status == VIRequestSuccess) {
+                //_arrayCategorys = ...
+                //_arrayWithImages = ...
+                [_tableView reloadData];
+            }
+            else {
+                UIAlertView *alerta = [[UIAlertView alloc]initWithTitle:@"Erro de conexao" message:@"Conecte-se a internet e tente novamente" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                [alerta show];
+            }
+            
+        });
+    });
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [_arrayCategorys count];

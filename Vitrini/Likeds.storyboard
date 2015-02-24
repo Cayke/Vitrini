@@ -17,6 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="UfG-UJ-93c">
+                                <rect key="frame" x="282" y="282" width="37" height="37"/>
+                                <color key="color" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qn9-l7-8iT">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -67,11 +71,14 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="qn9-l7-8iT" secondAttribute="trailing" constant="-16" id="CEG-JQ-y05"/>
                             <constraint firstItem="qn9-l7-8iT" firstAttribute="top" secondItem="9zE-8a-lZz" secondAttribute="topMargin" id="DQu-p3-LHa"/>
+                            <constraint firstAttribute="centerX" secondItem="UfG-UJ-93c" secondAttribute="centerX" id="Sv4-7H-dJv"/>
                             <constraint firstItem="qn9-l7-8iT" firstAttribute="leading" secondItem="9zE-8a-lZz" secondAttribute="leadingMargin" constant="-16" id="Wue-UG-71O"/>
+                            <constraint firstAttribute="centerY" secondItem="UfG-UJ-93c" secondAttribute="centerY" id="nxS-DP-vZd"/>
                             <constraint firstItem="Xq0-iF-hjJ" firstAttribute="top" secondItem="qn9-l7-8iT" secondAttribute="bottom" id="s0V-pw-Wh6"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="UfG-UJ-93c" id="h3j-Li-9a2"/>
                         <outlet property="collectionView" destination="qn9-l7-8iT" id="6lg-Cv-d49"/>
                     </connections>
                 </viewController>

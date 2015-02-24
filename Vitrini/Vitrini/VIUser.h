@@ -17,8 +17,6 @@
 @property (nonatomic) NSString *birthday;
 @property (nonatomic) NSString *city;
 @property (nonatomic) NSData *image;
-//todo referenciar o user pro server com userID?
-//@property (nonatomic) int userID;
 
 -(NSDictionary *) getDictionary;
 -(instancetype) initWithDictionary:(NSDictionary *)dicUser;

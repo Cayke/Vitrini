@@ -9,6 +9,9 @@
 #import "VIFeedViewController.h"
 #import "VIFeedTableViewCell.h"
 #import "VIFeedSectionView.h"
+#import "VIServer.h"
+#import "VIResponse.h"
+#import "VIStorage.h"
 
 #define sectionHeight 45
 
@@ -26,6 +29,8 @@
     _refresh = [[UIRefreshControl alloc]init];
     [_refresh addTarget:self action:@selector(refreshFeed) forControlEvents:UIControlEventValueChanged];
     [_tableView addSubview:_refresh];
+    
+    [self refreshFeed];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -103,21 +108,26 @@
         //Call your function or whatever work that needs to be done
         //Code in this part is run on a background thread
         
-        sleep(5);
-        
+        VIServer *server = [[VIServer alloc]init];
+        VIResponse *response = [server getUserFeed:[VIStorage sharedStorage].user.email];
     
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             //Stop your activity indicator or anything else with the GUI
             //Code here is run on the main thread
             [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            [_refresh endRefreshing];
             
             //tratar algo se precisar
-            [_refresh endRefreshing];
-            //reload na table view e talz...
+            if (response.status == VIRequestSuccess) {
+                _feed = [NSArray arrayWithArray:response.value];
+                [_tableView reloadData];
+            }
             
         });
     });
     //****************************************************
+    
+
 }
 
 

@@ -14,4 +14,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) UIRefreshControl *refresh;
 
+//array com VIProducts
+@property (nonatomic) NSArray *feed;
+
+
 @end

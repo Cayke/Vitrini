@@ -13,5 +13,9 @@
 <VIViewControllerMenuItemProtocol, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (nonatomic) UIRefreshControl *refresh;
+
+@property (nonatomic) NSArray *arrayWithProducts;
 
 @end

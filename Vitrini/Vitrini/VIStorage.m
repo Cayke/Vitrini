@@ -87,6 +87,13 @@
     [VIInitControl goToUserOnBoard];
 }
 
+-(void)initUserFromServer:(NSDictionary *)dicUser
+{
+    VIUser *user = [[VIUser alloc]initWithDictionary:dicUser];
+    _user = user;
+    [self saveUser];
+}
+
 /////////////////////////////////
 //////// SAVES AND LOADS ////////
 /////////////////////////////////

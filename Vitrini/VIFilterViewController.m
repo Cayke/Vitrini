@@ -82,6 +82,8 @@
 
 -(void) getCategories
 {
+    //todo : pegar categorias pelo sharedStorage
+    
     _arrayWithCategories = [[NSMutableArray alloc]init];
     NSMutableDictionary *dict;
     
@@ -133,6 +135,8 @@
     [[[[self view]window]layer] addAnimation:transition forKey:kCATransitionFade];
     
     [self dismissViewControllerAnimated:NO completion:nil];
+    
+    //todo : criar uma maneira de mandar pro servidor apenas os filtros selecionados
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section

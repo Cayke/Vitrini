@@ -7,17 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VIProduct.h"
 
 @interface VICardInfoViewController : UIViewController <UIPageViewControllerDataSource,UIPageViewControllerDelegate>
+
+//produto a ser mostrado
+@property (nonatomic) VIProduct *product;
+
 
 @property (nonatomic) UIPageViewController *pageViewController;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControlNB;
 @property (nonatomic) NSArray *pageImages;
 
 @property (weak, nonatomic) IBOutlet UINavigationBar *customNavigationBar;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *pageControlCenter;
-
-- (IBAction)back:(id)sender;
-
 
 @end
