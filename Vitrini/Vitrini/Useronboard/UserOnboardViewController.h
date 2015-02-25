@@ -11,6 +11,8 @@
 
 @interface UserOnboardViewController : UIViewController <UIPageViewControllerDataSource>
 
+//todo : imagens estarao no proprio device...
+
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (strong, nonatomic) NSArray *pageImages;
 @property (strong, nonatomic) VIInitControl *initiControl;
