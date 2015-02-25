@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "VIStore.h"
 
 @interface VIProduct : NSObject
 
@@ -16,8 +17,9 @@
 @property (nonatomic) double Valor;
 @property (nonatomic) NSArray *images;
 @property (nonatomic) BOOL liked;
+@property (nonatomic) VIStore *store;
 
-//todo apagar
+//todo apagar (usar array images)
 @property (nonatomic) UIImage *photo;
 
 @end

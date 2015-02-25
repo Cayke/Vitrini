@@ -20,6 +20,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    //todo : botar as informacoes a partir do objeto _product
+    
     _pageImages = [[NSArray alloc]initWithObjects:@"img1",@"img2",@"img3",@"img4", nil];
     
     //create pagevc
@@ -41,7 +43,15 @@
     UIBarButtonItem *concluido = [[UIBarButtonItem alloc]initWithTitle:@"Concluído" style:UIBarButtonItemStylePlain target:self action:@selector(voltar)];
     [concluido setTintColor:[VIColor blueVIColor]];
     self.navigationItem.leftBarButtonItem = concluido;
+    //todo
+    //ver se a pessoa ja curtiu o produto ou nao
+//    if (_product.liked == NO) {
+//        UIBarButtonItem *like = [UIBarButtonItem alloc]initWithImage:<#(UIImage *)#> landscapeImagePhone:<#(UIImage *)#> style:<#(UIBarButtonItemStyle)#> target:<#(id)#> action:<#(SEL)#>];
+//        UIBarButtonItem *dislike = [UIBarButtonItem alloc]initWithImage:<#(UIImage *)#> landscapeImagePhone:<#(UIImage *)#> style:<#(UIBarButtonItemStyle)#> target:<#(id)#> action:<#(SEL)#>];
+//        self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:like, dislike, nil];
+//    }
     self.customNavigationBar.items = [NSArray arrayWithObject:self.navigationItem];
+    
     //criar linha de baixo
     CALayer *borderBotton = [CALayer layer];
     borderBotton.borderColor = [VIColor blueVIColor].CGColor;
@@ -61,9 +71,6 @@
     _pageControlNB.backgroundColor = [UIColor clearColor];
     
     _pageControlNB.numberOfPages = [_pageImages count];
-    
-    //centralizar o page control na navigation bar
-    
     
 }
 

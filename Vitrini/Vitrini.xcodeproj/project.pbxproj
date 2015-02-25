@@ -56,6 +56,7 @@
 		27A8B87E1A824BB100226278 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27A8B87D1A824BB100226278 /* Profile.storyboard */; };
 		27CA104C1A9B63D600429F37 /* VIStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CA104B1A9B63D600429F37 /* VIStore.m */; };
 		27CA104F1A9B648D00429F37 /* VILocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CA104E1A9B648D00429F37 /* VILocation.m */; };
+		27CA10511A9B74BA00429F37 /* User.png in Resources */ = {isa = PBXBuildFile; fileRef = 27CA10501A9B74BA00429F37 /* User.png */; };
 		5C2878631A28E39700CC7DD2 /* CustomSegueTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2878621A28E39700CC7DD2 /* CustomSegueTransition.m */; };
 		5C8335201A9B2E5B006B3294 /* VIStoreProfileHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C83351F1A9B2E5B006B3294 /* VIStoreProfileHeaderCollectionReusableView.m */; };
 		5C83EA7A1A407008007988AA /* VIMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C83EA791A407008007988AA /* VIMainViewController.m */; };
@@ -201,6 +202,7 @@
 		27CA104B1A9B63D600429F37 /* VIStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIStore.m; sourceTree = "<group>"; };
 		27CA104D1A9B648D00429F37 /* VILocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VILocation.h; sourceTree = "<group>"; };
 		27CA104E1A9B648D00429F37 /* VILocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VILocation.m; sourceTree = "<group>"; };
+		27CA10501A9B74BA00429F37 /* User.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = User.png; sourceTree = "<group>"; };
 		5C2878611A28E39700CC7DD2 /* CustomSegueTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSegueTransition.h; sourceTree = "<group>"; };
 		5C2878621A28E39700CC7DD2 /* CustomSegueTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSegueTransition.m; sourceTree = "<group>"; };
 		5C83351E1A9B2E5B006B3294 /* VIStoreProfileHeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VIStoreProfileHeaderCollectionReusableView.h; path = StoreProfile/VIStoreProfileHeaderCollectionReusableView.h; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 		2781FF161A6ED427009FFAA5 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				27CA10501A9B74BA00429F37 /* User.png */,
 				2714F57E1A8CD9CC00C3C240 /* Vitrini_NewAccountpart2_icon.png */,
 				2714F57C1A8CD9C600C3C240 /* Vitrini_NewAccountpart1_icon.png */,
 				2781FF1E1A6ED6E6009FFAA5 /* VILoginStoryboard.storyboard */,
@@ -782,6 +785,7 @@
 				B3B6CF841A48FCAE00C07383 /* Vitrini@1x.png in Resources */,
 				B3B6CF651A44C45C00C07383 /* img6.jpg in Resources */,
 				2714F5761A8CD2D200C3C240 /* Vitrini_meuslikes_icon.png in Resources */,
+				27CA10511A9B74BA00429F37 /* User.png in Resources */,
 				2781FF1F1A6ED6E6009FFAA5 /* VILoginStoryboard.storyboard in Resources */,
 				277B37151A815D720081C796 /* feed_temp.png in Resources */,
 				277BD8921A80055A00AC887A /* Feed.storyboard in Resources */,

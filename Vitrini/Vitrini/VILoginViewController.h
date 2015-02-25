@@ -31,6 +31,8 @@
 @property (nonatomic) NSString *fbGender;
 @property (nonatomic) NSString *fbPictureUrl;
 
+@property (nonatomic) NSMutableArray *arrayWithLikes;
+
 
 
 @end

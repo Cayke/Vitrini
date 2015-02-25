@@ -13,6 +13,9 @@
 
 @property (nonatomic, readonly) VIUser *user;
 
+//todo : criar array com as categorias(sapato, calca, blusa)
+@property (nonatomic) NSArray *categories;
+
 +(VIStorage *) sharedStorage;
 
 ////////////////////////
@@ -21,6 +24,7 @@
 -(VIUser*)getUser;
 -(void)saveUser;
 -(BOOL)initUserFromDevice;
+-(void)initUserFromServer:(NSDictionary *) dicUser;
 -(void)setUser:(VIUser *)newUser;
 -(void)logOutUser;
 

@@ -103,4 +103,24 @@
     return nil;
 }
 
+-(VIResponse *)sendUser:(NSString *)email likesArray:(NSArray *)likes
+{
+    return nil;
+}
+
+-(VIResponse *)getLikedsFromUser:(NSString *)email
+{
+    return nil;
+}
+
+-(VIResponse *)getCategories
+{
+    return nil;
+}
+
+-(VIResponse *)getUserFeed:(NSString *)email
+{
+    return nil;
+}
+
 @end

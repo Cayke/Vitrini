@@ -27,6 +27,9 @@
         _liked 			= @"like",
         _notLiked		= @"notLike",
         _code = @"code";
+        _gender = @"gender";
+        _birthday = @"birthday";
+        _image = @"image";
     }
     return self;
 }

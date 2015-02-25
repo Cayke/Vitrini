@@ -11,6 +11,8 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "VIUser.h"
 #import "VIStorage.h"
+#import "VIServer.h"
+#import "VIResponse.h"
 
 #import "VIStoreProfileViewController.h"
 
@@ -218,7 +220,8 @@
         //Call your function or whatever work that needs to be done
         //Code in this part is run on a background thread
         sleep(5);
-        
+        VIServer *server = [[VIServer alloc]init];
+        VIResponse *response = [server loginWithEmail:_textFieldEmail.text andPassword:_textFieldSenha.text andFacebookID:nil];
         
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             //Stop your activity indicator or anything else with the GUI
@@ -227,7 +230,17 @@
             [alertView dismissWithClickedButtonIndex:0 animated:YES];
             
             //tratar algo se precisar
-            [VIInitControl goToMainApp];
+            if (response.status == VIRequestSuccess) {
+                //salvar user na storage e ir para o app
+                [[VIStorage sharedStorage]initUserFromServer:response.value];
+                
+                [VIInitControl goToMainApp];
+            }
+            else
+            {
+                UIAlertView *alerta = [[UIAlertView alloc]initWithTitle:@"Erro" message:@"Usuario ou senha invalidos" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                [alerta show];
+            }
             
         });
     });
@@ -401,33 +414,15 @@
                                   //Code in this part is run on a background thread
                                   [self seeIfThereIsMoreLikes:result];
                                   
+                                  //enviar os likes pro server
+                                  if (_arrayWithLikes) {
+                                      VIServer *server = [[VIServer alloc]init];
+                                      [server sendUser:[VIStorage sharedStorage].user.email likesArray:_arrayWithLikes];
+                                  }
                                   
-                                  dispatch_async(dispatch_get_main_queue(), ^(void) {
-                                      //Stop your activity indicator or anything else with the GUI
-                                      //Code here is run on the main thread
-                                      NSLog(@"pegou todos os likes");
-                                      //tratar algo se precisar
-                                      //enviar os likes para o servidor
-                                      
-                                  });
                               });
                               //****************************************************
                           }];
-    
-}
-
--(void) analyzeUserLikes:(NSArray *) arrayWithLikesData
-{
-    //get likes from categorys Clothing and Jewelry/watches
-    for (NSDictionary *dic in arrayWithLikesData) {
-        if ([[dic objectForKey:@"category"] isEqualToString:@"Clothing"] || [[dic objectForKey:@"category"] isEqualToString:@"Jewelry/watches"]) {
-            NSLog(@"%@", [dic objectForKey:@"name"]);
-            //TODO
-            //salvar os que achou e mandar pro servidor
-        }
-    }
-    
-    
     
 }
 
@@ -464,6 +459,21 @@
         }
         
         
+    }
+}
+
+-(void) analyzeUserLikes:(NSArray *) arrayWithLikesData
+{
+    //get likes from categorys Clothing and Jewelry/watches
+    for (NSDictionary *dic in arrayWithLikesData) {
+        if ([[dic objectForKey:@"category"] isEqualToString:@"Clothing"] || [[dic objectForKey:@"category"] isEqualToString:@"Jewelry/watches"]) {
+
+            //salvar os que achou e mandar pro servidor
+            if (!_arrayWithLikes) {
+                _arrayWithLikes = [[NSMutableArray alloc]init];
+            }
+            [_arrayWithLikes addObject:[dic objectForKey:@"name"]];
+        }
     }
 }
 
