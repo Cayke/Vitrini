@@ -109,7 +109,7 @@
         //Code in this part is run on a background thread
         
         VIServer *server = [[VIServer alloc]init];
-        VIResponse *response = [server getUserFeed:[VIStorage sharedStorage].user.email];
+        VIResponse *response = [server getFeedForUser:[VIStorage sharedStorage].user.email];
     
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             //Stop your activity indicator or anything else with the GUI

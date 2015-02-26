@@ -93,34 +93,21 @@
 //////// PUBLICOS ////////
 //////////////////////////
 
--(VIResponse *)registerWithEmail:(NSString *)email andPassword:(NSString *)pass andFacebookID:(NSString *)fbID andName:(NSString *)name andCity:(NSString *)city andBirthday:(NSString *)birthday andGender:(NSString *)gender
-{
-    return nil;
-}
-
--(VIResponse *)loginWithEmail:(NSString *)email andPassword:(NSString *)pass andFacebookID:(NSString *)fbID
-{
-    return nil;
-}
-
--(VIResponse *)sendUser:(NSString *)email likesArray:(NSArray *)likes
-{
-    return nil;
-}
-
--(VIResponse *)getLikedsFromUser:(NSString *)email
-{
-    return nil;
-}
-
--(VIResponse *)getCategories
-{
-    return nil;
-}
-
--(VIResponse *)getUserFeed:(NSString *)email
-{
-    return nil;
+/////////////////////////////////////////////////////////////////
+//
+// USAR O PADRAO ABAIXO PARA CRIAR OS REQUESTS
+//
+/////////////////////////////////////////////////////////////////
+-(VIResponse *) requestName{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/REQUESTNAME",[self serverAddress]]]];
+    
+    // CRIAR STRING DE DADOS PARA REALIZAR POST
+    NSString *post;
+    [self incrementPost:&post WithName:symbPack.name andValue:symbPack.name];
+    
+    // REALIZAR CONEXÃO
+    return [self createResponseFromData:[self makeRequest:request withPost:post]];
 }
 
 @end
