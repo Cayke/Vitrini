@@ -18,6 +18,10 @@
 @property (nonatomic) NSArray *images;
 @property (nonatomic) BOOL liked;
 @property (nonatomic) VIStore *store;
+@property (nonatomic) NSString *categoria;
+@property (nonatomic) NSArray *tamanhos;
+@property (nonatomic) BOOL genero;
+
 
 //todo apagar (usar array images)
 @property (nonatomic) UIImage *photo;
