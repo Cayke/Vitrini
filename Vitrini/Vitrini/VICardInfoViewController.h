@@ -20,5 +20,7 @@
 @property (nonatomic) NSArray *pageImages;
 
 @property (weak, nonatomic) IBOutlet UINavigationBar *customNavigationBar;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *pageControlCenter;
+
 
 @end
