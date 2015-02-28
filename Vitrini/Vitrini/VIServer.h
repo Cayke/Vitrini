@@ -22,12 +22,13 @@
                           andName:(NSString *) name
                           andCity:(NSString *) city
                       andBirthday:(NSString *) birthday
-                        andGender:(NSString *) gender
-                         andImage:(NSData *) image;
+                        andGender:(NSString *) gender;
+//                         andImage:(NSData *) image;
 
 //valida o login por email e senha. retorna se e valido ou nao
 -(VIResponse *) loginWithEmail:(NSString *) email
-                   andPassword:(NSString *) pass;
+                   andPassword:(NSString *) pass
+                 andFacebookID:(NSString *) facebookID;
 
 //manda os likes(facebook) de um usuario
 -(VIResponse *) sendUser:(NSString *) email
@@ -45,14 +46,15 @@
 -(VIResponse *) getAllInfoFromProduct:(int) productID;
 
 //quando uma pessoa da like ou deslike num product manda para o server
--(VIResponse *) product:(int) productID wasLiked:(BOOL) likes;
+-(VIResponse *) product:(int) productID wasLiked:(BOOL) likes byUser:(NSString *) email;
 
 ////////////////////////////
 ///     tela likeds     ///
 ////////////////////////////
 //essa request retorna uma lista de produtos que o usuario curtiu, porem os produtos conterao apenas foto e id...
 -(VIResponse *) getProductsLikedsForUser:(NSString *) email
-                  andFilter1Active:(BOOL) filter1;
+                              withGender:(NSString *) gender
+                             andCategory:(int) categoryID;
 //aqiu viria todos os filtros dizendo se ta ativo ou nao?
 
 //clicando numa foto
@@ -83,6 +85,7 @@
 
 //clicando na loja
 -(VIResponse *) getStoreWithID:(int) storeID;
+-(VIResponse *) getProductsOfStore:(int) storeID andPage:(int) page;
 
 //usuario seguiu/deseguiu loja
 -(VIResponse *) user:(NSString *) email
@@ -92,8 +95,12 @@
 ////////////////////////////
 ///     tela perfil      ///
 ////////////////////////////
-
-
+//editar dados usuario
+-(VIResponse *) editUserWithEmail:(NSString *) email
+                          andName:(NSString *) name
+                          andCity:(NSString *) city
+                      andBirthday:(NSString *) birthday
+                        andGender:(NSString *) gender;
 
 
 @end

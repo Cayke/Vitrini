@@ -11,10 +11,12 @@
 @interface VISymbolsPackage : NSObject
 
 @property (nonatomic, readonly) NSString
+*ID,
 *email,
 *password,
 *facebookID,
 *photo,
+*cover,
 *city,
 *name,
 *deviceToken,
@@ -26,6 +28,21 @@
 *code,
 *gender,
 *birthday,
-*image;
+*page,
+*branch,
+*brand,
+*storeID,
+*store,
+*categories,
+*category,
+*categoryID,
+*tags,
+*title,
+*image,
+*address,
+*products,
+*price,
+*oldPrice,
+*resume;
 
 @end

@@ -221,7 +221,7 @@
         //Code in this part is run on a background thread
         sleep(5);
         VIServer *server = [[VIServer alloc]init];
-        VIResponse *response = [server loginWithEmail:_textFieldEmail.text andPassword:_textFieldSenha.text];
+        VIResponse *response = [server loginWithEmail:_textFieldEmail.text andPassword:_textFieldSenha.text andFacebookID:nil];
         
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             //Stop your activity indicator or anything else with the GUI

@@ -38,7 +38,7 @@
 }
 
 -(NSString*)serverAddress{
-    return @"http://127.0.0.1:8000/appinterface";
+    return @"http://107.170.189.125/vitrini/vitrini_api";
 }
 
 -(NSData*)makeRequest:(NSMutableURLRequest*)request withPost:(NSString*)post{
@@ -109,5 +109,188 @@
     // REALIZAR CONEXÃO
     return [self createResponseFromData:[self makeRequest:request withPost:post]];
 }
+
+/////////////////////////////////////////////////////////////////
+//
+//    CADASTRO DE USUARIO
+//
+/////////////////////////////////////////////////////////////////
+-(VIResponse *)registerWithEmail:(NSString *)email andPassword:(NSString *)pass andFacebookID:(NSString *)fbID andName:(NSString *)name andCity:(NSString *)city andBirthday:(NSString *)birthday andGender:(NSString *)gender
+{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/register",[self serverAddress]]]];
+    
+    // CRIAR STRING DE DADOS PARA REALIZAR POST
+    NSString *post;
+    [self incrementPost:&post WithName:symbPack.email andValue:email];
+    [self incrementPost:&post WithName:symbPack.password andValue:pass];
+    [self incrementPost:&post WithName:symbPack.facebookID andValue:fbID];
+    [self incrementPost:&post WithName:symbPack.name andValue:name];
+    [self incrementPost:&post WithName:symbPack.city andValue:city];
+    [self incrementPost:&post WithName:symbPack.birthday andValue:birthday];
+    [self incrementPost:&post WithName:symbPack.gender andValue:gender];
+    
+    // REALIZAR CONEXÃO
+    return [self createResponseFromData:[self makeRequest:request withPost:post]];
+    
+}
+
+/////////////////////////////////////////////////////////////////
+//
+//   logar user
+//
+/////////////////////////////////////////////////////////////////
+-(VIResponse *)loginWithEmail:(NSString *)email andPassword:(NSString *)pass andFacebookID:(NSString *)facebookID
+{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/login",[self serverAddress]]]];
+    
+    // CRIAR STRING DE DADOS PARA REALIZAR POST
+    NSString *post;
+    [self incrementPost:&post WithName:symbPack.email andValue:email];
+    [self incrementPost:&post WithName:symbPack.password andValue:pass];
+    [self incrementPost:&post WithName:symbPack.facebookID andValue:facebookID];
+    
+    
+    // REALIZAR CONEXÃO
+    return [self createResponseFromData:[self makeRequest:request withPost:post]];
+    
+}
+
+/////////////////////////////////////////////////////////////////
+//
+//   editar os dados do user
+//
+/////////////////////////////////////////////////////////////////
+-(VIResponse *)editUserWithEmail:(NSString *)email andName:(NSString *)name andCity:(NSString *)city andBirthday:(NSString *)birthday andGender:(NSString *)gender
+{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/rewriteInfos",[self serverAddress]]]];
+    
+    // CRIAR STRING DE DADOS PARA REALIZAR POST
+    NSString *post;
+    [self incrementPost:&post WithName:symbPack.email andValue:email];
+    [self incrementPost:&post WithName:symbPack.name andValue:name];
+    [self incrementPost:&post WithName:symbPack.city andValue:city];
+    [self incrementPost:&post WithName:symbPack.birthday andValue:birthday];
+    [self incrementPost:&post WithName:symbPack.gender andValue:gender];
+    
+    
+    // REALIZAR CONEXÃO
+    return [self createResponseFromData:[self makeRequest:request withPost:post]];
+    
+}
+
+/////////////////////////////////////////////////////////////////
+//
+//   LIKE OU DESLIKE NUM PRODUTO
+//
+/////////////////////////////////////////////////////////////////
+-(VIResponse *)product:(int)productID wasLiked:(BOOL)likes byUser:(NSString *)email
+{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/reviewProduct",[self serverAddress]]]];
+    
+    // CRIAR STRING DE DADOS PARA REALIZAR POST
+    NSString *post;
+    [self incrementPost:&post WithName:symbPack.email andValue:email];
+    [self incrementPost:&post WithName:symbPack.productID andValue:[NSString stringWithFormat:@"%d", productID]];
+    
+    if (likes) {
+        [self incrementPost:&post WithName:symbPack.productReviewLike andValue:symbPack.liked];
+    }
+    else {
+        [self incrementPost:&post WithName:symbPack.productReviewLike andValue:symbPack.notLiked];
+    }
+    
+    // REALIZAR CONEXÃO
+    return [self createResponseFromData:[self makeRequest:request withPost:post]];
+    
+}
+
+/////////////////////////////////////////////////////////////////
+//
+//        PEGAR OS LIKES DE UM USER
+//
+/////////////////////////////////////////////////////////////////
+-(VIResponse *)getProductsLikedsForUser:(NSString *)email withGender:(NSString *)gender andCategory:(int)categoryID
+{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/getLikes",[self serverAddress]]]];
+    
+    // CRIAR STRING DE DADOS PARA REALIZAR POST
+    NSString *post;
+    [self incrementPost:&post WithName:symbPack.email andValue:email];
+    [self incrementPost:&post WithName:symbPack.gender andValue:gender];
+    if (categoryID != 0) {
+        [self incrementPost:&post WithName:symbPack.categoryID andValue:[NSString stringWithFormat:@"%d", categoryID]];
+    }
+    [self incrementPost:&post WithName:symbPack.page andValue:[NSString stringWithFormat:@"%d", 0]];
+    
+    // REALIZAR CONEXÃO
+    return [self createResponseFromData:[self makeRequest:request withPost:post]];
+    
+}
+
+/////////////////////////////////////////////////////////////////
+//
+//        PEGAR AS INFOS DE UM PRODUTO
+//
+/////////////////////////////////////////////////////////////////
+-(VIResponse *)getAllInfoFromProduct:(int)productID
+{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/getProduct",[self serverAddress]]]];
+    
+    // CRIAR STRING DE DADOS PARA REALIZAR POST
+    NSString *post;
+    
+    [self incrementPost:&post WithName:symbPack.productID andValue:[NSString stringWithFormat:@"%d", productID]];
+    
+    // REALIZAR CONEXÃO
+    return [self createResponseFromData:[self makeRequest:request withPost:post]];
+    
+}
+
+/////////////////////////////////////////////////////////////////
+//
+//        PEGAR UMA STOORE
+//
+/////////////////////////////////////////////////////////////////
+-(VIResponse *)getStoreWithID:(int)storeID
+{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/getStore",[self serverAddress]]]];
+    
+    // CRIAR STRING DE DADOS PARA REALIZAR POST
+    NSString *post;
+    
+    [self incrementPost:&post WithName:symbPack.storeID andValue:[NSString stringWithFormat:@"%d", storeID]];
+    
+    // REALIZAR CONEXÃO
+    return [self createResponseFromData:[self makeRequest:request withPost:post]];
+    
+}
+
+/////////////////////////////////////////////////////////////////
+//
+//        PEGAR OS PRODUTOS DE UMA LOJA
+//
+/////////////////////////////////////////////////////////////////
+-(VIResponse *)getProductsOfStore:(int)storeID andPage:(int)page
+{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/getProductsOfStore",[self serverAddress]]]];
+    
+    // CRIAR STRING DE DADOS PARA REALIZAR POST
+    NSString *post;
+    [self incrementPost:&post WithName:symbPack.storeID andValue:[NSString stringWithFormat:@"%d", storeID]];
+    [self incrementPost:&post WithName:symbPack.page andValue:[NSString stringWithFormat:@"%d", page]];
+    
+    // REALIZAR CONEXÃO
+    return [self createResponseFromData:[self makeRequest:request withPost:post]];
+    
+}
+
 
 @end

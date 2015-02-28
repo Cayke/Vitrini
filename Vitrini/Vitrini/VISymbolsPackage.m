@@ -14,22 +14,39 @@
 {
     self = [super init];
     if (self) {
-        _email 		    = @"email",
-        _password	    = @"password",
-        _facebookID	    = @"facebookID",
-        _photo		    = @"photo",
-        _city		    = @"city",
-        _name		    = @"name",
-        _deviceToken     = @"deviceToken",
-        _boostProductID  = @"boostProductID",
-        _productID 		= @"productID",
-        _productReviewLike = @"productReviewLike",
-        _liked 			= @"like",
-        _notLiked		= @"notLike",
-        _code = @"code";
-        _gender = @"gender";
-        _birthday = @"birthday";
-        _image = @"image";
+        _ID 				= @"ID";
+        _email 		    = @"email";
+        _password	    = @"password";
+        _facebookID	    = @"facebookID";
+        _photo		    = @"photo";
+        _cover 			= @"cover";
+        _city		    = @"city";
+        _name		    = @"name";
+        _deviceToken     = @"deviceToken";
+        _boostProductID  = @"boostProductID";
+        _productID 		= @"productID";
+        _productReviewLike = @"productReviewLike";
+        _liked 			= @"liked";
+        _notLiked		= @"notLiked";
+        _code 			= @"code";
+        _gender			= @"gender";
+        _birthday		= @"birthday";
+        _page 			= @"page";
+        _branch			= @"branch";
+        _brand 			= @"brand";
+        _storeID			= @"storeID";
+        _store 			= @"store";
+        _categories		= @"categories";
+        _category 		= @"category";
+        _categoryID 		= @"categoryID";
+        _tags			= @"tags";
+        _title 			= @"title";
+        _image			= @"image";
+        _address			= @"address";
+        _products 		= @"products";
+        _price 			= @"price";
+        _oldPrice 		= @"oldPrice";
+        _resume 	= @"resume";
     }
     return self;
 }
