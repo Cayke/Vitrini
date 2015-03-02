@@ -35,7 +35,7 @@ static NSString * const reuseIdentifier = @"Cell";
     
     self.navigationBar.topItem.title = @"";
     self.navigationBar.topItem.leftBarButtonItem.title = @"Back";
-    self.navigationBar.topItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(btnClicked:)];
+    self.navigationBar.topItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(btnBack:)];
     
     [UIView animateWithDuration:2.0
                           delay: 1.0
@@ -51,7 +51,7 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 
-- (void)btnClicked:(id)sender
+- (void)btnBack:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
