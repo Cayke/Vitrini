@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "VIInitControl.h"
+#import "VIUser.h"
 
 @interface VILoginViewController : UIViewController <UITextFieldDelegate>
 
@@ -30,6 +31,8 @@
 @property (nonatomic) NSString *fbCidade;
 @property (nonatomic) NSString *fbGender;
 @property (nonatomic) NSString *fbPictureUrl;
+
+@property (nonatomic) VIUser *user;
 
 @property (nonatomic) NSMutableArray *arrayWithLikes;
 

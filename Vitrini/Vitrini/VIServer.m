@@ -128,7 +128,13 @@
     [self incrementPost:&post WithName:symbPack.name andValue:name];
     [self incrementPost:&post WithName:symbPack.city andValue:city];
     [self incrementPost:&post WithName:symbPack.birthday andValue:birthday];
-    [self incrementPost:&post WithName:symbPack.gender andValue:gender];
+    if ([gender isEqual:@"male"]) {
+            [self incrementPost:&post WithName:symbPack.gender andValue:@"M"];
+    }
+    else
+    {
+            [self incrementPost:&post WithName:symbPack.gender andValue:@"F"];
+    }
     
     // REALIZAR CONEXÃO
     return [self createResponseFromData:[self makeRequest:request withPost:post]];

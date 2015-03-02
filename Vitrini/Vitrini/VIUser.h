@@ -11,6 +11,7 @@
 @interface VIUser : NSObject
 
 //dados do user: foto, nome, email, genero, nascimento, cidade
+@property (nonatomic) NSString *facebookID;
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSString *email;
 @property (nonatomic) NSString *gender;

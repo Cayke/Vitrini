@@ -177,7 +177,7 @@
     else
     {
         [_textFieldSenha resignFirstResponder];
-        [self login];
+        [self loginWithEmailAndPassword];
     }
     return YES;
 }
@@ -201,8 +201,8 @@
 }
 
 
-//funcao para efetuar login no servidor
--(void) login
+//funcao para efetuar login no servidor com email e senha
+-(void) loginWithEmailAndPassword
 {
     //***********************************************
     //aqui botamos as coisas na tela
@@ -219,7 +219,6 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         //Call your function or whatever work that needs to be done
         //Code in this part is run on a background thread
-        sleep(5);
         VIServer *server = [[VIServer alloc]init];
         VIResponse *response = [server loginWithEmail:_textFieldEmail.text andPassword:_textFieldSenha.text andFacebookID:nil];
         
@@ -306,13 +305,106 @@
     }
 }
 
--(void) userLoggedIn
+-(void) userLoggedIn //funcao que e chamada ao logar co o botao do facebook
 {
+    //pegar o id do cara...
     [self getInfo];
-    [self getLikes];
+}
+
+-(void) logUserWithFacebookID
+{
+    //***********************************************
+    //aqui botamos as coisas na tela
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    //------- botar alerta com carregando
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Carregando..." message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
+    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    indicator.color = [UIColor redColor];
+    [indicator startAnimating];
+    [alertView setValue:indicator forKey:@"accessoryView"];
+    [alertView show];
+    //---------------------------------
     
-    [VIInitControl goToMainApp];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //Call your function or whatever work that needs to be done
+        //Code in this part is run on a background thread
+        
+        VIServer *server = [[VIServer alloc]init];
+        VIResponse *response = [server loginWithEmail:nil andPassword:nil andFacebookID:_user.facebookID];
+        
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            //Stop your activity indicator or anything else with the GUI
+            //Code here is run on the main thread
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            [alertView dismissWithClickedButtonIndex:0 animated:YES];
+            
+            //tratar algo se precisar
+            if (response.status == VIRequestSuccess) {
+                //NAO PRECISO DE NADA, USER JA EXISTE NO SERVER
+                //salvar user
+                [[VIStorage sharedStorage]setUser:_user];
+                [[VIStorage sharedStorage]saveUser];
+                
+                //INICAR O APP
+                [VIInitControl goToMainApp];
+            }
+            else
+            {
+                [self registerUserWithFacebook];
+            }
+            
+        });
+    });
+    //****************************************************
+}
+
+-(void) registerUserWithFacebook
+{
+    //***********************************************
+    //aqui botamos as coisas na tela
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    //------- botar alerta com carregando
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Carregando..." message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
+    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    indicator.color = [UIColor redColor];
+    [indicator startAnimating];
+    [alertView setValue:indicator forKey:@"accessoryView"];
+    [alertView show];
+    //---------------------------------
     
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //Call your function or whatever work that needs to be done
+        //Code in this part is run on a background thread
+        
+        VIServer *server = [[VIServer alloc]init];
+        VIResponse *response = [server registerWithEmail:_user.email andPassword:nil andFacebookID:_user.facebookID andName:_user.name andCity:_user.city andBirthday:_user.birthday andGender:_user.gender];
+        
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            //Stop your activity indicator or anything else with the GUI
+            //Code here is run on the main thread
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            [alertView dismissWithClickedButtonIndex:0 animated:YES];
+            
+            //tratar algo se precisar
+            if (response.status == VIRequestSuccess) {
+                //NAO PRECISO DE NADA, USER JA EXISTE NO SERVER
+                //salvar user
+                [[VIStorage sharedStorage]setUser:_user];
+                [[VIStorage sharedStorage]saveUser];
+                
+                //INICAR O APP
+                [VIInitControl goToMainApp];
+            }
+            else
+            {
+                //todo : tratar response type
+                UIAlertView *alerta = [[UIAlertView alloc]initWithTitle:@"Erro de conexao" message:nil delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
+                [alerta show];
+            }
+            
+        });
+    });
+    //****************************************************
 }
 
 -(void) goToStorePage
@@ -375,23 +467,23 @@
                                                         _fbPictureUrl = [dic objectForKey:@"url"];
                                                         
                                                         //criar user
-                                                        VIUser *user = [[VIUser alloc]init];
-                                                        user.name = _fbName;
-                                                        user.email = _fbEmail;
-                                                        user.gender = _fbGender;
-                                                        user.birthday = _fbBirthday;
-                                                        user.city = _fbCidade;
-                                                        user.image = [NSData dataWithContentsOfURL:[NSURL URLWithString:_fbPictureUrl]];
+                                                        _user = [[VIUser alloc]init];
+                                                        _user.facebookID = _fbId;
+                                                        _user.name = _fbName;
+                                                        _user.email = _fbEmail;
+                                                        _user.gender = _fbGender;
+                                                        _user.birthday = _fbBirthday;
+                                                        _user.city = _fbCidade;
+                                                        _user.image = [NSData dataWithContentsOfURL:[NSURL URLWithString:_fbPictureUrl]];
                                                         
-                                                        //salvar user
-                                                        [[VIStorage sharedStorage]setUser:user];
-                                                        [[VIStorage sharedStorage]saveUser];
+                                                        [self logUserWithFacebookID];
+                                                        
                                                     }];
                               
                               
                           }];
     
-
+    
     
     
     
@@ -413,12 +505,6 @@
                                   //Call your function or whatever work that needs to be done
                                   //Code in this part is run on a background thread
                                   [self seeIfThereIsMoreLikes:result];
-                                  
-                                  //enviar os likes pro server
-                                  if (_arrayWithLikes) {
-                                      VIServer *server = [[VIServer alloc]init];
-                                      [server sendUser:[VIStorage sharedStorage].user.email likesArray:_arrayWithLikes];
-                                  }
                                   
                               });
                               //****************************************************
@@ -467,7 +553,7 @@
     //get likes from categorys Clothing and Jewelry/watches
     for (NSDictionary *dic in arrayWithLikesData) {
         if ([[dic objectForKey:@"category"] isEqualToString:@"Clothing"] || [[dic objectForKey:@"category"] isEqualToString:@"Jewelry/watches"]) {
-
+            
             //salvar os que achou e mandar pro servidor
             if (!_arrayWithLikes) {
                 _arrayWithLikes = [[NSMutableArray alloc]init];

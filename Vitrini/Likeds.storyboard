@@ -31,14 +31,14 @@
                                     <inset key="sectionInset" minX="0.0" minY="20" maxX="0.0" maxY="60"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellCV" id="A5u-cU-oiu">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VILikedProductCell" id="A5u-cU-oiu" customClass="VILikedProductCell">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="230" height="239"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="101" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img1.png" translatesAutoresizingMaskIntoConstraints="NO" id="XH2-1D-FD8">
+                                                <imageView userInteractionEnabled="NO" tag="101" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XH2-1D-FD8">
                                                     <rect key="frame" x="0.0" y="0.0" width="230" height="239"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="degrade.png" translatesAutoresizingMaskIntoConstraints="NO" id="X6W-Hj-pl2">
@@ -59,6 +59,9 @@
                                             <constraint firstItem="XH2-1D-FD8" firstAttribute="top" secondItem="A5u-cU-oiu" secondAttribute="topMargin" constant="-8" id="mGP-wU-mWL"/>
                                             <constraint firstItem="XH2-1D-FD8" firstAttribute="leading" secondItem="A5u-cU-oiu" secondAttribute="leadingMargin" constant="-8" id="zhW-6Y-8y2"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="XH2-1D-FD8" id="jhW-53-ROd"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -89,6 +92,5 @@
     </scenes>
     <resources>
         <image name="degrade.png" width="929" height="142"/>
-        <image name="img1.png" width="640" height="1136"/>
     </resources>
 </document>

@@ -7,6 +7,7 @@
 //
 
 #import "VIProduct.h"
+#import "VISymbolsPackage.h"
 
 @implementation VIProduct
 
@@ -14,7 +15,6 @@
 {
     self = [super init];
     if (self) {
-        _liked = NO;
     }
     return self;
 }
@@ -23,4 +23,15 @@
     NSLog(@"desalocou");
 }
 
+-(instancetype)initWithProductFromServer:(NSDictionary *)dict
+{
+    self = [super init];
+    if (self) {
+        VISymbolsPackage *symbPack = [[VISymbolsPackage alloc]init];
+        _idProduct = [[dict objectForKey:symbPack.ID]intValue];
+        _name = [dict objectForKey:symbPack.name];
+        _photoString = [dict objectForKey:symbPack.photo];
+    }
+    return self;
+}
 @end

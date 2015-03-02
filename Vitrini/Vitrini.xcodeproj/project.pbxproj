@@ -15,6 +15,7 @@
 		2714F57A1A8CD3E000C3C240 /* Vitrini_Config_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2714F5791A8CD3E000C3C240 /* Vitrini_Config_icon.png */; };
 		2714F57D1A8CD9C600C3C240 /* Vitrini_NewAccountpart1_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2714F57C1A8CD9C600C3C240 /* Vitrini_NewAccountpart1_icon.png */; };
 		2714F57F1A8CD9CC00C3C240 /* Vitrini_NewAccountpart2_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2714F57E1A8CD9CC00C3C240 /* Vitrini_NewAccountpart2_icon.png */; };
+		271A20761AA4AC0F000D9815 /* VILikedProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 271A20751AA4AC0F000D9815 /* VILikedProductCell.m */; };
 		2761A5071A960FE90009395C /* VIResponseType.m in Sources */ = {isa = PBXBuildFile; fileRef = 2761A5061A960FE90009395C /* VIResponseType.m */; };
 		2761A50A1A9610030009395C /* VISymbolsPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2761A5091A9610030009395C /* VISymbolsPackage.m */; };
 		2761A50D1A96100E0009395C /* VIServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2761A50C1A96100E0009395C /* VIServer.m */; };
@@ -141,6 +142,8 @@
 		2714F57B1A8CD56300C3C240 /* coolvetica rg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "coolvetica rg.ttf"; sourceTree = "<group>"; };
 		2714F57C1A8CD9C600C3C240 /* Vitrini_NewAccountpart1_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vitrini_NewAccountpart1_icon.png; sourceTree = "<group>"; };
 		2714F57E1A8CD9CC00C3C240 /* Vitrini_NewAccountpart2_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vitrini_NewAccountpart2_icon.png; sourceTree = "<group>"; };
+		271A20741AA4AC0F000D9815 /* VILikedProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VILikedProductCell.h; sourceTree = "<group>"; };
+		271A20751AA4AC0F000D9815 /* VILikedProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VILikedProductCell.m; sourceTree = "<group>"; };
 		2761A5051A960FE90009395C /* VIResponseType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIResponseType.h; sourceTree = "<group>"; };
 		2761A5061A960FE90009395C /* VIResponseType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIResponseType.m; sourceTree = "<group>"; };
 		2761A5081A9610030009395C /* VISymbolsPackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISymbolsPackage.h; sourceTree = "<group>"; };
@@ -640,6 +643,8 @@
 				B3B6CF8F1A4B56CD00C07383 /* VILikedsViewController.h */,
 				B3B6CF901A4B56CD00C07383 /* VILikedsViewController.m */,
 				B3B6CF931A4B56F100C07383 /* Likeds.storyboard */,
+				271A20741AA4AC0F000D9815 /* VILikedProductCell.h */,
+				271A20751AA4AC0F000D9815 /* VILikedProductCell.m */,
 			);
 			name = Likeds;
 			path = ..;
@@ -820,6 +825,7 @@
 				279B4BB51A9767CD00470FC9 /* VIUser.m in Sources */,
 				2781FF1A1A6ED47F009FFAA5 /* VILoginViewController.m in Sources */,
 				278AFBD81A83EF290002BB23 /* VIFilterCollectionViewCell.m in Sources */,
+				271A20761AA4AC0F000D9815 /* VILikedProductCell.m in Sources */,
 				5C83EA7D1A4071A1007988AA /* VIMainMenu.m in Sources */,
 				279D46771A82FE630075AEB8 /* VIProfileTableViewCell.m in Sources */,
 				5C8335201A9B2E5B006B3294 /* VIStoreProfileHeaderCollectionReusableView.m in Sources */,

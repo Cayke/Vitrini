@@ -13,6 +13,7 @@
 #import "VIServer.h"
 #import "VIProductStore.h"
 #import "VIProduct.h"
+#import "VILikedProductCell.h"
 
 @interface VILikedsViewController ()
 
@@ -30,10 +31,10 @@
     
     [self getLikeds];
     
-    //adicionar refresh control. para poder atualizar os likes pela table view
-    _refresh = [[UIRefreshControl alloc]init];
-    [_refresh addTarget:self action:@selector(getLikeds) forControlEvents:UIControlEventValueChanged];
-    [_collectionView addSubview:_refresh];
+//    //adicionar refresh control. para poder atualizar os likes pela table view
+//    _refresh = [[UIRefreshControl alloc]init];
+//    [_refresh addTarget:self action:@selector(getLikeds) forControlEvents:UIControlEventValueChanged];
+//    [_collectionView addSubview:_refresh];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,7 +60,7 @@
         //Call your function or whatever work that needs to be done
         //Code in this part is run on a background thread
         VIServer *server = [[VIServer alloc]init];
-        VIResponse *response = [server getProductsLikedsForUser:[VIStorage sharedStorage].user.email andFilter1Active:YES];
+        VIResponse *response = [server getProductsLikedsForUser:[VIStorage sharedStorage].user.email withGender:@"M" andCategory:0];
         
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             //Stop your activity indicator or anything else with the GUI
@@ -91,25 +92,22 @@
 }
 */
 
--(void)viewWillAppear:(BOOL)animated{
-    [_collectionView reloadData];
-
-}
-
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return [[[VIProductStore sharedStore]likedProducts] count];
+    return [_arrayWithProducts count];
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellCV" forIndexPath:indexPath];
+    VILikedProductCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"VILikedProductCell" forIndexPath:indexPath];
     
-    UIImageView *view = (UIImageView*)[cell viewWithTag:101];
-    VIProduct *product = [[[VIProductStore sharedStore]likedProducts]objectAtIndex:indexPath.row];
-    view.image = product.photo;
+    NSDictionary *dic = [_arrayWithProducts objectAtIndex:indexPath.row];
+    VIProduct *product = [[VIProduct alloc]initWithProductFromServer:dic];
+    [cell mountWithProduct:product];
+    
+    //BAIXAR A IMAGEM
     
     return cell;
 }

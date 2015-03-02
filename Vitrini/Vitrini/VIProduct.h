@@ -21,9 +21,13 @@
 @property (nonatomic) NSString *categoria;
 @property (nonatomic) NSArray *tamanhos;
 @property (nonatomic) BOOL genero;
+@property (nonatomic) int idProduct;
 
 
 //todo apagar (usar array images)
+@property (nonatomic) NSString *photoString;
 @property (nonatomic) UIImage *photo;
+
+-(instancetype) initWithProductFromServer:(NSDictionary *) dict;
 
 @end
