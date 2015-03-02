@@ -11,9 +11,11 @@
 
 @interface VIStoreProfileViewController ()
 
-@property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
+@property (nonatomic, weak) IBOutlet UINavigationBar *navigationBar;
 @property (nonatomic, strong) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSArray *dataArray;
+
+@property (nonatomic) CGFloat lastContentOffset;
 
 @end
 
@@ -35,29 +37,44 @@ static NSString * const reuseIdentifier = @"Cell";
     
     self.navigationBar.topItem.title = @"";
     self.navigationBar.topItem.leftBarButtonItem.title = @"Back";
-    self.navigationBar.topItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(btnClicked:)];
+    self.navigationBar.topItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(btnBack:)];
     
-    [UIView animateWithDuration:2.0
-                          delay: 1.0
-                        options: UIViewAnimationOptionCurveLinear
-                     animations:^{
-                         self.navigationBar.alpha = 0.0;
-                     }
-                     completion:^(BOOL finished){
-                         [UIView animateWithDuration:3.0 animations:^{
-                             self.navigationBar.alpha = 1.0;
-                         }];
-                     }];
 }
 
-
-- (void)btnClicked:(id)sender
+- (void)btnBack:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark - UIScrollViewDelegate Methods
 
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    self.lastContentOffset = scrollView.contentOffset.y;
+}
 
+- (void) scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
+{
+    if (scrollView.contentOffset.y > self.lastContentOffset) {
+        
+        [UIView animateWithDuration:0.5
+                              delay: 0.0
+                            options: UIViewAnimationOptionCurveLinear
+                         animations:^{
+                             self.navigationBar.alpha = 0.0;
+                         }
+                         completion:nil];
+        
+    } else{
+        [UIView animateWithDuration:0.5
+                              delay: 0.0
+                            options: UIViewAnimationOptionCurveLinear
+                         animations:^{
+                             self.navigationBar.alpha = 1.0;
+                         }
+                         completion:nil];
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

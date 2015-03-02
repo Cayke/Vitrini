@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VIStoreProfileViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface VIStoreProfileViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate>
 
 @end
