@@ -254,7 +254,7 @@
 
 /////////////////////////////////////////////////////////////////
 //
-//        PEGAR UMA STOORE
+//        PEGAR UMA STORE
 //
 /////////////////////////////////////////////////////////////////
 -(VIResponse *)getStoreWithID:(int)storeID
@@ -286,6 +286,49 @@
     NSString *post;
     [self incrementPost:&post WithName:symbPack.storeID andValue:[NSString stringWithFormat:@"%d", storeID]];
     [self incrementPost:&post WithName:symbPack.page andValue:[NSString stringWithFormat:@"%d", page]];
+    
+    // REALIZAR CONEXÃO
+    return [self createResponseFromData:[self makeRequest:request withPost:post]];
+    
+}
+
+/////////////////////////////////////////////////////////////////
+//
+//        PEGAR PRODUTOS DOS CARTOES
+//
+/////////////////////////////////////////////////////////////////
+-(VIResponse *)productsToReviewWithEmail:(NSString *)email
+                           andCategoryID:(int)categoryID
+                               andGender:(NSString *)gender
+{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/getProductsToReview",[self serverAddress]]]];
+    
+    // CRIAR STRING DE DADOS PARA REALIZAR POST
+    NSString *post;
+    [self incrementPost:&post WithName:symbPack.page andValue:gender];
+    if (categoryID) {
+        [self incrementPost:&post WithName:symbPack.storeID andValue:[NSString stringWithFormat:@"%d", categoryID]];
+    }
+    [self incrementPost:&post WithName:symbPack.page andValue:email];
+    
+    // REALIZAR CONEXÃO
+    return [self createResponseFromData:[self makeRequest:request withPost:post]];
+    
+}
+
+/////////////////////////////////////////////////////////////////
+//
+//        PEGAR FILTROS
+//
+/////////////////////////////////////////////////////////////////
+-(VIResponse *)getFilter
+{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/getFilter",[self serverAddress]]]];
+    
+    // CRIAR STRING DE DADOS PARA REALIZAR POST
+    NSString *post = @"";
     
     // REALIZAR CONEXÃO
     return [self createResponseFromData:[self makeRequest:request withPost:post]];

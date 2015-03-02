@@ -37,13 +37,10 @@
 ////////////////////////////
 ///     tela vitrini     ///
 ////////////////////////////
-//essa request retorna uma lista de produtos, porem os produtos conterao apenas foto e id...
--(VIResponse *) getProductsForUser:(NSString *) email
-                  andFilter1Active:(BOOL) filter1;
-                //todo: falar com riheldo. aqiu viria todos os filtros dizendo se ta ativo ou nao?
-
-//quando clicar no botao de info: aqui manda um id e recebe o produto em si(completo)
--(VIResponse *) getAllInfoFromProduct:(int) productID;
+// retorna produtos com suas infos
+-(VIResponse *) productsToReviewWithEmail:(NSString*)email
+                            andCategoryID:(int)categoryID
+                                andGender:(NSString*)gender;
 
 //quando uma pessoa da like ou deslike num product manda para o server
 -(VIResponse *) product:(int) productID wasLiked:(BOOL) likes byUser:(NSString *) email;
@@ -102,5 +99,5 @@
                       andBirthday:(NSString *) birthday
                         andGender:(NSString *) gender;
 
-
+-(VIResponse*)getFilter;
 @end
