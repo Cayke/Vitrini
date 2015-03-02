@@ -11,9 +11,11 @@
 
 @interface VIStoreProfileViewController ()
 
-@property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
+@property (nonatomic, weak) IBOutlet UINavigationBar *navigationBar;
 @property (nonatomic, strong) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSArray *dataArray;
+
+@property (nonatomic) CGFloat lastContentOffset;
 
 @end
 
