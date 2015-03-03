@@ -9,6 +9,8 @@
 #import "VIStorage.h"
 #import "VIServer.h"
 #import "VIInitControl.h"
+#import "VISymbolsPackage.h"
+#import "VIProduct.h"
 
 @implementation VIStorage
 {
@@ -105,6 +107,24 @@
 
 -(NSDictionary*)loadDictionaryFileName:(NSString*)fileName{
     return [[NSDictionary alloc]initWithContentsOfFile:[NSString stringWithFormat:@"%@/%@%@",deviceLocation,fileName,@".plist"]];
+}
+
+////////////////////////
+//////  lIKES    ////////
+////////////////////////
+-(NSArray *)createLikesProductsWithResponse:(VIResponse *) response
+{
+    VISymbolsPackage *symbPack = [[VISymbolsPackage alloc]init];
+    
+    NSArray *arrayWithProducts = [response.value objectForKey:symbPack.products];
+    
+    NSMutableArray *returnArray = [[NSMutableArray alloc]init];
+    for (NSDictionary *dic in arrayWithProducts) {
+        VIProduct *product = [[VIProduct alloc]initWithProductFromServer:dic];
+        [returnArray addObject: product];
+    }
+    
+    return [NSArray arrayWithArray:returnArray];
 }
 
 

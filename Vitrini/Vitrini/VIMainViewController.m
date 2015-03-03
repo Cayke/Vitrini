@@ -10,7 +10,7 @@
 #import "VIColor.h"
 
 #import "VICardsViewController.h"
-#import "VILikedsViewController.h"
+#import "VILikesViewController.h"
 #import "VICatalogViewController.h"
 #import "VIFeedViewController.h"
 #import "VIProfileViewController.h"
@@ -97,8 +97,8 @@
     
     VICardsViewController *vc1 = [[VICardsViewController alloc]init];
     
-    UIStoryboard *likeds = [UIStoryboard storyboardWithName:@"Likeds" bundle:nil];
-    VILikedsViewController *likedsVC = (VILikedsViewController*)[likeds instantiateInitialViewController];
+    UIStoryboard *likes = [UIStoryboard storyboardWithName:@"Likes" bundle:nil];
+    VILikesViewController *likesVC = (VILikesViewController*)[likes instantiateInitialViewController];
     
     UIStoryboard *catalog = [UIStoryboard storyboardWithName:@"Catalog" bundle:nil];
     VICatalogViewController *catalogVC = (VICatalogViewController *) [catalog instantiateInitialViewController];
@@ -109,7 +109,7 @@
     UIStoryboard *profile = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
     VIProfileViewController *profileVC = (VIProfileViewController *) [profile instantiateInitialViewController];
     
-    self.viewControllers = @[vc1, likedsVC, catalogVC, feedVC, profileVC,];
+    self.viewControllers = @[vc1, likesVC, catalogVC, feedVC, profileVC,];
 }
 
 

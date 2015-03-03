@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "VIUser.h"
+#import "VIResponse.h"
 
 @interface VIStorage : NSObject
 
@@ -33,5 +34,11 @@
 ////////////////////////
 -(BOOL)saveDictionary:(NSDictionary*)dict withFileName:(NSString*)fileName;
 -(NSDictionary*)loadDictionaryFileName:(NSString*)fileName;
+
+////////////////////////
+//////  lIKES    ////////
+////////////////////////
+//retorna array de VIProdcuts com (ID,name,photo)
+-(NSArray *)createLikesProductsWithResponse:(VIResponse *) response;
 
 @end

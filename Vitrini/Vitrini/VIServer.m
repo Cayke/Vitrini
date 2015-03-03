@@ -64,8 +64,7 @@
     NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     
     if (error) {
-        @throw [NSException exceptionWithName:@"erro de conexão" reason:@"conexao falha" userInfo:nil];
-        //@throw error;
+        return nil;
     }
     
     return data;
@@ -325,10 +324,10 @@
 
 /////////////////////////////////////////////////////////////////
 //
-//        PEGAR FILTROS
+//        PEGAR CATEGORIAS
 //
 /////////////////////////////////////////////////////////////////
--(VIResponse *)getFilter
+-(VIResponse *)getCategories
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
     [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/getFilter",[self serverAddress]]]];

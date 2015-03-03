@@ -24,8 +24,7 @@
         NSDictionary *d = [NSJSONSerialization JSONObjectWithData:responsedata options:0 error:&error];
         
         if (error) {
-            NSLog(@"erro");
-            @throw error;
+            return nil;
         }
         
         if ([[d objectForKey:@"status"] isEqualToString:@"success"]) {

@@ -15,7 +15,11 @@
 		2714F57A1A8CD3E000C3C240 /* Vitrini_Config_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2714F5791A8CD3E000C3C240 /* Vitrini_Config_icon.png */; };
 		2714F57D1A8CD9C600C3C240 /* Vitrini_NewAccountpart1_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2714F57C1A8CD9C600C3C240 /* Vitrini_NewAccountpart1_icon.png */; };
 		2714F57F1A8CD9CC00C3C240 /* Vitrini_NewAccountpart2_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2714F57E1A8CD9CC00C3C240 /* Vitrini_NewAccountpart2_icon.png */; };
-		271A20761AA4AC0F000D9815 /* VILikedProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 271A20751AA4AC0F000D9815 /* VILikedProductCell.m */; };
+		271A20791AA4B034000D9815 /* VICategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 271A20781AA4B034000D9815 /* VICategory.m */; };
+		272C6EF01AA5FF9C00063CCF /* Likes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272C6EEF1AA5FF9C00063CCF /* Likes.storyboard */; };
+		272C6EF31AA6012000063CCF /* VILikesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 272C6EF21AA6012000063CCF /* VILikesViewController.m */; };
+		272C6EF61AA6015F00063CCF /* VILikesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 272C6EF51AA6015F00063CCF /* VILikesCollectionViewCell.m */; };
+		272C6EFC1AA64DA300063CCF /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 272C6EFB1AA64DA300063CCF /* AsyncImageView.m */; };
 		2761A5071A960FE90009395C /* VIResponseType.m in Sources */ = {isa = PBXBuildFile; fileRef = 2761A5061A960FE90009395C /* VIResponseType.m */; };
 		2761A50A1A9610030009395C /* VISymbolsPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2761A5091A9610030009395C /* VISymbolsPackage.m */; };
 		2761A50D1A96100E0009395C /* VIServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2761A50C1A96100E0009395C /* VIServer.m */; };
@@ -112,8 +116,6 @@
 		B3B6CF8C1A49003F00C07383 /* CloseMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF891A49003F00C07383 /* CloseMenu.png */; };
 		B3B6CF8D1A49003F00C07383 /* CloseMenu@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF8A1A49003F00C07383 /* CloseMenu@1x.png */; };
 		B3B6CF8E1A49003F00C07383 /* CloseMenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF8B1A49003F00C07383 /* CloseMenu@2x.png */; };
-		B3B6CF911A4B56CD00C07383 /* VILikedsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B6CF901A4B56CD00C07383 /* VILikedsViewController.m */; };
-		B3B6CF941A4B56F100C07383 /* Likeds.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF931A4B56F100C07383 /* Likeds.storyboard */; };
 		B3B6CF9A1A4C4A8500C07383 /* img8.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF951A4C4A8500C07383 /* img8.png */; };
 		B3B6CF9B1A4C4A8500C07383 /* img9.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF961A4C4A8500C07383 /* img9.png */; };
 		B3B6CF9C1A4C4A8500C07383 /* img10.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF971A4C4A8500C07383 /* img10.png */; };
@@ -142,8 +144,15 @@
 		2714F57B1A8CD56300C3C240 /* coolvetica rg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "coolvetica rg.ttf"; sourceTree = "<group>"; };
 		2714F57C1A8CD9C600C3C240 /* Vitrini_NewAccountpart1_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vitrini_NewAccountpart1_icon.png; sourceTree = "<group>"; };
 		2714F57E1A8CD9CC00C3C240 /* Vitrini_NewAccountpart2_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vitrini_NewAccountpart2_icon.png; sourceTree = "<group>"; };
-		271A20741AA4AC0F000D9815 /* VILikedProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VILikedProductCell.h; sourceTree = "<group>"; };
-		271A20751AA4AC0F000D9815 /* VILikedProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VILikedProductCell.m; sourceTree = "<group>"; };
+		271A20771AA4B034000D9815 /* VICategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VICategory.h; sourceTree = "<group>"; };
+		271A20781AA4B034000D9815 /* VICategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VICategory.m; sourceTree = "<group>"; };
+		272C6EEF1AA5FF9C00063CCF /* Likes.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Likes.storyboard; sourceTree = "<group>"; };
+		272C6EF11AA6012000063CCF /* VILikesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VILikesViewController.h; sourceTree = "<group>"; };
+		272C6EF21AA6012000063CCF /* VILikesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VILikesViewController.m; sourceTree = "<group>"; };
+		272C6EF41AA6015F00063CCF /* VILikesCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VILikesCollectionViewCell.h; sourceTree = "<group>"; };
+		272C6EF51AA6015F00063CCF /* VILikesCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VILikesCollectionViewCell.m; sourceTree = "<group>"; };
+		272C6EFA1AA64DA300063CCF /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
+		272C6EFB1AA64DA300063CCF /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
 		2761A5051A960FE90009395C /* VIResponseType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIResponseType.h; sourceTree = "<group>"; };
 		2761A5061A960FE90009395C /* VIResponseType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIResponseType.m; sourceTree = "<group>"; };
 		2761A5081A9610030009395C /* VISymbolsPackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISymbolsPackage.h; sourceTree = "<group>"; };
@@ -284,9 +293,6 @@
 		B3B6CF891A49003F00C07383 /* CloseMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseMenu.png; sourceTree = "<group>"; };
 		B3B6CF8A1A49003F00C07383 /* CloseMenu@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CloseMenu@1x.png"; sourceTree = "<group>"; };
 		B3B6CF8B1A49003F00C07383 /* CloseMenu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CloseMenu@2x.png"; sourceTree = "<group>"; };
-		B3B6CF8F1A4B56CD00C07383 /* VILikedsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VILikedsViewController.h; path = Vitrini/VILikedsViewController.h; sourceTree = "<group>"; };
-		B3B6CF901A4B56CD00C07383 /* VILikedsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VILikedsViewController.m; path = Vitrini/VILikedsViewController.m; sourceTree = "<group>"; };
-		B3B6CF931A4B56F100C07383 /* Likeds.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Likeds.storyboard; sourceTree = "<group>"; };
 		B3B6CF951A4C4A8500C07383 /* img8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img8.png; sourceTree = "<group>"; };
 		B3B6CF961A4C4A8500C07383 /* img9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img9.png; sourceTree = "<group>"; };
 		B3B6CF971A4C4A8500C07383 /* img10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img10.png; sourceTree = "<group>"; };
@@ -567,6 +573,10 @@
 				279B4BB41A9767CD00470FC9 /* VIUser.m */,
 				27CA104D1A9B648D00429F37 /* VILocation.h */,
 				27CA104E1A9B648D00429F37 /* VILocation.m */,
+				271A20771AA4B034000D9815 /* VICategory.h */,
+				271A20781AA4B034000D9815 /* VICategory.m */,
+				272C6EFA1AA64DA300063CCF /* AsyncImageView.h */,
+				272C6EFB1AA64DA300063CCF /* AsyncImageView.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -640,11 +650,11 @@
 			children = (
 				279A81701A706553003E50D7 /* Icon_meuslikes_Menu.png */,
 				2714F5751A8CD2D200C3C240 /* Vitrini_meuslikes_icon.png */,
-				B3B6CF8F1A4B56CD00C07383 /* VILikedsViewController.h */,
-				B3B6CF901A4B56CD00C07383 /* VILikedsViewController.m */,
-				B3B6CF931A4B56F100C07383 /* Likeds.storyboard */,
-				271A20741AA4AC0F000D9815 /* VILikedProductCell.h */,
-				271A20751AA4AC0F000D9815 /* VILikedProductCell.m */,
+				272C6EEF1AA5FF9C00063CCF /* Likes.storyboard */,
+				272C6EF11AA6012000063CCF /* VILikesViewController.h */,
+				272C6EF21AA6012000063CCF /* VILikesViewController.m */,
+				272C6EF41AA6015F00063CCF /* VILikesCollectionViewCell.h */,
+				272C6EF51AA6015F00063CCF /* VILikesCollectionViewCell.m */,
 			);
 			name = Likeds;
 			path = ..;
@@ -767,6 +777,7 @@
 				278AFBD41A83ABDE0002BB23 /* Icom_marcacao_filtro.png in Resources */,
 				B3B6CF601A44C45C00C07383 /* img1.png in Resources */,
 				B3B6CF4F1A44C41A00C07383 /* infoBtn.png in Resources */,
+				272C6EF01AA5FF9C00063CCF /* Likes.storyboard in Resources */,
 				92D96E611A7FEBF6009BC061 /* Cards.storyboard in Resources */,
 				B3B6CF9A1A4C4A8500C07383 /* img8.png in Resources */,
 				B3B6CF9B1A4C4A8500C07383 /* img9.png in Resources */,
@@ -774,7 +785,6 @@
 				B3B6CF641A44C45C00C07383 /* img5.png in Resources */,
 				B3B6CF9D1A4C4A8500C07383 /* img11.png in Resources */,
 				2781FF2A1A6F0D81009FFAA5 /* Vitrini_Login__0007_Conta.png in Resources */,
-				B3B6CF941A4B56F100C07383 /* Likeds.storyboard in Resources */,
 				277B37171A816B4C0081C796 /* profile_feed_temp2.png in Resources */,
 				B3B6CF9C1A4C4A8500C07383 /* img10.png in Resources */,
 				B3B6CF621A44C45C00C07383 /* img3.png in Resources */,
@@ -825,8 +835,9 @@
 				279B4BB51A9767CD00470FC9 /* VIUser.m in Sources */,
 				2781FF1A1A6ED47F009FFAA5 /* VILoginViewController.m in Sources */,
 				278AFBD81A83EF290002BB23 /* VIFilterCollectionViewCell.m in Sources */,
-				271A20761AA4AC0F000D9815 /* VILikedProductCell.m in Sources */,
+				272C6EFC1AA64DA300063CCF /* AsyncImageView.m in Sources */,
 				5C83EA7D1A4071A1007988AA /* VIMainMenu.m in Sources */,
+				272C6EF61AA6015F00063CCF /* VILikesCollectionViewCell.m in Sources */,
 				279D46771A82FE630075AEB8 /* VIProfileTableViewCell.m in Sources */,
 				5C8335201A9B2E5B006B3294 /* VIStoreProfileHeaderCollectionReusableView.m in Sources */,
 				277BD8951A80089600AC887A /* VIFeedTableViewCell.m in Sources */,
@@ -835,6 +846,7 @@
 				B3B6CF411A44BCA600C07383 /* VISignView.m in Sources */,
 				2761A5071A960FE90009395C /* VIResponseType.m in Sources */,
 				2761A50D1A96100E0009395C /* VIServer.m in Sources */,
+				272C6EF31AA6012000063CCF /* VILikesViewController.m in Sources */,
 				5C2878631A28E39700CC7DD2 /* CustomSegueTransition.m in Sources */,
 				5CE349BE1A2CF42100F1DC17 /* UserOnboardViewController.m in Sources */,
 				5CE349BD1A2CF42100F1DC17 /* UserOnboardContentViewController.m in Sources */,
@@ -853,8 +865,8 @@
 				2761A50A1A9610030009395C /* VISymbolsPackage.m in Sources */,
 				279A817A1A7085C6003E50D7 /* VICatalogTableViewCell.m in Sources */,
 				B3B6CF3B1A44BBAA00C07383 /* VIDraggableCardsView.m in Sources */,
+				271A20791AA4B034000D9815 /* VICategory.m in Sources */,
 				B3B6CF881A48FDD300C07383 /* VIColor.m in Sources */,
-				B3B6CF911A4B56CD00C07383 /* VILikedsViewController.m in Sources */,
 				B3B6CF351A44B91900C07383 /* VIProduct.m in Sources */,
 				27A8B87C1A824B4200226278 /* VIProfileViewController.m in Sources */,
 			);

@@ -10,6 +10,7 @@
 #import "VICatalogTableViewCell.h"
 #import "VIResponse.h"
 #import "VIServer.h"
+#import "VICategory.h"
 
 @interface VICatalogViewController ()
 
@@ -73,11 +74,10 @@
 
 -(void) initCategorysArray
 {
-    _arrayCategorys = [[NSArray alloc]initWithObjects:@"Sapatos",@"Calcas", @"Vestidos", @"Saias", nil];
-    _arrayWithImages = [[NSArray alloc]initWithObjects:[UIImage imageNamed:@"catalogo_temp"],[UIImage imageNamed:@"catalogo_temp"], [UIImage imageNamed:@"catalogo_temp"], [UIImage imageNamed:@"catalogo_temp"], nil];
+    _arrayCategorys = [[NSMutableArray alloc]init];
+   // _arrayWithImages = [[NSArray alloc]initWithObjects:[UIImage imageNamed:@"catalogo_temp"],[UIImage imageNamed:@"catalogo_temp"], [UIImage imageNamed:@"catalogo_temp"], [UIImage imageNamed:@"catalogo_temp"], nil];
 
     
-    //TODO
     //pegar esses dados do servidor
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     //---------------------------------
@@ -95,7 +95,10 @@
             
             //tratar algo se precisar
             if (response.status == VIRequestSuccess) {
-                //_arrayCategorys = ...
+                for (NSDictionary *dic in response.value) {
+                    VICategory *category = [[VICategory alloc]initWithDicFromServer:dic];
+                    [_arrayCategorys addObject:category];
+                }
                 //_arrayWithImages = ...
                 [_tableView reloadData];
             }
