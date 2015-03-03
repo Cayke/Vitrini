@@ -14,6 +14,9 @@
 @property (nonatomic) NSString *photoPath;
 @property (nonatomic) int idCategory;
 
+//propriedade para controle nos filtros...
+@property (nonatomic) BOOL active;
+
 -(instancetype) initWithDicFromServer:(NSDictionary *) dic;
 
 @end

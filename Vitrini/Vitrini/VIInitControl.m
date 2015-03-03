@@ -18,6 +18,7 @@
 +(void)start {
     if ([[VIStorage sharedStorage]initUserFromDevice]) {
         [self goToMainApp];
+        [[VIStorage sharedStorage]startCategories];
     }
     else
     {

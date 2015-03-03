@@ -10,8 +10,7 @@
 
 @interface VIFilterViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
-
-@property (nonatomic) NSMutableArray *arrayWithCategories;
+@property (nonatomic) NSArray *arrayWithCategories;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end

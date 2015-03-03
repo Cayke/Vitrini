@@ -12,6 +12,7 @@
 #import "VIResponse.h"
 #import "VIStorage.h"
 #import "VILikesCollectionViewCell.h"
+#import "VIFilterViewController.h"
 
 @interface VILikesViewController ()
 
@@ -23,9 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UIView *statusBar = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
-    statusBar.backgroundColor = [VIColor lightRedVIColor];
-    [self.view addSubview:statusBar];
+    [self setupStatusAndFilter];
     
     [self getLikes];
 }
@@ -33,6 +32,49 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)setupStatusAndFilter{
+    // filter
+    CGFloat width = self.view.frame.size.width;
+    CGFloat dimension = 78;
+    
+    UIView *filter = [[UIView alloc]initWithFrame:CGRectMake(width/2 - dimension/2, -(dimension/2)+10, dimension, dimension)];
+    filter.backgroundColor = [VIColor lightRedVIColor];
+    // deixar circular
+    [filter.layer setCornerRadius:(dimension/2)];
+    filter.layer.masksToBounds = NO;
+    [self.view addSubview:filter];
+    //adicionar gesure recognizer na view
+    UITapGestureRecognizer *singleTapView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(filterTapDetected)];
+    singleTapView.numberOfTapsRequired = 1;
+    [filter setUserInteractionEnabled:YES];
+    [filter addGestureRecognizer:singleTapView];
+    
+    // status
+    UIView *status = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
+    status.backgroundColor = [VIColor lightRedVIColor];
+    
+    [self.view addSubview:status];
+    
+}
+
+-(void) filterTapDetected
+{
+    UIStoryboard *filter = [UIStoryboard storyboardWithName:@"Filter" bundle:nil];
+    VIFilterViewController *filterVC = (VIFilterViewController *)[filter instantiateInitialViewController];
+    
+    //comando para botar a view por cima e poder ver a debaixo ainda...
+    filterVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    
+    //fade view
+    CATransition *transition = [CATransition animation];
+    transition.duration = 0.4;
+    transition.type = kCATransitionFade;
+    
+    [[[[self view]window]layer] addAnimation:transition forKey:kCATransitionFade];
+    
+    [self presentViewController:filterVC animated:NO completion:nil];
 }
 
 -(UIImage *)itemMenuIcon{

@@ -11,6 +11,7 @@
 #import "VIInitControl.h"
 #import "VISymbolsPackage.h"
 #import "VIProduct.h"
+#import "VICategory.h"
 
 @implementation VIStorage
 {
@@ -127,6 +128,30 @@
     return [NSArray arrayWithArray:returnArray];
 }
 
+////////////////////////
+////// CATEGORY ////////
+////////////////////////
+-(void) startCategories
+{
+    VISymbolsPackage *symbPack = [[VISymbolsPackage alloc]init];
+    VIResponse *response = [server getCategories];
+    if (response.status == VIRequestSuccess) {
+        _categories = [response.value objectForKey:symbPack.categories];
+    }
+}
+-(NSArray *) returnCategories{
+    if (!_categories) {
+        [self startCategories];
+    }
+    
+    NSMutableArray *mArray = [[NSMutableArray alloc]init];
+    for (NSDictionary *dic in _categories) {
+        VICategory *cat = [[VICategory alloc]initWithDicFromServer:dic];
+        [mArray addObject:cat];
+    }
+    
+    return [NSArray arrayWithArray:mArray];
+}
 
 
 

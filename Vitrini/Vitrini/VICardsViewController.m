@@ -48,12 +48,12 @@
     [filter setUserInteractionEnabled:YES];
     [filter addGestureRecognizer:singleTapView];
     
-    
     // status
     UIView *status = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
     status.backgroundColor = [VIColor whiteVIColor];
     
     [self.view addSubview:status];
+    
 }
 
 -(NSString *)itemMenuTitle{
@@ -68,9 +68,13 @@
 {
     UIStoryboard *filter = [UIStoryboard storyboardWithName:@"Filter" bundle:nil];
     VIFilterViewController *filterVC = (VIFilterViewController *)[filter instantiateInitialViewController];
+    
+    //comando para botar a view por cima e poder ver a debaixo ainda...
+    filterVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    
     //fade view
     CATransition *transition = [CATransition animation];
-    transition.duration = 0.5;
+    transition.duration = 0.4;
     transition.type = kCATransitionFade;
     
     [[[[self view]window]layer] addAnimation:transition forKey:kCATransitionFade];

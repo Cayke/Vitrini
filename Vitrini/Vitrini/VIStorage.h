@@ -14,7 +14,6 @@
 
 @property (nonatomic, readonly) VIUser *user;
 
-//todo : criar array com as categorias(sapato, calca, blusa)
 @property (nonatomic) NSArray *categories;
 
 +(VIStorage *) sharedStorage;
@@ -40,5 +39,11 @@
 ////////////////////////
 //retorna array de VIProdcuts com (ID,name,photo)
 -(NSArray *)createLikesProductsWithResponse:(VIResponse *) response;
+
+////////////////////////
+////// CATEGORY ////////
+////////////////////////
+-(void) startCategories;
+-(NSArray *) returnCategories;
 
 @end

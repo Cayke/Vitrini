@@ -17,9 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundFilter.png" translatesAutoresizingMaskIntoConstraints="NO" id="XFW-vh-YEy">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fRH-qd-gW3">
                                 <rect key="frame" x="0.0" y="110" width="375" height="557"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -51,19 +48,20 @@
                                                         <constraint firstAttribute="width" constant="17" id="sfE-eM-mM0"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camisas" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MxQ-k9-mpa">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camisas / camisetas" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MxQ-k9-mpa">
                                                     <rect key="frame" x="64" y="10" width="84" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="fyI-pG-E09"/>
                                                         <constraint firstAttribute="width" constant="84" id="zVy-c0-bMR"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="centerX" secondItem="MxQ-k9-mpa" secondAttribute="centerX" constant="-28" id="6dU-m7-MXt"/>
                                             <constraint firstAttribute="centerX" secondItem="Juj-69-imq" secondAttribute="centerX" constant="37" id="6nC-BS-xHF"/>
@@ -85,13 +83,14 @@
                                     <rect key="frame" x="0.0" y="50" width="375" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a leo tortor. Morbi pulvinar lacinia magna." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BrE-Gk-8Pk">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escolha uma categoria para filtrar seus produtos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BrE-Gk-8Pk">
                                             <rect key="frame" x="20" y="48" width="335" height="64"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="BrE-Gk-8Pk" secondAttribute="trailing" constant="12" id="JEH-i6-1T5"/>
                                         <constraint firstItem="BrE-Gk-8Pk" firstAttribute="top" secondItem="D85-TI-mPO" secondAttribute="topMargin" constant="40" id="bFq-nY-Ntk"/>
@@ -105,21 +104,17 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.098039215686274508" green="0.18431372549019609" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fRH-qd-gW3" firstAttribute="leading" secondItem="4aU-3q-trq" secondAttribute="leadingMargin" constant="-16" id="3Zu-8J-lJP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="XFW-vh-YEy" secondAttribute="trailing" constant="-16" id="HQA-Ou-XQS"/>
                             <constraint firstItem="Yso-an-54P" firstAttribute="top" secondItem="fRH-qd-gW3" secondAttribute="bottom" id="Lcz-u8-v8d"/>
-                            <constraint firstItem="XFW-vh-YEy" firstAttribute="leading" secondItem="4aU-3q-trq" secondAttribute="leadingMargin" constant="-16" id="TbU-fl-9nB"/>
-                            <constraint firstItem="XFW-vh-YEy" firstAttribute="top" secondItem="4aU-3q-trq" secondAttribute="topMargin" id="Xwn-tt-3n6"/>
-                            <constraint firstItem="Yso-an-54P" firstAttribute="top" secondItem="XFW-vh-YEy" secondAttribute="bottom" id="dPm-Rt-YCn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fRH-qd-gW3" secondAttribute="trailing" constant="-16" id="hFS-3p-Rkd"/>
                             <constraint firstItem="fRH-qd-gW3" firstAttribute="top" secondItem="k7t-iw-ZRd" secondAttribute="bottom" constant="90" id="zrB-PP-Cpb"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="backgroundImageView" destination="XFW-vh-YEy" id="FEM-cR-yW7"/>
+                        <outlet property="collectionView" destination="fRH-qd-gW3" id="WQE-Ow-0lD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eQc-af-v6Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -130,6 +125,5 @@
     <resources>
         <image name="Icom_caixa_foltro.png" width="45" height="45"/>
         <image name="Icom_marcacao_filtro.png" width="25" height="25"/>
-        <image name="backgroundFilter.png" width="640" height="1097"/>
     </resources>
 </document>

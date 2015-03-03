@@ -10,6 +10,8 @@
 #import "VIColor.h"
 #import "VIFilterCollectionViewCell.h"
 #import "VIFilterCollectionFooterCollectionReusableView.h"
+#import "VIStorage.h"
+#import "VICategory.h"
 
 @interface VIFilterViewController ()
 
@@ -20,6 +22,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self addBlur];
+    
+    self.view.backgroundColor = [UIColor clearColor];
+    
     [self getCategories];
     
     //criar o botao do filtro
@@ -27,7 +33,7 @@
     CGFloat dimension = 78;
     
     UIView *filter = [[UIView alloc]initWithFrame:CGRectMake(width/2 - dimension/2, -(dimension/2)+10, dimension, dimension)];
-    filter.backgroundColor = [VIColor redVIColor];
+    filter.backgroundColor = [VIColor lightRedVIColor];
     // deixar circular
     [filter.layer setCornerRadius:(dimension/2)];
     filter.layer.masksToBounds = NO;
@@ -40,29 +46,10 @@
     
     // status
     UIView *status = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
-    status.backgroundColor = [VIColor whiteVIColor];
+    status.backgroundColor = [VIColor lightRedVIColor];
     
     [self.view addSubview:status];
     
-//    _tableView.backgroundColor = [UIColor clearColor];
-//    
-    //colocar blur effect na imagem
-    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
-    UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc]initWithEffect:blurEffect];
-    [blurEffectView setFrame:self.view.frame];
-    
-    //colocar vibrancy effect
-    UIVibrancyEffect * vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:blurEffect];
-    UIVisualEffectView *vibrancyEffectView = [[UIVisualEffectView alloc]initWithEffect:vibrancyEffect];
-    [vibrancyEffectView setFrame:self.view.frame];
-    
-    [blurEffectView addSubview:vibrancyEffectView];
-    
-    //adicionar o blur a view
-    [_backgroundImageView addSubview:blurEffectView];
-    
-    self.view.backgroundColor = [UIColor clearColor];
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -80,48 +67,68 @@
 }
 */
 
+-(void) addBlur
+{
+    //colocar blur effect na imagem
+    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc]initWithEffect:blurEffect];
+    [blurEffectView setFrame:self.view.frame];
+    
+    //colocar vibrancy effect
+    UIVibrancyEffect * vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:blurEffect];
+    UIVisualEffectView *vibrancyEffectView = [[UIVisualEffectView alloc]initWithEffect:vibrancyEffect];
+    [vibrancyEffectView setFrame:self.view.frame];
+    
+    [blurEffectView addSubview:vibrancyEffectView];
+    
+    //adicionar o blur a view
+    [self.view insertSubview:blurEffectView belowSubview:_collectionView];
+}
+
 -(void) getCategories
 {
     //todo : pegar categorias pelo sharedStorage
     
-    _arrayWithCategories = [[NSMutableArray alloc]init];
-    NSMutableDictionary *dict;
+//    _arrayWithCategories = [[NSMutableArray alloc]init];
+//    NSMutableDictionary *dict;
+//    
+//    //add coluna nova
+//    dict = [[NSMutableDictionary alloc]init];
+//    [dict setValue:@"Um" forKey:@"category"];
+//    [dict setValue:[NSNumber numberWithBool:YES] forKey:@"Active"];
+//    [_arrayWithCategories addObject:dict];
+//    
+//    //add coluna nova
+//    dict = [[NSMutableDictionary alloc]init];
+//    [dict setValue:@"Dois" forKey:@"category"];
+//    [dict setValue:[NSNumber numberWithBool:YES] forKey:@"Active"];
+//    [_arrayWithCategories addObject:dict];
+//    
+//    //add coluna nova
+//    dict = [[NSMutableDictionary alloc]init];
+//    [dict setValue:@"Tres" forKey:@"category"];
+//    [dict setValue:[NSNumber numberWithBool:YES] forKey:@"Active"];
+//    [_arrayWithCategories addObject:dict];
+//    
+//    //add coluna nova
+//    dict = [[NSMutableDictionary alloc]init];
+//    [dict setValue:@"Quatro" forKey:@"category"];
+//    [dict setValue:[NSNumber numberWithBool:YES] forKey:@"Active"];
+//    [_arrayWithCategories addObject:dict];
+//    
+//    //add coluna nova
+//    dict = [[NSMutableDictionary alloc]init];
+//    [dict setValue:@"Cinco" forKey:@"category"];
+//    [dict setValue:[NSNumber numberWithBool:YES] forKey:@"Active"];
+//    [_arrayWithCategories addObject:dict];
+//    
+//    //add coluna nova
+//    dict = [[NSMutableDictionary alloc]init];
+//    [dict setValue:@"Seis" forKey:@"category"];
+//    [dict setValue:[NSNumber numberWithBool:YES] forKey:@"Active"];
+//    [_arrayWithCategories addObject:dict];
     
-    //add coluna nova
-    dict = [[NSMutableDictionary alloc]init];
-    [dict setValue:@"Um" forKey:@"category"];
-    [dict setValue:[NSNumber numberWithBool:YES] forKey:@"Active"];
-    [_arrayWithCategories addObject:dict];
-    
-    //add coluna nova
-    dict = [[NSMutableDictionary alloc]init];
-    [dict setValue:@"Dois" forKey:@"category"];
-    [dict setValue:[NSNumber numberWithBool:YES] forKey:@"Active"];
-    [_arrayWithCategories addObject:dict];
-    
-    //add coluna nova
-    dict = [[NSMutableDictionary alloc]init];
-    [dict setValue:@"Tres" forKey:@"category"];
-    [dict setValue:[NSNumber numberWithBool:YES] forKey:@"Active"];
-    [_arrayWithCategories addObject:dict];
-    
-    //add coluna nova
-    dict = [[NSMutableDictionary alloc]init];
-    [dict setValue:@"Quatro" forKey:@"category"];
-    [dict setValue:[NSNumber numberWithBool:YES] forKey:@"Active"];
-    [_arrayWithCategories addObject:dict];
-    
-    //add coluna nova
-    dict = [[NSMutableDictionary alloc]init];
-    [dict setValue:@"Cinco" forKey:@"category"];
-    [dict setValue:[NSNumber numberWithBool:YES] forKey:@"Active"];
-    [_arrayWithCategories addObject:dict];
-    
-    //add coluna nova
-    dict = [[NSMutableDictionary alloc]init];
-    [dict setValue:@"Seis" forKey:@"category"];
-    [dict setValue:[NSNumber numberWithBool:YES] forKey:@"Active"];
-    [_arrayWithCategories addObject:dict];
+    _arrayWithCategories = [[VIStorage sharedStorage]returnCategories];
     
 }
 
@@ -148,10 +155,11 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     VIFilterCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Filter" forIndexPath:indexPath];
-    NSDictionary *dic = [_arrayWithCategories objectAtIndex:indexPath.row];
     [cell mountWithPosition:indexPath.row];
-    cell.labelName.text = [dic objectForKey:@"category"];
-    if ([[dic objectForKey:@"Active"]boolValue] == NO) {
+    
+    VICategory *cat = [_arrayWithCategories objectAtIndex:indexPath.row];
+    cell.labelName.text = cat.name;
+    if (cat.active == NO) {
         cell.photoOnOff.image = nil;
     }
     else{
@@ -162,9 +170,9 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *dic = [_arrayWithCategories objectAtIndex:indexPath.row];
-    [dic setValue:[NSNumber numberWithBool:![[dic valueForKey:@"Active"]boolValue]] forKey:@"Active"];
-    [_arrayWithCategories replaceObjectAtIndex:indexPath.row withObject:dic];
+    VICategory *cat = [_arrayWithCategories objectAtIndex:indexPath.row];
+    cat.active = YES;
+    
     [collectionView reloadItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
     
     NSLog(@"row:%ld", (long)indexPath.row);

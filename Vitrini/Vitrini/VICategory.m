@@ -7,13 +7,18 @@
 //
 
 #import "VICategory.h"
+#import "VISymbolsPackage.h"
 
 @implementation VICategory
 
 -(instancetype) initWithDicFromServer:(NSDictionary *) dic{
     self = [super init];
     if (self) {
-        
+        VISymbolsPackage *symbPack = [[VISymbolsPackage alloc]init];
+        self.idCategory = [[dic objectForKey:symbPack.ID]intValue];
+        self.photoPath = [dic objectForKey:symbPack.image];
+        self.name = [dic objectForKey:symbPack.title];
+        self.active = NO;
     }
     return self;
 }
