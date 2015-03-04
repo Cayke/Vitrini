@@ -30,4 +30,6 @@
 -(VICardView*)presentedCard;
 -(VICardView*)waitingCard;
 
+-(void)reviewProduct:(VIProduct*)product withLiked:(BOOL)isLiked;
+
 @end

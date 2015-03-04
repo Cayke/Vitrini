@@ -23,5 +23,6 @@
 -(VIProduct*)nextProduct;
 
 -(BOOL)loadCards;
-
+-(void)reviewProductID:(int)productID withLiked:(BOOL)isLiked;
+    
 @end

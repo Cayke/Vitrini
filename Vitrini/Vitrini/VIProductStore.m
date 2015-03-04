@@ -11,7 +11,11 @@
 #import "VIServer.h"
 #import "VIStorage.h"
 
-@implementation VIProductStore
+#define MAX_COUNTER_INCREMENT 10
+
+@implementation VIProductStore {
+    int counterRN;
+}
 
 - (instancetype)init
 {
@@ -26,6 +30,7 @@
         // inicializar coisas aqui
         _loading = NO;
         _products = [[NSMutableArray alloc]init];
+        counterRN = 0;
     }
     return self;
 }
@@ -37,7 +42,6 @@
         // inicializar loja
         store = [[VIProductStore alloc]initPrivate];
         
-        [store mountForTest];
     }
     
     return store;
@@ -91,24 +95,45 @@
 }
 
 -(VIProduct *)nextProduct{
-    static NSUInteger productIndex = 0;
-    if (productIndex >= [_products count]) {
-        return nil;
+    VIProduct *auxNext = nil;
+    if ([_products count] > 0) {
+        auxNext = _products[0];
+        [_products removeObjectAtIndex:0];
     }
-    productIndex++;
-    return _products[productIndex-1];
+    return auxNext;
+}
+
+-(void)restartCounter{
+    counterRN = 0;
+}
+-(void)incrementCounter{
+    counterRN++;
 }
 
 -(BOOL)loadCards{
     VIServer *server = [[VIServer alloc]init];
-    VIResponse *response = [server productsToReviewWithEmail:@"newuser@teste.com" andCategoryID:0 andGender:@"M"];
+    VIResponse *response = [server productsToReviewWithEmail:[VIStorage sharedStorage].user.email andCategoryID:0 andGender:@"M"];
+    
+    NSDictionary *productsDictionaryFromJSON = [response.value objectForKey:@"products"];
+    if ([productsDictionaryFromJSON count] == 0) {
+        [self incrementCounter];
+        if (counterRN > MAX_COUNTER_INCREMENT) {
+            @throw [NSException exceptionWithName:@"MAX_COUNTER_INCREMENT" reason:@"nao tem mais produto" userInfo:nil];
+        }
+        return NO;
+    }
     
     VIProduct *auxProduct;
-    for (NSDictionary *pdict in [response.value objectForKey:@"products"]) {
+    for (NSDictionary *pdict in productsDictionaryFromJSON) {
         auxProduct = [[VIProduct alloc]initToCardWithDict:pdict];
         [_products addObject:auxProduct];
     }
     return YES;
+}
+
+-(void)reviewProductID:(int)productID withLiked:(BOOL)isLiked{
+    VIServer *server = [[VIServer alloc]init];
+    [server product:productID wasLiked:isLiked byUser:[VIStorage sharedStorage].user.email];
 }
 
 @end

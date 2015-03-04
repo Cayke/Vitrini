@@ -28,6 +28,10 @@
     
     UIImageView *waitingCardsAnim;
     BOOL animationOn;
+    
+    UIView *cardsLayer;
+    
+    BOOL inDispatch;
 }
 //this makes it so only two cards are loaded at a time to
 //avoid performance and memory costs
@@ -46,6 +50,7 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
         self.clickEvent = YES;
         self.waitingNewProducts = NO;
         animationOn = YES;
+        inDispatch = NO;
         
         CARD_HEIGHT = self.frame.size.height;
         CARD_WIDTH = self.frame.size.width;
@@ -56,6 +61,10 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
         loadedCards = [[NSMutableArray alloc] init];
         //cardsLoadedIndex = 0;
         
+        cardsLayer = [[UIView alloc]initWithFrame:frame];
+        [self addSubview:cardsLayer];
+        
+        [self mountCards];
         [self setupFrontView];
     }
     return self;
@@ -253,33 +262,53 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
 }
 
 -(void)mountCards{
-    //aqui botamos as coisas na tela
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    
-    waitingCardsAnim.hidden = NO;
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        //Call your function or whatever work that needs to be done
-        //Code in this part is run on a background thread
-        BOOL readed = [[VIProductStore sharedStore]loadCards];
+    if (!inDispatch) {
+        inDispatch = YES;
+        //aqui botamos as coisas na tela
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         
-        dispatch_async(dispatch_get_main_queue(), ^(void) {
-            
-            if (!readed) {
-                [self mountCards];
-            } else {
-                //Stop your activity indicator or anything else with the GUI
-                //Code here is run on the main thread
-                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-                
-                [self fillCardBuffer];
-                [self loadCards];
-                
-                // esconder binoculo
-                waitingCardsAnim.hidden = YES;
+        [self hiddeControlls];
+        waitingCardsAnim.hidden = NO;
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            BOOL readed = NO;
+            BOOL cancel = NO;
+            @try {
+                readed = [[VIProductStore sharedStore]loadCards];
+            }
+            @catch (NSException *exception) {
+                if (![exception.name isEqual:@"MAX_COUNTER_INCREMENT"]) {
+                    @throw exception;
+                } else {
+                    cancel = YES;
+                }
             }
             
+            dispatch_async(dispatch_get_main_queue(), ^(void) {
+                inDispatch = NO;
+                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                
+                if (!cancel) {
+                    if (!readed) {
+                        [self mountCards];
+                    } else {
+                        
+                        [self fillCardBuffer];
+                        [self loadCards];
+                        
+                        // esconder binoculo
+                        waitingCardsAnim.hidden = YES;
+                        [self showControlls];
+                    }
+                }
+            });
         });
+    }
+}
+
+-(void)reviewProduct:(VIProduct*)product withLiked:(BOOL)isLiked{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [[VIProductStore sharedStore]reviewProductID:product.ID withLiked:isLiked];
     });
 }
 
@@ -316,9 +345,15 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
     //            cardsLoadedIndex++; //%%% we loaded a card into loaded cards, so we have to increment
     //        }
     //    }
+    for (int i = 0; i < MAX_BUFFER_SIZE && i < [loadedCards count]; i++) {
+        UIView *viproductCard = loadedCards[i];
+        if (viproductCard) {
+            [cardsLayer addSubview:viproductCard];
+        }
+    }
     
-    [self addSubview:[loadedCards objectAtIndex:1]];
-    [self addSubview:[loadedCards objectAtIndex:0]];
+    //[cardsLayer addSubview:[loadedCards objectAtIndex:1]];
+    //[cardsLayer addSubview:[loadedCards objectAtIndex:0]];
     [[self presentedCard]normalize];
     [self presentedCard].alpha = 1.0;
     [self changeBackgroundBlur];
@@ -331,7 +366,7 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
             VIProduct *nextProduct = [[VIProductStore sharedStore]nextProduct];
             if (nextProduct) {
                 [loadedCards addObject:[self createCardWithProduct:nextProduct]];
-            } else {
+            } else if(![loadedCards count] > 0){
                 // nao tem proximo produto
                 if ([loadedCards count]==0) {
                     // nao tem produto a ser mostrado
@@ -346,6 +381,8 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
 // This should be customized with your own action
 -(void)cardSwipedLeft:(UIView *)card;
 {
+    VICardView *cv = (VICardView*)card;
+    [self reviewProduct:cv.product withLiked:NO];
     [self swipedCardWillEnded];
 }
 
@@ -353,6 +390,8 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
 // This should be customized with your own action
 -(void)cardSwipedRight:(UIView *)card
 {
+    VICardView *cv = (VICardView*)card;
+    [self reviewProduct:cv.product withLiked:YES];
     [self swipedCardWillEnded];
 }
 
@@ -365,7 +404,8 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
     
     if ([self waitingCard]) {
         // existe cartoes para serem mostrados
-        [self insertSubview:loadedCards[1] belowSubview:loadedCards[0]];
+        [cardsLayer insertSubview:loadedCards[1] atIndex:0];
+        //[cardsLayer insertSubview:loadedCards[1] belowSubview:loadedCards[0]];
         [[self presentedCard]normalize];
         [self presentedCard].alpha = 1.0;
     } else {

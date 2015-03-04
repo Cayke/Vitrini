@@ -41,6 +41,10 @@
     return @"http://107.170.189.125/vitrini/vitrini_api";
 }
 
+-(NSString*)serverDefault{
+    return @"http://107.170.189.125/vitrini";
+}
+
 -(NSData*)makeRequest:(NSMutableURLRequest*)request withPost:(NSString*)post{
     [request setTimeoutInterval:20];
     
@@ -342,5 +346,15 @@
     
 }
 
+/////////////////////////////////////////////////////////////////
+//
+//        DOWNLOAD IMAGES
+//
+/////////////////////////////////////////////////////////////////
+-(NSURL*)urlToDownloadImageName:(NSString *)imageName{
+    NSString *pathToImageDownload = [NSString stringWithFormat:@"%@/default/download/db/%@", [self serverDefault], imageName];
+    return [NSURL URLWithString:pathToImageDownload];
+     
+}
 
 @end

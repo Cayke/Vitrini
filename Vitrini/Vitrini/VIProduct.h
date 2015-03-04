@@ -39,4 +39,6 @@
 
 - (instancetype)initToCardWithDict:(NSDictionary*)pdict;
 
+-(NSURL*)addressToDownloadMainImage;
+
 @end

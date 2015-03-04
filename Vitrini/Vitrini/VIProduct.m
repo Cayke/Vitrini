@@ -8,6 +8,7 @@
 
 #import "VIProduct.h"
 #import "VISymbolsPackage.h"
+#import "VIServer.h"
 
 @implementation VIProduct
 
@@ -50,4 +51,10 @@
     }
     return self;
 }
+
+-(NSURL *)addressToDownloadMainImage{
+    VIServer *serverConnection = [[VIServer alloc]init];
+    return [serverConnection urlToDownloadImageName:_images[0]];
+}
+
 @end

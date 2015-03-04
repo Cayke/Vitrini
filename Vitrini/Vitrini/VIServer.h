@@ -100,4 +100,12 @@
                         andGender:(NSString *) gender;
 
 -(VIResponse*)getFilter;
+
+
+////////////////////////////
+///     tela perfil      ///
+////////////////////////////
+//
+-(NSURL*)urlToDownloadImageName:(NSString*)imageName;
+
 @end

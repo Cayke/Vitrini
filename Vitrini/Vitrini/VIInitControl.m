@@ -16,6 +16,8 @@
 @implementation VIInitControl
 
 +(void)start {
+    [self goToMainApp];
+    return;
     if ([[VIStorage sharedStorage]initUserFromDevice]) {
         [self goToMainApp];
         [[VIStorage sharedStorage]startCategories];

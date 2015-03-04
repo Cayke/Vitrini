@@ -18,10 +18,12 @@
 
 
 #import "VICardView.h"
+#import "AsyncImageView.h"
 
 @implementation VICardView {
     CGFloat xFromCenter;
     CGFloat yFromCenter;
+    AsyncImageLoader *asyncImage;
 }
 
 //delegate is instance of ViewController
@@ -42,9 +44,29 @@
     if (self) {
         [self startView];
         _product = product;
-        [self mountWithProduct];
+        
+        asyncImage = [[AsyncImageLoader alloc]init];
+        [self callImageLoader];
     }
     return self;
+}
+
+-(void)finishToLoadImage{
+    [self mountWithProduct];
+}
+
+-(void)callImageLoader{
+    NSURL *mainurl = [_product addressToDownloadMainImage];
+    [asyncImage loadImageWithURL:mainurl target:self success:@selector(successToLoadImage:) failure:@selector(failToLoadImahe:)];
+}
+
+-(void)successToLoadImage:(id)some{
+    NSLog(@"%@",some);
+    _product.photo = some;
+    [self mountWithProduct];
+}
+-(void)failToLoadImahe:(id)some{
+    NSLog(@"%@",some);
 }
 
 -(void)startView{
@@ -277,7 +299,6 @@
     
     [delegate cardSwipedRight:self];
     _product.liked = YES;
-    NSLog(@"YES");
 }
 
 -(void)leftClickAction
@@ -301,7 +322,6 @@
     
     [delegate cardSwipedLeft:self];
     _product.liked = NO;
-    NSLog(@"NO");
 }
 
 -(void)animationBeingSecondCardWithFirstCardFactor:(CGFloat)factor{
