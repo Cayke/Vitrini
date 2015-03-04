@@ -120,6 +120,7 @@
 		B3B6CF9C1A4C4A8500C07383 /* img10.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF971A4C4A8500C07383 /* img10.png */; };
 		B3B6CF9D1A4C4A8500C07383 /* img11.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF981A4C4A8500C07383 /* img11.png */; };
 		B3B6CFA01A4D19E600C07383 /* degrade.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF9F1A4D19E600C07383 /* degrade.png */; };
+		B3CE202C1AA7492E00B3836F /* looking.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CE202B1AA7492E00B3836F /* looking.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -296,6 +297,7 @@
 		B3B6CF971A4C4A8500C07383 /* img10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img10.png; sourceTree = "<group>"; };
 		B3B6CF981A4C4A8500C07383 /* img11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img11.png; sourceTree = "<group>"; };
 		B3B6CF9F1A4D19E600C07383 /* degrade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = degrade.png; sourceTree = "<group>"; };
+		B3CE202B1AA7492E00B3836F /* looking.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = looking.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -581,6 +583,7 @@
 		B3B6CF451A44C3F100C07383 /* Img */ = {
 			isa = PBXGroup;
 			children = (
+				B3CE202B1AA7492E00B3836F /* looking.png */,
 				B32B2CC41A8CDF34004BCDD9 /* noSign.png */,
 				B32B2CC51A8CDF34004BCDD9 /* noSign@2x.png */,
 				B32B2CC61A8CDF34004BCDD9 /* noSign@3x.png */,
@@ -764,6 +767,7 @@
 				278AFBD51A83ABDE0002BB23 /* Icom_caixa_foltro.png in Resources */,
 				2781FF281A6F0D7C009FFAA5 /* Vitrini_Login__0006_Facebook.png in Resources */,
 				B32B2CCC1A8CDF34004BCDD9 /* noSign@3x.png in Resources */,
+				B3CE202C1AA7492E00B3836F /* looking.png in Resources */,
 				278AFBCF1A83A9DA0002BB23 /* Filter.storyboard in Resources */,
 				92891CE71A28D80F002F6678 /* Images.xcassets in Resources */,
 				279A81711A706553003E50D7 /* Icon_meuslikes_Menu.png in Resources */,
