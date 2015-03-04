@@ -11,9 +11,11 @@
 
 @interface VIStore : NSObject
 
-@property (nonatomic) NSString *nome;
+@property (nonatomic) NSString *name;
 @property (nonatomic) NSString *usuario;
 @property (nonatomic) VILocation *location;
 @property (nonatomic) NSArray * products;
+@property (nonatomic) NSString *address;
+@property (nonatomic) NSString *imageName;
 
 @end

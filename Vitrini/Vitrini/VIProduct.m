@@ -11,10 +11,26 @@
 
 @implementation VIProduct
 
-- (instancetype)init
+
+- (instancetype)initToCardWithDict:(NSDictionary*)pdict
 {
     self = [super init];
     if (self) {
+        _ID = [[pdict objectForKey:@"ID"]intValue];
+        _gender = [pdict objectForKey:@"gender"];
+        //_oldPrice = [[pdict objectForKey:@"oldPrice"]floatValue];
+        //_price = [[pdict objectForKey:@"price"]floatValue];
+        _resume = [pdict objectForKey:@"resume"];
+        _images = [pdict objectForKey:@"photo"];
+        
+        _store = [[VIStore alloc]init];
+        _store.imageName = [[pdict objectForKey:@"store"]objectForKey:@"image"];
+        _store.name = [[pdict objectForKey:@"store"]objectForKey:@"name"];
+        _store.address = [[pdict objectForKey:@"store"]objectForKey:@"address"];
+        
+        _brand = [[VIBrand alloc]init];
+        _brand.imageName = [[pdict objectForKey:@"brand"]objectForKey:@"image"];
+        _brand.name = [[pdict objectForKey:@"brand"]objectForKey:@"name"];
     }
     return self;
 }

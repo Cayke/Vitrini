@@ -121,6 +121,7 @@
 		B3B6CF9D1A4C4A8500C07383 /* img11.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF981A4C4A8500C07383 /* img11.png */; };
 		B3B6CFA01A4D19E600C07383 /* degrade.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B6CF9F1A4D19E600C07383 /* degrade.png */; };
 		B3CE202C1AA7492E00B3836F /* looking.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CE202B1AA7492E00B3836F /* looking.png */; };
+		B3CE20441AA74B5A00B3836F /* VIBrand.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CE20431AA74B5A00B3836F /* VIBrand.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -298,6 +299,8 @@
 		B3B6CF981A4C4A8500C07383 /* img11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img11.png; sourceTree = "<group>"; };
 		B3B6CF9F1A4D19E600C07383 /* degrade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = degrade.png; sourceTree = "<group>"; };
 		B3CE202B1AA7492E00B3836F /* looking.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = looking.png; sourceTree = "<group>"; };
+		B3CE20421AA74B5A00B3836F /* VIBrand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIBrand.h; sourceTree = "<group>"; };
+		B3CE20431AA74B5A00B3836F /* VIBrand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIBrand.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -576,6 +579,8 @@
 				271A20781AA4B034000D9815 /* VICategory.m */,
 				272C6EFA1AA64DA300063CCF /* AsyncImageView.h */,
 				272C6EFB1AA64DA300063CCF /* AsyncImageView.m */,
+				B3CE20421AA74B5A00B3836F /* VIBrand.h */,
+				B3CE20431AA74B5A00B3836F /* VIBrand.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -850,6 +855,7 @@
 				5C2878631A28E39700CC7DD2 /* CustomSegueTransition.m in Sources */,
 				5CE349BE1A2CF42100F1DC17 /* UserOnboardViewController.m in Sources */,
 				5CE349BD1A2CF42100F1DC17 /* UserOnboardContentViewController.m in Sources */,
+				B3CE20441AA74B5A00B3836F /* VIBrand.m in Sources */,
 				5CE3DE3F1A81021A00F0CC92 /* VIStoreProfileViewController.m in Sources */,
 				27CA104C1A9B63D600429F37 /* VIStore.m in Sources */,
 				92ADB6511A88336B00EA76B1 /* VICardInfoContainerViewController.m in Sources */,

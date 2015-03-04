@@ -128,11 +128,11 @@
     [self incrementPost:&post WithName:symbPack.city andValue:city];
     [self incrementPost:&post WithName:symbPack.birthday andValue:birthday];
     if ([gender isEqual:@"male"]) {
-            [self incrementPost:&post WithName:symbPack.gender andValue:@"M"];
+        [self incrementPost:&post WithName:symbPack.gender andValue:@"M"];
     }
     else
     {
-            [self incrementPost:&post WithName:symbPack.gender andValue:@"F"];
+        [self incrementPost:&post WithName:symbPack.gender andValue:@"F"];
     }
     
     // REALIZAR CONEXÃO
@@ -311,11 +311,13 @@
     
     // CRIAR STRING DE DADOS PARA REALIZAR POST
     NSString *post;
-    [self incrementPost:&post WithName:symbPack.page andValue:gender];
+    [self incrementPost:&post WithName:symbPack.gender andValue:gender];
     if (categoryID) {
         [self incrementPost:&post WithName:symbPack.storeID andValue:[NSString stringWithFormat:@"%d", categoryID]];
     }
-    [self incrementPost:&post WithName:symbPack.page andValue:email];
+    [self incrementPost:&post WithName:symbPack.email andValue:email];
+    
+    NSLog(@"%@",post);
     
     // REALIZAR CONEXÃO
     return [self createResponseFromData:[self makeRequest:request withPost:post]];

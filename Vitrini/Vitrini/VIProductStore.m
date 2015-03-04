@@ -8,6 +8,8 @@
 
 #import "VIProductStore.h"
 #import "VIProduct.h"
+#import "VIServer.h"
+#import "VIStorage.h"
 
 @implementation VIProductStore
 
@@ -22,6 +24,7 @@
     self = [super init];
     if (self) {
         // inicializar coisas aqui
+        _loading = NO;
         _products = [[NSMutableArray alloc]init];
     }
     return self;
@@ -94,6 +97,18 @@
     }
     productIndex++;
     return _products[productIndex-1];
+}
+
+-(BOOL)loadCards{
+    VIServer *server = [[VIServer alloc]init];
+    VIResponse *response = [server productsToReviewWithEmail:@"newuser@teste.com" andCategoryID:0 andGender:@"M"];
+    
+    VIProduct *auxProduct;
+    for (NSDictionary *pdict in [response.value objectForKey:@"products"]) {
+        auxProduct = [[VIProduct alloc]initToCardWithDict:pdict];
+        [_products addObject:auxProduct];
+    }
+    return YES;
 }
 
 @end

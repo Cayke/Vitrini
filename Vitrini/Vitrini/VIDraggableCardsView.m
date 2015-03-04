@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Vitrini. All rights reserved.
 //
 
-// oi=la
-
 #import "VIDraggableCardsView.h"
 #import "VIProductStore.h"
 #import "VIColor.h"
@@ -27,6 +25,9 @@
     
     UIImageView *backgroundStatic;
     UIImageView *backgroundAnimat;
+    
+    UIImageView *waitingCardsAnim;
+    BOOL animationOn;
 }
 //this makes it so only two cards are loaded at a time to
 //avoid performance and memory costs
@@ -44,6 +45,7 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
         self.clickIsAvailable = YES;
         self.clickEvent = YES;
         self.waitingNewProducts = NO;
+        animationOn = YES;
         
         CARD_HEIGHT = self.frame.size.height;
         CARD_WIDTH = self.frame.size.width;
@@ -53,8 +55,6 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
         
         loadedCards = [[NSMutableArray alloc] init];
         //cardsLoadedIndex = 0;
-        
-        [self loadCards];
         
         [self setupFrontView];
     }
@@ -186,6 +186,41 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
     [infoButton addTarget:self action:@selector(goToInfo) forControlEvents:UIControlEventTouchUpInside];
     [infoButton setImage:[UIImage imageNamed:@"infoBtn.png"] forState:UIControlStateNormal];
     [self addSubview:infoButton];
+    
+    //
+    //// CALCULAR POSICAO DA IMAGEM DE LENDO CARTPES
+    //
+    CGFloat squareSize = 160.0;
+    posX = self.frame.size.width/2 - squareSize/2;
+    posY = self.frame.size.height/2 - squareSize/2;
+    
+    // IMAGEM DE CARREGANDO
+    waitingCardsAnim = [[UIImageView alloc]initWithFrame:CGRectMake(posX, posY, squareSize, squareSize)];
+    [waitingCardsAnim setImage:[UIImage imageNamed:@"looking.png"]];
+    waitingCardsAnim.hidden = YES;
+    [self addSubview:waitingCardsAnim];
+}
+
+-(void)animatBinoculus{
+    NSLog(@"anim");
+    CGFloat squareSize = 160.0;
+    CGRect frame1 = CGRectMake(self.frame.size.width/2 - squareSize/2, self.frame.size.height - squareSize/2, squareSize, squareSize);
+    squareSize = 140.0;
+    CGRect frame2 = CGRectMake(self.frame.size.width/2 - squareSize/2, self.frame.size.height - squareSize/2, squareSize, squareSize);
+    squareSize = 200.0;
+    CGRect frame3 = CGRectMake(self.frame.size.width/2 - squareSize/2, self.frame.size.height - squareSize/2, squareSize, squareSize);
+    
+    [waitingCardsAnim setAlpha:1];
+    [UIView animateWithDuration: 0.4
+                          delay: 0.0
+                        options: UIViewAnimationOptionCurveEaseOut | UIViewAnimationOptionAutoreverse | UIViewAnimationOptionRepeat
+                     animations: ^{
+                         [waitingCardsAnim setAlpha:0.6];
+                     } completion: ^(BOOL finished){
+                         if (!animationOn) {
+                             [UIView setAnimationRepeatCount: 0];
+                         }
+                     }];
 }
 
 -(void) goToInfo
@@ -217,40 +252,70 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
     return draggableView;
 }
 
+-(void)mountCards{
+    //aqui botamos as coisas na tela
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    waitingCardsAnim.hidden = NO;
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //Call your function or whatever work that needs to be done
+        //Code in this part is run on a background thread
+        BOOL readed = [[VIProductStore sharedStore]loadCards];
+        
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            
+            if (!readed) {
+                [self mountCards];
+            } else {
+                //Stop your activity indicator or anything else with the GUI
+                //Code here is run on the main thread
+                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                
+                [self fillCardBuffer];
+                [self loadCards];
+                
+                // esconder binoculo
+                waitingCardsAnim.hidden = YES;
+            }
+            
+        });
+    });
+}
+
 //%%% loads all the cards and puts the first x in the "loaded cards" array
 -(void)loadCards
 {
-    [self fillCardBuffer];
     
-//    if([exampleCardPhotos count] > 0) {
-//        NSInteger numLoadedCardsCap =(([exampleCardPhotos count] > MAX_BUFFER_SIZE)?MAX_BUFFER_SIZE:[exampleCardPhotos count]);
-//        //%%% if the buffer size is greater than the data size, there will be an array error, so this makes sure that doesn't happen
-//        
-//        //%%% loops through the exampleCardsLabels array to create a card for each label.  This should be customized by removing "exampleCardLabels" with your own array of data
-//        for (int i = 0; i<[exampleCardPhotos count]; i++) {
-//            VICardView* newCard = [self createDraggableViewWithDataAtIndex:i];
-//            [allCards addObject:newCard];
-//            
-//            if (i<numLoadedCardsCap) {
-//                //%%% adds a small number of cards to be loaded
-//                [loadedCards addObject:newCard];
-//            }
-//        }
-//        
-//        //%%% displays the small number of loaded cards dictated by MAX_BUFFER_SIZE so that not all the cards
-//        // are showing at once and clogging a ton of data
-//        for (int i = 0; i<[loadedCards count]; i++) {
-//            if (i>0) {
-//                [self insertSubview:[loadedCards objectAtIndex:i] belowSubview:[loadedCards objectAtIndex:i-1]];
-//            } else {
-//                [self addSubview:[loadedCards objectAtIndex:i]];
-//            }
-//            [[self presentedCard]normalize];
-//            [self presentedCard].alpha = 1.0;
-//            [self changeBackgroundBlur];
-//            cardsLoadedIndex++; //%%% we loaded a card into loaded cards, so we have to increment
-//        }
-//    }
+    //    if([exampleCardPhotos count] > 0) {
+    //        NSInteger numLoadedCardsCap =(([exampleCardPhotos count] > MAX_BUFFER_SIZE)?MAX_BUFFER_SIZE:[exampleCardPhotos count]);
+    //        //%%% if the buffer size is greater than the data size, there will be an array error, so this makes sure that doesn't happen
+    //
+    //        //%%% loops through the exampleCardsLabels array to create a card for each label.  This should be customized by removing "exampleCardLabels" with your own array of data
+    //        for (int i = 0; i<[exampleCardPhotos count]; i++) {
+    //            VICardView* newCard = [self createDraggableViewWithDataAtIndex:i];
+    //            [allCards addObject:newCard];
+    //
+    //            if (i<numLoadedCardsCap) {
+    //                //%%% adds a small number of cards to be loaded
+    //                [loadedCards addObject:newCard];
+    //            }
+    //        }
+    //
+    //        //%%% displays the small number of loaded cards dictated by MAX_BUFFER_SIZE so that not all the cards
+    //        // are showing at once and clogging a ton of data
+    //        for (int i = 0; i<[loadedCards count]; i++) {
+    //            if (i>0) {
+    //                [self insertSubview:[loadedCards objectAtIndex:i] belowSubview:[loadedCards objectAtIndex:i-1]];
+    //            } else {
+    //                [self addSubview:[loadedCards objectAtIndex:i]];
+    //            }
+    //            [[self presentedCard]normalize];
+    //            [self presentedCard].alpha = 1.0;
+    //            [self changeBackgroundBlur];
+    //            cardsLoadedIndex++; //%%% we loaded a card into loaded cards, so we have to increment
+    //        }
+    //    }
     
     [self addSubview:[loadedCards objectAtIndex:1]];
     [self addSubview:[loadedCards objectAtIndex:0]];
@@ -303,13 +368,15 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
         [self insertSubview:loadedCards[1] belowSubview:loadedCards[0]];
         [[self presentedCard]normalize];
         [self presentedCard].alpha = 1.0;
+    } else {
+        NSLog(@"show loading...");
     }
     
-//    if (cardsLoadedIndex < [allCards count]) { //%%% if we haven't reached the end of all cards, put another into the loaded cards
-//        [loadedCards addObject:[allCards objectAtIndex:cardsLoadedIndex]];
-//        cardsLoadedIndex++;//%%% loaded a card, so have to increment count
-//        [self insertSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-1)] belowSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-2)]];
-//    }
+    //    if (cardsLoadedIndex < [allCards count]) { //%%% if we haven't reached the end of all cards, put another into the loaded cards
+    //        [loadedCards addObject:[allCards objectAtIndex:cardsLoadedIndex]];
+    //        cardsLoadedIndex++;//%%% loaded a card, so have to increment count
+    //        [self insertSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-1)] belowSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-2)]];
+    //    }
     
     [self changeBackgroundBlur];
     _clickEvent = YES;
@@ -337,7 +404,7 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
 
 -(void)changeBackgroundBlur{
     VICardView *cardView = [loadedCards firstObject];
-
+    
     if (cardView) {
         [backgroundAnimat setAlpha:0.0f];
         [backgroundAnimat setImage: cardView.product.photo];
@@ -388,6 +455,7 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
 -(void)waitNewProducts{
     self.waitingNewProducts = YES;
     [self hiddeControlls];
+    [self mountCards];
 }
 
 -(void)hiddeControlls{

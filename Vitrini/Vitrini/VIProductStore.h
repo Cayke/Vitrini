@@ -7,16 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VIDraggableCardsView.h"
 
 @class VIProduct;
 
 @interface VIProductStore : NSObject
 
 @property (nonatomic) NSMutableArray *products;
+@property (nonatomic, weak) VIDraggableCardsView *backgroundCardsView;
+@property (nonatomic) BOOL loading;
 
 +(instancetype)sharedStore;
 
 -(NSArray*)likedProducts;
 -(VIProduct*)nextProduct;
+
+-(BOOL)loadCards;
 
 @end
