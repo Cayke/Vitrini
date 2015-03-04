@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Vitrini. All rights reserved.
 //
 
+// oi
+
 #import "VIDraggableCardsView.h"
 #import "VIProductStore.h"
 #import "VIColor.h"
