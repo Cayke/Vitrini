@@ -11,6 +11,7 @@
 #import "VIResponse.h"
 #import "VIServer.h"
 #import "VICategory.h"
+#import "VIStorage.h"
 
 @interface VICatalogViewController ()
 
@@ -44,7 +45,7 @@
     _tableView.dataSource = self;
     
     //inicializar array com categorias
-    [self initCategorysArray];
+    _arrayCategorys = [[VIStorage sharedStorage]returnCategories];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,44 +73,6 @@
     return @"Catálogo";
 }
 
--(void) initCategorysArray
-{
-    _arrayCategorys = [[NSMutableArray alloc]init];
-   // _arrayWithImages = [[NSArray alloc]initWithObjects:[UIImage imageNamed:@"catalogo_temp"],[UIImage imageNamed:@"catalogo_temp"], [UIImage imageNamed:@"catalogo_temp"], [UIImage imageNamed:@"catalogo_temp"], nil];
-
-    
-    //pegar esses dados do servidor
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    //---------------------------------
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        //Call your function or whatever work that needs to be done
-        //Code in this part is run on a background thread
-        VIServer *server = [[VIServer alloc]init];
-        VIResponse *response = [server getCategories];
-        
-        dispatch_async(dispatch_get_main_queue(), ^(void) {
-            //Stop your activity indicator or anything else with the GUI
-            //Code here is run on the main thread
-            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-            
-            //tratar algo se precisar
-            if (response.status == VIRequestSuccess) {
-                for (NSDictionary *dic in response.value) {
-                    VICategory *category = [[VICategory alloc]initWithDicFromServer:dic];
-                    [_arrayCategorys addObject:category];
-                }
-                //_arrayWithImages = ...
-                [_tableView reloadData];
-            }
-            else {
-                UIAlertView *alerta = [[UIAlertView alloc]initWithTitle:@"Erro de conexao" message:@"Conecte-se a internet e tente novamente" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-                [alerta show];
-            }
-            
-        });
-    });
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [_arrayCategorys count];
@@ -117,8 +80,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     VICatalogTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VICatalogTableViewCell"];
-    cell.iconImageView.image = [_arrayWithImages objectAtIndex:indexPath.row];
-    cell.labelName.text = [_arrayCategorys objectAtIndex:indexPath.row];
+    
+    VICategory *cat = [_arrayCategorys objectAtIndex:indexPath.row];
+    [cell mountWithCategory:cat];
     
     return cell;
 }

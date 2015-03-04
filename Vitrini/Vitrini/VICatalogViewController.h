@@ -14,8 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewBackground;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (nonatomic) NSMutableArray *arrayCategorys;
-@property (nonatomic) NSArray *arrayWithImages;
-
+@property (nonatomic) NSArray *arrayCategorys;
 
 @end

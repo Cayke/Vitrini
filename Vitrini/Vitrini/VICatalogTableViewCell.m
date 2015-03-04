@@ -20,4 +20,13 @@
     // Configure the view for the selected state
 }
 
+-(void)mountWithCategory:(VICategory *)category
+{
+    _iconImageView.activityIndicatorStyle = UIActivityIndicatorViewStyleWhite;
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://107.170.189.125/vitrini/default/download/db/%@", category.photoPath]];
+    _iconImageView.imageURL = url;
+    
+    _labelName.text = category.name;
+}
+
 @end
