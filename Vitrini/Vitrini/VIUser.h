@@ -17,6 +17,8 @@
 @property (nonatomic) NSString *gender;
 @property (nonatomic) NSString *birthday;
 @property (nonatomic) NSString *city;
+@property (nonatomic) NSString *pass;
+
 @property (nonatomic) NSData *image;
 
 -(NSDictionary *) getDictionary;

@@ -71,6 +71,7 @@
 		5CE349BE1A2CF42100F1DC17 /* UserOnboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE349BB1A2CF42100F1DC17 /* UserOnboardViewController.m */; };
 		5CE3DE3F1A81021A00F0CC92 /* VIStoreProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE3DE3E1A81021A00F0CC92 /* VIStoreProfileViewController.m */; };
 		5CE3DE411A81022900F0CC92 /* VIStoreProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE3DE401A81022900F0CC92 /* VIStoreProfile.storyboard */; };
+		926E75241AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 926E75231AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.m */; };
 		92891CDC1A28D80F002F6678 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CDB1A28D80F002F6678 /* main.m */; };
 		92891CDF1A28D80F002F6678 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CDE1A28D80F002F6678 /* AppDelegate.m */; };
 		92891CE71A28D80F002F6678 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92891CE61A28D80F002F6678 /* Images.xcassets */; };
@@ -233,6 +234,8 @@
 		5CE3DE3D1A81021A00F0CC92 /* VIStoreProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VIStoreProfileViewController.h; path = StoreProfile/VIStoreProfileViewController.h; sourceTree = "<group>"; };
 		5CE3DE3E1A81021A00F0CC92 /* VIStoreProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VIStoreProfileViewController.m; path = StoreProfile/VIStoreProfileViewController.m; sourceTree = "<group>"; };
 		5CE3DE401A81022900F0CC92 /* VIStoreProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = VIStoreProfile.storyboard; path = StoreProfile/VIStoreProfile.storyboard; sourceTree = "<group>"; };
+		926E75221AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIRegisterSingleInputTableViewCell.h; sourceTree = "<group>"; };
+		926E75231AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIRegisterSingleInputTableViewCell.m; sourceTree = "<group>"; };
 		92891CD61A28D80F002F6678 /* Vitrini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vitrini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92891CDA1A28D80F002F6678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92891CDB1A28D80F002F6678 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -352,6 +355,8 @@
 				2781FF181A6ED47F009FFAA5 /* VILoginViewController.m */,
 				2781FF2B1A6F2C0C009FFAA5 /* VIRegisterViewController.h */,
 				2781FF2C1A6F2C0C009FFAA5 /* VIRegisterViewController.m */,
+				926E75221AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.h */,
+				926E75231AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.m */,
 				2781FF241A6EDA5E009FFAA5 /* images */,
 			);
 			name = Login;
@@ -852,6 +857,7 @@
 				2761A5071A960FE90009395C /* VIResponseType.m in Sources */,
 				2761A50D1A96100E0009395C /* VIServer.m in Sources */,
 				272C6EF31AA6012000063CCF /* VILikesViewController.m in Sources */,
+				926E75241AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.m in Sources */,
 				5C2878631A28E39700CC7DD2 /* CustomSegueTransition.m in Sources */,
 				5CE349BE1A2CF42100F1DC17 /* UserOnboardViewController.m in Sources */,
 				5CE349BD1A2CF42100F1DC17 /* UserOnboardContentViewController.m in Sources */,
