@@ -14,6 +14,7 @@
 #import "VICatalogViewController.h"
 #import "VIFeedViewController.h"
 #import "VIProfileViewController.h"
+#import "VIStoreProfileViewController.h"
 
 @implementation VIMainViewController
 
@@ -109,7 +110,19 @@
     UIStoryboard *profile = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
     VIProfileViewController *profileVC = (VIProfileViewController *) [profile instantiateInitialViewController];
     
-    self.viewControllers = @[vc1, likesVC, catalogVC, feedVC, profileVC,];
+    self.viewControllers = @[vc1, likesVC, catalogVC, feedVC, profileVC];
+    
+    [self performSelector:@selector(goToStoreProfile) withObject:nil afterDelay:1.0];
+}
+
+
+- (void)goToStoreProfile
+{
+    NSLog(@"goToStoreProfile");
+    
+    UIStoryboard *store = [UIStoryboard storyboardWithName:@"VIStoreProfile" bundle:nil];
+    VIStoreProfileViewController *storeVC = (VIStoreProfileViewController *) [store instantiateInitialViewController];
+    [self presentViewController:storeVC animated:YES completion:nil];
 }
 
 
