@@ -11,7 +11,8 @@
 #import "VIServer.h"
 #import "VIInitControl.h"
 #import "VIResponse.h"
-
+#import "VIUser.h"
+#import "VIStorage.h"
 
 @interface VIRegisterViewController ()
 
@@ -136,18 +137,39 @@
 
 -(void) registerUser
 {
-    if([self canCreateUser]) {
-        VIServer *server = [[VIServer alloc]init];
-        VIResponse *response = [server registerWithEmail:_auxUser.email andPassword:_auxUser.pass andFacebookID:nil andName:_auxUser.name andCity:_auxUser.city andBirthday:_auxUser.birthday andGender:_auxUser.gender];
-        if (response.status == VIRequestSuccess) {
-            [VIInitControl goToMainApp];
-        }
-    }
+    if ([self canCreateUser]) {
+        
     
-    else
-    {
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Erro" message:@"Tente novamente mais tarde" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-        [alert show];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    //[_activityIndicator startAnimating];
+    //---------------------------------
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //Call your function or whatever work that needs to be done
+        //Code in this part is run on a background thread
+        VIServer *server = [[VIServer alloc]init];
+        VIResponse *response = [server registerWithEmail:self.email andPassword:self.pass andFacebookID:nil andName:self.name andCity:self.city andBirthday:self.birthday andGender:self.gender];
+
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            //Stop your activity indicator or anything else with the GUI
+            //Code here is run on the main thread
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            //            [_activityIndicator stopAnimating];
+            
+            if (response.status == VIRequestSuccess) {
+                VIUser *user = [[VIUser alloc]initWithName:self.name andEmail:self.email andGender:self.gender andBirthday:self.birthday andCity:self.city andPass:self.pass];
+                [[VIStorage sharedStorage]setUser:user];
+                [VIInitControl goToMainApp];
+            }
+            
+            else
+            {
+                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Erro" message:@"Tente novamente mais tarde" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                [alert show];
+            }
+        });
+    });
+    
     }
 }
 
@@ -190,10 +212,10 @@
             rsitvc.singleInput.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Email"attributes:@{NSForegroundColorAttributeName: [VIColor darkWhiteVIColor]}];
             
             [rsitvc.singleInput sizeToFit];
-            rsitvc.auxUser = self.auxUser;
+            rsitvc.singleInput.tag = 0;
             
-            self.rsitvc = rsitvc;
-            
+            rsitvc.singleInput.delegate = self;
+
             return rsitvc;
         } else if ([item isEqualToString:@"pass"]) {
             VIRegisterSingleInputTableViewCell *rsitvc = (VIRegisterSingleInputTableViewCell *)[tableView dequeueReusableCellWithIdentifier:registerSingleInputCell forIndexPath:indexPath];
@@ -201,21 +223,10 @@
             rsitvc.singleInput.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Pass"attributes:@{NSForegroundColorAttributeName: [VIColor darkWhiteVIColor]}];
             
             [rsitvc.singleInput sizeToFit];
-            rsitvc.auxUser = self.auxUser;
-            
-            self.rsitvc = rsitvc;
-            
-            return rsitvc;
-        } else if ([item isEqualToString:@"fbID"]) {
-            VIRegisterSingleInputTableViewCell *rsitvc = (VIRegisterSingleInputTableViewCell *)[tableView dequeueReusableCellWithIdentifier:registerSingleInputCell forIndexPath:indexPath];
-            
-            rsitvc.singleInput.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"fbID"attributes:@{NSForegroundColorAttributeName: [VIColor darkWhiteVIColor]}];
-            
-            [rsitvc.singleInput sizeToFit];
-            rsitvc.auxUser = self.auxUser;
-            
-            self.rsitvc = rsitvc;
-            
+            rsitvc.singleInput.tag = 1;
+
+            rsitvc.singleInput.delegate = self;
+
             return rsitvc;
         } else if ([item isEqualToString:@"name"]) {
             VIRegisterSingleInputTableViewCell *rsitvc = (VIRegisterSingleInputTableViewCell *)[tableView dequeueReusableCellWithIdentifier:registerSingleInputCell forIndexPath:indexPath];
@@ -223,10 +234,10 @@
             rsitvc.singleInput.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Name"attributes:@{NSForegroundColorAttributeName: [VIColor darkWhiteVIColor]}];
             
             [rsitvc.singleInput sizeToFit];
-            rsitvc.auxUser = self.auxUser;
-            
-            self.rsitvc = rsitvc;
-            
+            rsitvc.singleInput.tag = 2;
+
+            rsitvc.singleInput.delegate = self;
+
             return rsitvc;
         } else if ([item isEqualToString:@"city"]) {
             VIRegisterSingleInputTableViewCell *rsitvc = (VIRegisterSingleInputTableViewCell *)[tableView dequeueReusableCellWithIdentifier:registerSingleInputCell forIndexPath:indexPath];
@@ -234,10 +245,10 @@
             rsitvc.singleInput.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"City"attributes:@{NSForegroundColorAttributeName: [VIColor darkWhiteVIColor]}];
             
             [rsitvc.singleInput sizeToFit];
-            rsitvc.auxUser = self.auxUser;
-            
-            self.rsitvc = rsitvc;
-            
+            rsitvc.singleInput.tag = 3;
+
+            rsitvc.singleInput.delegate = self;
+
             return rsitvc;
         } else if ([item isEqualToString:@"birthday"]) {
             VIRegisterSingleInputTableViewCell *rsitvc = (VIRegisterSingleInputTableViewCell *)[tableView dequeueReusableCellWithIdentifier:registerSingleInputCell forIndexPath:indexPath];
@@ -245,9 +256,9 @@
             rsitvc.singleInput.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Birthday"attributes:@{NSForegroundColorAttributeName: [VIColor darkWhiteVIColor]}];
             
             [rsitvc.singleInput sizeToFit];
-            rsitvc.auxUser = self.auxUser;
-            
-            self.rsitvc = rsitvc;
+            rsitvc.singleInput.tag = 4;
+            rsitvc.singleInput.delegate = self;
+
             
             return rsitvc;
         } else if ([item isEqualToString:@"gender"]) {
@@ -256,10 +267,10 @@
             rsitvc.singleInput.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Gender"attributes:@{NSForegroundColorAttributeName: [VIColor darkWhiteVIColor]}];
             
             [rsitvc.singleInput sizeToFit];
-            rsitvc.auxUser = self.auxUser;
+            rsitvc.singleInput.tag = 5;
             
-            self.rsitvc = rsitvc;
-            
+            rsitvc.singleInput.delegate = self;
+
             return rsitvc;
         }
         
@@ -275,27 +286,36 @@
     
     
 }
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    if (textField.tag == 0) {
+        _email = textField.text;
+    } else if (textField.tag == 1){
+        _pass = textField.text;
+    } else if (textField.tag == 2){
+        _name = textField.text;
+    } else if (textField.tag == 3){
+        _city = textField.text;
+    } else if (textField.tag == 4){
+       _birthday = textField.text;
+    } else if (textField.tag == 5){
+        _gender = textField.text;
+    }
+}
+
+
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
 }
 
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 0) {
-        if (indexPath.row == 0) {
-            [_rsitvc.singleInput becomeFirstResponder];
-        }
-    }
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
-
 -(BOOL)canCreateUser{
-    if (![_rsitvc.singleInput.text isEqualToString:@""]) {
+    if (![self.name  isEqual: @""] && ![self.email  isEqual: @""] && ![self.gender  isEqual: @""] && ![self.birthday  isEqual: @""] && ![self.city  isEqual: @""] && ![self.pass  isEqual: @""]) {
         return YES;
     }
     return NO;
 }
+
+
 
 
 

@@ -40,6 +40,19 @@
     return [NSDictionary dictionaryWithDictionary:dic];
 }
 
+- (instancetype)initWithName:(NSString *)name andEmail:(NSString *)email andGender:(NSString *)gender andBirthday:(NSString *)birthday andCity:(NSString *)city andPass:(NSString *)pass {
+    self = [super init];
+    if (self) {
+        self.name = name;
+        self.email = email;
+        self.gender = gender;
+        self.birthday = birthday;
+        self.city = city;
+        self.pass = pass;
+    }
+    return self;
+}
+
 
 
 @end

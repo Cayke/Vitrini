@@ -23,6 +23,11 @@
 
 -(NSDictionary *) getDictionary;
 -(instancetype) initWithDictionary:(NSDictionary *)dicUser;
-
+-(instancetype) initWithName:(NSString *)name
+                    andEmail:(NSString *)email
+                   andGender:(NSString *)gender
+                 andBirthday:(NSString *)birthday
+                     andCity:(NSString *)city
+                     andPass:(NSString *)pass;
 
 @end
