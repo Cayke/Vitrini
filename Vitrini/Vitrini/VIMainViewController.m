@@ -23,13 +23,23 @@
     // inicializar views controllers
     [self initViewControllers];
     [self setupMenu];
+    
+    [self performSelector:@selector(goToStoreProfile) withObject:nil afterDelay:1.0];
+}
+
+- (void)goToStoreProfile
+{
+    NSLog(@"goToStoreProfile");
+    
+    UIStoryboard *store = [UIStoryboard storyboardWithName:@"VIStoreProfile" bundle:nil];
+    VIStoreProfileViewController *storeVC = (VIStoreProfileViewController *) [store instantiateInitialViewController];
+    [self presentViewController:storeVC animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 -(void)clicou{
     // subir menu
@@ -111,19 +121,6 @@
     VIProfileViewController *profileVC = (VIProfileViewController *) [profile instantiateInitialViewController];
     
     self.viewControllers = @[vc1, likesVC, catalogVC, feedVC, profileVC];
-    
-    [self performSelector:@selector(goToStoreProfile) withObject:nil afterDelay:1.0];
 }
-
-
-- (void)goToStoreProfile
-{
-    NSLog(@"goToStoreProfile");
-    
-    UIStoryboard *store = [UIStoryboard storyboardWithName:@"VIStoreProfile" bundle:nil];
-    VIStoreProfileViewController *storeVC = (VIStoreProfileViewController *) [store instantiateInitialViewController];
-    [self presentViewController:storeVC animated:YES completion:nil];
-}
-
 
 @end
