@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Vitrini. All rights reserved.
 //
 
+// vamos ver se adianta
+
 #import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
