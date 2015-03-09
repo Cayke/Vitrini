@@ -3,7 +3,6 @@
 //  Vitrini
 //
 //  Created by Cayke Prudente on 19/02/15.
-//  Copyright (c) 2015 Willian Pinho. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -43,6 +42,9 @@
 *products,
 *price,
 *oldPrice,
-*resume;
+*resume,
+*following,
+*follow,
+*unfollow;
 
 @end

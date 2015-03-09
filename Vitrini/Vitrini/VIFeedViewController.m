@@ -3,7 +3,6 @@
 //  Vitrini
 //
 //  Created by Cayke Prudente on 02/02/15.
-//  Copyright (c) 2015 Willian Pinho. All rights reserved.
 //
 
 #import "VIFeedViewController.h"
@@ -19,9 +18,15 @@
 
 @end
 
-@implementation VIFeedViewController
+@implementation VIFeedViewController {
+    int page;
+    BOOL feedIsLoading;
+}
 
 - (void)viewDidLoad {
+    _feed = [[NSMutableArray alloc]init];
+    page = 0;
+    feedIsLoading = NO;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
@@ -39,14 +44,14 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 -(UIImage *)itemMenuIcon
 {
@@ -66,19 +71,22 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     VIFeedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"feedCell"];
-    cell.productImage.image = [UIImage imageNamed:@"feed_temp"];
+    
+    cell.productDict = [_feed objectAtIndex:indexPath.section];
+    [cell mountCell];
+    
     return cell;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return [_feed count];
 }
 
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    VIFeedSectionView *view = [[VIFeedSectionView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, sectionHeight)];
+    VIFeedSectionView *view = [[VIFeedSectionView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, sectionHeight) andDict:[_feed objectAtIndex:section]];
     view.feedVC = self;
     return view;
 }
@@ -99,38 +107,52 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
--(void) refreshFeed
-{
-    //***********************************************
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        //Call your function or whatever work that needs to be done
-        //Code in this part is run on a background thread
-        
-        VIServer *server = [[VIServer alloc]init];
-        VIResponse *response = [server getFeedForUser:[VIStorage sharedStorage].user.email];
-    
-        dispatch_async(dispatch_get_main_queue(), ^(void) {
-            //Stop your activity indicator or anything else with the GUI
-            //Code here is run on the main thread
-            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-            [_refresh endRefreshing];
-            
-            //tratar algo se precisar
-            if (response.status == VIRequestSuccess) {
-                _feed = [NSArray arrayWithArray:response.value];
-                [_tableView reloadData];
-            }
-            
-        });
-    });
-    //****************************************************
-    
+-(void)refreshFeed{
+    page = 0;
+    [_feed removeAllObjects];
+    [self loadFeed];
+}
 
+-(void) loadFeed
+{
+    if (!feedIsLoading) {
+        feedIsLoading = YES;
+        //***********************************************
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            VIServer *server = [[VIServer alloc]init];
+            VIResponse *response = [server getFeedForUser:[VIStorage sharedStorage].user.email andPage:page];
+            
+            dispatch_async(dispatch_get_main_queue(), ^(void) {
+                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                [_refresh endRefreshing];
+                
+                if (response.status == VIRequestSuccess) {
+                    page++;
+                    NSArray *newFeeds = [NSArray arrayWithArray:response.value];
+                    NSLog(@"nf: %@",newFeeds);
+                    [_feed addObjectsFromArray:newFeeds];
+                    [_tableView reloadData];
+                    
+                    feedIsLoading = NO;
+                } else {
+                    feedIsLoading = NO;
+                }
+                
+            });
+        });
+        //****************************************************
+    }
 }
 
 
-
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    CGFloat actualPosition = scrollView.contentOffset.y + self.view.frame.size.height;
+    CGFloat contentHeight = scrollView.contentSize.height - (200);
+    if (actualPosition >= contentHeight) {
+        [self loadFeed];
+    }
+}
 
 @end

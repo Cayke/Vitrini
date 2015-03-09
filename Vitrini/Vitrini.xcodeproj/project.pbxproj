@@ -22,7 +22,6 @@
 		272C6EFC1AA64DA300063CCF /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 272C6EFB1AA64DA300063CCF /* AsyncImageView.m */; };
 		2761A5071A960FE90009395C /* VIResponseType.m in Sources */ = {isa = PBXBuildFile; fileRef = 2761A5061A960FE90009395C /* VIResponseType.m */; };
 		2761A50A1A9610030009395C /* VISymbolsPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2761A5091A9610030009395C /* VISymbolsPackage.m */; };
-		2761A50D1A96100E0009395C /* VIServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2761A50C1A96100E0009395C /* VIServer.m */; };
 		2761A5101A96101C0009395C /* VIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 2761A50F1A96101C0009395C /* VIResponse.m */; };
 		277A5E9E1A84F40600C14619 /* VICardInfoContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 277A5E9D1A84F40600C14619 /* VICardInfoContentViewController.m */; };
 		277B370D1A80F3D80081C796 /* VIFeedSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 277B370C1A80F3D80081C796 /* VIFeedSectionView.m */; };
@@ -80,6 +79,7 @@
 		92ADB6571A88438C00EA76B1 /* VICardInfoInformationOfTheSelectedItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92ADB6561A88438C00EA76B1 /* VICardInfoInformationOfTheSelectedItemViewController.m */; };
 		92D96E611A7FEBF6009BC061 /* Cards.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92D96E601A7FEBF6009BC061 /* Cards.storyboard */; };
 		92D96E681A80FCB8009BC061 /* VICardInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D96E671A80FCB8009BC061 /* VICardInfoViewController.m */; };
+		B30866361AADD7E3006803CE /* VIServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2761A50C1A96100E0009395C /* VIServer.m */; };
 		B32B2CCA1A8CDF34004BCDD9 /* noSign.png in Resources */ = {isa = PBXBuildFile; fileRef = B32B2CC41A8CDF34004BCDD9 /* noSign.png */; };
 		B32B2CCB1A8CDF34004BCDD9 /* noSign@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B32B2CC51A8CDF34004BCDD9 /* noSign@2x.png */; };
 		B32B2CCC1A8CDF34004BCDD9 /* noSign@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B32B2CC61A8CDF34004BCDD9 /* noSign@3x.png */; };
@@ -252,6 +252,8 @@
 		92D96E601A7FEBF6009BC061 /* Cards.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Cards.storyboard; path = Vitrini/Cards.storyboard; sourceTree = "<group>"; };
 		92D96E661A80FCB8009BC061 /* VICardInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VICardInfoViewController.h; path = Vitrini/VICardInfoViewController.h; sourceTree = "<group>"; };
 		92D96E671A80FCB8009BC061 /* VICardInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VICardInfoViewController.m; path = Vitrini/VICardInfoViewController.m; sourceTree = "<group>"; };
+		B30866321AADD6FA006803CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B30866341AADD71A006803CE /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		B32B2CC41A8CDF34004BCDD9 /* noSign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noSign.png; path = yesNoBtns/noSign.png; sourceTree = "<group>"; };
 		B32B2CC51A8CDF34004BCDD9 /* noSign@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "noSign@2x.png"; path = "yesNoBtns/noSign@2x.png"; sourceTree = "<group>"; };
 		B32B2CC61A8CDF34004BCDD9 /* noSign@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "noSign@3x.png"; path = "yesNoBtns/noSign@3x.png"; sourceTree = "<group>"; };
@@ -446,6 +448,8 @@
 		92891CCD1A28D80F002F6678 = {
 			isa = PBXGroup;
 			children = (
+				B30866341AADD71A006803CE /* CoreFoundation.framework */,
+				B30866321AADD6FA006803CE /* Foundation.framework */,
 				92891CD81A28D80F002F6678 /* Vitrini */,
 				92891CF21A28D80F002F6678 /* VitriniTests */,
 				92891CD71A28D80F002F6678 /* Products */,
@@ -833,6 +837,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B30866361AADD7E3006803CE /* VIServer.m in Sources */,
 				2781FF2D1A6F2C0C009FFAA5 /* VIRegisterViewController.m in Sources */,
 				2761A5101A96101C0009395C /* VIResponse.m in Sources */,
 				277A5E9E1A84F40600C14619 /* VICardInfoContentViewController.m in Sources */,
@@ -855,7 +860,6 @@
 				279B4BB21A9767B300470FC9 /* VIStorage.m in Sources */,
 				B3B6CF411A44BCA600C07383 /* VISignView.m in Sources */,
 				2761A5071A960FE90009395C /* VIResponseType.m in Sources */,
-				2761A50D1A96100E0009395C /* VIServer.m in Sources */,
 				272C6EF31AA6012000063CCF /* VILikesViewController.m in Sources */,
 				926E75241AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.m in Sources */,
 				5C2878631A28E39700CC7DD2 /* CustomSegueTransition.m in Sources */,

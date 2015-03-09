@@ -3,7 +3,6 @@
 //  Vitrini
 //
 //  Created by Cayke Prudente on 19/02/15.
-//  Copyright (c) 2015 Willian Pinho. All rights reserved.
 //
 
 #import "VIServer.h"
@@ -266,7 +265,7 @@
 //        PEGAR UMA STORE
 //
 /////////////////////////////////////////////////////////////////
--(VIResponse *)getStoreWithID:(int)storeID
+-(VIResponse *) getStoreWithID:(int) storeID andUserEmail:(NSString*)email
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
     [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/getStore",[self serverAddress]]]];
@@ -275,6 +274,7 @@
     NSString *post;
     
     [self incrementPost:&post WithName:symbPack.storeID andValue:[NSString stringWithFormat:@"%d", storeID]];
+    [self incrementPost:&post WithName:symbPack.email andValue:email];
     
     // REALIZAR CONEXÃO
     return [self createResponseFromData:[self makeRequest:request withPost:post]];
@@ -346,6 +346,53 @@
     
 }
 
+
+/////////////////////////////////////////////////////////////////
+//
+//        PEGAR CATEGORIAS
+//
+/////////////////////////////////////////////////////////////////
+-(VIResponse *)getFeedForUser:(NSString *)email andPage:(int)page
+{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/getFeed",[self serverAddress]]]];
+    
+    // CRIAR STRING DE DADOS PARA REALIZAR POST
+    NSString *post;
+    [self incrementPost:&post WithName:symbPack.email andValue:email];
+    [self incrementPost:&post WithName:symbPack.page andValue:[NSString stringWithFormat:@"%d", page]];
+    
+    // REALIZAR CONEXÃO
+    return [self createResponseFromData:[self makeRequest:request withPost:post]];
+}
+
+
+/////////////////////////////////////////////////////////////////
+//
+//        SEGUIR OU DEIXAR DE SEGUIR LOJA
+//
+/////////////////////////////////////////////////////////////////
+-(VIResponse *)user:(NSString *)email willFollow:(BOOL)follow store:(int)storeID
+{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/getFeed",[self serverAddress]]]];
+    
+    // CRIAR STRING DE DADOS PARA REALIZAR POST
+    NSString *post;
+    [self incrementPost:&post WithName:symbPack.email andValue:email];
+    [self incrementPost:&post WithName:symbPack.storeID andValue:[NSString stringWithFormat:@"%d", storeID]];
+    
+    if (follow) {
+        [self incrementPost:&post WithName:symbPack.follow andValue:symbPack.follow];
+    } else {
+        [self incrementPost:&post WithName:symbPack.follow andValue:symbPack.unfollow];
+    }
+    
+    // REALIZAR CONEXÃO
+    return [self createResponseFromData:[self makeRequest:request withPost:post]];
+}
+
+
 /////////////////////////////////////////////////////////////////
 //
 //        DOWNLOAD IMAGES
@@ -354,7 +401,7 @@
 -(NSURL*)urlToDownloadImageName:(NSString *)imageName{
     NSString *pathToImageDownload = [NSString stringWithFormat:@"%@/default/download/db/%@", [self serverDefault], imageName];
     return [NSURL URLWithString:pathToImageDownload];
-     
+    
 }
 
 @end

@@ -3,15 +3,18 @@
 //  Vitrini
 //
 //  Created by Cayke Prudente on 02/02/15.
-//  Copyright (c) 2015 Willian Pinho. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
+#import "VIProduct.h"
+#import "AsyncImageView.h"
+
 @interface VIFeedTableViewCell : UITableViewCell
 
+@property (nonatomic) NSDictionary *productDict;
+@property (weak, nonatomic) IBOutlet AsyncImageView *productImage;
 
-@property (weak, nonatomic) IBOutlet UIImageView *productImage;
-
+-(void)mountCell;
 
 @end

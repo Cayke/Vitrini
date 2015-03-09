@@ -3,7 +3,6 @@
 //  Vitrini
 //
 //  Created by Cayke Prudente on 19/02/15.
-//  Copyright (c) 2015 Willian Pinho. All rights reserved.
 //
 
 #import "VISymbolsPackage.h"
@@ -47,6 +46,9 @@
         _price 			= @"price";
         _oldPrice 		= @"oldPrice";
         _resume 	= @"resume";
+        _following 		= @"following";
+        _follow 			= @"follow";
+        _unfollow 		= @"unfollow";
     }
     return self;
 }

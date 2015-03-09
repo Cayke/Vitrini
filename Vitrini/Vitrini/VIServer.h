@@ -3,7 +3,6 @@
 //  Vitrini
 //
 //  Created by Cayke Prudente on 19/02/15.
-//  Copyright (c) 2015 Willian Pinho. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -75,13 +74,13 @@
 ///      tela feed       ///
 ////////////////////////////
 //retorna o feed do usuario...(loja e foto do produto)
--(VIResponse *) getFeedForUser:(NSString *) email;
+-(VIResponse *) getFeedForUser:(NSString *) email andPage:(int)page;
 
 //clicando no produto
 //-(VIResponse *) getAllInfoFromProduct:(int) productID;
 
 //clicando na loja
--(VIResponse *) getStoreWithID:(int) storeID;
+-(VIResponse *) getStoreWithID:(int) storeID andUserEmail:(NSString*)email;
 -(VIResponse *) getProductsOfStore:(int) storeID andPage:(int) page;
 
 //usuario seguiu/deseguiu loja
