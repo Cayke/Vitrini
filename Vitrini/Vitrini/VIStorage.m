@@ -69,6 +69,7 @@
 -(void)setUser:(VIUser *)newUser
 {
     _user = newUser;
+    [self saveUser];
 }
 
 -(VIUser *)getUser

@@ -48,7 +48,7 @@
                                                     </constraints>
                                                     <color key="textColor" red="0.792156862745098" green="0.7803921568627451" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="CoolveticaRg-Regular" family="Coolvetica" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jQz-yb-ejy">
                                                     <rect key="frame" x="53" y="49" width="322" height="1"/>
