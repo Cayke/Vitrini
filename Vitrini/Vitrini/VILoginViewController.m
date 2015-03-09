@@ -14,8 +14,6 @@
 #import "VIServer.h"
 #import "VIResponse.h"
 
-#import "VIStoreProfileViewController.h"
-
 @interface VILoginViewController ()
 
 @end
@@ -405,14 +403,6 @@
         });
     });
     //****************************************************
-}
-
--(void) goToStorePage
-{
-    NSLog(@"go to store page");
-    UIStoryboard *store = [UIStoryboard storyboardWithName:@"VIStoreProfile" bundle:nil];
-    VIStoreProfileViewController *storeVC = (VIStoreProfileViewController *) [store instantiateInitialViewController];
-    [self presentViewController:storeVC animated:YES completion:nil];
 }
 
 -(void) userLoggedOut
