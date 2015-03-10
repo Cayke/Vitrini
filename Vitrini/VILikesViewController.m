@@ -28,7 +28,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    [self getLikes];
+    [self getLikesWithCategory:0];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,6 +65,7 @@
 {
     UIStoryboard *filter = [UIStoryboard storyboardWithName:@"Filter" bundle:nil];
     VIFilterViewController *filterVC = (VIFilterViewController *)[filter instantiateInitialViewController];
+    filterVC.likesVC = self;
     
     //comando para botar a view por cima e poder ver a debaixo ainda...
     filterVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
@@ -87,23 +88,23 @@
     return @"Likeds";
 }
 
--(void) getLikes
+-(void) getLikesWithCategory:(int) categoryID
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    //[_activityIndicator startAnimating];
+    [_activityIndicator startAnimating];
     //---------------------------------
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         //Call your function or whatever work that needs to be done
         //Code in this part is run on a background thread
         VIServer *server = [[VIServer alloc]init];
-        VIResponse *response = [server getProductsLikedsForUser:[VIStorage sharedStorage].user.email withGender:@"M" andCategory:0];
+        VIResponse *response = [server getProductsLikedsForUser:[VIStorage sharedStorage].user.email withGender:@"M" andCategory:categoryID];
         
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             //Stop your activity indicator or anything else with the GUI
             //Code here is run on the main thread
             [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-//            [_activityIndicator stopAnimating];
+            [_activityIndicator stopAnimating];
             
             //tratar algo se precisar
             if (response.status == VIRequestSuccess) {

@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VILikesViewController.h"
 
 @interface VIFilterViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic) NSArray *arrayWithCategories;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
+@property (weak, nonatomic) VILikesViewController *likesVC;
 
 @end
