@@ -88,6 +88,8 @@
 		5CE349BE1A2CF42100F1DC17 /* UserOnboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE349BB1A2CF42100F1DC17 /* UserOnboardViewController.m */; };
 		5CE3DE3F1A81021A00F0CC92 /* VIStoreProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE3DE3E1A81021A00F0CC92 /* VIStoreProfileViewController.m */; };
 		5CE3DE411A81022900F0CC92 /* VIStoreProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE3DE401A81022900F0CC92 /* VIStoreProfile.storyboard */; };
+		9265DC811AB0706100AD1724 /* VIRegisterPhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9265DC801AB0706100AD1724 /* VIRegisterPhotoTableViewCell.m */; };
+		9265DC831AB0794000AD1724 /* Patricia-Beck.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9265DC821AB0794000AD1724 /* Patricia-Beck.jpg */; };
 		926E75241AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 926E75231AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.m */; };
 		92891CDC1A28D80F002F6678 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CDB1A28D80F002F6678 /* main.m */; };
 		92891CDF1A28D80F002F6678 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CDE1A28D80F002F6678 /* AppDelegate.m */; };
@@ -273,6 +275,9 @@
 		5CE3DE3D1A81021A00F0CC92 /* VIStoreProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VIStoreProfileViewController.h; path = StoreProfile/VIStoreProfileViewController.h; sourceTree = "<group>"; };
 		5CE3DE3E1A81021A00F0CC92 /* VIStoreProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VIStoreProfileViewController.m; path = StoreProfile/VIStoreProfileViewController.m; sourceTree = "<group>"; };
 		5CE3DE401A81022900F0CC92 /* VIStoreProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = VIStoreProfile.storyboard; path = StoreProfile/VIStoreProfile.storyboard; sourceTree = "<group>"; };
+		9265DC7F1AB0706100AD1724 /* VIRegisterPhotoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIRegisterPhotoTableViewCell.h; sourceTree = "<group>"; };
+		9265DC801AB0706100AD1724 /* VIRegisterPhotoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIRegisterPhotoTableViewCell.m; sourceTree = "<group>"; };
+		9265DC821AB0794000AD1724 /* Patricia-Beck.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Patricia-Beck.jpg"; sourceTree = "<group>"; };
 		926E75221AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIRegisterSingleInputTableViewCell.h; sourceTree = "<group>"; };
 		926E75231AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIRegisterSingleInputTableViewCell.m; sourceTree = "<group>"; };
 		92891CD61A28D80F002F6678 /* Vitrini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vitrini.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -419,6 +424,8 @@
 				2781FF2C1A6F2C0C009FFAA5 /* VIRegisterViewController.m */,
 				926E75221AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.h */,
 				926E75231AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.m */,
+				9265DC7F1AB0706100AD1724 /* VIRegisterPhotoTableViewCell.h */,
+				9265DC801AB0706100AD1724 /* VIRegisterPhotoTableViewCell.m */,
 				2781FF241A6EDA5E009FFAA5 /* images */,
 			);
 			name = Login;
@@ -703,6 +710,7 @@
 				B3B6CF961A4C4A8500C07383 /* img9.png */,
 				B3B6CF971A4C4A8500C07383 /* img10.png */,
 				B3B6CF981A4C4A8500C07383 /* img11.png */,
+				9265DC821AB0794000AD1724 /* Patricia-Beck.jpg */,
 			);
 			name = "Imagens para teste";
 			sourceTree = "<group>";
@@ -875,6 +883,7 @@
 				2793021C1AAF8B2900708EB7 /* categoriasBackground.png in Resources */,
 				B3B6CF4F1A44C41A00C07383 /* infoBtn.png in Resources */,
 				272C6EF01AA5FF9C00063CCF /* Likes.storyboard in Resources */,
+				9265DC831AB0794000AD1724 /* Patricia-Beck.jpg in Resources */,
 				92D96E611A7FEBF6009BC061 /* Cards.storyboard in Resources */,
 				0B5729651AB00FF700B76187 /* tumbStore11.png in Resources */,
 				B3B6CF9A1A4C4A8500C07383 /* img8.png in Resources */,
@@ -967,6 +976,7 @@
 				92891CDC1A28D80F002F6678 /* main.m in Sources */,
 				5C83EA8A1A409EE1007988AA /* VIInitControl.m in Sources */,
 				5C83EA7A1A407008007988AA /* VIMainViewController.m in Sources */,
+				9265DC811AB0706100AD1724 /* VIRegisterPhotoTableViewCell.m in Sources */,
 				2761A50A1A9610030009395C /* VISymbolsPackage.m in Sources */,
 				279A817A1A7085C6003E50D7 /* VICatalogTableViewCell.m in Sources */,
 				B3B6CF3B1A44BBAA00C07383 /* VIDraggableCardsView.m in Sources */,
