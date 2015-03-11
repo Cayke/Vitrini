@@ -36,7 +36,16 @@ static NSString * const reuseIdentifier = @"Cell";
     self.dataArray = [NSArray arrayWithObjects:@"Vitrini_Login__0008_BG.png", @"backgroundFilter.png", @"Vitrini_Login__0008_BG.png", @"backgroundFilter.png", @"Vitrini_Login__0008_BG.png", @"backgroundFilter.png", @"Vitrini_Login__0008_BG.png", @"backgroundFilter.png", @"Vitrini_Login__0008_BG.png", @"backgroundFilter.png", @"Vitrini_Login__0008_BG.png", @"backgroundFilter.png", @"Vitrini_Login__0008_BG.png", @"backgroundFilter.png", @"Vitrini_Login__0008_BG.png", @"backgroundFilter.png", @"Vitrini_Login__0008_BG.png", @"backgroundFilter.png", nil];
     
     self.navigationBar.topItem.title = @"Lojas Zara";
-
+    
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    backButton.frame = CGRectMake(7, 1, 30, 41); // custom frame
+    [backButton setImage:[UIImage imageNamed:@"VIStoreProfileNavigationBarBackButton.png"] forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(backButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    [backButton setTitle:@"  " forState:UIControlStateNormal];
+    
+    // set left barButtonItem to backButton
+    //self.navigationBar.topItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+    [self.navigationBar addSubview:backButton];
 }
 
 
