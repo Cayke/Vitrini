@@ -11,7 +11,9 @@
 #import "AsyncImageView.h"
 #import "VIColor.h"
 
-@implementation VIFeedSectionView
+@implementation VIFeedSectionView {
+    NSDictionary *storeDict;
+}
 
 -(instancetype)initWithFrame:(CGRect)frame andDict:(NSDictionary*)dict
 {
@@ -24,6 +26,8 @@
 
 -(void) createLayoutWithDict:(NSDictionary*)dict
 {
+    storeDict = [dict objectForKey:@"store"];
+    
     UIBlurEffect *blurEffect;
     blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
     
@@ -61,18 +65,15 @@
     [self addSubview:labelName];
     
     //linha seguinte para section nao ficar "transparente"
-    
-    
     //self.backgroundColor = [VIColor blueVIColor];
-    
     
 }
 
 -(void) goToStorePage
 {
-    NSLog(@"go to store page");
     UIStoryboard *store = [UIStoryboard storyboardWithName:@"VIStoreProfile" bundle:nil];
     VIStoreProfileViewController *storeVC = (VIStoreProfileViewController *) [store instantiateInitialViewController];
+    storeVC.storeID = [[storeDict objectForKey:@"storeID"]intValue];
     [self.feedVC presentViewController:storeVC animated:YES completion:nil];
 }
 

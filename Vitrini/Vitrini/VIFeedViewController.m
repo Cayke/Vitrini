@@ -122,13 +122,22 @@
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             VIServer *server = [[VIServer alloc]init];
-            VIResponse *response = [server getFeedForUser:[VIStorage sharedStorage].user.email andPage:page];
+            VIResponse *response;
+            @try {
+                response = [server getFeedForUser:[VIStorage sharedStorage].user.email andPage:page];
+            }
+            @catch (NSException *exception) {
+                response = nil;
+                NSLog(@"colocar alerta");
+            }
             
             dispatch_async(dispatch_get_main_queue(), ^(void) {
                 [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                 [_refresh endRefreshing];
-                
-                if (response.status == VIRequestSuccess) {
+                if (!response){
+                    // alerta
+                    
+                } else if (response.status == VIRequestSuccess) {
                     page++;
                     NSArray *newFeeds = [NSArray arrayWithArray:response.value];
                     NSLog(@"nf: %@",newFeeds);
