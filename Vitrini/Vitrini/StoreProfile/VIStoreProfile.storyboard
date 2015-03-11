@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ncm-22-tr2">
+                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ncm-22-tr2">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="QAf-Z6-kon">
@@ -168,13 +168,23 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OKn-N8-YmN">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
+                                <color key="backgroundColor" red="1" green="0.15770537009999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="ZvC-MK-ItA"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Ncm-22-tr2" firstAttribute="top" secondItem="L8W-Ix-wWD" secondAttribute="bottom" constant="-20" id="4yW-qS-1B9"/>
                             <constraint firstItem="Uiv-DU-eqd" firstAttribute="top" secondItem="L8W-Ix-wWD" secondAttribute="bottom" id="JqH-jl-IKG"/>
                             <constraint firstItem="Ncm-22-tr2" firstAttribute="leading" secondItem="CkW-Hn-eCs" secondAttribute="leadingMargin" constant="-16" id="Rbk-AE-jlx"/>
+                            <constraint firstItem="OKn-N8-YmN" firstAttribute="top" secondItem="Uiv-DU-eqd" secondAttribute="top" constant="-20" id="jRp-iS-jlJ"/>
+                            <constraint firstItem="OKn-N8-YmN" firstAttribute="leading" secondItem="CkW-Hn-eCs" secondAttribute="leading" id="lQ4-mH-gSs"/>
                             <constraint firstItem="UAd-MX-Ez9" firstAttribute="top" secondItem="Ncm-22-tr2" secondAttribute="bottom" id="lsg-TP-q7F"/>
                             <constraint firstItem="Ncm-22-tr2" firstAttribute="trailing" secondItem="CkW-Hn-eCs" secondAttribute="trailingMargin" constant="16" id="q3p-mW-Ccp"/>
+                            <constraint firstAttribute="centerX" secondItem="OKn-N8-YmN" secondAttribute="centerX" id="yWs-pD-AIY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Uiv-DU-eqd" secondAttribute="trailing" constant="-16" id="zCO-Sc-e9X"/>
                             <constraint firstItem="Uiv-DU-eqd" firstAttribute="leading" secondItem="CkW-Hn-eCs" secondAttribute="leadingMargin" constant="-16" id="zyU-UX-FoZ"/>
                         </constraints>
@@ -182,6 +192,7 @@
                     <connections>
                         <outlet property="collectionView" destination="Ncm-22-tr2" id="Dyb-Hg-ONh"/>
                         <outlet property="navigationBar" destination="Uiv-DU-eqd" id="jOJ-ZO-Ear"/>
+                        <outlet property="statuBarBackground" destination="OKn-N8-YmN" id="iBx-aC-Fr1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fdh-2b-jx8" userLabel="First Responder" sceneMemberID="firstResponder"/>

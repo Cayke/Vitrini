@@ -11,9 +11,11 @@
 
 @interface VIStoreProfileViewController ()
 
+@property (weak, nonatomic) IBOutlet UIView *statuBarBackground;
 @property (nonatomic, weak) IBOutlet UINavigationBar *navigationBar;
 @property (nonatomic, strong) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSArray *dataArray;
+
 
 @property (nonatomic) CGFloat lastContentOffset;
 
@@ -27,18 +29,14 @@ static NSString * const reuseIdentifier = @"Cell";
     [super viewDidLoad];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    self.statuBarBackground.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.1f];
+    self.collectionView.backgroundColor = [UIColor whiteColor];
+
+    UIView* backgroundHeader = [[UIView alloc] initWithFrame:CGRectMake(0, -400, self.view.frame.size.width, 400)];
+    [backgroundHeader setBackgroundColor:[UIColor colorWithRed:0.21f green:0.22f blue:0.25f alpha:1.0f]];
+    [backgroundHeader setAlpha:1.0f];
+    [self.collectionView addSubview:backgroundHeader];
     
-//    self.view.backgroundColor = [UIColor colorWithRed:0.21f green:0.22f blue:0.25f alpha:1.0f];
-//    self.collectionView.backgroundColor = [UIColor yellowColor];
-
-    /*
-    UIView *firstView = [self.view.subviews firstObject];
-    if ([firstView isKindOfClass:[UIScrollView class]]) {
-        
-        UIScrollView *scroll = (UIScrollView*)firstView;
-        scroll.backgroundColor = [UIColor colorWithRed:0.21f green:0.22f blue:0.25f alpha:1.0f];//[UIColor colorWithPatternImage:[UIImage imageNamed:@"zaraBack"]];
-    }*/
-
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -81,8 +79,8 @@ static NSString * const reuseIdentifier = @"Cell";
                               delay: 0.0
                             options: UIViewAnimationOptionCurveLinear
                          animations:^{
-//                             self.navigationBar.alpha = 0.0;
-
+                             self.navigationBar.alpha = 0.0;
+                             self.statuBarBackground.alpha = 1.0;
                          }
                          completion:nil];
         
@@ -91,8 +89,8 @@ static NSString * const reuseIdentifier = @"Cell";
                               delay: 0.0
                             options: UIViewAnimationOptionCurveLinear
                          animations:^{
-//                             self.navigationBar.alpha = 1.0;
-
+                             self.navigationBar.alpha = 1.0;
+                             self.statuBarBackground.alpha = 0.0;
                          }
                          completion:nil];
     }
