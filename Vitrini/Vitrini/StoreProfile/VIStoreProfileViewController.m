@@ -16,6 +16,8 @@
 @property (nonatomic, strong) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSArray *dataArray;
 
+@property (nonatomic, strong) UIView *backgroundHeader;
+
 @property (nonatomic) CGFloat lastContentOffset;
 
 @end
@@ -37,10 +39,10 @@ static NSString * const reuseIdentifier = @"Cell";
     self.statuBarBackground.alpha = 0.0f;
     self.collectionView.backgroundColor = [UIColor whiteColor];
 
-    UIView* backgroundHeader = [[UIView alloc] initWithFrame:CGRectMake(0, -400, self.view.frame.size.width, 400)];
-    [backgroundHeader setBackgroundColor:[UIColor colorWithRed:22/255.0f green:22/255.0f blue:25/255.0f alpha:1.0f]];
-    [backgroundHeader setAlpha:1.0f];
-    [self.collectionView addSubview:backgroundHeader];
+    _backgroundHeader = [[UIView alloc] initWithFrame:CGRectMake(0, -400, self.view.frame.size.width, 400)];
+    [_backgroundHeader setBackgroundColor:[UIColor colorWithRed:22/255.0f green:22/255.0f blue:25/255.0f alpha:1.0f]];
+    [_backgroundHeader setAlpha:1.0f];
+    [self.collectionView addSubview:_backgroundHeader];
     
     // Register cell classes
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
@@ -62,6 +64,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (IBAction)backButtonPressed:(id)sender
 {
+    _backgroundHeader.alpha = 0;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
