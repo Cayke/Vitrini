@@ -31,11 +31,6 @@
     }
 }
 
-- (void)teste
-{
-    NSLog(@"NICE NICE");
-}
-
 - (UIView*)underlayView
 {
     if(_underlayView == nil)

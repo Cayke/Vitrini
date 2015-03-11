@@ -16,7 +16,6 @@
 @property (nonatomic, strong) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSArray *dataArray;
 
-
 @property (nonatomic) CGFloat lastContentOffset;
 
 @end
@@ -59,9 +58,6 @@ static NSString * const reuseIdentifier = @"Cell";
 //    //set left barButtonItem to backButton
 //    //self.navigationBar.topItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
 //    [self.navigationBar addSubview:backButton];
-    
-    [self setNeedsStatusBarAppearanceUpdate];
-    
 }
 
 - (IBAction)backButtonPressed:(id)sender
@@ -136,7 +132,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
     cellHeader.descricaoLoja.text = @"Zara is a Spanish clothing and accessories retailer based in Arteixo, Galicia.";
     cellHeader.descricaoLoja.font = [UIFont fontWithName:@"Helvetica Neue" size:13];
-    //cellHeader.descricaoLoja.font = [UIFont boldSystemFontOfSize:13];
+    cellHeader.descricaoLoja.font = [UIFont boldSystemFontOfSize:13];
     cellHeader.descricaoLoja.textColor = [UIColor whiteColor];
     cellHeader.descricaoLoja.tintColor = [UIColor whiteColor];
 
@@ -144,14 +140,24 @@ static NSString * const reuseIdentifier = @"Cell";
     cellHeader.descricaoLoja.pagingEnabled = NO;
     cellHeader.descricaoLoja.editable = NO;
     
-    [cellHeader.seguirLoja addTarget:self action:@selector(seguirAction) forControlEvents:UIControlEventTouchUpInside];
+    if ([[cellHeader.seguirLoja.titleLabel text] isEqual: @"Seguindo"]) {
+        NSLog(@"Estou Seguindo a Loja");
+    }
+    
+    [cellHeader.seguirLoja addTarget:self action:@selector(seguirAction:) forControlEvents:UIControlEventTouchUpInside];
     [cellHeader.localizacaoLoja addTarget:self action:@selector(localizacaoAction) forControlEvents:UIControlEventTouchUpInside];
     
     return cellHeader;
 }
 
-- (void)seguirAction{
+- (void)seguirAction:(UIButton *)botao
+{
     NSLog(@"seguirAction");
+    if ([[botao.titleLabel text] isEqual: @"Seguir"]) {
+        [botao setTitle:@"Seguindo" forState:UIControlStateNormal];
+    }else{
+        [botao setTitle:@"Seguir" forState:UIControlStateNormal];
+    }
 }
 
 - (void)localizacaoAction{

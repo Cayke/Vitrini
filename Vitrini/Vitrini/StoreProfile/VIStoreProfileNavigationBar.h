@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface VIStoreProfileNavigationBar : UINavigationBar
-- (void)teste;
+
 @end

@@ -142,7 +142,7 @@
                                         <outlet property="backgroundLoja" destination="DgM-Lw-r9X" id="DYL-hN-hra"/>
                                         <outlet property="descricaoLoja" destination="vpz-56-qqP" id="qaz-DX-LkW"/>
                                         <outlet property="localizacaoLoja" destination="gWN-0R-dml" id="aj5-Fb-02x"/>
-                                        <outlet property="logoLoja" destination="GJB-aZ-YZD" id="T4W-SW-mqx"/>
+                                        <outlet property="logoLoja" destination="GJB-aZ-YZD" id="qaL-0e-pYH"/>
                                         <outlet property="seguirLoja" destination="4zI-OF-tAf" id="aDA-z7-hDY"/>
                                     </connections>
                                 </collectionReusableView>
