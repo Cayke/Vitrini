@@ -13,5 +13,9 @@
 
 @property (nonatomic) NSArray *arrayWithProducts;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionVIew;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
+
+-(void) getLikesWithCategory:(int) categoryID;
 
 @end

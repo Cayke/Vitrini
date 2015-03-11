@@ -46,4 +46,10 @@
 -(void) startCategories;
 -(NSArray *) returnCategories;
 
+////////////////////////
+//////  catalogo   /////
+////////////////////////
+-(NSArray *)createProductsWithResponse:(VIResponse *) response;
+
+
 @end

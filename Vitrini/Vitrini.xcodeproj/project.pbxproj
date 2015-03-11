@@ -39,6 +39,7 @@
 		2761A5071A960FE90009395C /* VIResponseType.m in Sources */ = {isa = PBXBuildFile; fileRef = 2761A5061A960FE90009395C /* VIResponseType.m */; };
 		2761A50A1A9610030009395C /* VISymbolsPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2761A5091A9610030009395C /* VISymbolsPackage.m */; };
 		2761A5101A96101C0009395C /* VIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 2761A50F1A96101C0009395C /* VIResponse.m */; };
+		276B3A5F1AAFC4250039544B /* VIProductsFromCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276B3A5E1AAFC4250039544B /* VIProductsFromCategoryViewController.m */; };
 		277A5E9E1A84F40600C14619 /* VICardInfoContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 277A5E9D1A84F40600C14619 /* VICardInfoContentViewController.m */; };
 		277B370D1A80F3D80081C796 /* VIFeedSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 277B370C1A80F3D80081C796 /* VIFeedSectionView.m */; };
 		277B37111A8103D10081C796 /* profile_feed_temp.png in Resources */ = {isa = PBXBuildFile; fileRef = 277B37101A8103D10081C796 /* profile_feed_temp.png */; };
@@ -63,6 +64,7 @@
 		278AFBD41A83ABDE0002BB23 /* Icom_marcacao_filtro.png in Resources */ = {isa = PBXBuildFile; fileRef = 278AFBD21A83ABDE0002BB23 /* Icom_marcacao_filtro.png */; };
 		278AFBD51A83ABDE0002BB23 /* Icom_caixa_foltro.png in Resources */ = {isa = PBXBuildFile; fileRef = 278AFBD31A83ABDE0002BB23 /* Icom_caixa_foltro.png */; };
 		278AFBD81A83EF290002BB23 /* VIFilterCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 278AFBD71A83EF290002BB23 /* VIFilterCollectionViewCell.m */; };
+		2793021C1AAF8B2900708EB7 /* categoriasBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 2793021B1AAF8B2900708EB7 /* categoriasBackground.png */; };
 		279A816D1A706366003E50D7 /* VICatalogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279A816C1A706366003E50D7 /* VICatalogViewController.m */; };
 		279A81711A706553003E50D7 /* Icon_meuslikes_Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 279A81701A706553003E50D7 /* Icon_meuslikes_Menu.png */; };
 		279A81751A70671A003E50D7 /* Catalog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 279A81741A70671A003E50D7 /* Catalog.storyboard */; };
@@ -196,6 +198,8 @@
 		2761A50C1A96100E0009395C /* VIServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIServer.m; sourceTree = "<group>"; };
 		2761A50E1A96101C0009395C /* VIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIResponse.h; sourceTree = "<group>"; };
 		2761A50F1A96101C0009395C /* VIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIResponse.m; sourceTree = "<group>"; };
+		276B3A5D1AAFC4250039544B /* VIProductsFromCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIProductsFromCategoryViewController.h; sourceTree = "<group>"; };
+		276B3A5E1AAFC4250039544B /* VIProductsFromCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIProductsFromCategoryViewController.m; sourceTree = "<group>"; };
 		277A5E9C1A84F40600C14619 /* VICardInfoContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VICardInfoContentViewController.h; sourceTree = "<group>"; };
 		277A5E9D1A84F40600C14619 /* VICardInfoContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VICardInfoContentViewController.m; sourceTree = "<group>"; };
 		277B370B1A80F3D80081C796 /* VIFeedSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIFeedSectionView.h; sourceTree = "<group>"; };
@@ -228,6 +232,7 @@
 		278AFBD31A83ABDE0002BB23 /* Icom_caixa_foltro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icom_caixa_foltro.png; sourceTree = "<group>"; };
 		278AFBD61A83EF290002BB23 /* VIFilterCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIFilterCollectionViewCell.h; sourceTree = "<group>"; };
 		278AFBD71A83EF290002BB23 /* VIFilterCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIFilterCollectionViewCell.m; sourceTree = "<group>"; };
+		2793021B1AAF8B2900708EB7 /* categoriasBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = categoriasBackground.png; sourceTree = "<group>"; };
 		279A816B1A706366003E50D7 /* VICatalogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VICatalogViewController.h; sourceTree = "<group>"; };
 		279A816C1A706366003E50D7 /* VICatalogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VICatalogViewController.m; sourceTree = "<group>"; };
 		279A81701A706553003E50D7 /* Icon_meuslikes_Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_meuslikes_Menu.png; sourceTree = "<group>"; };
@@ -449,12 +454,15 @@
 		279A816A1A706300003E50D7 /* Catalogo */ = {
 			isa = PBXGroup;
 			children = (
+				2793021B1AAF8B2900708EB7 /* categoriasBackground.png */,
 				2714F5771A8CD34E00C3C240 /* Vitrini_catalogos_icon.png */,
 				279A81761A706D54003E50D7 /* fundo vitrini.png */,
 				279A816B1A706366003E50D7 /* VICatalogViewController.h */,
 				279A816C1A706366003E50D7 /* VICatalogViewController.m */,
 				279A81781A7085C6003E50D7 /* VICatalogTableViewCell.h */,
 				279A81791A7085C6003E50D7 /* VICatalogTableViewCell.m */,
+				276B3A5D1AAFC4250039544B /* VIProductsFromCategoryViewController.h */,
+				276B3A5E1AAFC4250039544B /* VIProductsFromCategoryViewController.m */,
 				279A81741A70671A003E50D7 /* Catalog.storyboard */,
 			);
 			name = Catalogo;
@@ -859,6 +867,7 @@
 				0B5729021AAFFE3A00B76187 /* zaraLogo.png in Resources */,
 				278AFBD41A83ABDE0002BB23 /* Icom_marcacao_filtro.png in Resources */,
 				B3B6CF601A44C45C00C07383 /* img1.png in Resources */,
+				2793021C1AAF8B2900708EB7 /* categoriasBackground.png in Resources */,
 				B3B6CF4F1A44C41A00C07383 /* infoBtn.png in Resources */,
 				272C6EF01AA5FF9C00063CCF /* Likes.storyboard in Resources */,
 				92D96E611A7FEBF6009BC061 /* Cards.storyboard in Resources */,
@@ -929,6 +938,7 @@
 				279D46771A82FE630075AEB8 /* VIProfileTableViewCell.m in Sources */,
 				5C8335201A9B2E5B006B3294 /* VIStoreProfileHeaderCollectionReusableView.m in Sources */,
 				277BD8951A80089600AC887A /* VIFeedTableViewCell.m in Sources */,
+				276B3A5F1AAFC4250039544B /* VIProductsFromCategoryViewController.m in Sources */,
 				27CA104F1A9B648D00429F37 /* VILocation.m in Sources */,
 				279B4BB21A9767B300470FC9 /* VIStorage.m in Sources */,
 				B3B6CF411A44BCA600C07383 /* VISignView.m in Sources */,

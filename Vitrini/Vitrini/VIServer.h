@@ -65,6 +65,7 @@
 -(VIResponse *) getCategories;
 
 //clicando numa categoria, vai mostrar os produtos daquela...
+//todo riheldo : criar essa request no server e no app
 -(VIResponse *) getProductsForCategory:(int) categoryID;
 
 //clicando no produto baixa ele por completo...

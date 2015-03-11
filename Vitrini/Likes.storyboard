@@ -50,17 +50,24 @@
                                     <outlet property="delegate" destination="DjI-0v-liD" id="nVJ-jP-Qg1"/>
                                 </connections>
                             </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="sDE-SZ-4q3">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="0.098039215686274508" green="0.18431372549019609" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="JuR-Bf-m5b" firstAttribute="leading" secondItem="A42-qf-mXi" secondAttribute="leading" id="5j3-OS-0Ny"/>
                             <constraint firstAttribute="trailing" secondItem="JuR-Bf-m5b" secondAttribute="trailing" id="EOH-gP-bfO"/>
+                            <constraint firstAttribute="centerX" secondItem="sDE-SZ-4q3" secondAttribute="centerX" id="HZG-DI-F51"/>
                             <constraint firstItem="JuR-Bf-m5b" firstAttribute="top" secondItem="A42-qf-mXi" secondAttribute="top" constant="21" id="XaV-U3-HlU"/>
+                            <constraint firstAttribute="centerY" secondItem="sDE-SZ-4q3" secondAttribute="centerY" id="foZ-cW-CqT"/>
                             <constraint firstItem="OL5-po-wrH" firstAttribute="top" secondItem="JuR-Bf-m5b" secondAttribute="bottom" id="tri-EY-Sw3"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="sDE-SZ-4q3" id="K4Z-f2-rGg"/>
                         <outlet property="collectionVIew" destination="JuR-Bf-m5b" id="v6u-82-Zyr"/>
                     </connections>
                 </viewController>

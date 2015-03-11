@@ -57,16 +57,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 -(void) addBlur
 {
     //colocar blur effect na imagem
@@ -87,47 +77,6 @@
 
 -(void) getCategories
 {
-    //todo : pegar categorias pelo sharedStorage
-    
-//    _arrayWithCategories = [[NSMutableArray alloc]init];
-//    NSMutableDictionary *dict;
-//    
-//    //add coluna nova
-//    dict = [[NSMutableDictionary alloc]init];
-//    [dict setValue:@"Um" forKey:@"category"];
-//    [dict setValue:[NSNumber numberWithBool:YES] forKey:@"Active"];
-//    [_arrayWithCategories addObject:dict];
-//    
-//    //add coluna nova
-//    dict = [[NSMutableDictionary alloc]init];
-//    [dict setValue:@"Dois" forKey:@"category"];
-//    [dict setValue:[NSNumber numberWithBool:YES] forKey:@"Active"];
-//    [_arrayWithCategories addObject:dict];
-//    
-//    //add coluna nova
-//    dict = [[NSMutableDictionary alloc]init];
-//    [dict setValue:@"Tres" forKey:@"category"];
-//    [dict setValue:[NSNumber numberWithBool:YES] forKey:@"Active"];
-//    [_arrayWithCategories addObject:dict];
-//    
-//    //add coluna nova
-//    dict = [[NSMutableDictionary alloc]init];
-//    [dict setValue:@"Quatro" forKey:@"category"];
-//    [dict setValue:[NSNumber numberWithBool:YES] forKey:@"Active"];
-//    [_arrayWithCategories addObject:dict];
-//    
-//    //add coluna nova
-//    dict = [[NSMutableDictionary alloc]init];
-//    [dict setValue:@"Cinco" forKey:@"category"];
-//    [dict setValue:[NSNumber numberWithBool:YES] forKey:@"Active"];
-//    [_arrayWithCategories addObject:dict];
-//    
-//    //add coluna nova
-//    dict = [[NSMutableDictionary alloc]init];
-//    [dict setValue:@"Seis" forKey:@"category"];
-//    [dict setValue:[NSNumber numberWithBool:YES] forKey:@"Active"];
-//    [_arrayWithCategories addObject:dict];
-    
     _arrayWithCategories = [[VIStorage sharedStorage]returnCategories];
     
 }
@@ -142,8 +91,25 @@
     [[[[self view]window]layer] addAnimation:transition forKey:kCATransitionFade];
     
     [self dismissViewControllerAnimated:NO completion:nil];
+}
+
+-(void) filterSelected:(NSInteger) indexPathRow
+{
+    //fade view
+    CATransition *transition = [CATransition animation];
+    transition.duration = 0.5;
+    transition.type = kCATransitionFade;
+    
+    [[[[self view]window]layer] addAnimation:transition forKey:kCATransitionFade];
+    
+    [self dismissViewControllerAnimated:NO completion:nil];
     
     //todo : criar uma maneira de mandar pro servidor apenas os filtros selecionados
+    VICategory *category = [_arrayWithCategories objectAtIndex:indexPathRow];
+    if (_likesVC) {
+        [_likesVC getLikesWithCategory:category.idCategory];
+    }
+    
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -175,7 +141,7 @@
     
     [collectionView reloadItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
     
-    NSLog(@"row:%ld", (long)indexPath.row);
+    [self filterSelected:indexPath.row];
 }
 
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
@@ -186,9 +152,5 @@
     }
     return nil;
 }
-
-
-
-
 
 @end

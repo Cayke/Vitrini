@@ -154,6 +154,22 @@
     return [NSArray arrayWithArray:mArray];
 }
 
-
+////////////////////////
+//////  catalogo   /////
+////////////////////////
+-(NSArray *)createProductsWithResponse:(VIResponse *) response
+{
+    VISymbolsPackage *symbPack = [[VISymbolsPackage alloc]init];
+    
+    NSArray *arrayWithProducts = [response.value objectForKey:symbPack.products];
+    
+    NSMutableArray *returnArray = [[NSMutableArray alloc]init];
+    for (NSDictionary *dic in arrayWithProducts) {
+        VIProduct *product = [[VIProduct alloc]initWithProductFromServer:dic];
+        [returnArray addObject: product];
+    }
+    
+    return [NSArray arrayWithArray:returnArray];
+}
 
 @end

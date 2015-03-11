@@ -12,6 +12,7 @@
 #import "VIServer.h"
 #import "VICategory.h"
 #import "VIStorage.h"
+#import "VIProductsFromCategoryViewController.h"
 
 @interface VICatalogViewController ()
 
@@ -25,20 +26,20 @@
     
     _tableView.backgroundColor = [UIColor clearColor];
     
-    //colocar blur effect na imagem
-    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
-    UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc]initWithEffect:blurEffect];
-    [blurEffectView setFrame:self.view.frame];
-    
-    //colocar vibrancy effect
-    UIVibrancyEffect * vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:blurEffect];
-    UIVisualEffectView *vibrancyEffectView = [[UIVisualEffectView alloc]initWithEffect:vibrancyEffect];
-    [vibrancyEffectView setFrame:self.view.frame];
-    
-    [blurEffectView addSubview:vibrancyEffectView];
-    
-    //adicionar o blur a view
-    [_imageViewBackground addSubview:blurEffectView];
+//    //colocar blur effect na imagem
+//    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+//    UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc]initWithEffect:blurEffect];
+//    [blurEffectView setFrame:self.view.frame];
+//    
+//    //colocar vibrancy effect
+//    UIVibrancyEffect * vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:blurEffect];
+//    UIVisualEffectView *vibrancyEffectView = [[UIVisualEffectView alloc]initWithEffect:vibrancyEffect];
+//    [vibrancyEffectView setFrame:self.view.frame];
+//    
+//    [blurEffectView addSubview:vibrancyEffectView];
+//    
+//    //adicionar o blur a view
+//    [_imageViewBackground addSubview:blurEffectView];
     
     //delegate table view
     _tableView.delegate = self;
@@ -46,6 +47,9 @@
     
     //inicializar array com categorias
     _arrayCategorys = [[VIStorage sharedStorage]returnCategories];
+    
+    //botar status bar branca
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,15 +57,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
-*/
 
 -(UIImage *)itemMenuIcon
 {
@@ -83,8 +82,18 @@
     
     VICategory *cat = [_arrayCategorys objectAtIndex:indexPath.row];
     [cell mountWithCategory:cat];
+    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UIStoryboard *store = [UIStoryboard storyboardWithName:@"Catalog" bundle:nil];
+    VIProductsFromCategoryViewController *products = (VIProductsFromCategoryViewController *) [store instantiateViewControllerWithIdentifier:@"VIProductsFromCategoryViewController"];
+    [self presentViewController:products animated:YES completion:nil];
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 
