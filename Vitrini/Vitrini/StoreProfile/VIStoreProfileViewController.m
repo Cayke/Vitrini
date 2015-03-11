@@ -17,6 +17,8 @@
 @property (nonatomic, strong) NSArray *dataArray;
 
 @property (nonatomic, strong) UIView *backgroundHeader;
+@property (nonatomic) BOOL firstTime;
+
 
 @property (nonatomic) CGFloat lastContentOffset;
 
@@ -33,6 +35,8 @@ static NSString * const reuseIdentifier = @"Cell";
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     
+    _firstTime = YES;
+    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     self.statuBarBackground.backgroundColor = [UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:0.2f];
@@ -48,7 +52,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     // Do any additional setup after loading the view.
-    self.dataArray = [NSArray arrayWithObjects:@"tumbStore1", @"tumbStore2", @"tumbStore3", @"tumbStore4", @"tumbStore5", @"tumbStore6", @"tumbStore7", @"tumbStore8", @"tumbStore9", @"tumbStore10", @"tumbStore11", @"tumbStore12", nil];
+    self.dataArray = [NSArray arrayWithObjects:@"tumbStore1", @"tumbStore2", @"tumbStore3", @"tumbStore4", @"tumbStore5", @"tumbStore6", @"tumbStore7", @"tumbStore8", @"tumbStore9", @"tumbStore10", @"tumbStore11", @"tumbStore12", @"tumbStore1", @"tumbStore2", @"tumbStore3", @"tumbStore4", @"tumbStore5", @"tumbStore6", @"tumbStore7", @"tumbStore8", @"tumbStore9", @"tumbStore10", @"tumbStore11", @"tumbStore12", nil];
     
     self.navigationBar.topItem.title = @"Lojas Zara";
     
@@ -130,6 +134,10 @@ static NSString * const reuseIdentifier = @"Cell";
 {
     VIStoreProfileHeaderCollectionReusableView* cellHeader = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Header" forIndexPath:indexPath];
     
+    if (_firstTime) {
+        NSLog(@"_firstTime YES YES YES");
+        
+        
     cellHeader.backgroundLoja.image = [UIImage imageNamed:@"zaraBack.png"];
     cellHeader.logoLoja.image = [UIImage imageNamed:@"zaraLogo.png"];
 
@@ -150,6 +158,8 @@ static NSString * const reuseIdentifier = @"Cell";
     [cellHeader.seguirLoja addTarget:self action:@selector(seguirAction:) forControlEvents:UIControlEventTouchUpInside];
     [cellHeader.localizacaoLoja addTarget:self action:@selector(localizacaoAction) forControlEvents:UIControlEventTouchUpInside];
     
+        _firstTime = NO;
+    }
     return cellHeader;
 }
 
@@ -158,7 +168,7 @@ static NSString * const reuseIdentifier = @"Cell";
     NSLog(@"seguirAction");
     if ([[botao.titleLabel text] isEqual: @"Seguir"]) {
         [botao setTitle:@"Seguindo" forState:UIControlStateNormal];
-    }else{
+    } else {
         [botao setTitle:@"Seguir" forState:UIControlStateNormal];
     }
 }

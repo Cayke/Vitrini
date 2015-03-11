@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     VIDraggableCardsView *draggableBackground = [[VIDraggableCardsView alloc]initWithFrame:self.view.frame];
     draggableBackground.VICardsVC = self;
     [self.view addSubview:draggableBackground];
