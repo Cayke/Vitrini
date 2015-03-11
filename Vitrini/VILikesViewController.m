@@ -23,12 +23,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    [self getLikesWithCategory:0];
     [self setupStatusAndFilter];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    [self getLikesWithCategory:0];
+//    [self getLikesWithCategory:0];
 }
 
 - (void)didReceiveMemoryWarning {
