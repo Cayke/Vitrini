@@ -37,20 +37,18 @@ static NSString * const reuseIdentifier = @"Cell";
     
     self.navigationBar.topItem.title = @"Lojas Zara";
     
-    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    backButton.frame = CGRectMake(7, 1, 30, 41); // custom frame
-    [backButton setImage:[UIImage imageNamed:@"VIStoreProfileNavigationBarBackButton.png"] forState:UIControlStateNormal];
-    [backButton addTarget:self action:@selector(backButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-    [backButton setTitle:@"  " forState:UIControlStateNormal];
+//    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    backButton.frame = CGRectMake(10, 0, 30, 42); // custom frame
+//    [backButton setImage:[UIImage imageNamed:@"VIStoreProfileNavigationBarBackButton"] forState:UIControlStateNormal];
+//    [backButton addTarget:self action:@selector(backButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+//    [backButton setTitle:@" " forState:UIControlStateNormal];
+//    //set left barButtonItem to backButton
+//    //self.navigationBar.topItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+//    [self.navigationBar addSubview:backButton];
     
-    // set left barButtonItem to backButton
-    //self.navigationBar.topItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-    [self.navigationBar addSubview:backButton];
 }
 
-
-
-- (void)backButtonPressed
+- (IBAction)backButtonPressed:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -115,9 +113,19 @@ static NSString * const reuseIdentifier = @"Cell";
 {
     VIStoreProfileHeaderCollectionReusableView* cellHeader = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Header" forIndexPath:indexPath];
     
-    cellHeader.backgroundLoja.image = [UIImage imageNamed:@"zaraBackground.png"];
-    cellHeader.logoLoja.image = [UIImage imageNamed:@"Vitrini_Login__0002_Icom.png"];
-    cellHeader.descricaoLoja.text = @"Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+    cellHeader.backgroundLoja.image = [UIImage imageNamed:@"zaraBack.png"];
+    cellHeader.logoLoja.image = [UIImage imageNamed:@"zaraLogo.png"];
+
+    cellHeader.descricaoLoja.text = @"Zara is a Spanish clothing and accessories retailer based in Arteixo, Galicia.";
+    cellHeader.descricaoLoja.font = [UIFont fontWithName:@"Helvetica Neue" size:13];
+//    cellHeader.descricaoLoja.font = [UIFont boldSystemFontOfSize:13];
+    cellHeader.descricaoLoja.textColor = [UIColor whiteColor];
+    cellHeader.descricaoLoja.tintColor = [UIColor whiteColor];
+
+    cellHeader.descricaoLoja.scrollEnabled = NO;
+    cellHeader.descricaoLoja.pagingEnabled = NO;
+    cellHeader.descricaoLoja.editable = NO;
+    
     [cellHeader.seguirLoja addTarget:self action:@selector(seguirAction) forControlEvents:UIControlEventTouchUpInside];
     [cellHeader.localizacaoLoja addTarget:self action:@selector(localizacaoAction) forControlEvents:UIControlEventTouchUpInside];
     

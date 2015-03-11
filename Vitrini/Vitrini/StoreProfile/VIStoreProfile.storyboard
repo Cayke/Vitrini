@@ -22,7 +22,7 @@
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="QAf-Z6-kon">
                                     <size key="itemSize" width="124" height="124"/>
-                                    <size key="headerReferenceSize" width="50" height="330"/>
+                                    <size key="headerReferenceSize" width="50" height="280"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
@@ -42,75 +42,58 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DgM-Lw-r9X">
-                                            <rect key="frame" x="0.0" y="-20" width="600" height="240"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="280"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="240" id="FR0-dO-2ec"/>
+                                                <constraint firstAttribute="height" constant="280" id="FR0-dO-2ec"/>
                                             </constraints>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GJB-aZ-YZD">
-                                            <rect key="frame" x="250" y="50" width="100" height="100"/>
+                                            <rect key="frame" x="28" y="78" width="125" height="125"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="100" id="PO0-MX-6VT"/>
-                                                <constraint firstAttribute="width" constant="100" id="wSH-xt-m0b"/>
+                                                <constraint firstAttribute="height" constant="125" id="PO0-MX-6VT"/>
+                                                <constraint firstAttribute="width" constant="125" id="wSH-xt-m0b"/>
                                             </constraints>
                                         </imageView>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpz-56-qqP">
-                                            <rect key="frame" x="10" y="220" width="580" height="70"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <rect key="frame" x="173" y="105" width="409" height="70"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
+                                                <constraint firstAttribute="height" constant="70" id="4jb-ju-cYi"/>
+                                                <constraint firstAttribute="height" constant="70" id="Suy-mh-scE"/>
                                                 <constraint firstAttribute="height" constant="70" id="awv-Ua-0lb"/>
                                             </constraints>
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Suy-mh-scE"/>
+                                                    <exclude reference="awv-Ua-0lb"/>
+                                                </mask>
+                                            </variation>
                                         </textView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjq-TW-MBB">
-                                            <rect key="frame" x="10" y="290" width="110" height="30"/>
-                                            <color key="backgroundColor" red="0.0028289813609999998" green="0.72823660710000004" blue="0.0084574786069999998" alpha="1" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="110" id="0wz-mR-VeU"/>
-                                                <constraint firstAttribute="height" constant="30" id="9Yp-HW-onk"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <state key="normal" title="Seguir">
-                                                <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpG-c2-jMQ">
-                                            <rect key="frame" x="480" y="290" width="110" height="30"/>
-                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="cv3-8Y-Ckh"/>
-                                                <constraint firstAttribute="width" constant="110" id="uc5-ej-OXK"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <state key="normal" title="Localizacao">
-                                                <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="DgM-Lw-r9X" secondAttribute="trailing" constant="-8" id="1AF-K6-5q1"/>
-                                        <constraint firstItem="DgM-Lw-r9X" firstAttribute="top" secondItem="CI3-98-0vi" secondAttribute="topMargin" constant="-28" id="1if-uy-f9N"/>
-                                        <constraint firstItem="Gjq-TW-MBB" firstAttribute="leading" secondItem="CI3-98-0vi" secondAttribute="leadingMargin" constant="2" id="7Wn-c2-aud"/>
-                                        <constraint firstItem="GJB-aZ-YZD" firstAttribute="centerY" secondItem="DgM-Lw-r9X" secondAttribute="centerY" id="Gxw-PT-PfU"/>
-                                        <constraint firstItem="vpz-56-qqP" firstAttribute="top" secondItem="DgM-Lw-r9X" secondAttribute="bottom" id="KlL-GM-NBc"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="vpz-56-qqP" secondAttribute="trailing" constant="2" id="XiF-kd-uCG"/>
-                                        <constraint firstItem="Gjq-TW-MBB" firstAttribute="top" secondItem="vpz-56-qqP" secondAttribute="bottom" id="ZOi-aP-j54"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="lpG-c2-jMQ" secondAttribute="trailing" constant="2" id="hku-ZF-LyP"/>
-                                        <constraint firstItem="vpz-56-qqP" firstAttribute="leading" secondItem="CI3-98-0vi" secondAttribute="leadingMargin" constant="2" id="mMb-yB-ceV"/>
+                                        <constraint firstItem="DgM-Lw-r9X" firstAttribute="top" secondItem="CI3-98-0vi" secondAttribute="topMargin" constant="-8" id="1if-uy-f9N"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="vpz-56-qqP" secondAttribute="trailing" constant="10" id="RLE-0P-P6O"/>
+                                        <constraint firstAttribute="centerY" secondItem="GJB-aZ-YZD" secondAttribute="centerY" id="bK9-8E-R3A"/>
+                                        <constraint firstAttribute="centerY" secondItem="GJB-aZ-YZD" secondAttribute="centerY" id="l5o-bM-yCS"/>
+                                        <constraint firstAttribute="centerY" secondItem="vpz-56-qqP" secondAttribute="centerY" id="mzE-nl-wDo"/>
+                                        <constraint firstItem="GJB-aZ-YZD" firstAttribute="leading" secondItem="CI3-98-0vi" secondAttribute="leadingMargin" constant="20" id="nbl-vi-XVF"/>
                                         <constraint firstItem="DgM-Lw-r9X" firstAttribute="leading" secondItem="CI3-98-0vi" secondAttribute="leadingMargin" constant="-8" id="o0h-fe-jCd"/>
-                                        <constraint firstItem="lpG-c2-jMQ" firstAttribute="top" secondItem="vpz-56-qqP" secondAttribute="bottom" id="pBA-UN-AzN"/>
-                                        <constraint firstItem="GJB-aZ-YZD" firstAttribute="centerX" secondItem="DgM-Lw-r9X" secondAttribute="centerX" id="yvJ-6x-6Up"/>
+                                        <constraint firstItem="vpz-56-qqP" firstAttribute="leading" secondItem="GJB-aZ-YZD" secondAttribute="trailing" constant="20" id="uYo-91-ayi"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="bK9-8E-R3A"/>
+                                        </mask>
+                                    </variation>
                                     <connections>
                                         <outlet property="backgroundLoja" destination="DgM-Lw-r9X" id="DYL-hN-hra"/>
                                         <outlet property="descricaoLoja" destination="vpz-56-qqP" id="qaz-DX-LkW"/>
-                                        <outlet property="localizacaoLoja" destination="lpG-c2-jMQ" id="ar5-yu-mVG"/>
                                         <outlet property="logoLoja" destination="GJB-aZ-YZD" id="T4W-SW-mqx"/>
-                                        <outlet property="seguirLoja" destination="Gjq-TW-MBB" id="6yx-kN-OJ8"/>
                                     </connections>
                                 </collectionReusableView>
                                 <connections>
@@ -120,11 +103,19 @@
                             </collectionView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uiv-DU-eqd" customClass="VIStoreProfileNavigationBar">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Title" id="Opp-6H-1rF"/>
+                                    <navigationItem title="Title" id="fIY-xU-GbX">
+                                        <barButtonItem key="leftBarButtonItem" image="VIStoreProfileNavigationBarBackButton.png" id="UKJ-3g-dCj">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="backButtonPressed:" destination="s8c-2U-U6c" id="0LI-rl-lBa"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -149,4 +140,7 @@
             <point key="canvasLocation" x="856" y="148"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="VIStoreProfileNavigationBarBackButton.png" width="12" height="20"/>
+    </resources>
 </document>

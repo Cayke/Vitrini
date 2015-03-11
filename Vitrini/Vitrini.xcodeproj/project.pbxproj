@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0B5728FC1AAF2B8400B76187 /* VIStoreProfileNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5728FB1AAF2B8400B76187 /* VIStoreProfileNavigationBar.m */; };
-		0B5728FE1AAF34D100B76187 /* VIStoreProfileNavigationBarBackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5728FD1AAF34D100B76187 /* VIStoreProfileNavigationBarBackButton.png */; };
-		0B5729001AAFEBA700B76187 /* zaraBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5728FF1AAFEBA700B76187 /* zaraBackground.png */; };
+		0B5728FE1AAF34D100B76187 /* VIStoreProfileNavigationBarBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5728FD1AAF34D100B76187 /* VIStoreProfileNavigationBarBackButton@2x.png */; };
+		0B5729021AAFFE3A00B76187 /* zaraLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5729011AAFFE3A00B76187 /* zaraLogo.png */; };
+		0B5729041AAFFFB800B76187 /* zaraBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5729031AAFFFB800B76187 /* zaraBack.png */; };
 		270BF8761A84288F00D261A1 /* VIFilterCollectionFooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 270BF8751A84288F00D261A1 /* VIFilterCollectionFooterCollectionReusableView.m */; };
 		2714F5721A8CD19D00C3C240 /* Vitrini_Vitrini_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2714F5711A8CD19D00C3C240 /* Vitrini_Vitrini_icon.png */; };
 		2714F5741A8CD24E00C3C240 /* Vitrini_novidades_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2714F5731A8CD24E00C3C240 /* Vitrini_novidades_icon.png */; };
@@ -141,8 +142,9 @@
 /* Begin PBXFileReference section */
 		0B5728FA1AAF2B8400B76187 /* VIStoreProfileNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VIStoreProfileNavigationBar.h; path = StoreProfile/VIStoreProfileNavigationBar.h; sourceTree = "<group>"; };
 		0B5728FB1AAF2B8400B76187 /* VIStoreProfileNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VIStoreProfileNavigationBar.m; path = StoreProfile/VIStoreProfileNavigationBar.m; sourceTree = "<group>"; };
-		0B5728FD1AAF34D100B76187 /* VIStoreProfileNavigationBarBackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VIStoreProfileNavigationBarBackButton.png; sourceTree = "<group>"; };
-		0B5728FF1AAFEBA700B76187 /* zaraBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zaraBackground.png; sourceTree = "<group>"; };
+		0B5728FD1AAF34D100B76187 /* VIStoreProfileNavigationBarBackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VIStoreProfileNavigationBarBackButton@2x.png"; sourceTree = "<group>"; };
+		0B5729011AAFFE3A00B76187 /* zaraLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zaraLogo.png; sourceTree = "<group>"; };
+		0B5729031AAFFFB800B76187 /* zaraBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zaraBack.png; sourceTree = "<group>"; };
 		270BF8741A84288F00D261A1 /* VIFilterCollectionFooterCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIFilterCollectionFooterCollectionReusableView.h; sourceTree = "<group>"; };
 		270BF8751A84288F00D261A1 /* VIFilterCollectionFooterCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIFilterCollectionFooterCollectionReusableView.m; sourceTree = "<group>"; };
 		2714F5711A8CD19D00C3C240 /* Vitrini_Vitrini_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vitrini_Vitrini_icon.png; sourceTree = "<group>"; };
@@ -443,8 +445,9 @@
 		5CE3DE301A80FDB400F0CC92 /* StoreProfile */ = {
 			isa = PBXGroup;
 			children = (
-				0B5728FD1AAF34D100B76187 /* VIStoreProfileNavigationBarBackButton.png */,
-				0B5728FF1AAFEBA700B76187 /* zaraBackground.png */,
+				0B5729031AAFFFB800B76187 /* zaraBack.png */,
+				0B5729011AAFFE3A00B76187 /* zaraLogo.png */,
+				0B5728FD1AAF34D100B76187 /* VIStoreProfileNavigationBarBackButton@2x.png */,
 				0B5728FA1AAF2B8400B76187 /* VIStoreProfileNavigationBar.h */,
 				0B5728FB1AAF2B8400B76187 /* VIStoreProfileNavigationBar.m */,
 				5CE3DE401A81022900F0CC92 /* VIStoreProfile.storyboard */,
@@ -765,6 +768,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B5729041AAFFFB800B76187 /* zaraBack.png in Resources */,
 				279A81751A70671A003E50D7 /* Catalog.storyboard in Resources */,
 				B32B2CCB1A8CDF34004BCDD9 /* noSign@2x.png in Resources */,
 				B3B6CF541A44C41A00C07383 /* notBtn@3x.png in Resources */,
@@ -775,12 +779,11 @@
 				B3B6CF561A44C41A00C07383 /* yesBtn@2x.png in Resources */,
 				B3B6CF501A44C41A00C07383 /* infoBtn@2x.png in Resources */,
 				278AFBD11A83ABD40002BB23 /* backgroundFilter.png in Resources */,
-				0B5728FE1AAF34D100B76187 /* VIStoreProfileNavigationBarBackButton.png in Resources */,
+				0B5728FE1AAF34D100B76187 /* VIStoreProfileNavigationBarBackButton@2x.png in Resources */,
 				B3B6CF8C1A49003F00C07383 /* CloseMenu.png in Resources */,
 				B3B6CF521A44C41A00C07383 /* notBtn.png in Resources */,
 				2714F57F1A8CD9CC00C3C240 /* Vitrini_NewAccountpart2_icon.png in Resources */,
 				2781FF211A6ED7D7009FFAA5 /* Vitrini_Login__0008_BG.png in Resources */,
-				0B5729001AAFEBA700B76187 /* zaraBackground.png in Resources */,
 				B3B6CF571A44C41A00C07383 /* yesBtn@3x.png in Resources */,
 				B32B2CCD1A8CDF34004BCDD9 /* yesSign.png in Resources */,
 				279A81771A706D54003E50D7 /* fundo vitrini.png in Resources */,
@@ -801,6 +804,7 @@
 				5CE3DE411A81022900F0CC92 /* VIStoreProfile.storyboard in Resources */,
 				B3B6CF551A44C41A00C07383 /* yesBtn.png in Resources */,
 				2781FF261A6EDBFA009FFAA5 /* Vitrini_Login__0001_Logo.png in Resources */,
+				0B5729021AAFFE3A00B76187 /* zaraLogo.png in Resources */,
 				278AFBD41A83ABDE0002BB23 /* Icom_marcacao_filtro.png in Resources */,
 				B3B6CF601A44C45C00C07383 /* img1.png in Resources */,
 				B3B6CF4F1A44C41A00C07383 /* infoBtn.png in Resources */,
