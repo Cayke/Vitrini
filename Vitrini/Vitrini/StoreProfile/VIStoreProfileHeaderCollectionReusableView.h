@@ -12,7 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundLoja;
 @property (weak, nonatomic) IBOutlet UIImageView *logoLoja;
-@property (weak, nonatomic) IBOutlet UILabel *nomeLoja;
 @property (weak, nonatomic) IBOutlet UITextView *descricaoLoja;
 @property (weak, nonatomic) IBOutlet UIButton *seguirLoja;
 @property (weak, nonatomic) IBOutlet UIButton *localizacaoLoja;

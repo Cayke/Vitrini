@@ -35,13 +35,13 @@ static NSString * const reuseIdentifier = @"Cell";
     // Do any additional setup after loading the view.
     self.dataArray = [NSArray arrayWithObjects:@"Vitrini_Login__0008_BG.png", @"backgroundFilter.png", @"Vitrini_Login__0008_BG.png", @"backgroundFilter.png", @"Vitrini_Login__0008_BG.png", @"backgroundFilter.png", @"Vitrini_Login__0008_BG.png", @"backgroundFilter.png", @"Vitrini_Login__0008_BG.png", @"backgroundFilter.png", @"Vitrini_Login__0008_BG.png", @"backgroundFilter.png", @"Vitrini_Login__0008_BG.png", @"backgroundFilter.png", @"Vitrini_Login__0008_BG.png", @"backgroundFilter.png", @"Vitrini_Login__0008_BG.png", @"backgroundFilter.png", nil];
     
-    self.navigationBar.topItem.title = @"";
-    self.navigationBar.topItem.leftBarButtonItem.title = @"Back";
-    self.navigationBar.topItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(btnBack:)];
-    
+    self.navigationBar.topItem.title = @"Lojas Zara";
+
 }
 
-- (void)btnBack:(id)sender
+
+
+- (void)backButtonPressed
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -106,9 +106,8 @@ static NSString * const reuseIdentifier = @"Cell";
 {
     VIStoreProfileHeaderCollectionReusableView* cellHeader = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Header" forIndexPath:indexPath];
     
-    cellHeader.backgroundLoja.image = [UIImage imageNamed:@"Vitrini_Login__0008_BG.png"];
+    cellHeader.backgroundLoja.image = [UIImage imageNamed:@"zaraBackground.png"];
     cellHeader.logoLoja.image = [UIImage imageNamed:@"Vitrini_Login__0002_Icom.png"];
-    cellHeader.nomeLoja.text = @"Lojas - Vitrini";
     cellHeader.descricaoLoja.text = @"Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
     [cellHeader.seguirLoja addTarget:self action:@selector(seguirAction) forControlEvents:UIControlEventTouchUpInside];
     [cellHeader.localizacaoLoja addTarget:self action:@selector(localizacaoAction) forControlEvents:UIControlEventTouchUpInside];
@@ -127,7 +126,7 @@ static NSString * const reuseIdentifier = @"Cell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-    UIImageView *roupas =[[UIImageView alloc] initWithFrame:CGRectMake(0,0,110,110)];
+    UIImageView *roupas =[[UIImageView alloc] initWithFrame:CGRectMake(0,0,124,124)];
     roupas.image = [UIImage imageNamed: [self.dataArray objectAtIndex:indexPath.row]];
     roupas.tag = 202;
 
