@@ -11,7 +11,7 @@
 
 @interface VIRegisterSingleInputTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UITextField *singleInput;
-@property (weak, nonatomic) IBOutlet UIView *lineView;
+@property (weak, nonatomic) IBOutlet UIImageView *icon;
 
 @property (nonatomic) VIUser *auxUser;
 
