@@ -19,19 +19,24 @@
 
 @implementation VIStoreProfileNavigationBar
 
-- (void) didAddSubview:(UIView *)subview
+- (void)didAddSubview:(UIView *)subview
 {
     [super didAddSubview:subview];
     
     if(subview != _underlayView)
     {
-        UIView* underlayView = self.underlayView;
+        UIView* underlayView = [self underlayView];
         [underlayView removeFromSuperview];
         [self insertSubview:underlayView atIndex:1];
     }
 }
 
-- (UIView*) underlayView
+- (void)teste
+{
+    NSLog(@"NICE NICE");
+}
+
+- (UIView*)underlayView
 {
     if(_underlayView == nil)
     {

@@ -26,16 +26,17 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    /*
-    self.view.tintColor = [UIColor blueColor];
-    self.view.backgroundColor = [UIColor yellowColor];
-
-    UIView *firstView = [self.view.subviews firstObject];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
+//    self.view.backgroundColor = [UIColor colorWithRed:0.21f green:0.22f blue:0.25f alpha:1.0f];
+//    self.collectionView.backgroundColor = [UIColor yellowColor];
+
+    /*
+    UIView *firstView = [self.view.subviews firstObject];
     if ([firstView isKindOfClass:[UIScrollView class]]) {
         
         UIScrollView *scroll = (UIScrollView*)firstView;
-        scroll.backgroundColor = [UIColor redColor];
+        scroll.backgroundColor = [UIColor colorWithRed:0.21f green:0.22f blue:0.25f alpha:1.0f];//[UIColor colorWithPatternImage:[UIImage imageNamed:@"zaraBack"]];
     }*/
 
     // Uncomment the following line to preserve selection between presentations
@@ -80,7 +81,8 @@ static NSString * const reuseIdentifier = @"Cell";
                               delay: 0.0
                             options: UIViewAnimationOptionCurveLinear
                          animations:^{
-                             self.navigationBar.alpha = 0.0;
+//                             self.navigationBar.alpha = 0.0;
+
                          }
                          completion:nil];
         
@@ -89,7 +91,8 @@ static NSString * const reuseIdentifier = @"Cell";
                               delay: 0.0
                             options: UIViewAnimationOptionCurveLinear
                          animations:^{
-                             self.navigationBar.alpha = 1.0;
+//                             self.navigationBar.alpha = 1.0;
+
                          }
                          completion:nil];
     }
@@ -155,7 +158,7 @@ static NSString * const reuseIdentifier = @"Cell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-    UIImageView *roupas =[[UIImageView alloc] initWithFrame:CGRectMake(0,0,124,124)];
+    UIImageView *roupas = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,124,124)];
     roupas.image = [UIImage imageNamed: [self.dataArray objectAtIndex:indexPath.row]];
     roupas.tag = 202;
 
