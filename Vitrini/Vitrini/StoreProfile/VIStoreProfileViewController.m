@@ -26,14 +26,17 @@
 static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    self.statuBarBackground.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.1f];
+    
+    self.statuBarBackground.backgroundColor = [UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:0.4f];
+    self.statuBarBackground.alpha = 0.0f;
     self.collectionView.backgroundColor = [UIColor whiteColor];
 
     UIView* backgroundHeader = [[UIView alloc] initWithFrame:CGRectMake(0, -400, self.view.frame.size.width, 400)];
-    [backgroundHeader setBackgroundColor:[UIColor colorWithRed:0.21f green:0.22f blue:0.25f alpha:1.0f]];
+    [backgroundHeader setBackgroundColor:[UIColor colorWithRed:22/255.0f green:22/255.0f blue:25/255.0f alpha:1.0f]];
     [backgroundHeader setAlpha:1.0f];
     [self.collectionView addSubview:backgroundHeader];
     
@@ -57,6 +60,8 @@ static NSString * const reuseIdentifier = @"Cell";
 //    //self.navigationBar.topItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
 //    [self.navigationBar addSubview:backButton];
     
+    [self setNeedsStatusBarAppearanceUpdate];
+    
 }
 
 - (IBAction)backButtonPressed:(id)sender
@@ -75,7 +80,7 @@ static NSString * const reuseIdentifier = @"Cell";
 {
     if (scrollView.contentOffset.y > self.lastContentOffset) {
         
-        [UIView animateWithDuration:0.5
+        [UIView animateWithDuration:0.25
                               delay: 0.0
                             options: UIViewAnimationOptionCurveLinear
                          animations:^{
@@ -85,7 +90,7 @@ static NSString * const reuseIdentifier = @"Cell";
                          completion:nil];
         
     } else{
-        [UIView animateWithDuration:0.5
+        [UIView animateWithDuration:0.25
                               delay: 0.0
                             options: UIViewAnimationOptionCurveLinear
                          animations:^{

@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="top" id="L8W-Ix-wWD"/>
                         <viewControllerLayoutGuide type="bottom" id="UAd-MX-Ez9"/>
                     </layoutGuides>
-                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="CkW-Hn-eCs">
+                    <view key="view" contentMode="scaleToFill" id="CkW-Hn-eCs">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -197,7 +197,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fdh-2b-jx8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="781" y="136"/>
+            <point key="canvasLocation" x="434" y="94"/>
         </scene>
     </scenes>
     <resources>
