@@ -19,7 +19,6 @@
 @property (nonatomic, strong) UIView *backgroundHeader;
 @property (nonatomic) BOOL firstTime;
 
-
 @property (nonatomic) CGFloat lastContentOffset;
 
 @end
@@ -38,6 +37,11 @@ static NSString * const reuseIdentifier = @"Cell";
     _firstTime = YES;
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, self.statuBarBackground.frame.size.height, self.statuBarBackground.frame.size.width, 1)];
+    [line setBackgroundColor:[UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:0.4f]];
+    [line setAlpha:1.0f];
+    [self.statuBarBackground addSubview:line];
     
     self.statuBarBackground.backgroundColor = [UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:0.2f];
     self.statuBarBackground.alpha = 0.0f;
@@ -188,62 +192,6 @@ static NSString * const reuseIdentifier = @"Cell";
     if (foundLabelBackground) [foundLabelBackground removeFromSuperview];
 
     [cell addSubview:roupas];
-    
-//    }
-//    CGPoint translation = [collectionView.panGestureRecognizer translationInView:collectionView.superview];
-//    if (translation.y > 0) {
-//        NSLog(@"DOWN");
-//        
-//        [UIView animateWithDuration: 0.5
-//                              delay: 0.0
-//                            options: UIViewAnimationOptionCurveLinear
-//                         animations: ^{
-//                             //                             self.profileView.alpha = 1.0;
-//                             //                             self.profileView.frame.origin.y = -300.0f;
-//                             self.profileView.frame = CGRectMake (self.profileView.frame.origin.x,
-//                                                                  20,
-//                                                                  self.profileView.frame.size.width,
-//                                                                  self.profileView.frame.size.height);
-//                             
-//                             self.collectionView.frame = CGRectMake (self.collectionView.frame.origin.x,
-//                                                                     self.profileView.frame.size.height + 30,
-//                                                                     self.collectionView.frame.size.width,
-//                                                                     self.collectionView.frame.size.height);
-//                             
-//                         }
-//                         completion:nil];
-//        
-//    } else {
-//        NSLog(@"UP");
-//        
-//        [UIView animateWithDuration: 0.5
-//                              delay: 0.0
-//                            options: UIViewAnimationOptionCurveLinear
-//                         animations: ^{
-//                             //                             self.profileView.alpha = 1.0;
-//                             //                             self.profileView.frame.origin.y = -300.0f;
-//                             self.profileView.frame = CGRectMake (self.profileView.frame.origin.x,
-//                                                                  -self.profileView.frame.size.height,
-//                                                                  self.profileView.frame.size.width,
-//                                                                  self.profileView.frame.size.height);
-//                             
-//                             self.collectionView.frame = CGRectMake (self.collectionView.frame.origin.x,
-//                                                                  164,
-//                                                                  self.collectionView.frame.size.width,
-//                                                                  self.collectionView.frame.size.height);
-//                             
-//                         }
-//                         completion:nil];
-//        
-//        
-//    }
-    
-//    UILabel *title = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, cell.bounds.size.width, 21)];
-//    title.text = [self.dataArray objectAtIndex:indexPath.row];
-//    cell.tag = 200;
-
-//    [cell addSubview:title];
-
     
     return cell;
 }
