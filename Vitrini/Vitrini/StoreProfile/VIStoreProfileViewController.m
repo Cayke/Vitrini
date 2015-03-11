@@ -26,6 +26,18 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    /*
+    self.view.tintColor = [UIColor blueColor];
+    self.view.backgroundColor = [UIColor yellowColor];
+
+    UIView *firstView = [self.view.subviews firstObject];
+    
+    if ([firstView isKindOfClass:[UIScrollView class]]) {
+        
+        UIScrollView *scroll = (UIScrollView*)firstView;
+        scroll.backgroundColor = [UIColor redColor];
+    }*/
+
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -33,7 +45,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     // Do any additional setup after loading the view.
-    self.dataArray = [NSArray arrayWithObjects:@"Vitrini_Login__0008_BG.png", @"backgroundFilter.png", @"Vitrini_Login__0008_BG.png", @"backgroundFilter.png", @"Vitrini_Login__0008_BG.png", @"backgroundFilter.png", @"Vitrini_Login__0008_BG.png", @"backgroundFilter.png", @"Vitrini_Login__0008_BG.png", @"backgroundFilter.png", @"Vitrini_Login__0008_BG.png", @"backgroundFilter.png", @"Vitrini_Login__0008_BG.png", @"backgroundFilter.png", @"Vitrini_Login__0008_BG.png", @"backgroundFilter.png", @"Vitrini_Login__0008_BG.png", @"backgroundFilter.png", nil];
+    self.dataArray = [NSArray arrayWithObjects:@"tumbStore1", @"tumbStore2", @"tumbStore3", @"tumbStore4", @"tumbStore5", @"tumbStore6", @"tumbStore7", @"tumbStore8", @"tumbStore9", @"tumbStore10", @"tumbStore11", @"tumbStore12", nil];
     
     self.navigationBar.topItem.title = @"Lojas Zara";
     
@@ -118,7 +130,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
     cellHeader.descricaoLoja.text = @"Zara is a Spanish clothing and accessories retailer based in Arteixo, Galicia.";
     cellHeader.descricaoLoja.font = [UIFont fontWithName:@"Helvetica Neue" size:13];
-//    cellHeader.descricaoLoja.font = [UIFont boldSystemFontOfSize:13];
+    //cellHeader.descricaoLoja.font = [UIFont boldSystemFontOfSize:13];
     cellHeader.descricaoLoja.textColor = [UIColor whiteColor];
     cellHeader.descricaoLoja.tintColor = [UIColor whiteColor];
 

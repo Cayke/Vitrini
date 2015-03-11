@@ -11,6 +11,18 @@
 		0B5728FE1AAF34D100B76187 /* VIStoreProfileNavigationBarBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5728FD1AAF34D100B76187 /* VIStoreProfileNavigationBarBackButton@2x.png */; };
 		0B5729021AAFFE3A00B76187 /* zaraLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5729011AAFFE3A00B76187 /* zaraLogo.png */; };
 		0B5729041AAFFFB800B76187 /* zaraBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5729031AAFFFB800B76187 /* zaraBack.png */; };
+		0B57295A1AB00FF700B76187 /* tumbStore9.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B57294E1AB00FF700B76187 /* tumbStore9.png */; };
+		0B57295B1AB00FF700B76187 /* tumbStore7.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B57294F1AB00FF700B76187 /* tumbStore7.png */; };
+		0B57295C1AB00FF700B76187 /* tumbStore5.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5729501AB00FF700B76187 /* tumbStore5.png */; };
+		0B57295D1AB00FF700B76187 /* tumbStore12.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5729511AB00FF700B76187 /* tumbStore12.png */; };
+		0B57295E1AB00FF700B76187 /* tumbStore3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5729521AB00FF700B76187 /* tumbStore3.png */; };
+		0B57295F1AB00FF700B76187 /* tumbStore8.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5729531AB00FF700B76187 /* tumbStore8.png */; };
+		0B5729601AB00FF700B76187 /* tumbStore4.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5729541AB00FF700B76187 /* tumbStore4.png */; };
+		0B5729611AB00FF700B76187 /* tumbStore2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5729551AB00FF700B76187 /* tumbStore2.png */; };
+		0B5729621AB00FF700B76187 /* tumbStore6.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5729561AB00FF700B76187 /* tumbStore6.png */; };
+		0B5729631AB00FF700B76187 /* tumbStore1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5729571AB00FF700B76187 /* tumbStore1.png */; };
+		0B5729641AB00FF700B76187 /* tumbStore10.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5729581AB00FF700B76187 /* tumbStore10.png */; };
+		0B5729651AB00FF700B76187 /* tumbStore11.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5729591AB00FF700B76187 /* tumbStore11.png */; };
 		270BF8761A84288F00D261A1 /* VIFilterCollectionFooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 270BF8751A84288F00D261A1 /* VIFilterCollectionFooterCollectionReusableView.m */; };
 		2714F5721A8CD19D00C3C240 /* Vitrini_Vitrini_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2714F5711A8CD19D00C3C240 /* Vitrini_Vitrini_icon.png */; };
 		2714F5741A8CD24E00C3C240 /* Vitrini_novidades_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2714F5731A8CD24E00C3C240 /* Vitrini_novidades_icon.png */; };
@@ -145,6 +157,18 @@
 		0B5728FD1AAF34D100B76187 /* VIStoreProfileNavigationBarBackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VIStoreProfileNavigationBarBackButton@2x.png"; sourceTree = "<group>"; };
 		0B5729011AAFFE3A00B76187 /* zaraLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zaraLogo.png; sourceTree = "<group>"; };
 		0B5729031AAFFFB800B76187 /* zaraBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zaraBack.png; sourceTree = "<group>"; };
+		0B57294E1AB00FF700B76187 /* tumbStore9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tumbStore9.png; sourceTree = "<group>"; };
+		0B57294F1AB00FF700B76187 /* tumbStore7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tumbStore7.png; sourceTree = "<group>"; };
+		0B5729501AB00FF700B76187 /* tumbStore5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tumbStore5.png; sourceTree = "<group>"; };
+		0B5729511AB00FF700B76187 /* tumbStore12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tumbStore12.png; sourceTree = "<group>"; };
+		0B5729521AB00FF700B76187 /* tumbStore3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tumbStore3.png; sourceTree = "<group>"; };
+		0B5729531AB00FF700B76187 /* tumbStore8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tumbStore8.png; sourceTree = "<group>"; };
+		0B5729541AB00FF700B76187 /* tumbStore4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tumbStore4.png; sourceTree = "<group>"; };
+		0B5729551AB00FF700B76187 /* tumbStore2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tumbStore2.png; sourceTree = "<group>"; };
+		0B5729561AB00FF700B76187 /* tumbStore6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tumbStore6.png; sourceTree = "<group>"; };
+		0B5729571AB00FF700B76187 /* tumbStore1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tumbStore1.png; sourceTree = "<group>"; };
+		0B5729581AB00FF700B76187 /* tumbStore10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tumbStore10.png; sourceTree = "<group>"; };
+		0B5729591AB00FF700B76187 /* tumbStore11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tumbStore11.png; sourceTree = "<group>"; };
 		270BF8741A84288F00D261A1 /* VIFilterCollectionFooterCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIFilterCollectionFooterCollectionReusableView.h; sourceTree = "<group>"; };
 		270BF8751A84288F00D261A1 /* VIFilterCollectionFooterCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIFilterCollectionFooterCollectionReusableView.m; sourceTree = "<group>"; };
 		2714F5711A8CD19D00C3C240 /* Vitrini_Vitrini_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vitrini_Vitrini_icon.png; sourceTree = "<group>"; };
@@ -336,6 +360,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B5729051AB00F4F00B76187 /* tumbs */ = {
+			isa = PBXGroup;
+			children = (
+				0B57294E1AB00FF700B76187 /* tumbStore9.png */,
+				0B57294F1AB00FF700B76187 /* tumbStore7.png */,
+				0B5729501AB00FF700B76187 /* tumbStore5.png */,
+				0B5729511AB00FF700B76187 /* tumbStore12.png */,
+				0B5729521AB00FF700B76187 /* tumbStore3.png */,
+				0B5729531AB00FF700B76187 /* tumbStore8.png */,
+				0B5729541AB00FF700B76187 /* tumbStore4.png */,
+				0B5729551AB00FF700B76187 /* tumbStore2.png */,
+				0B5729561AB00FF700B76187 /* tumbStore6.png */,
+				0B5729571AB00FF700B76187 /* tumbStore1.png */,
+				0B5729581AB00FF700B76187 /* tumbStore10.png */,
+				0B5729591AB00FF700B76187 /* tumbStore11.png */,
+			);
+			name = tumbs;
+			sourceTree = "<group>";
+		};
 		277BD88D1A80037300AC887A /* Feed */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,14 +488,15 @@
 		5CE3DE301A80FDB400F0CC92 /* StoreProfile */ = {
 			isa = PBXGroup;
 			children = (
+				0B5729051AB00F4F00B76187 /* tumbs */,
 				0B5729031AAFFFB800B76187 /* zaraBack.png */,
 				0B5729011AAFFE3A00B76187 /* zaraLogo.png */,
 				0B5728FD1AAF34D100B76187 /* VIStoreProfileNavigationBarBackButton@2x.png */,
-				0B5728FA1AAF2B8400B76187 /* VIStoreProfileNavigationBar.h */,
-				0B5728FB1AAF2B8400B76187 /* VIStoreProfileNavigationBar.m */,
 				5CE3DE401A81022900F0CC92 /* VIStoreProfile.storyboard */,
 				5CE3DE3D1A81021A00F0CC92 /* VIStoreProfileViewController.h */,
 				5CE3DE3E1A81021A00F0CC92 /* VIStoreProfileViewController.m */,
+				0B5728FA1AAF2B8400B76187 /* VIStoreProfileNavigationBar.h */,
+				0B5728FB1AAF2B8400B76187 /* VIStoreProfileNavigationBar.m */,
 				5C83351E1A9B2E5B006B3294 /* VIStoreProfileHeaderCollectionReusableView.h */,
 				5C83351F1A9B2E5B006B3294 /* VIStoreProfileHeaderCollectionReusableView.m */,
 			);
@@ -776,12 +820,16 @@
 				B32B2CCE1A8CDF34004BCDD9 /* yesSign@2x.png in Resources */,
 				5CE349BC1A2CF42100F1DC17 /* UserOnboard.storyboard in Resources */,
 				B3B6CF531A44C41A00C07383 /* notBtn@2x.png in Resources */,
+				0B5729631AB00FF700B76187 /* tumbStore1.png in Resources */,
 				B3B6CF561A44C41A00C07383 /* yesBtn@2x.png in Resources */,
+				0B57295A1AB00FF700B76187 /* tumbStore9.png in Resources */,
+				0B5729601AB00FF700B76187 /* tumbStore4.png in Resources */,
 				B3B6CF501A44C41A00C07383 /* infoBtn@2x.png in Resources */,
 				278AFBD11A83ABD40002BB23 /* backgroundFilter.png in Resources */,
 				0B5728FE1AAF34D100B76187 /* VIStoreProfileNavigationBarBackButton@2x.png in Resources */,
 				B3B6CF8C1A49003F00C07383 /* CloseMenu.png in Resources */,
 				B3B6CF521A44C41A00C07383 /* notBtn.png in Resources */,
+				0B5729621AB00FF700B76187 /* tumbStore6.png in Resources */,
 				2714F57F1A8CD9CC00C3C240 /* Vitrini_NewAccountpart2_icon.png in Resources */,
 				2781FF211A6ED7D7009FFAA5 /* Vitrini_Login__0008_BG.png in Resources */,
 				B3B6CF571A44C41A00C07383 /* yesBtn@3x.png in Resources */,
@@ -796,11 +844,15 @@
 				27A8B87E1A824BB100226278 /* Profile.storyboard in Resources */,
 				278AFBD51A83ABDE0002BB23 /* Icom_caixa_foltro.png in Resources */,
 				2781FF281A6F0D7C009FFAA5 /* Vitrini_Login__0006_Facebook.png in Resources */,
+				0B57295F1AB00FF700B76187 /* tumbStore8.png in Resources */,
 				B32B2CCC1A8CDF34004BCDD9 /* noSign@3x.png in Resources */,
 				B3CE202C1AA7492E00B3836F /* looking.png in Resources */,
+				0B57295E1AB00FF700B76187 /* tumbStore3.png in Resources */,
 				278AFBCF1A83A9DA0002BB23 /* Filter.storyboard in Resources */,
 				92891CE71A28D80F002F6678 /* Images.xcassets in Resources */,
 				279A81711A706553003E50D7 /* Icon_meuslikes_Menu.png in Resources */,
+				0B5729611AB00FF700B76187 /* tumbStore2.png in Resources */,
+				0B5729641AB00FF700B76187 /* tumbStore10.png in Resources */,
 				5CE3DE411A81022900F0CC92 /* VIStoreProfile.storyboard in Resources */,
 				B3B6CF551A44C41A00C07383 /* yesBtn.png in Resources */,
 				2781FF261A6EDBFA009FFAA5 /* Vitrini_Login__0001_Logo.png in Resources */,
@@ -810,11 +862,14 @@
 				B3B6CF4F1A44C41A00C07383 /* infoBtn.png in Resources */,
 				272C6EF01AA5FF9C00063CCF /* Likes.storyboard in Resources */,
 				92D96E611A7FEBF6009BC061 /* Cards.storyboard in Resources */,
+				0B5729651AB00FF700B76187 /* tumbStore11.png in Resources */,
 				B3B6CF9A1A4C4A8500C07383 /* img8.png in Resources */,
 				B3B6CF9B1A4C4A8500C07383 /* img9.png in Resources */,
+				0B57295D1AB00FF700B76187 /* tumbStore12.png in Resources */,
 				B3B6CFA01A4D19E600C07383 /* degrade.png in Resources */,
 				B3B6CF641A44C45C00C07383 /* img5.png in Resources */,
 				B3B6CF9D1A4C4A8500C07383 /* img11.png in Resources */,
+				0B57295B1AB00FF700B76187 /* tumbStore7.png in Resources */,
 				2781FF2A1A6F0D81009FFAA5 /* Vitrini_Login__0007_Conta.png in Resources */,
 				277B37171A816B4C0081C796 /* profile_feed_temp2.png in Resources */,
 				B3B6CF9C1A4C4A8500C07383 /* img10.png in Resources */,
@@ -825,6 +880,7 @@
 				2714F5741A8CD24E00C3C240 /* Vitrini_novidades_icon.png in Resources */,
 				2781FF231A6ED803009FFAA5 /* Vitrini_Login__0002_Icom.png in Resources */,
 				2714F57A1A8CD3E000C3C240 /* Vitrini_Config_icon.png in Resources */,
+				0B57295C1AB00FF700B76187 /* tumbStore5.png in Resources */,
 				B3B6CF611A44C45C00C07383 /* img2.png in Resources */,
 				B3B6CF831A48FCAE00C07383 /* Vitrini.png in Resources */,
 				2714F57D1A8CD9C600C3C240 /* Vitrini_NewAccountpart1_icon.png in Resources */,
