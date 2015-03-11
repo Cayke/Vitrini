@@ -29,9 +29,12 @@ static NSString * const reuseIdentifier = @"Cell";
     
     [super viewDidLoad];
     
+    // Uncomment the following line to preserve selection between presentations
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
-    self.statuBarBackground.backgroundColor = [UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:0.4f];
+    self.statuBarBackground.backgroundColor = [UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:0.2f];
     self.statuBarBackground.alpha = 0.0f;
     self.collectionView.backgroundColor = [UIColor whiteColor];
 
@@ -39,9 +42,6 @@ static NSString * const reuseIdentifier = @"Cell";
     [backgroundHeader setBackgroundColor:[UIColor colorWithRed:22/255.0f green:22/255.0f blue:25/255.0f alpha:1.0f]];
     [backgroundHeader setAlpha:1.0f];
     [self.collectionView addSubview:backgroundHeader];
-    
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
     
     // Register cell classes
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
@@ -80,7 +80,7 @@ static NSString * const reuseIdentifier = @"Cell";
 {
     if (scrollView.contentOffset.y > self.lastContentOffset) {
         
-        [UIView animateWithDuration:0.25
+        [UIView animateWithDuration:0.2
                               delay: 0.0
                             options: UIViewAnimationOptionCurveLinear
                          animations:^{
@@ -90,7 +90,7 @@ static NSString * const reuseIdentifier = @"Cell";
                          completion:nil];
         
     } else{
-        [UIView animateWithDuration:0.25
+        [UIView animateWithDuration:0.3
                               delay: 0.0
                             options: UIViewAnimationOptionCurveLinear
                          animations:^{
