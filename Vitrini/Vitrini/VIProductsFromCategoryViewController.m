@@ -42,7 +42,7 @@
     UIView *status = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
     status.backgroundColor = [VIColor lightRedVIColor];
     
-    [self.view addSubview:status];
+    //[self.view addSubview:status];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,7 +60,10 @@
         //Call your function or whatever work that needs to be done
         //Code in this part is run on a background thread
         VIServer *server = [[VIServer alloc]init];
-        VIResponse *response = [server getProductsForCategory:_category.idCategory];
+        
+        //todo: usar funcao abaixo..
+        //VIResponse *response = [server getProductsForCategory:_category.idCategory];
+        VIResponse *response = [server getProductsLikedsForUser:[VIStorage sharedStorage].user.email withGender:@"M" andCategory:0];
         
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             //Stop your activity indicator or anything else with the GUI
