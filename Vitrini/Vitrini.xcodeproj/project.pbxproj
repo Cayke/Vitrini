@@ -23,7 +23,8 @@
 		0B5729631AB00FF700B76187 /* tumbStore1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5729571AB00FF700B76187 /* tumbStore1.png */; };
 		0B5729641AB00FF700B76187 /* tumbStore10.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5729581AB00FF700B76187 /* tumbStore10.png */; };
 		0B5729651AB00FF700B76187 /* tumbStore11.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5729591AB00FF700B76187 /* tumbStore11.png */; };
-		0BBA39061AB16764008E0FA2 /* VIStoreProfileShowProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BBA39051AB16764008E0FA2 /* VIStoreProfileShowProductViewController.m */; };
+		0B92C9941AB1CC7600D0CFC6 /* VIStoreShowProduct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B92C9931AB1CC7600D0CFC6 /* VIStoreShowProduct.storyboard */; };
+		0B92C9971AB1CEB800D0CFC6 /* VIStoreShowProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B92C9961AB1CEB800D0CFC6 /* VIStoreShowProductViewController.m */; };
 		270BF8761A84288F00D261A1 /* VIFilterCollectionFooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 270BF8751A84288F00D261A1 /* VIFilterCollectionFooterCollectionReusableView.m */; };
 		2714F5721A8CD19D00C3C240 /* Vitrini_Vitrini_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2714F5711A8CD19D00C3C240 /* Vitrini_Vitrini_icon.png */; };
 		2714F5741A8CD24E00C3C240 /* Vitrini_novidades_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2714F5731A8CD24E00C3C240 /* Vitrini_novidades_icon.png */; };
@@ -175,8 +176,9 @@
 		0B5729571AB00FF700B76187 /* tumbStore1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tumbStore1.png; sourceTree = "<group>"; };
 		0B5729581AB00FF700B76187 /* tumbStore10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tumbStore10.png; sourceTree = "<group>"; };
 		0B5729591AB00FF700B76187 /* tumbStore11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tumbStore11.png; sourceTree = "<group>"; };
-		0BBA39041AB16764008E0FA2 /* VIStoreProfileShowProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VIStoreProfileShowProductViewController.h; path = StoreProfile/VIStoreProfileShowProductViewController.h; sourceTree = "<group>"; };
-		0BBA39051AB16764008E0FA2 /* VIStoreProfileShowProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VIStoreProfileShowProductViewController.m; path = StoreProfile/VIStoreProfileShowProductViewController.m; sourceTree = "<group>"; };
+		0B92C9931AB1CC7600D0CFC6 /* VIStoreShowProduct.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VIStoreShowProduct.storyboard; sourceTree = "<group>"; };
+		0B92C9951AB1CEB800D0CFC6 /* VIStoreShowProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VIStoreShowProductViewController.h; path = StoreProfile/VIStoreShowProductViewController.h; sourceTree = "<group>"; };
+		0B92C9961AB1CEB800D0CFC6 /* VIStoreShowProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VIStoreShowProductViewController.m; path = StoreProfile/VIStoreShowProductViewController.m; sourceTree = "<group>"; };
 		270BF8741A84288F00D261A1 /* VIFilterCollectionFooterCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIFilterCollectionFooterCollectionReusableView.h; sourceTree = "<group>"; };
 		270BF8751A84288F00D261A1 /* VIFilterCollectionFooterCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIFilterCollectionFooterCollectionReusableView.m; sourceTree = "<group>"; };
 		2714F5711A8CD19D00C3C240 /* Vitrini_Vitrini_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vitrini_Vitrini_icon.png; sourceTree = "<group>"; };
@@ -510,6 +512,9 @@
 			isa = PBXGroup;
 			children = (
 				0B5729051AB00F4F00B76187 /* tumbs */,
+				0B92C9931AB1CC7600D0CFC6 /* VIStoreShowProduct.storyboard */,
+				0B92C9951AB1CEB800D0CFC6 /* VIStoreShowProductViewController.h */,
+				0B92C9961AB1CEB800D0CFC6 /* VIStoreShowProductViewController.m */,
 				0B5729031AAFFFB800B76187 /* zaraBack.png */,
 				0B5729011AAFFE3A00B76187 /* zaraLogo.png */,
 				0B5728FD1AAF34D100B76187 /* VIStoreProfileNavigationBarBackButton@2x.png */,
@@ -522,8 +527,6 @@
 				5CE3DE3E1A81021A00F0CC92 /* VIStoreProfileViewController.m */,
 				B3C4EBDA1AB0888100A833B0 /* VIProductsCollectionCell.h */,
 				B3C4EBDB1AB0888100A833B0 /* VIProductsCollectionCell.m */,
-				0BBA39041AB16764008E0FA2 /* VIStoreProfileShowProductViewController.h */,
-				0BBA39051AB16764008E0FA2 /* VIStoreProfileShowProductViewController.m */,
 			);
 			name = StoreProfile;
 			sourceTree = "<group>";
@@ -873,6 +876,7 @@
 				2781FF281A6F0D7C009FFAA5 /* Vitrini_Login__0006_Facebook.png in Resources */,
 				0B57295F1AB00FF700B76187 /* tumbStore8.png in Resources */,
 				B32B2CCC1A8CDF34004BCDD9 /* noSign@3x.png in Resources */,
+				0B92C9941AB1CC7600D0CFC6 /* VIStoreShowProduct.storyboard in Resources */,
 				B3CE202C1AA7492E00B3836F /* looking.png in Resources */,
 				0B57295E1AB00FF700B76187 /* tumbStore3.png in Resources */,
 				278AFBCF1A83A9DA0002BB23 /* Filter.storyboard in Resources */,
@@ -969,6 +973,7 @@
 				5C2878631A28E39700CC7DD2 /* CustomSegueTransition.m in Sources */,
 				5CE349BE1A2CF42100F1DC17 /* UserOnboardViewController.m in Sources */,
 				5CE349BD1A2CF42100F1DC17 /* UserOnboardContentViewController.m in Sources */,
+				0B92C9971AB1CEB800D0CFC6 /* VIStoreShowProductViewController.m in Sources */,
 				B3CE20441AA74B5A00B3836F /* VIBrand.m in Sources */,
 				5CE3DE3F1A81021A00F0CC92 /* VIStoreProfileViewController.m in Sources */,
 				27CA104C1A9B63D600429F37 /* VIStore.m in Sources */,
@@ -988,7 +993,6 @@
 				B3B6CF3B1A44BBAA00C07383 /* VIDraggableCardsView.m in Sources */,
 				271A20791AA4B034000D9815 /* VICategory.m in Sources */,
 				B3B6CF881A48FDD300C07383 /* VIColor.m in Sources */,
-				0BBA39061AB16764008E0FA2 /* VIStoreProfileShowProductViewController.m in Sources */,
 				B3B6CF351A44B91900C07383 /* VIProduct.m in Sources */,
 				0B5728FC1AAF2B8400B76187 /* VIStoreProfileNavigationBar.m in Sources */,
 				27A8B87C1A824B4200226278 /* VIProfileViewController.m in Sources */,

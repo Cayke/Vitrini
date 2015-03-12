@@ -8,7 +8,7 @@
 
 #import "VIStoreProfileViewController.h"
 #import "VIStoreProfileHeaderCollectionReusableView.h"
-#import "VIStoreProfileShowProductViewController.h"
+#import "VIStoreShowProductViewController.h"
 
 @interface VIStoreProfileViewController ()
 
@@ -149,12 +149,28 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)buttonPressed:(UIButton *)button
 {
-    [self performSegueWithIdentifier: @"showProductOnStoreProfile" sender:[self.dataArray objectAtIndex:button.tag]];
+//    [self performSegueWithIdentifier: @"showProductOnStoreProfile" sender:[self.dataArray objectAtIndex:button.tag]];
     NSLog(@"ImageOfArray: %ld\n%@", (long)button.tag, [self.dataArray objectAtIndex:button.tag]);
+    
+    [self goToStoreProduct: [self.dataArray objectAtIndex:button.tag]];
+}
+
+- (void)goToStoreProduct:(NSString *)title
+{
+    NSLog(@"goToStoreProduct");
+    
+    UIStoryboard *product = [UIStoryboard storyboardWithName:@"VIStoreShowProduct" bundle:nil];
+    VIStoreShowProductViewController *productVC = (VIStoreShowProductViewController *) [product instantiateViewControllerWithIdentifier:@"VIStoreShowProductViewControllerID"];
+    
+    productVC.view.backgroundColor = [UIColor redColor];
+    productVC.navigationBar.topItem.title = title;
+    
+    [self presentViewController:productVC animated:YES completion:nil];
 }
 
 #pragma mark prepareForSegue
 
+/*
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showProductOnStoreProfile"])
@@ -168,7 +184,7 @@ static NSString * const reuseIdentifier = @"Cell";
 //        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
 //        [controller.view addSubview:imageView];
     }
-}
+}*/
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {

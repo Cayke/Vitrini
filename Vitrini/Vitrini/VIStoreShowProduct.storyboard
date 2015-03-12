@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BZ1-X7-qq1">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Store Show Product View Controller-->
+        <scene sceneID="LN7-VB-0DB">
+            <objects>
+                <viewController storyboardIdentifier="VIStoreShowProductViewControllerID" id="BZ1-X7-qq1" customClass="VIStoreShowProductViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YQn-Oq-kgY"/>
+                        <viewControllerLayoutGuide type="bottom" id="yh4-hO-X3x"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="doK-hn-hds">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aiQ-MF-Sz3" customClass="VIStoreProfileNavigationBar">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Title" id="ssT-YM-iqg">
+                                        <barButtonItem key="leftBarButtonItem" image="VIStoreProfileNavigationBarBackButton.png" id="Pf8-2h-ARE">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="backButtonPressed:" destination="BZ1-X7-qq1" id="DGO-nX-aqO"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aiQ-MF-Sz3" firstAttribute="leading" secondItem="doK-hn-hds" secondAttribute="leadingMargin" constant="-16" id="Xlj-DT-tKO"/>
+                            <constraint firstItem="aiQ-MF-Sz3" firstAttribute="top" secondItem="YQn-Oq-kgY" secondAttribute="bottom" id="YHR-8m-0Vn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aiQ-MF-Sz3" secondAttribute="trailing" constant="-16" id="vVG-K6-btW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="aiQ-MF-Sz3" id="Aya-Ik-MKb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gCh-bn-UkV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="647" y="92"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="VIStoreProfileNavigationBarBackButton.png" width="12" height="20"/>
+    </resources>
+</document>
