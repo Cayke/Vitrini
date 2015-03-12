@@ -11,6 +11,4 @@
 
 @interface VIStoreProfileViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate>
 
-@property (nonatomic) int storeID;
-
 @end

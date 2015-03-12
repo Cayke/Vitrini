@@ -213,11 +213,11 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
 -(void)animatBinoculus{
     NSLog(@"anim");
     CGFloat squareSize = 160.0;
-    CGRect frame1 = CGRectMake(self.frame.size.width/2 - squareSize/2, self.frame.size.height - squareSize/2, squareSize, squareSize);
+    __unused CGRect frame1 = CGRectMake(self.frame.size.width/2 - squareSize/2, self.frame.size.height - squareSize/2, squareSize, squareSize);
     squareSize = 140.0;
-    CGRect frame2 = CGRectMake(self.frame.size.width/2 - squareSize/2, self.frame.size.height - squareSize/2, squareSize, squareSize);
+    __unused CGRect frame2 = CGRectMake(self.frame.size.width/2 - squareSize/2, self.frame.size.height - squareSize/2, squareSize, squareSize);
     squareSize = 200.0;
-    CGRect frame3 = CGRectMake(self.frame.size.width/2 - squareSize/2, self.frame.size.height - squareSize/2, squareSize, squareSize);
+    __unused CGRect frame3 = CGRectMake(self.frame.size.width/2 - squareSize/2, self.frame.size.height - squareSize/2, squareSize, squareSize);
     
     [waitingCardsAnim setAlpha:1];
     [UIView animateWithDuration: 0.4
