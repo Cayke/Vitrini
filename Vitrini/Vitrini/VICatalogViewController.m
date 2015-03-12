@@ -84,6 +84,7 @@
 {
     UIStoryboard *store = [UIStoryboard storyboardWithName:@"Catalog" bundle:nil];
     VIProductsFromCategoryViewController *products = (VIProductsFromCategoryViewController *) [store instantiateViewControllerWithIdentifier:@"VIProductsFromCategoryViewController"];
+        products.category = [_arrayCategorys objectAtIndex:indexPath.row];
     [self presentViewController:products animated:YES completion:nil];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

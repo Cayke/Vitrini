@@ -19,30 +19,18 @@
 
 @implementation VIProductsFromCategoryViewController
 
--(instancetype)init
-{
-    @throw [NSException exceptionWithName:@"use another init" reason:nil userInfo:nil];
-}
-
-- (instancetype)initWithCategory:(VICategory *) category
-{
-    self = [super init];
-    if (self) {
-        _category = category;
-    }
-    return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self getProducts];
     
     // status
-    UIView *status = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
+    UIView *status = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 64)];
     status.backgroundColor = [VIColor lightRedVIColor];
     
-    [self.view addSubview:status];
+    [self.view insertSubview:status belowSubview:_navBar];
+    
+    self.navBar.topItem.title = _category.name;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,7 +48,10 @@
         //Call your function or whatever work that needs to be done
         //Code in this part is run on a background thread
         VIServer *server = [[VIServer alloc]init];
-        VIResponse *response = [server getProductsForCategory:_category.idCategory];
+        
+        //todo: usar funcao abaixo..
+        //VIResponse *response = [server getProductsForCategory:_category.idCategory];
+        VIResponse *response = [server getProductsLikedsForUser:[VIStorage sharedStorage].user.email withGender:@"M" andCategory:0];
         
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             //Stop your activity indicator or anything else with the GUI
@@ -99,4 +90,7 @@
     NSLog(@"clicou num produto dos likes");
 }
 
+- (IBAction)backButton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

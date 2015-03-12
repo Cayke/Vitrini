@@ -11,6 +11,7 @@
 #import "VIServer.h"
 #import "VIResponse.h"
 #import "VIStorage.h"
+#import "VIColor.h"
 
 #define sectionHeight 45
 
@@ -36,6 +37,13 @@
     [_tableView addSubview:_refresh];
     
     [self refreshFeed];
+    
+    // status
+    UIView *status = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
+    status.backgroundColor = [VIColor blueVIColor];
+    
+    [self.view addSubview:status];
+
 }
 
 - (void)didReceiveMemoryWarning {
