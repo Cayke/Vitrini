@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="A8D-35-rA5">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -63,22 +63,37 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Pesquisar" showsScopeBar="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kDB-cg-RFB">
+                                <rect key="frame" x="0.0" y="20" width="375" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="mVq-55-AVB"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Produtos</string>
+                                    <string>Lojas</string>
+                                </scopeButtonTitles>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="A8D-35-rA5" firstAttribute="leading" secondItem="2em-jR-x8S" secondAttribute="leading" id="42a-YQ-9P2"/>
-                            <constraint firstAttribute="trailing" secondItem="K1A-DC-4nG" secondAttribute="trailing" id="NzH-gN-rLt"/>
-                            <constraint firstItem="K1A-DC-4nG" firstAttribute="top" secondItem="2em-jR-x8S" secondAttribute="top" id="bK5-RF-DfE"/>
-                            <constraint firstItem="dnc-Bd-RaV" firstAttribute="top" secondItem="A8D-35-rA5" secondAttribute="bottom" id="cw1-Wv-xG1"/>
-                            <constraint firstAttribute="trailing" secondItem="A8D-35-rA5" secondAttribute="trailing" id="ioc-Je-m5a"/>
-                            <constraint firstItem="A8D-35-rA5" firstAttribute="top" secondItem="2jh-fG-Khf" secondAttribute="bottom" id="lv3-dB-bOK"/>
-                            <constraint firstItem="dnc-Bd-RaV" firstAttribute="top" secondItem="K1A-DC-4nG" secondAttribute="bottom" id="rbj-F5-N1a"/>
-                            <constraint firstItem="K1A-DC-4nG" firstAttribute="leading" secondItem="2em-jR-x8S" secondAttribute="leading" id="tMa-wS-xSa"/>
+                            <constraint firstItem="A8D-35-rA5" firstAttribute="top" secondItem="kDB-cg-RFB" secondAttribute="bottom" id="9u6-JL-xOD"/>
+                            <constraint firstItem="kDB-cg-RFB" firstAttribute="top" secondItem="2jh-fG-Khf" secondAttribute="bottom" id="FbA-mo-Cr9"/>
+                            <constraint firstItem="A8D-35-rA5" firstAttribute="leading" secondItem="2em-jR-x8S" secondAttribute="leading" id="L25-qS-9Im"/>
+                            <constraint firstAttribute="trailing" secondItem="K1A-DC-4nG" secondAttribute="trailing" id="XhB-Rx-SX1"/>
+                            <constraint firstItem="K1A-DC-4nG" firstAttribute="top" secondItem="2em-jR-x8S" secondAttribute="top" id="aEq-NP-JIk"/>
+                            <constraint firstAttribute="trailing" secondItem="A8D-35-rA5" secondAttribute="trailing" id="bdk-6K-eNO"/>
+                            <constraint firstItem="K1A-DC-4nG" firstAttribute="leading" secondItem="2em-jR-x8S" secondAttribute="leading" id="ikq-yi-Pxb"/>
+                            <constraint firstAttribute="bottom" secondItem="A8D-35-rA5" secondAttribute="bottom" id="j18-Ff-Tfu"/>
+                            <constraint firstAttribute="trailing" secondItem="kDB-cg-RFB" secondAttribute="trailing" id="poi-DR-LVQ"/>
+                            <constraint firstItem="dnc-Bd-RaV" firstAttribute="top" secondItem="K1A-DC-4nG" secondAttribute="bottom" id="psx-bs-QXx"/>
+                            <constraint firstItem="kDB-cg-RFB" firstAttribute="leading" secondItem="2em-jR-x8S" secondAttribute="leading" id="pwD-Xq-boi"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="imageViewBackground" destination="K1A-DC-4nG" id="REh-mn-qIM"/>
+                        <outlet property="searchBar" destination="kDB-cg-RFB" id="N9i-7D-7ao"/>
                         <outlet property="tableView" destination="A8D-35-rA5" id="rlQ-Bp-H6z"/>
                     </connections>
                 </viewController>

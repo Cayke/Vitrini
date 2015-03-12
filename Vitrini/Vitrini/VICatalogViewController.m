@@ -26,20 +26,13 @@
     
     _tableView.backgroundColor = [UIColor clearColor];
     
-//    //colocar blur effect na imagem
-//    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
-//    UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc]initWithEffect:blurEffect];
-//    [blurEffectView setFrame:self.view.frame];
-//    
-//    //colocar vibrancy effect
-//    UIVibrancyEffect * vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:blurEffect];
-//    UIVisualEffectView *vibrancyEffectView = [[UIVisualEffectView alloc]initWithEffect:vibrancyEffect];
-//    [vibrancyEffectView setFrame:self.view.frame];
-//    
-//    [blurEffectView addSubview:vibrancyEffectView];
-//    
-//    //adicionar o blur a view
-//    [_imageViewBackground addSubview:blurEffectView];
+    //trocar a cor da searchbar
+    [_searchBar setSearchBarStyle:UISearchBarStyleMinimal];
+    [_searchBar setScopeBarBackgroundImage:[UIImage imageWithCGImage:(__bridge CGImageRef)([UIColor clearColor])]];
+    //[_searchBar setBackgroundImage:[UIImage imageWithCGImage:(__bridge CGImageRef)([UIColor clearColor])]];
+    //[_searchBar setTintColor:[UIColor orangeColor]];
+    //[_searchBar setBarTintColor:[UIColor orangeColor]];
+    //[_searchBar setTranslucent:NO];
     
     //delegate table view
     _tableView.delegate = self;
@@ -96,6 +89,9 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 44;
+}
 
 @end
