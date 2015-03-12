@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="s8c-2U-U6c">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -27,14 +27,29 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="fha-Ik-WaW">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="fha-Ik-WaW" customClass="VIProductsCollectionCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="124" height="124"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uf7-Bf-UXu" customClass="AsyncImageView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="124" height="124"/>
+                                                </imageView>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="uf7-Bf-UXu" firstAttribute="leading" secondItem="fha-Ik-WaW" secondAttribute="leadingMargin" constant="-8" id="1f4-pg-Cuj"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="uf7-Bf-UXu" secondAttribute="bottom" constant="-8" id="2os-yd-UCP"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="uf7-Bf-UXu" secondAttribute="trailing" constant="-8" id="5e1-RG-QaO"/>
+                                            <constraint firstItem="uf7-Bf-UXu" firstAttribute="top" secondItem="fha-Ik-WaW" secondAttribute="topMargin" constant="-8" id="BUV-US-T9E"/>
+                                        </constraints>
                                         <size key="customSize" width="124" height="124"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="uf7-Bf-UXu" id="F1O-BU-BIw"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Header" id="CI3-98-0vi" customClass="VIStoreProfileHeaderCollectionReusableView">
@@ -69,7 +84,7 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GJB-aZ-YZD">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GJB-aZ-YZD" customClass="AsyncImageView">
                                             <rect key="frame" x="28" y="78" width="125" height="125"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="125" id="PO0-MX-6VT"/>

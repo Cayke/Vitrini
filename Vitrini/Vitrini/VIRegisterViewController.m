@@ -27,15 +27,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.fields = [NSArray arrayWithObjects:
-                   @"email",
-                   @"pass",
-                   @"fbID",
-                   @"name",
-                   @"city",
-                   @"birthday",
-                   @"gender", nil];
-    self.arrayOfSections = [NSArray arrayWithObjects:self.fields, nil];
+    self.firstFieldsOfSection = [NSArray arrayWithObjects:
+                                 @"name",
+                                 @"city",
+                                 @"gender",
+                                 @"birthday", nil];
+    self.secondFieldsOfSection = [NSArray arrayWithObjects:
+                                  @"email",
+                                  @"pass",
+                                  @"confirmPass", nil];
+    self.sectionPhoto = [NSArray arrayWithObjects:@"photo", nil];
+    self.arrayOfSections = [NSArray arrayWithObjects:self.sectionPhoto,self.firstFieldsOfSection,self.secondFieldsOfSection, nil];
+    
     // status
     UIView *status = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
     status.backgroundColor = [VIColor whiteVIColor];
@@ -47,11 +50,16 @@
     UIBarButtonItem *voltar = [[UIBarButtonItem alloc]initWithTitle:@"< Voltar" style:UIBarButtonItemStylePlain target:self action:@selector(voltar)];
     [voltar setTintColor:[VIColor whiteVIColor]];
     self.navigationItem.leftBarButtonItem = voltar;
+    
+    UIBarButtonItem *createButton = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"Create", nil) style:UIBarButtonItemStylePlain target:self action:@selector(registerUser)];
+    self.navigationItem.rightBarButtonItem = createButton;
+    
+    self.navigationItem.title = @"Criar Conta";
+    
     self.navigationBar.items = [NSArray arrayWithObject:self.navigationItem];
     
     //Create
-    UIBarButtonItem *createButton = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"Create", nil) style:UIBarButtonSystemItemAdd target:self action:@selector(registerUser)];
-    self.navigationItem.rightBarButtonItem = createButton;
+
     createButton.tintColor = [UIColor whiteColor];
     
     
@@ -173,6 +181,7 @@
     }
 }
 
+
 #pragma Create TableView
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -203,38 +212,21 @@
     NSArray *array = self.arrayOfSections[indexPath.section];
     NSString *item = array[indexPath.row];
     NSString *registerSingleInputCell = @"VIRegisterSingleInputTableViewCellID";
+    NSString *registerPhotoInputCell = @"VIRegisterPhotoTableViewCellID";
+
 
     
-    if (array == self.fields) {
-        if ([item isEqualToString:@"email"]) {
-            VIRegisterSingleInputTableViewCell *rsitvc = (VIRegisterSingleInputTableViewCell *)[tableView dequeueReusableCellWithIdentifier:registerSingleInputCell forIndexPath:indexPath];
-            
-            rsitvc.singleInput.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Email"attributes:@{NSForegroundColorAttributeName: [VIColor darkWhiteVIColor]}];
-            
-            [rsitvc.singleInput sizeToFit];
-            rsitvc.singleInput.tag = 0;
-            
-            rsitvc.singleInput.delegate = self;
-
-            return rsitvc;
-        } else if ([item isEqualToString:@"pass"]) {
-            VIRegisterSingleInputTableViewCell *rsitvc = (VIRegisterSingleInputTableViewCell *)[tableView dequeueReusableCellWithIdentifier:registerSingleInputCell forIndexPath:indexPath];
-            
-            rsitvc.singleInput.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Pass"attributes:@{NSForegroundColorAttributeName: [VIColor darkWhiteVIColor]}];
-            
-            [rsitvc.singleInput sizeToFit];
-            rsitvc.singleInput.tag = 1;
-
-            rsitvc.singleInput.delegate = self;
-
-            return rsitvc;
-        } else if ([item isEqualToString:@"name"]) {
+    if (array == self.firstFieldsOfSection) {
+        if ([item isEqualToString:@"name"]) {
             VIRegisterSingleInputTableViewCell *rsitvc = (VIRegisterSingleInputTableViewCell *)[tableView dequeueReusableCellWithIdentifier:registerSingleInputCell forIndexPath:indexPath];
             
             rsitvc.singleInput.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Name"attributes:@{NSForegroundColorAttributeName: [VIColor darkWhiteVIColor]}];
             
             [rsitvc.singleInput sizeToFit];
-            rsitvc.singleInput.tag = 2;
+            rsitvc.singleInput.tag = 1;
+            
+            rsitvc.icon.image = [UIImage imageNamed:@"Vitrini@2x.png"];
+
 
             rsitvc.singleInput.delegate = self;
 
@@ -245,7 +237,7 @@
             rsitvc.singleInput.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"City"attributes:@{NSForegroundColorAttributeName: [VIColor darkWhiteVIColor]}];
             
             [rsitvc.singleInput sizeToFit];
-            rsitvc.singleInput.tag = 3;
+            rsitvc.singleInput.tag = 2;
 
             rsitvc.singleInput.delegate = self;
 
@@ -256,7 +248,7 @@
             rsitvc.singleInput.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Birthday"attributes:@{NSForegroundColorAttributeName: [VIColor darkWhiteVIColor]}];
             
             [rsitvc.singleInput sizeToFit];
-            rsitvc.singleInput.tag = 4;
+            rsitvc.singleInput.tag = 3;
             rsitvc.singleInput.delegate = self;
 
             
@@ -267,7 +259,7 @@
             rsitvc.singleInput.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Gender"attributes:@{NSForegroundColorAttributeName: [VIColor darkWhiteVIColor]}];
             
             [rsitvc.singleInput sizeToFit];
-            rsitvc.singleInput.tag = 5;
+            rsitvc.singleInput.tag = 4;
             
             rsitvc.singleInput.delegate = self;
 
@@ -275,9 +267,52 @@
         }
         
         
-    } else if (2 == 2 ){
-        
-        //montar outra section
+    } else if (array == self.secondFieldsOfSection ){
+        if ([item isEqualToString:@"email"]) {
+            VIRegisterSingleInputTableViewCell *rsitvc = (VIRegisterSingleInputTableViewCell *)[tableView dequeueReusableCellWithIdentifier:registerSingleInputCell forIndexPath:indexPath];
+            
+            rsitvc.singleInput.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Email"attributes:@{NSForegroundColorAttributeName: [VIColor darkWhiteVIColor]}];
+            
+            [rsitvc.singleInput sizeToFit];
+            rsitvc.singleInput.tag = 5;
+            
+            rsitvc.singleInput.delegate = self;
+            
+            return rsitvc;
+        } else if ([item isEqualToString:@"pass"]) {
+            VIRegisterSingleInputTableViewCell *rsitvc = (VIRegisterSingleInputTableViewCell *)[tableView dequeueReusableCellWithIdentifier:registerSingleInputCell forIndexPath:indexPath];
+            
+            rsitvc.singleInput.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Senha"attributes:@{NSForegroundColorAttributeName: [VIColor darkWhiteVIColor]}];
+            
+            [rsitvc.singleInput sizeToFit];
+            rsitvc.singleInput.tag = 6;
+            
+            rsitvc.singleInput.delegate = self;
+            
+            return rsitvc;
+        } else if ([item isEqualToString:@"confirmPass"]) {
+            VIRegisterSingleInputTableViewCell *rsitvc = (VIRegisterSingleInputTableViewCell *)[tableView dequeueReusableCellWithIdentifier:registerSingleInputCell forIndexPath:indexPath];
+            
+            rsitvc.singleInput.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Confirmar Senha"attributes:@{NSForegroundColorAttributeName: [VIColor darkWhiteVIColor]}];
+            
+            [rsitvc.singleInput sizeToFit];
+            rsitvc.singleInput.tag = 7;
+            
+            rsitvc.singleInput.delegate = self;
+            
+            return rsitvc;
+        }
+    } else if (array == self.sectionPhoto ){
+        if ([item isEqualToString:@"photo"]) {
+            VIRegisterPhotoTableViewCell *rptvc = (VIRegisterPhotoTableViewCell *)[tableView dequeueReusableCellWithIdentifier:registerPhotoInputCell forIndexPath:indexPath];
+            
+            rptvc.photoImageView.image = [UIImage imageNamed:@"Patricia-Beck.jpg"];
+            rptvc.backgroundImageView.image = [UIImage imageNamed:@"Patricia-Beck.jpg"];
+            
+            
+            
+            return rptvc;
+        }
     }
     
     
@@ -286,32 +321,115 @@
     
     
 }
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return 200.0;
+    } else if (indexPath.section != 0){
+        return 60.0;
+    }
+    
+    return 40.0;
+}
+
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    if (textField.tag == 0) {
-        _email = textField.text;
-    } else if (textField.tag == 1){
-        _pass = textField.text;
-    } else if (textField.tag == 2){
+    if (textField.tag == 1) {
         _name = textField.text;
-    } else if (textField.tag == 3){
+    } else if (textField.tag == 2){
         _city = textField.text;
+    } else if (textField.tag == 3){
+        _birthday = textField.text;
     } else if (textField.tag == 4){
-       _birthday = textField.text;
-    } else if (textField.tag == 5){
         _gender = textField.text;
+    } else if (textField.tag == 5){
+        _email = textField.text;
+    } else if (textField.tag == 6){
+       _pass = textField.text;
+    } else if (textField.tag == 7){
+        _confirmPass = textField.text;
     }
 }
 
 
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self.view endEditing:YES];
+//-(BOOL)textFieldShouldReturn:(UITextField *)textField
+//{
+//    if (textField == _textFieldEmail) {
+//        [_textFieldSenha becomeFirstResponder];
+//    }
+//    else
+//    {
+//        [_textFieldSenha resignFirstResponder];
+//        [self loginWithEmailAndPassword];
+//    }
+//    return YES;
+//}
+//
+//-(void)textFieldDidBeginEditing:(UITextField *)textField{
+//    [UIView animateWithDuration:0.30 animations:^{
+//        self.view.frame = CGRectMake(0, -120, self.view.frame.size.width, self.view.frame.size.height);
+//    }];
+//}
+//
+//-(void)textFieldDidEndEditing:(UITextField *)textField{
+//    [UIView animateWithDuration:0.30 animations:^{
+//        self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+//    }];
+//}
+//
+//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+//{
+//    [_textFieldEmail resignFirstResponder];
+//    [_textFieldSenha resignFirstResponder];
+//}
+
+
+- (BOOL) verifyPass {
+    if (![self.pass isEqualToString:self.confirmPass]) {
+        return NO;
+    }
+    
+    
+    return YES;
 }
+
 
 -(BOOL)canCreateUser{
-    if (![self.name  isEqual: @""] && ![self.email  isEqual: @""] && ![self.gender  isEqual: @""] && ![self.birthday  isEqual: @""] && ![self.city  isEqual: @""] && ![self.pass  isEqual: @""]) {
+    if (![self.name  isEqual: @""]) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:@"Nome não preenchido" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+        return YES;
+    } else if ([self.email  isEqual: @""]) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:@"Email não preenchido" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+        return YES;
+
+    } else if ([self.gender  isEqual: @""]) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:@"Gênero não preenchido" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+        return YES;
+
+    } else if ([self.birthday  isEqual: @""]) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:@"Data de nascimento não preenchido" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+        return YES;
+
+    } else if ([self.city  isEqual: @""]) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:@"Cidade não preenchida" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+        return YES;
+
+    } else if ([self.pass  isEqual: @""]) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:@"Senha não preenchida" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+        return YES;
+    } else if ([self verifyPass]) {
+        
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:@"Senhas não conferem" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
         return YES;
     }
+    
     return NO;
 }
 

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "VIUser.h"
 #import "VIRegisterSingleInputTableViewCell.h"
+#import "VIRegisterPhotoTableViewCell.h"
 
 
 @interface VIRegisterViewController : UIViewController <UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
@@ -16,7 +17,10 @@
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (nonatomic) NSArray *fields;
+@property (nonatomic) NSArray *firstFieldsOfSection;
+@property (nonatomic) NSArray *secondFieldsOfSection;
+@property (nonatomic) NSArray *sectionPhoto;
+
 
 //Provavelmente vai precisar
 @property (nonatomic) NSArray *arrayOfSections;
@@ -29,5 +33,8 @@
 @property (nonatomic) NSString *birthday;
 @property (nonatomic) NSString *city;
 @property (nonatomic) NSString *pass;
+
+@property (nonatomic) NSString *confirmPass;
+
 
 @end

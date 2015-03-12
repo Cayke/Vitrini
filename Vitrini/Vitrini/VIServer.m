@@ -87,6 +87,9 @@
 }
 
 -(VIResponse*)createResponseFromData:(NSData*)data{
+    if (!data) {
+        @throw [NSException exceptionWithName:@"no_connection" reason:@"internet error" userInfo:nil];
+    }
     return [[VIResponse alloc]initWithResponse:data];
 }
 
