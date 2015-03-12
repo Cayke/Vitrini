@@ -17,5 +17,10 @@
 @property (nonatomic) NSArray * products;
 @property (nonatomic) NSString *address;
 @property (nonatomic) NSString *imageName;
+@property (nonatomic) int storeID;
+@property (nonatomic) BOOL isFollowing;
+@property (nonatomic) NSString *resume;
+
+-(instancetype) initWithDictionary:(NSDictionary *) dict;
 
 @end

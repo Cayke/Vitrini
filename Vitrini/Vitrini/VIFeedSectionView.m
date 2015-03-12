@@ -7,12 +7,13 @@
 
 #import "VIFeedSectionView.h"
 #import "VIStoreProfileViewController.h"
-
+#import "VIStore.h"
 #import "AsyncImageView.h"
 #import "VIColor.h"
 
 @implementation VIFeedSectionView {
-    NSDictionary *storeDict;
+    VIStore *store;
+    //NSDictionary *storeDict;
 }
 
 -(instancetype)initWithFrame:(CGRect)frame andDict:(NSDictionary*)dict
@@ -24,9 +25,11 @@
     return self;
 }
 
--(void) createLayoutWithDict:(NSDictionary*)dict
+-(void) createLayoutWithDict:(NSDictionary*)dictWithStore
 {
-    storeDict = [dict objectForKey:@"store"];
+    //storeDict = [dict objectForKey:@"store"];
+    store = [[VIStore alloc]initWithDictionary:[dictWithStore objectForKey:@"store"]];
+    
     
     UIBlurEffect *blurEffect;
     blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
@@ -44,7 +47,7 @@
     //add fotinha loja
     AsyncImageView *imageView = [[AsyncImageView alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
     
-    NSString *imageName = [[dict objectForKey:@"store"] objectForKey:@"image"];
+    NSString *imageName = store.imageName;
     imageView.activityIndicatorStyle = UIActivityIndicatorViewStyleWhiteLarge;
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://107.170.189.125/vitrini/default/download/db/%@", imageName]];
     imageView.imageURL = url;
@@ -56,11 +59,11 @@
     //adicionar imageview ao button
     [buttonStore addSubview:imageView];
     [buttonStore setShowsTouchWhenHighlighted:YES];
-    [buttonStore addTarget:self action:@selector(goToStorePage) forControlEvents:UIControlEventTouchUpInside];
+    [buttonStore addTarget:self action:@selector(goToStoreProfile) forControlEvents:UIControlEventTouchUpInside];
     
     //adicionar nome da loja
     UILabel *labelName = [[UILabel alloc]initWithFrame:CGRectMake(50, 12, 200, 20)];
-    labelName.text = [[dict objectForKey:@"store"]objectForKey:@"name"];
+    labelName.text = store.name;
     
     [self addSubview:labelName];
     
@@ -69,10 +72,12 @@
     
 }
 
--(void) goToStorePage
+-(void) goToStoreProfile
 {
-    UIStoryboard *store = [UIStoryboard storyboardWithName:@"VIStoreProfile" bundle:nil];
-    VIStoreProfileViewController *storeVC = (VIStoreProfileViewController *) [store instantiateInitialViewController];
+    UIStoryboard *storeSB = [UIStoryboard storyboardWithName:@"VIStoreProfile" bundle:nil];
+    VIStoreProfileViewController *storeVC = (VIStoreProfileViewController *) [storeSB instantiateInitialViewController];
+    storeVC.actualStore = store;
+    
     [self.feedVC presentViewController:storeVC animated:YES completion:nil];
 }
 

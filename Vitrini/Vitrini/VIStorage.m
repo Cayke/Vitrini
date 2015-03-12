@@ -159,9 +159,7 @@
 ////////////////////////
 -(NSArray *)createProductsWithResponse:(VIResponse *) response
 {
-    VISymbolsPackage *symbPack = [[VISymbolsPackage alloc]init];
-    
-    NSArray *arrayWithProducts = [response.value objectForKey:symbPack.products];
+    NSArray *arrayWithProducts = response.value;
     
     NSMutableArray *returnArray = [[NSMutableArray alloc]init];
     for (NSDictionary *dic in arrayWithProducts) {

@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "AsyncImageView.h"
+#import "VIStore.h"
 
 @interface VIStoreProfileViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate>
+
+@property (nonatomic) VIStore *actualStore;
 
 @end

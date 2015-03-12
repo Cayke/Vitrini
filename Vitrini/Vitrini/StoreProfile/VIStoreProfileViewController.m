@@ -9,6 +9,8 @@
 #import "VIStoreProfileViewController.h"
 #import "VIStoreProfileHeaderCollectionReusableView.h"
 #import "VIStoreShowProductViewController.h"
+#import "VIServer.h"
+#import "VIStorage.h"
 
 @interface VIStoreProfileViewController ()
 
@@ -22,6 +24,8 @@
 
 @property (nonatomic) CGFloat lastContentOffset;
 
+@property (nonatomic) VIStore *storeWithCompleteInfo;
+
 @end
 
 @implementation VIStoreProfileViewController
@@ -34,6 +38,9 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
+    
+    //baixar a loja completa do server
+    [self getCompleteStoreInfo];
     
     _firstTime = YES;
     
@@ -60,6 +67,47 @@ static NSString * const reuseIdentifier = @"Cell";
     self.dataArray = [NSArray arrayWithObjects:@"tumbStore1", @"tumbStore2", @"tumbStore3", @"tumbStore4", @"tumbStore5", @"tumbStore6", @"tumbStore7", @"tumbStore8", @"tumbStore9", @"tumbStore10", @"tumbStore11", @"tumbStore12", @"tumbStore1", @"tumbStore2", @"tumbStore3", @"tumbStore4", @"tumbStore5", @"tumbStore6", @"tumbStore7", @"tumbStore8", @"tumbStore9", @"tumbStore10", @"tumbStore11", @"tumbStore12", nil];
     
     self.navigationBar.topItem.title = @"Lojas Zara";
+}
+
+-(void) getCompleteStoreInfo
+{
+    //todo
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    //[_activityIndicator startAnimating];
+    //---------------------------------
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //Call your function or whatever work that needs to be done
+        //Code in this part is run on a background thread
+        VIServer *server = [[VIServer alloc]init];
+        VIResponse *response = [server getStoreWithID:_actualStore.storeID andUserEmail:[VIStorage sharedStorage].user.email];
+        VIResponse *response2 = [server getProductsOfStore:_actualStore.storeID andPage:0];
+        
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            //Stop your activity indicator or anything else with the GUI
+            //Code here is run on the main thread
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            //[_activityIndicator stopAnimating];
+            
+            //tratar algo se precisar
+            if (response.status == VIRequestSuccess) {
+                //pegar dados da loja
+                _storeWithCompleteInfo = [[VIStore alloc]initWithDictionary:response.value];
+                
+                //pegar os produtos
+                _storeWithCompleteInfo.products = [[VIStorage sharedStorage] createProductsWithResponse:response2];
+                
+                //todo: jogar na tela as paradas
+                [_collectionView reloadData];
+                
+            }
+            else {
+                UIAlertView *alerta = [[UIAlertView alloc]initWithTitle:@"Erro de conexao" message:@"Conecte-se a internet e tente novamente" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                [alerta show];
+            }
+            
+        });
+    });
 }
 
 - (IBAction)backButtonPressed:(id)sender
@@ -234,7 +282,7 @@ static NSString * const reuseIdentifier = @"Cell";
         cellHeader.backgroundLoja.image = [UIImage imageNamed:@"zaraBack.png"];
         cellHeader.logoLoja.image = [UIImage imageNamed:@"zaraLogo.png"];
         
-        cellHeader.descricaoLoja.text = @"Zara is a Spanish clothing and accessories retailer based in Arteixo, Galicia.";
+        cellHeader.descricaoLoja.text = _storeWithCompleteInfo.resume;
         cellHeader.descricaoLoja.font = [UIFont fontWithName:@"Helvetica Neue" size:13];
         cellHeader.descricaoLoja.font = [UIFont boldSystemFontOfSize:13];
         cellHeader.descricaoLoja.textColor = [UIColor whiteColor];
