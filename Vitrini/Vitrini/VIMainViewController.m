@@ -24,7 +24,7 @@
     [self initViewControllers];
     [self setupMenu];
     
-    [self performSelector:@selector(goToStoreProfile) withObject:nil afterDelay:1.0];
+//    [self performSelector:@selector(goToStoreProfile) withObject:nil afterDelay:1.0];
 }
 
 - (void)goToStoreProfile
