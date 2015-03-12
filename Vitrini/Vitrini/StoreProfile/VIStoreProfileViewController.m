@@ -20,7 +20,6 @@
 @property (nonatomic, strong) NSArray *dataArray;
 
 @property (nonatomic, strong) UIView *backgroundHeader;
-@property (nonatomic) BOOL firstTime;
 
 @property (nonatomic) CGFloat lastContentOffset;
 
@@ -41,8 +40,6 @@ static NSString * const reuseIdentifier = @"Cell";
     
     //baixar a loja completa do server
     [self getCompleteStoreInfo];
-    
-    _firstTime = YES;
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
@@ -97,6 +94,7 @@ static NSString * const reuseIdentifier = @"Cell";
                 //pegar os produtos
                 _storeWithCompleteInfo.products = [[VIStorage sharedStorage] createProductsWithResponse:response2];
                 
+                NSLog(@"_storeWithCompleteInfo: %@",_storeWithCompleteInfo);
                 //todo: jogar na tela as paradas
                 [_collectionView reloadData];
                 
@@ -276,31 +274,26 @@ static NSString * const reuseIdentifier = @"Cell";
 {
     VIStoreProfileHeaderCollectionReusableView* cellHeader = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Header" forIndexPath:indexPath];
     
-    if (_firstTime) {
-        NSLog(@"_firstTime YES YES YES");
-        
-        cellHeader.backgroundLoja.image = [UIImage imageNamed:@"zaraBack.png"];
-        cellHeader.logoLoja.image = [UIImage imageNamed:@"zaraLogo.png"];
-        
-        cellHeader.descricaoLoja.text = _storeWithCompleteInfo.resume;
-        cellHeader.descricaoLoja.font = [UIFont fontWithName:@"Helvetica Neue" size:13];
-        cellHeader.descricaoLoja.font = [UIFont boldSystemFontOfSize:13];
-        cellHeader.descricaoLoja.textColor = [UIColor whiteColor];
-        cellHeader.descricaoLoja.tintColor = [UIColor whiteColor];
-        
-        cellHeader.descricaoLoja.scrollEnabled = NO;
-        cellHeader.descricaoLoja.pagingEnabled = NO;
-        cellHeader.descricaoLoja.editable = NO;
-        
-        if ([[cellHeader.seguirLoja.titleLabel text] isEqual: @"Seguindo"]) {
-            NSLog(@"Estou Seguindo a Loja");
-        }
-        
-        [cellHeader.seguirLoja addTarget:self action:@selector(seguirAction:) forControlEvents:UIControlEventTouchUpInside];
-        [cellHeader.localizacaoLoja addTarget:self action:@selector(localizacaoAction) forControlEvents:UIControlEventTouchUpInside];
-        
-        _firstTime = NO;
+    cellHeader.backgroundLoja.image = [UIImage imageNamed:@"zaraBack.png"];
+    cellHeader.logoLoja.image = [UIImage imageNamed:@"zaraLogo.png"];
+    
+    cellHeader.descricaoLoja.text = _storeWithCompleteInfo.resume;
+    cellHeader.descricaoLoja.font = [UIFont fontWithName:@"Helvetica Neue" size:13];
+    cellHeader.descricaoLoja.font = [UIFont boldSystemFontOfSize:13];
+    cellHeader.descricaoLoja.textColor = [UIColor whiteColor];
+    cellHeader.descricaoLoja.tintColor = [UIColor whiteColor];
+    
+    cellHeader.descricaoLoja.scrollEnabled = NO;
+    cellHeader.descricaoLoja.pagingEnabled = NO;
+    cellHeader.descricaoLoja.editable = NO;
+    
+    if ([[cellHeader.seguirLoja.titleLabel text] isEqual: @"Seguindo"]) {
+        NSLog(@"Estou Seguindo a Loja");
     }
+    
+    [cellHeader.seguirLoja addTarget:self action:@selector(seguirAction:) forControlEvents:UIControlEventTouchUpInside];
+    [cellHeader.localizacaoLoja addTarget:self action:@selector(localizacaoAction) forControlEvents:UIControlEventTouchUpInside];
+    
     return cellHeader;
 }
 
