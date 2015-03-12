@@ -73,7 +73,6 @@
 {
     UIStoryboard *store = [UIStoryboard storyboardWithName:@"VIStoreProfile" bundle:nil];
     VIStoreProfileViewController *storeVC = (VIStoreProfileViewController *) [store instantiateInitialViewController];
-    storeVC.storeID = [[storeDict objectForKey:@"storeID"]intValue];
     [self.feedVC presentViewController:storeVC animated:YES completion:nil];
 }
 

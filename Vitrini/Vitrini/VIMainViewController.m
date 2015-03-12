@@ -23,6 +23,8 @@
     // inicializar views controllers
     [self initViewControllers];
     [self setupMenu];
+    
+    [self performSelector:@selector(goToStoreProfile) withObject:nil afterDelay:1.0];
 }
 
 - (void)goToStoreProfile
