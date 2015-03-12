@@ -38,7 +38,7 @@
     CGFloat dimension = 78;
     
     UIView *filter = [[UIView alloc]initWithFrame:CGRectMake(width/2 - dimension/2, -(dimension/2)+10, dimension, dimension)];
-    filter.backgroundColor = [VIColor blueVIColor];
+    filter.backgroundColor = [VIColor lightRedVIColor];
     // deixar circular
     [filter.layer setCornerRadius:(dimension/2)];
     filter.layer.masksToBounds = NO;
@@ -51,7 +51,7 @@
     
     // status
     UIView *status = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
-    status.backgroundColor = [VIColor whiteVIColor];
+    status.backgroundColor = [VIColor lightRedVIColor];
     
     [self.view addSubview:status];
     

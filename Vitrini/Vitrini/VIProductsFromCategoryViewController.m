@@ -19,30 +19,18 @@
 
 @implementation VIProductsFromCategoryViewController
 
--(instancetype)init
-{
-    @throw [NSException exceptionWithName:@"use another init" reason:nil userInfo:nil];
-}
-
-- (instancetype)initWithCategory:(VICategory *) category
-{
-    self = [super init];
-    if (self) {
-        _category = category;
-    }
-    return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self getProducts];
     
     // status
-    UIView *status = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
+    UIView *status = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 64)];
     status.backgroundColor = [VIColor lightRedVIColor];
     
-    //[self.view addSubview:status];
+    [self.view insertSubview:status belowSubview:_navBar];
+    
+    self.navBar.topItem.title = _category.name;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -102,4 +90,7 @@
     NSLog(@"clicou num produto dos likes");
 }
 
+- (IBAction)backButton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

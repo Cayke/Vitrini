@@ -151,8 +151,11 @@
                                 <rect key="frame" x="169" y="315" width="37" height="37"/>
                                 <color key="color" red="0.098039215686274508" green="0.18431372549019609" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iLB-Uh-0DX" customClass="VIStoreProfileNavigationBar">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iLB-Uh-0DX" customClass="VIStoreProfileNavigationBar">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="uCh-h9-8A8"/>
+                                </constraints>
                                 <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -161,6 +164,9 @@
                                     <navigationItem title="Title" id="Ks1-uu-GDm">
                                         <barButtonItem key="leftBarButtonItem" image="VIStoreProfileNavigationBarBackButton.png" id="whb-Nf-V3L">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="backButton:" destination="ox8-9b-IgM" id="V2d-XN-cYt"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -168,10 +174,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="iLB-Uh-0DX" secondAttribute="trailing" id="D9H-gO-kYQ"/>
                             <constraint firstAttribute="centerX" secondItem="V6D-Ik-yYM" secondAttribute="centerX" id="Ok8-sA-Cel"/>
+                            <constraint firstItem="iLB-Uh-0DX" firstAttribute="leading" secondItem="KhN-8Z-QBf" secondAttribute="leading" id="RKH-bY-SVD"/>
                             <constraint firstAttribute="centerY" secondItem="V6D-Ik-yYM" secondAttribute="centerY" id="Uhd-fH-pVr"/>
                             <constraint firstItem="bdv-IN-zci" firstAttribute="top" secondItem="5Gn-5b-ELJ" secondAttribute="bottom" constant="44" id="Xvr-1Y-HEO"/>
                             <constraint firstItem="Wv0-Dt-NkM" firstAttribute="top" secondItem="bdv-IN-zci" secondAttribute="bottom" id="f7c-QU-XGz"/>
+                            <constraint firstItem="iLB-Uh-0DX" firstAttribute="top" secondItem="5Gn-5b-ELJ" secondAttribute="bottom" id="qCC-V3-G7D"/>
                             <constraint firstAttribute="trailing" secondItem="bdv-IN-zci" secondAttribute="trailing" id="qgX-cM-7h8"/>
                             <constraint firstItem="bdv-IN-zci" firstAttribute="leading" secondItem="KhN-8Z-QBf" secondAttribute="leading" id="qyQ-us-8cb"/>
                         </constraints>
@@ -180,6 +189,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="V6D-Ik-yYM" id="IPk-gm-O1o"/>
                         <outlet property="collectionView" destination="bdv-IN-zci" id="DVd-Eo-qkt"/>
+                        <outlet property="navBar" destination="iLB-Uh-0DX" id="MXc-Ay-TrU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WkR-9k-r5U" userLabel="First Responder" sceneMemberID="firstResponder"/>

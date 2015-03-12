@@ -11,6 +11,7 @@
 #import "VIUser.h"
 #import "VIStorage.h"
 #import "VIInitControl.h"
+#import "VIColor.h"
 
 @interface VIProfileViewController ()
 
@@ -25,6 +26,12 @@
     [self setVariableConstraints];
     [self designPhotos];
     [self setRows];
+    
+    // status
+    UIView *status = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
+    status.backgroundColor = [VIColor blueVIColor];
+    
+    [self.view addSubview:status];
     
 }
 
