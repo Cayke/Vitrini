@@ -14,6 +14,7 @@
 #import "VICatalogViewController.h"
 #import "VIFeedViewController.h"
 #import "VIProfileViewController.h"
+
 #import "VIStoreProfileViewController.h"
 
 @implementation VIMainViewController
@@ -29,10 +30,9 @@
 
 - (void)goToStoreProfile
 {
-    NSLog(@"goToStoreProfile");
-    
     UIStoryboard *store = [UIStoryboard storyboardWithName:@"VIStoreProfile" bundle:nil];
     VIStoreProfileViewController *storeVC = (VIStoreProfileViewController *) [store instantiateInitialViewController];
+   
     [self presentViewController:storeVC animated:YES completion:nil];
 }
 
