@@ -7,19 +7,19 @@
 //
 
 #import "VIStoreProfileViewController.h"
+#import "VIProductsCollectionCell.h"
 #import "VIStoreProfileHeaderCollectionReusableView.h"
 #import "VIStoreShowProductViewController.h"
 #import "VIServer.h"
 #import "VIStorage.h"
 #import "VIProduct.h"
-#import "VIProductsCollectionCell.h"
+
 
 @interface VIStoreProfileViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *statuBarBackground;
 @property (nonatomic, weak) IBOutlet UINavigationBar *navigationBar;
 @property (nonatomic, strong) IBOutlet UICollectionView *collectionView;
-@property (nonatomic, strong) NSArray *dataArray;
 
 @property (nonatomic, strong) UIView *backgroundHeader;
 
@@ -40,9 +40,6 @@ static NSString * const reuseIdentifier = @"Cell";
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     
-    //baixar a loja completa do server
-    [self getCompleteStoreInfo];
-    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, self.statuBarBackground.frame.size.height, self.statuBarBackground.frame.size.width, 1)];
@@ -58,11 +55,11 @@ static NSString * const reuseIdentifier = @"Cell";
     [_backgroundHeader setBackgroundColor:[UIColor colorWithRed:22/255.0f green:22/255.0f blue:25/255.0f alpha:1.0f]];
     [_backgroundHeader setAlpha:1.0f];
     [self.collectionView addSubview:_backgroundHeader];
-   
-    // Do any additional setup after loading the view.
-    self.dataArray = [NSArray arrayWithObjects:@"tumbStore1", @"tumbStore2", @"tumbStore3", @"tumbStore4", @"tumbStore5", @"tumbStore6", @"tumbStore7", @"tumbStore8", @"tumbStore9", @"tumbStore10", @"tumbStore11", @"tumbStore12", @"tumbStore1", @"tumbStore2", @"tumbStore3", @"tumbStore4", @"tumbStore5", @"tumbStore6", @"tumbStore7", @"tumbStore8", @"tumbStore9", @"tumbStore10", @"tumbStore11", @"tumbStore12", nil];
     
     self.navigationBar.topItem.title = @"Lojas Zara";
+    
+    //baixar a loja completa do server
+    [self getCompleteStoreInfo];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -91,8 +88,8 @@ static NSString * const reuseIdentifier = @"Cell";
         //Call your function or whatever work that needs to be done
         //Code in this part is run on a background thread
         VIServer *server = [[VIServer alloc]init];
-        VIResponse *response = [server getStoreWithID:3 andUserEmail:[VIStorage sharedStorage].user.email];
-        VIResponse *response2 = [server getProductsOfStore:3 andPage:0]; //_actualStore.storeID
+        VIResponse *response = [server getStoreWithID:self.actualStore.storeID andUserEmail:[VIStorage sharedStorage].user.email];
+        VIResponse *response2 = [server getProductsOfStore:self.actualStore.storeID andPage:0]; //_actualStore.storeID
         
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             //Stop your activity indicator or anything else with the GUI
@@ -108,7 +105,18 @@ static NSString * const reuseIdentifier = @"Cell";
                 //pegar os produtos
                 _storeWithCompleteInfo.products = [[VIStorage sharedStorage] createProductsWithResponse:response2];
                 
-                NSLog(@"_storeWithCompleteInfo: %@", _storeWithCompleteInfo.products);
+                /* logs
+                NSLog(@"++ _storeWithCompleteInfo.storeID: %d", _storeWithCompleteInfo.storeID);
+                NSLog(@"++ _actualStore.storeID: %d", _actualStore.storeID);
+                
+                
+                NSLog(@"++ _storeWithCompleteInfo.products: %@", _storeWithCompleteInfo.products);
+                NSLog(@"++ _actualStore.products: %@", _actualStore.products);
+                
+                
+                NSLog(@"++ [_storeWithCompleteInfo.products objectAtIndex:0]: %@", [[_storeWithCompleteInfo.products objectAtIndex:0] name]);
+                */
+                
                 //todo: jogar na tela as paradas
                 [_collectionView reloadData];
                 
@@ -130,7 +138,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.dataArray count];
+    return [self.storeWithCompleteInfo.products count];
 }
 
 #pragma mark UICollectionViewCell
@@ -139,7 +147,7 @@ static NSString * const reuseIdentifier = @"Cell";
     
     VIProductsCollectionCell *cell = (VIProductsCollectionCell *)[collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-    VIProduct *product = [_actualStore.products objectAtIndex:indexPath.row];
+    VIProduct *product = [self.storeWithCompleteInfo.products objectAtIndex:indexPath.row];
     
     [cell mountWithProduct:product];
     
@@ -148,8 +156,8 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"CLICOU %ld", (long)indexPath.row);
-    [self goToStoreProduct: [self.dataArray objectAtIndex:indexPath.row]];
+    NSLog(@"CLICOU: %ld \n OBJETO: %@", (long)indexPath.row, [self.storeWithCompleteInfo.products objectAtIndex:indexPath.row]);
+    [self goToStoreProduct: [[self.storeWithCompleteInfo.products objectAtIndex:indexPath.row] name]];
 }
 
 #pragma mark Go To Store Product
