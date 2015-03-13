@@ -407,4 +407,42 @@
     
 }
 
+
+/////////////////////////////////////////////////////////////////
+//
+//        PEGAR PRODUTOS PARA AS CATEGORIAS
+//
+/////////////////////////////////////////////////////////////////
+-(VIResponse *)getProductsFromCategoryID:(int)catID andPage:(int)page{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/getProductsFromCategory",[self serverAddress]]]];
+    
+    // CRIAR STRING DE DADOS PARA REALIZAR POST
+    NSString *post;
+    if (catID != 0) {
+        [self incrementPost:&post WithName:symbPack.categoryID andValue:[NSString stringWithFormat:@"%d",catID]];
+    }
+    [self incrementPost:&post WithName:symbPack.page andValue:[NSString stringWithFormat:@"%d", page]];
+    
+    // REALIZAR CONEXÃO
+    return [self createResponseFromData:[self makeRequest:request withPost:post]];
+}
+
+/////////////////////////////////////////////////////////////////
+//
+//        PEGAR PRODUTOS PARA AS CATEGORIAS
+//
+/////////////////////////////////////////////////////////////////
+-(VIResponse *)getStoresToPage:(int)page{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/getStores",[self serverAddress]]]];
+    
+    // CRIAR STRING DE DADOS PARA REALIZAR POST
+    NSString *post;
+    [self incrementPost:&post WithName:symbPack.page andValue:[NSString stringWithFormat:@"%d", page]];
+    
+    // REALIZAR CONEXÃO
+    return [self createResponseFromData:[self makeRequest:request withPost:post]];
+}
+
 @end
