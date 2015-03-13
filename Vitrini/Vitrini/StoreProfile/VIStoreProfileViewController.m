@@ -113,38 +113,6 @@ static NSString * const reuseIdentifier = @"Cell";
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-#pragma mark - UIScrollViewDelegate Methods
-
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
-{
-    self.lastContentOffset = scrollView.contentOffset.y;
-}
-
-- (void) scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
-{
-    if (scrollView.contentOffset.y > self.lastContentOffset) {
-        
-        [UIView animateWithDuration:0.2
-                              delay: 0.0
-                            options: UIViewAnimationOptionCurveLinear
-                         animations:^{
-                             self.navigationBar.alpha = 0.0;
-                             self.statuBarBackground.alpha = 1.0;
-                         }
-                         completion:nil];
-        
-    } else{
-        [UIView animateWithDuration:0.3
-                              delay: 0.0
-                            options: UIViewAnimationOptionCurveLinear
-                         animations:^{
-                             self.navigationBar.alpha = 1.0;
-                             self.statuBarBackground.alpha = 0.0;
-                         }
-                         completion:nil];
-    }
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -202,24 +170,6 @@ static NSString * const reuseIdentifier = @"Cell";
     
     [self presentViewController:productVC animated:YES completion:nil];
 }
-
-#pragma mark prepareForSegue
-
-/*
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"showProductOnStoreProfile"])
-    {
-        __unused VIStoreProfileShowProductViewController *controller = [segue destinationViewController];
-        controller.view.backgroundColor = [UIColor redColor];
-        controller.navigationBar.topItem.title = sender;
-        NSLog(@"---->>> sender: %@", sender);
-        
-//        UIImage *image = [UIImage imageNamed:sender];
-//        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-//        [controller.view addSubview:imageView];
-    }
-}*/
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
@@ -302,6 +252,38 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)localizacaoAction{
     NSLog(@"localizacaoAction");
+}
+
+#pragma mark - UIScrollViewDelegate Methods
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    self.lastContentOffset = scrollView.contentOffset.y;
+}
+
+- (void) scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
+{
+    if (scrollView.contentOffset.y > self.lastContentOffset) {
+        
+        [UIView animateWithDuration:0.2
+                              delay: 0.0
+                            options: UIViewAnimationOptionCurveLinear
+                         animations:^{
+                             self.navigationBar.alpha = 0.0;
+                             self.statuBarBackground.alpha = 1.0;
+                         }
+                         completion:nil];
+        
+    } else{
+        [UIView animateWithDuration:0.3
+                              delay: 0.0
+                            options: UIViewAnimationOptionCurveLinear
+                         animations:^{
+                             self.navigationBar.alpha = 1.0;
+                             self.statuBarBackground.alpha = 0.0;
+                         }
+                         completion:nil];
+    }
 }
 
 #pragma mark Global Menu
