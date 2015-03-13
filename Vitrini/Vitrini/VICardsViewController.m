@@ -14,12 +14,14 @@
 @interface VICardsViewController ()
 @end
 
-@implementation VICardsViewController
+@implementation VICardsViewController{
+    VIDraggableCardsView *draggableBackground;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    VIDraggableCardsView *draggableBackground = [[VIDraggableCardsView alloc]initWithFrame:self.view.frame];
+    draggableBackground = [[VIDraggableCardsView alloc]initWithFrame:self.view.frame];
     draggableBackground.VICardsVC = self;
     [self.view addSubview:draggableBackground];
     
@@ -69,6 +71,8 @@
 {
     UIStoryboard *filter = [UIStoryboard storyboardWithName:@"Filter" bundle:nil];
     VIFilterViewController *filterVC = (VIFilterViewController *)[filter instantiateInitialViewController];
+    
+    filterVC.vcDelegate = draggableBackground;
     
     //comando para botar a view por cima e poder ver a debaixo ainda...
     filterVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;

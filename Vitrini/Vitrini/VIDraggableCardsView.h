@@ -10,7 +10,9 @@
 #import "VICardView.h"
 #import "VICardsViewController.h"
 
-@interface VIDraggableCardsView : UIView <DraggableViewDelegate>
+#import "VIFilterViewController.h"
+
+@interface VIDraggableCardsView : UIView <DraggableViewDelegate, VIFilterDelegate>
 
 //methods called in DraggableView
 -(void)cardSwipedLeft:(UIView *)card;

@@ -70,6 +70,7 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
     return self;
 }
 
+
 -(void)setupBackgroundView{
     // background
     
@@ -261,6 +262,13 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
     return draggableView;
 }
 
+-(void)loadWithCategoryID:(int)categoryID{
+    [self clearCards];
+    [[VIProductStore sharedStore] changeCategoryID:categoryID];
+    [self mountCards];
+    inDispatch = NO;
+}
+
 -(void)mountCards{
     if (!inDispatch) {
         inDispatch = YES;
@@ -310,6 +318,13 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [[VIProductStore sharedStore]reviewProductID:product.ID withLiked:isLiked];
     });
+}
+
+-(void)clearCards{
+    for (VICardView *card in loadedCards) {
+        [card removeFromSuperview];
+    }
+    [loadedCards removeAllObjects];
 }
 
 //%%% loads all the cards and puts the first x in the "loaded cards" array

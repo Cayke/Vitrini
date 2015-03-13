@@ -50,8 +50,8 @@
         VIServer *server = [[VIServer alloc]init];
         
         //todo: usar funcao abaixo..
-        //VIResponse *response = [server getProductsForCategory:_category.idCategory];
-        VIResponse *response = [server getProductsLikedsForUser:[VIStorage sharedStorage].user.email withGender:@"M" andCategory:0];
+        VIResponse *response = [server getProductsFromCategoryID:_category.idCategory andPage:0];
+        //VIResponse *response = [server getProductsLikedsForUser:[VIStorage sharedStorage].user.email withGender:@"M" andCategory:0];
         
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             //Stop your activity indicator or anything else with the GUI
