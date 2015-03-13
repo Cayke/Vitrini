@@ -87,7 +87,7 @@ static NSString * const reuseIdentifier = @"Cell";
             //[_activityIndicator stopAnimating];
             
             //tratar algo se precisar
-            if (response.status == VIRequestSuccess) {
+            if (response.status == VIRequestSuccess && response2.status == VIRequestSuccess) {
                 //pegar dados da loja
                 _storeWithCompleteInfo = [[VIStore alloc]initWithDictionary:response.value];
                 

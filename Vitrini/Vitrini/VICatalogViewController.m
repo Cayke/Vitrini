@@ -27,8 +27,8 @@
     _tableView.backgroundColor = [UIColor clearColor];
     
     //trocar a cor da searchbar
-    [_searchBar setSearchBarStyle:UISearchBarStyleMinimal];
-    [_searchBar setScopeBarBackgroundImage:[UIImage imageWithCGImage:(__bridge CGImageRef)([UIColor clearColor])]];
+    //[_searchBar setSearchBarStyle:UISearchBarStyleMinimal];
+    //[_searchBar setScopeBarBackgroundImage:[UIImage imageWithCGImage:(__bridge CGImageRef)([UIColor clearColor])]];
     //[_searchBar setBackgroundImage:[UIImage imageWithCGImage:(__bridge CGImageRef)([UIColor clearColor])]];
     //[_searchBar setTintColor:[UIColor orangeColor]];
     //[_searchBar setBarTintColor:[UIColor orangeColor]];
@@ -40,6 +40,10 @@
     
     //inicializar array com categorias
     _arrayCategorys = [[VIStorage sharedStorage]returnCategories];
+    
+    [self.segControl addTarget:self action:@selector(segmentControlChangeState:) forControlEvents:UIControlEventValueChanged];
+    
+    
     
     //botar status bar branca
     
@@ -77,6 +81,7 @@
     [cell mountWithCategory:cat];
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     
+    
     return cell;
 }
 
@@ -93,6 +98,18 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 44;
+}
+
+-(void) segmentControlChangeState:(id)sender
+{
+    UISegmentedControl *segControl = sender;
+    if (segControl.selectedSegmentIndex == 0) {
+        NSLog(@"produtos");
+    }
+    else
+    {
+        NSLog(@"lojas");
+    }
 }
 
 @end

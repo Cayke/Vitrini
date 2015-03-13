@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="A8D-35-rA5">
-                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="611"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -34,11 +34,11 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n5h-Cb-zcT" customClass="AsyncImageView">
                                                     <rect key="frame" x="10" y="7" width="30" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="EWw-Jm-4Ca"/>
-                                                        <constraint firstAttribute="height" constant="30" id="IGh-iL-zQf"/>
+                                                        <constraint firstAttribute="height" constant="30" id="Lhs-5S-mYb"/>
+                                                        <constraint firstAttribute="width" constant="30" id="Qof-Ls-Etl"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZrW-Pg-eaT">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZrW-Pg-eaT">
                                                     <rect key="frame" x="50" y="7" width="317" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -47,12 +47,8 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ZrW-Pg-eaT" firstAttribute="leading" secondItem="n5h-Cb-zcT" secondAttribute="trailing" constant="10" id="2aj-eE-mCr"/>
-                                                <constraint firstAttribute="bottom" secondItem="ZrW-Pg-eaT" secondAttribute="bottom" constant="7" id="Fk6-Pu-iVY"/>
-                                                <constraint firstItem="ZrW-Pg-eaT" firstAttribute="top" secondItem="AFb-Q8-3CL" secondAttribute="top" constant="7" id="YZ0-6M-Ayn"/>
-                                                <constraint firstAttribute="trailing" secondItem="ZrW-Pg-eaT" secondAttribute="trailing" constant="8" id="ayo-yB-WD7"/>
-                                                <constraint firstItem="n5h-Cb-zcT" firstAttribute="top" secondItem="AFb-Q8-3CL" secondAttribute="top" constant="7" id="mcD-YZ-S3X"/>
-                                                <constraint firstItem="n5h-Cb-zcT" firstAttribute="leading" secondItem="AFb-Q8-3CL" secondAttribute="leading" constant="10" id="wj8-DJ-4iF"/>
+                                                <constraint firstItem="n5h-Cb-zcT" firstAttribute="top" secondItem="AFb-Q8-3CL" secondAttribute="top" constant="7" id="Pym-W1-cXk"/>
+                                                <constraint firstItem="n5h-Cb-zcT" firstAttribute="leading" secondItem="AFb-Q8-3CL" secondAttribute="leading" constant="10" id="cVe-q8-XmT"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -63,37 +59,34 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Pesquisar" showsScopeBar="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kDB-cg-RFB">
-                                <rect key="frame" x="0.0" y="20" width="375" height="88"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="mVq-55-AVB"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                                <scopeButtonTitles>
-                                    <string>Produtos</string>
-                                    <string>Lojas</string>
-                                </scopeButtonTitles>
-                            </searchBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NiZ-Fz-1Xa">
+                                <rect key="frame" x="16" y="20" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Produtos"/>
+                                    <segment title="Lojas"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="A8D-35-rA5" firstAttribute="top" secondItem="kDB-cg-RFB" secondAttribute="bottom" id="9u6-JL-xOD"/>
-                            <constraint firstItem="kDB-cg-RFB" firstAttribute="top" secondItem="2jh-fG-Khf" secondAttribute="bottom" id="FbA-mo-Cr9"/>
-                            <constraint firstItem="A8D-35-rA5" firstAttribute="leading" secondItem="2em-jR-x8S" secondAttribute="leading" id="L25-qS-9Im"/>
-                            <constraint firstAttribute="trailing" secondItem="K1A-DC-4nG" secondAttribute="trailing" id="XhB-Rx-SX1"/>
-                            <constraint firstItem="K1A-DC-4nG" firstAttribute="top" secondItem="2em-jR-x8S" secondAttribute="top" id="aEq-NP-JIk"/>
-                            <constraint firstAttribute="trailing" secondItem="A8D-35-rA5" secondAttribute="trailing" id="bdk-6K-eNO"/>
-                            <constraint firstItem="K1A-DC-4nG" firstAttribute="leading" secondItem="2em-jR-x8S" secondAttribute="leading" id="ikq-yi-Pxb"/>
-                            <constraint firstAttribute="bottom" secondItem="A8D-35-rA5" secondAttribute="bottom" id="j18-Ff-Tfu"/>
-                            <constraint firstAttribute="trailing" secondItem="kDB-cg-RFB" secondAttribute="trailing" id="poi-DR-LVQ"/>
-                            <constraint firstItem="dnc-Bd-RaV" firstAttribute="top" secondItem="K1A-DC-4nG" secondAttribute="bottom" id="psx-bs-QXx"/>
-                            <constraint firstItem="kDB-cg-RFB" firstAttribute="leading" secondItem="2em-jR-x8S" secondAttribute="leading" id="pwD-Xq-boi"/>
+                            <constraint firstItem="A8D-35-rA5" firstAttribute="top" secondItem="NiZ-Fz-1Xa" secondAttribute="bottom" constant="8" id="0KF-9G-M99"/>
+                            <constraint firstAttribute="trailing" secondItem="K1A-DC-4nG" secondAttribute="trailing" id="1dZ-mG-a8c"/>
+                            <constraint firstItem="NiZ-Fz-1Xa" firstAttribute="leading" secondItem="2em-jR-x8S" secondAttribute="leading" constant="16" id="AYQ-9f-o5O"/>
+                            <constraint firstItem="A8D-35-rA5" firstAttribute="leading" secondItem="2em-jR-x8S" secondAttribute="leading" id="G2v-Hd-KCa"/>
+                            <constraint firstItem="dnc-Bd-RaV" firstAttribute="top" secondItem="K1A-DC-4nG" secondAttribute="bottom" id="KHE-JT-M2n"/>
+                            <constraint firstItem="K1A-DC-4nG" firstAttribute="top" secondItem="2em-jR-x8S" secondAttribute="top" id="MSI-JY-KaJ"/>
+                            <constraint firstAttribute="trailing" secondItem="A8D-35-rA5" secondAttribute="trailing" id="P2g-H5-e8S"/>
+                            <constraint firstItem="A8D-35-rA5" firstAttribute="top" secondItem="NiZ-Fz-1Xa" secondAttribute="bottom" constant="8" id="UbU-JQ-oSL"/>
+                            <constraint firstItem="K1A-DC-4nG" firstAttribute="leading" secondItem="2em-jR-x8S" secondAttribute="leading" id="hLl-1S-cr5"/>
+                            <constraint firstItem="dnc-Bd-RaV" firstAttribute="top" secondItem="A8D-35-rA5" secondAttribute="bottom" id="nlQ-Yt-5sk"/>
+                            <constraint firstAttribute="trailing" secondItem="NiZ-Fz-1Xa" secondAttribute="trailing" constant="16" id="szv-gB-SUc"/>
+                            <constraint firstItem="NiZ-Fz-1Xa" firstAttribute="top" secondItem="2jh-fG-Khf" secondAttribute="bottom" id="yHo-ZQ-ebd"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="imageViewBackground" destination="K1A-DC-4nG" id="REh-mn-qIM"/>
-                        <outlet property="searchBar" destination="kDB-cg-RFB" id="N9i-7D-7ao"/>
+                        <outlet property="segControl" destination="NiZ-Fz-1Xa" id="Hdg-nh-2h8"/>
                         <outlet property="tableView" destination="A8D-35-rA5" id="rlQ-Bp-H6z"/>
                     </connections>
                 </viewController>

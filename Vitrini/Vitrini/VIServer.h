@@ -57,7 +57,7 @@
 //-(VIResponse *) getAllInfoFromProduct:(int) productID;
 
 ////////////////////////////
-///     tela catalogo     ///
+///    tela catalogo     ///
 ////////////////////////////
 //todo : criar request quando tiver o search...
 
@@ -105,7 +105,7 @@
 ////////////////////////////
 ///     tela perfil      ///
 ////////////////////////////
-//
+
 -(NSURL*)urlToDownloadImageName:(NSString*)imageName;
 
 @end
