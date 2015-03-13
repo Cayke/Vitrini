@@ -11,6 +11,8 @@
 #import "VIStoreShowProductViewController.h"
 #import "VIServer.h"
 #import "VIStorage.h"
+#import "VIProduct.h"
+#import "VIProductsCollectionCell.h"
 
 @interface VIStoreProfileViewController ()
 
@@ -56,10 +58,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [_backgroundHeader setBackgroundColor:[UIColor colorWithRed:22/255.0f green:22/255.0f blue:25/255.0f alpha:1.0f]];
     [_backgroundHeader setAlpha:1.0f];
     [self.collectionView addSubview:_backgroundHeader];
-    
-    // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
+   
     // Do any additional setup after loading the view.
     self.dataArray = [NSArray arrayWithObjects:@"tumbStore1", @"tumbStore2", @"tumbStore3", @"tumbStore4", @"tumbStore5", @"tumbStore6", @"tumbStore7", @"tumbStore8", @"tumbStore9", @"tumbStore10", @"tumbStore11", @"tumbStore12", @"tumbStore1", @"tumbStore2", @"tumbStore3", @"tumbStore4", @"tumbStore5", @"tumbStore6", @"tumbStore7", @"tumbStore8", @"tumbStore9", @"tumbStore10", @"tumbStore11", @"tumbStore12", nil];
     
@@ -77,8 +76,8 @@ static NSString * const reuseIdentifier = @"Cell";
         //Call your function or whatever work that needs to be done
         //Code in this part is run on a background thread
         VIServer *server = [[VIServer alloc]init];
-        VIResponse *response = [server getStoreWithID:_actualStore.storeID andUserEmail:[VIStorage sharedStorage].user.email];
-        VIResponse *response2 = [server getProductsOfStore:_actualStore.storeID andPage:0];
+        VIResponse *response = [server getStoreWithID:3 andUserEmail:[VIStorage sharedStorage].user.email];
+        VIResponse *response2 = [server getProductsOfStore:3 andPage:0]; //_actualStore.storeID
         
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             //Stop your activity indicator or anything else with the GUI
@@ -94,7 +93,7 @@ static NSString * const reuseIdentifier = @"Cell";
                 //pegar os produtos
                 _storeWithCompleteInfo.products = [[VIStorage sharedStorage] createProductsWithResponse:response2];
                 
-                NSLog(@"_storeWithCompleteInfo: %@",_storeWithCompleteInfo);
+                NSLog(@"_storeWithCompleteInfo: %@", _storeWithCompleteInfo.products);
                 //todo: jogar na tela as paradas
                 [_collectionView reloadData];
                 
@@ -176,21 +175,33 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    UICollectionViewCell *cell = (UICollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    VIProductsCollectionCell *cell = (VIProductsCollectionCell *)[collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
+    VIProduct *product = [_actualStore.products objectAtIndex:indexPath.row];
+    
+    [cell mountWithProduct:product];
+    
+    
+    
+    /*
     UIImageView *roupas = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,124,124)];
     roupas.image = [UIImage imageNamed: [self.dataArray objectAtIndex:indexPath.row]];
     
-    [cell addSubview:roupas];
+//    [cell addSubview:roupas];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setFrame:CGRectMake(0, 0, 124, 124)];
     [button setBackgroundColor: [UIColor clearColor]];
     [button addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
     button.tag = indexPath.row;
-    [cell addSubview:button];
+    [cell addSubview:button];*/
     
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"CLICOU %ld", (long)indexPath.row);
 }
 
 - (void)buttonPressed:(UIButton *)button
@@ -275,6 +286,7 @@ static NSString * const reuseIdentifier = @"Cell";
     VIStoreProfileHeaderCollectionReusableView* cellHeader = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Header" forIndexPath:indexPath];
     
     cellHeader.backgroundLoja.image = [UIImage imageNamed:@"zaraBack.png"];
+    
     cellHeader.logoLoja.image = [UIImage imageNamed:@"zaraLogo.png"];
     
     cellHeader.descricaoLoja.text = _storeWithCompleteInfo.resume;
@@ -282,7 +294,6 @@ static NSString * const reuseIdentifier = @"Cell";
     cellHeader.descricaoLoja.font = [UIFont boldSystemFontOfSize:13];
     cellHeader.descricaoLoja.textColor = [UIColor whiteColor];
     cellHeader.descricaoLoja.tintColor = [UIColor whiteColor];
-    
     cellHeader.descricaoLoja.scrollEnabled = NO;
     cellHeader.descricaoLoja.pagingEnabled = NO;
     cellHeader.descricaoLoja.editable = NO;
