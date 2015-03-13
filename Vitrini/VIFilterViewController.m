@@ -108,8 +108,15 @@
     VICategory *category = [_arrayWithCategories objectAtIndex:indexPathRow];
     if (_likesVC) {
         [_likesVC getLikesWithCategory:category.idCategory];
+    } else {
+        [self throwToDelegateCatID:category.idCategory];
     }
-    
+}
+
+-(void)throwToDelegateCatID:(int)catID{
+    if (_vcDelegate) {
+        [(NSObject <VIFilterDelegate> *)_vcDelegate loadWithCategoryID:catID];
+    }
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section

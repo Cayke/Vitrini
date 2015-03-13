@@ -11,10 +11,11 @@
 #import "VIServer.h"
 #import "VIStorage.h"
 
-#define MAX_COUNTER_INCREMENT 10
+#define MAX_COUNTER_INCREMENT 4
 
 @implementation VIProductStore {
     int counterRN;
+    int category_id;
 }
 
 - (instancetype)init
@@ -31,6 +32,7 @@
         _loading = NO;
         _products = [[NSMutableArray alloc]init];
         counterRN = 0;
+        category_id = 0;
     }
     return self;
 }
@@ -110,9 +112,15 @@
     counterRN++;
 }
 
+-(void) changeCategoryID:(int)newCategoryID{
+    [self restartCounter];
+    category_id = newCategoryID;
+    [_products removeAllObjects];
+}
+
 -(BOOL)loadCards{
     VIServer *server = [[VIServer alloc]init];
-    VIResponse *response = [server productsToReviewWithEmail:[VIStorage sharedStorage].user.email andCategoryID:0 andGender:@"M"];
+    VIResponse *response = [server productsToReviewWithEmail:[VIStorage sharedStorage].user.email andCategoryID:category_id andGender:@"M"];
     
     NSDictionary *productsDictionaryFromJSON = [response.value objectForKey:@"products"];
     if ([productsDictionaryFromJSON count] == 0) {
@@ -127,6 +135,7 @@
     for (NSDictionary *pdict in productsDictionaryFromJSON) {
         auxProduct = [[VIProduct alloc]initToCardWithDict:pdict];
         [_products addObject:auxProduct];
+        NSLog(@"%d",auxProduct.ID);
     }
     return YES;
 }

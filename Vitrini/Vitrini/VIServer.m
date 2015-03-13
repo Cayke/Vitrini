@@ -319,8 +319,8 @@
     // CRIAR STRING DE DADOS PARA REALIZAR POST
     NSString *post;
     [self incrementPost:&post WithName:symbPack.gender andValue:gender];
-    if (categoryID) {
-        [self incrementPost:&post WithName:symbPack.storeID andValue:[NSString stringWithFormat:@"%d", categoryID]];
+    if (categoryID != 0) {
+        [self incrementPost:&post WithName:symbPack.categoryID andValue:[NSString stringWithFormat:@"%d", categoryID]];
     }
     [self incrementPost:&post WithName:symbPack.email andValue:email];
     
