@@ -56,8 +56,6 @@ static NSString * const reuseIdentifier = @"Cell";
     [_backgroundHeader setAlpha:1.0f];
     [self.collectionView addSubview:_backgroundHeader];
     
-    self.navigationBar.topItem.title = @"Lojas Zara";
-    
     //baixar a loja completa do server
     [self getCompleteStoreInfo];
 }
@@ -104,18 +102,6 @@ static NSString * const reuseIdentifier = @"Cell";
                 
                 //pegar os produtos
                 _storeWithCompleteInfo.products = [[VIStorage sharedStorage] createProductsWithResponse:response2];
-                
-                /* logs
-                NSLog(@"++ _storeWithCompleteInfo.storeID: %d", _storeWithCompleteInfo.storeID);
-                NSLog(@"++ _actualStore.storeID: %d", _actualStore.storeID);
-                
-                
-                NSLog(@"++ _storeWithCompleteInfo.products: %@", _storeWithCompleteInfo.products);
-                NSLog(@"++ _actualStore.products: %@", _actualStore.products);
-                
-                
-                NSLog(@"++ [_storeWithCompleteInfo.products objectAtIndex:0]: %@", [[_storeWithCompleteInfo.products objectAtIndex:0] name]);
-                */
                 
                 //todo: jogar na tela as paradas
                 [_collectionView reloadData];
@@ -181,9 +167,11 @@ static NSString * const reuseIdentifier = @"Cell";
 {
     VIStoreProfileHeaderCollectionReusableView* cellHeader = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Header" forIndexPath:indexPath];
     
-    cellHeader.backgroundLoja.image = [UIImage imageNamed:@"zaraBack.png"];
+    self.navigationBar.topItem.title = _storeWithCompleteInfo.name;
     
-    cellHeader.logoLoja.image = [UIImage imageNamed:@"zaraLogo.png"];
+    cellHeader.backgroundLoja.image = [UIImage imageNamed:@"zaraBack"];
+    
+    cellHeader.logoLoja.image = [UIImage imageNamed:@"zaraLogo"]; // _storeWithCompleteInfo.imageName
     
     cellHeader.descricaoLoja.text = _storeWithCompleteInfo.resume;
     cellHeader.descricaoLoja.font = [UIFont fontWithName:@"Helvetica Neue" size:13];
@@ -194,8 +182,10 @@ static NSString * const reuseIdentifier = @"Cell";
     cellHeader.descricaoLoja.pagingEnabled = NO;
     cellHeader.descricaoLoja.editable = NO;
     
-    if ([[cellHeader.seguirLoja.titleLabel text] isEqual: @"Seguindo"]) {
+    if (_storeWithCompleteInfo.isFollowing) {
         NSLog(@"Estou Seguindo a Loja");
+    } else {
+        NSLog(@">> NÃO estou seguindo a loja");
     }
     
     [cellHeader.seguirLoja addTarget:self action:@selector(seguirAction:) forControlEvents:UIControlEventTouchUpInside];
