@@ -171,7 +171,12 @@ static NSString * const reuseIdentifier = @"Cell";
     
     cellHeader.backgroundLoja.image = [UIImage imageNamed:@"zaraBack"];
     
-    cellHeader.logoLoja.image = [UIImage imageNamed:@"zaraLogo"]; // _storeWithCompleteInfo.imageName
+    //-------------------------------------
+    //setar url para download da logo
+    cellHeader.logoLoja.activityIndicatorStyle = UIActivityIndicatorViewStyleWhiteLarge;
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://107.170.189.125/vitrini/default/download/db/%@", _actualStore.imageName]];
+    cellHeader.logoLoja.imageURL = url;
+    //-------------------------------------
     
     cellHeader.descricaoLoja.text = _storeWithCompleteInfo.resume;
     cellHeader.descricaoLoja.font = [UIFont fontWithName:@"Helvetica Neue" size:13];
