@@ -92,6 +92,7 @@
 		5CE3DE411A81022900F0CC92 /* VIStoreProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE3DE401A81022900F0CC92 /* VIStoreProfile.storyboard */; };
 		9265DC811AB0706100AD1724 /* VIRegisterPhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9265DC801AB0706100AD1724 /* VIRegisterPhotoTableViewCell.m */; };
 		9265DC831AB0794000AD1724 /* Patricia-Beck.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9265DC821AB0794000AD1724 /* Patricia-Beck.jpg */; };
+		926DB6081AB29C3700BAA0E6 /* VIRegisterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 926DB6071AB29C3700BAA0E6 /* VIRegisterTableViewController.m */; };
 		926E75241AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 926E75231AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.m */; };
 		92891CDC1A28D80F002F6678 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CDB1A28D80F002F6678 /* main.m */; };
 		92891CDF1A28D80F002F6678 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CDE1A28D80F002F6678 /* AppDelegate.m */; };
@@ -283,6 +284,8 @@
 		9265DC7F1AB0706100AD1724 /* VIRegisterPhotoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIRegisterPhotoTableViewCell.h; sourceTree = "<group>"; };
 		9265DC801AB0706100AD1724 /* VIRegisterPhotoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIRegisterPhotoTableViewCell.m; sourceTree = "<group>"; };
 		9265DC821AB0794000AD1724 /* Patricia-Beck.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Patricia-Beck.jpg"; sourceTree = "<group>"; };
+		926DB6061AB29C3700BAA0E6 /* VIRegisterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIRegisterTableViewController.h; sourceTree = "<group>"; };
+		926DB6071AB29C3700BAA0E6 /* VIRegisterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIRegisterTableViewController.m; sourceTree = "<group>"; };
 		926E75221AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIRegisterSingleInputTableViewCell.h; sourceTree = "<group>"; };
 		926E75231AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIRegisterSingleInputTableViewCell.m; sourceTree = "<group>"; };
 		92891CD61A28D80F002F6678 /* Vitrini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vitrini.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -431,6 +434,8 @@
 				926E75231AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.m */,
 				9265DC7F1AB0706100AD1724 /* VIRegisterPhotoTableViewCell.h */,
 				9265DC801AB0706100AD1724 /* VIRegisterPhotoTableViewCell.m */,
+				926DB6061AB29C3700BAA0E6 /* VIRegisterTableViewController.h */,
+				926DB6071AB29C3700BAA0E6 /* VIRegisterTableViewController.m */,
 				2781FF241A6EDA5E009FFAA5 /* images */,
 			);
 			name = Login;
@@ -810,10 +815,11 @@
 				TargetAttributes = {
 					92891CD51A28D80F002F6678 = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = 3RX826N34M;
+						DevelopmentTeam = UT4W7MMEML;
 					};
 					92891CEE1A28D80F002F6678 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = UT4W7MMEML;
 						TestTargetID = 92891CD51A28D80F002F6678;
 					};
 				};
@@ -974,6 +980,7 @@
 				5CE349BE1A2CF42100F1DC17 /* UserOnboardViewController.m in Sources */,
 				5CE349BD1A2CF42100F1DC17 /* UserOnboardContentViewController.m in Sources */,
 				0B92C9971AB1CEB800D0CFC6 /* VIStoreShowProductViewController.m in Sources */,
+				926DB6081AB29C3700BAA0E6 /* VIRegisterTableViewController.m in Sources */,
 				B3CE20441AA74B5A00B3836F /* VIBrand.m in Sources */,
 				5CE3DE3F1A81021A00F0CC92 /* VIStoreProfileViewController.m in Sources */,
 				27CA104C1A9B63D600429F37 /* VIStore.m in Sources */,
@@ -1100,6 +1107,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1108,6 +1117,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1115,6 +1125,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1123,6 +1135,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

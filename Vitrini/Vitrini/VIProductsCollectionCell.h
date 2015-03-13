@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 
 #import "AsyncImageView.h"
+#import "VIProduct.h"
 
 @interface VIProductsCollectionCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet AsyncImageView *imageView;
+@property (weak, nonatomic) IBOutlet AsyncImageView *imageViewAsync;
 
--(void)mountWithDict:(NSDictionary*)dict;
+-(void)mountWithProduct:(VIProduct*)product;
 
 @end

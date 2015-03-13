@@ -7,11 +7,15 @@
 //
 
 #import "VIRegisterSingleInputTableViewCell.h"
+#import "VIColor.h"
 
 @implementation VIRegisterSingleInputTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code
+    _singleInput.tintColor = [VIColor darkWhiteVIColor];
+    
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

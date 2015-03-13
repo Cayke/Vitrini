@@ -48,7 +48,7 @@
                                         </constraints>
                                         <size key="customSize" width="124" height="124"/>
                                         <connections>
-                                            <outlet property="imageView" destination="uf7-Bf-UXu" id="F1O-BU-BIw"/>
+                                            <outlet property="imageViewAsync" destination="uf7-Bf-UXu" id="Vyc-CI-wVo"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -162,8 +162,8 @@
                                     </connections>
                                 </collectionReusableView>
                                 <connections>
-                                    <outlet property="dataSource" destination="s8c-2U-U6c" id="xLS-uF-08z"/>
-                                    <outlet property="delegate" destination="s8c-2U-U6c" id="xGb-Cj-lqT"/>
+                                    <outlet property="dataSource" destination="s8c-2U-U6c" id="Ve8-gq-Dj7"/>
+                                    <outlet property="delegate" destination="s8c-2U-U6c" id="nBK-qv-Shz"/>
                                 </connections>
                             </collectionView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uiv-DU-eqd" customClass="VIStoreProfileNavigationBar">

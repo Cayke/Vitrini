@@ -11,6 +11,8 @@
 #import "VIStoreShowProductViewController.h"
 #import "VIServer.h"
 #import "VIStorage.h"
+#import "VIProduct.h"
+#import "VIProductsCollectionCell.h"
 
 @interface VIStoreProfileViewController ()
 
@@ -56,15 +58,27 @@ static NSString * const reuseIdentifier = @"Cell";
     [_backgroundHeader setBackgroundColor:[UIColor colorWithRed:22/255.0f green:22/255.0f blue:25/255.0f alpha:1.0f]];
     [_backgroundHeader setAlpha:1.0f];
     [self.collectionView addSubview:_backgroundHeader];
-    
-    // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
+   
     // Do any additional setup after loading the view.
     self.dataArray = [NSArray arrayWithObjects:@"tumbStore1", @"tumbStore2", @"tumbStore3", @"tumbStore4", @"tumbStore5", @"tumbStore6", @"tumbStore7", @"tumbStore8", @"tumbStore9", @"tumbStore10", @"tumbStore11", @"tumbStore12", @"tumbStore1", @"tumbStore2", @"tumbStore3", @"tumbStore4", @"tumbStore5", @"tumbStore6", @"tumbStore7", @"tumbStore8", @"tumbStore9", @"tumbStore10", @"tumbStore11", @"tumbStore12", nil];
     
     self.navigationBar.topItem.title = @"Lojas Zara";
 }
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark Back Button Pressed - dismiss ViewController
+
+- (IBAction)backButtonPressed:(id)sender
+{
+    _backgroundHeader.alpha = 0;
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark Get Complete Store Info
 
 -(void) getCompleteStoreInfo
 {
@@ -77,8 +91,8 @@ static NSString * const reuseIdentifier = @"Cell";
         //Call your function or whatever work that needs to be done
         //Code in this part is run on a background thread
         VIServer *server = [[VIServer alloc]init];
-        VIResponse *response = [server getStoreWithID:_actualStore.storeID andUserEmail:[VIStorage sharedStorage].user.email];
-        VIResponse *response2 = [server getProductsOfStore:_actualStore.storeID andPage:0];
+        VIResponse *response = [server getStoreWithID:3 andUserEmail:[VIStorage sharedStorage].user.email];
+        VIResponse *response2 = [server getProductsOfStore:3 andPage:0]; //_actualStore.storeID
         
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             //Stop your activity indicator or anything else with the GUI
@@ -94,7 +108,7 @@ static NSString * const reuseIdentifier = @"Cell";
                 //pegar os produtos
                 _storeWithCompleteInfo.products = [[VIStorage sharedStorage] createProductsWithResponse:response2];
                 
-                NSLog(@"_storeWithCompleteInfo: %@",_storeWithCompleteInfo);
+                NSLog(@"_storeWithCompleteInfo: %@", _storeWithCompleteInfo.products);
                 //todo: jogar na tela as paradas
                 [_collectionView reloadData];
                 
@@ -107,59 +121,6 @@ static NSString * const reuseIdentifier = @"Cell";
         });
     });
 }
-
-- (IBAction)backButtonPressed:(id)sender
-{
-    _backgroundHeader.alpha = 0;
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-#pragma mark - UIScrollViewDelegate Methods
-
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
-{
-    self.lastContentOffset = scrollView.contentOffset.y;
-}
-
-- (void) scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
-{
-    if (scrollView.contentOffset.y > self.lastContentOffset) {
-        
-        [UIView animateWithDuration:0.2
-                              delay: 0.0
-                            options: UIViewAnimationOptionCurveLinear
-                         animations:^{
-                             self.navigationBar.alpha = 0.0;
-                             self.statuBarBackground.alpha = 1.0;
-                         }
-                         completion:nil];
-        
-    } else{
-        [UIView animateWithDuration:0.3
-                              delay: 0.0
-                            options: UIViewAnimationOptionCurveLinear
-                         animations:^{
-                             self.navigationBar.alpha = 1.0;
-                             self.statuBarBackground.alpha = 0.0;
-                         }
-                         completion:nil];
-    }
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 #pragma mark <UICollectionViewDataSource>
 
@@ -176,30 +137,22 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    UICollectionViewCell *cell = (UICollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    VIProductsCollectionCell *cell = (VIProductsCollectionCell *)[collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-    UIImageView *roupas = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,124,124)];
-    roupas.image = [UIImage imageNamed: [self.dataArray objectAtIndex:indexPath.row]];
+    VIProduct *product = [_actualStore.products objectAtIndex:indexPath.row];
     
-    [cell addSubview:roupas];
-    
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setFrame:CGRectMake(0, 0, 124, 124)];
-    [button setBackgroundColor: [UIColor clearColor]];
-    [button addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    button.tag = indexPath.row;
-    [cell addSubview:button];
+    [cell mountWithProduct:product];
     
     return cell;
 }
 
-- (void)buttonPressed:(UIButton *)button
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-//    [self performSegueWithIdentifier: @"showProductOnStoreProfile" sender:[self.dataArray objectAtIndex:button.tag]];
-    NSLog(@"ImageOfArray: %ld\n%@", (long)button.tag, [self.dataArray objectAtIndex:button.tag]);
-    
-    [self goToStoreProduct: [self.dataArray objectAtIndex:button.tag]];
+    NSLog(@"CLICOU %ld", (long)indexPath.row);
+    [self goToStoreProduct: [self.dataArray objectAtIndex:indexPath.row]];
 }
+
+#pragma mark Go To Store Product
 
 - (void)goToStoreProduct:(NSString *)title
 {
@@ -214,60 +167,6 @@ static NSString * const reuseIdentifier = @"Cell";
     [self presentViewController:productVC animated:YES completion:nil];
 }
 
-#pragma mark prepareForSegue
-
-/*
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"showProductOnStoreProfile"])
-    {
-        __unused VIStoreProfileShowProductViewController *controller = [segue destinationViewController];
-        controller.view.backgroundColor = [UIColor redColor];
-        controller.navigationBar.topItem.title = sender;
-        NSLog(@"---->>> sender: %@", sender);
-        
-//        UIImage *image = [UIImage imageNamed:sender];
-//        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-//        [controller.view addSubview:imageView];
-    }
-}*/
-
-- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
-{
-    return YES;
-}
-
-#pragma mark <UICollectionViewDelegate>
-
-/*
- // Uncomment this method to specify if the specified item should be highlighted during tracking
- - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
- }
- */
-
-/*
- // Uncomment this method to specify if the specified item should be selected
- - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
- return YES;
- }
- */
-
-/*
- // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
- - (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
- return NO;
- }
- 
- - (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
- return NO;
- }
- 
- - (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
- 
- }
- */
-
 #pragma mark UICollectionReusableView
 
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
@@ -275,6 +174,7 @@ static NSString * const reuseIdentifier = @"Cell";
     VIStoreProfileHeaderCollectionReusableView* cellHeader = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Header" forIndexPath:indexPath];
     
     cellHeader.backgroundLoja.image = [UIImage imageNamed:@"zaraBack.png"];
+    
     cellHeader.logoLoja.image = [UIImage imageNamed:@"zaraLogo.png"];
     
     cellHeader.descricaoLoja.text = _storeWithCompleteInfo.resume;
@@ -282,7 +182,6 @@ static NSString * const reuseIdentifier = @"Cell";
     cellHeader.descricaoLoja.font = [UIFont boldSystemFontOfSize:13];
     cellHeader.descricaoLoja.textColor = [UIColor whiteColor];
     cellHeader.descricaoLoja.tintColor = [UIColor whiteColor];
-    
     cellHeader.descricaoLoja.scrollEnabled = NO;
     cellHeader.descricaoLoja.pagingEnabled = NO;
     cellHeader.descricaoLoja.editable = NO;
@@ -313,6 +212,69 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)localizacaoAction{
     NSLog(@"localizacaoAction");
+}
+
+#pragma mark  UICollectionViewDelegate Extra Methods
+
+/*
+ // Uncomment this method to specify if the specified item should be highlighted during tracking
+ - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+	return YES;
+ }
+ */
+
+/*
+ // Uncomment this method to specify if the specified item should be selected
+ - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+ return YES;
+ }
+ */
+
+/*
+ // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
+ - (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
+ return NO;
+ }
+ 
+ - (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
+ return NO;
+ }
+ 
+ - (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
+ 
+ }
+ */
+
+#pragma mark UIScrollViewDelegate Methods
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    self.lastContentOffset = scrollView.contentOffset.y;
+}
+
+- (void) scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
+{
+    if (scrollView.contentOffset.y > self.lastContentOffset) {
+        
+        [UIView animateWithDuration:0.2
+                              delay: 0.0
+                            options: UIViewAnimationOptionCurveLinear
+                         animations:^{
+                             self.navigationBar.alpha = 0.0;
+                             self.statuBarBackground.alpha = 1.0;
+                         }
+                         completion:nil];
+        
+    } else{
+        [UIView animateWithDuration:0.3
+                              delay: 0.0
+                            options: UIViewAnimationOptionCurveLinear
+                         animations:^{
+                             self.navigationBar.alpha = 1.0;
+                             self.statuBarBackground.alpha = 0.0;
+                         }
+                         completion:nil];
+    }
 }
 
 #pragma mark Global Menu

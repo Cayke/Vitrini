@@ -10,10 +10,10 @@
 
 @implementation VIProductsCollectionCell
 
--(void)mountWithDict:(NSDictionary *)dict{
-    _imageView.activityIndicatorStyle = UIActivityIndicatorViewStyleWhiteLarge;
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://107.170.189.125/vitrini/default/download/db/%@", [dict objectForKey:@"photo"]]];
-    _imageView.imageURL = url;
+-(void)mountWithProduct:(VIProduct *)product{
+    _imageViewAsync.activityIndicatorStyle = UIActivityIndicatorViewStyleWhiteLarge;
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://107.170.189.125/vitrini/default/download/db/%@", product.photoString]];
+    _imageViewAsync.imageURL = url;
 }
 
 @end

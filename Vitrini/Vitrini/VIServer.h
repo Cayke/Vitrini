@@ -64,10 +64,6 @@
 //request que retornas as categorias com nome e foto
 -(VIResponse *) getCategories;
 
-//clicando numa categoria, vai mostrar os produtos daquela...
-//todo riheldo : criar essa request no server e no app
--(VIResponse *) getProductsForCategory:(int) categoryID;
-
 //clicando no produto baixa ele por completo...
 //-(VIResponse *) getAllInfoFromProduct:(int) productID;
 
@@ -107,5 +103,18 @@
 ////////////////////////////
 
 -(NSURL*)urlToDownloadImageName:(NSString*)imageName;
+
+
+
+/////////////////////////////////
+///     tela categorias      ///
+////////////////////////////////
+-(VIResponse*)getProductsFromCategoryID:(int)catID andPage:(int)page;
+
+
+/////////////////////////////////
+///     tela categorias      ///
+////////////////////////////////
+-(VIResponse*)getStoresToPage:(int)page;
 
 @end
