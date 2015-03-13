@@ -12,10 +12,10 @@
 #import "VIRegisterPhotoTableViewCell.h"
 
 
-@interface VIRegisterViewController : UIViewController <UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
+@interface VIRegisterViewController : UITableViewController <UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *smallPhoro;
 
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic) NSArray *firstFieldsOfSection;
 @property (nonatomic) NSArray *secondFieldsOfSection;

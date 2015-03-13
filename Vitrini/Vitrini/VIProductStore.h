@@ -24,5 +24,6 @@
 
 -(BOOL)loadCards;
 -(void)reviewProductID:(int)productID withLiked:(BOOL)isLiked;
-    
+-(void) changeCategoryID:(int)newCategoryID;
+
 @end

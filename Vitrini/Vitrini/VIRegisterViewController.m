@@ -399,31 +399,31 @@
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:@"Nome não preenchido" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
         return YES;
-    } else if ([self.email  isEqual: @""]) {
+    } else if (![self.email  isEqual: @""]) {
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:@"Email não preenchido" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
         return YES;
 
-    } else if ([self.gender  isEqual: @""]) {
+    } else if (![self.gender  isEqual: @""]) {
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:@"Gênero não preenchido" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
         return YES;
 
-    } else if ([self.birthday  isEqual: @""]) {
+    } else if (![self.birthday  isEqual: @""]) {
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:@"Data de nascimento não preenchido" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
         return YES;
 
-    } else if ([self.city  isEqual: @""]) {
+    } else if (![self.city  isEqual: @""]) {
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:@"Cidade não preenchida" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
         return YES;
 
-    } else if ([self.pass  isEqual: @""]) {
+    } else if (![self.pass  isEqual: @""]) {
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:@"Senha não preenchida" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
         return YES;
-    } else if ([self verifyPass]) {
+    } else if (![self verifyPass]) {
         
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:@"Senhas não conferem" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
