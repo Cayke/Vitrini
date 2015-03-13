@@ -56,7 +56,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="280"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DgM-Lw-r9X">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DgM-Lw-r9X" customClass="AsyncImageView">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="280"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="280" id="FR0-dO-2ec"/>

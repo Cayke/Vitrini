@@ -40,8 +40,6 @@ static NSString * const reuseIdentifier = @"Cell";
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    
     UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, self.statuBarBackground.frame.size.height, self.statuBarBackground.frame.size.width, 1)];
     [line setBackgroundColor:[UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:0.4f]];
     [line setAlpha:1.0f];
@@ -169,14 +167,11 @@ static NSString * const reuseIdentifier = @"Cell";
     
     self.navigationBar.topItem.title = _storeWithCompleteInfo.name;
     
-    cellHeader.backgroundLoja.image = [UIImage imageNamed:@"zaraBack"];
+    cellHeader.backgroundLoja.activityIndicatorStyle = UIActivityIndicatorViewStyleWhiteLarge;
+    cellHeader.backgroundLoja.imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://107.170.189.125/vitrini/default/download/db/%@", _storeWithCompleteInfo.imageName]];
     
-    //-------------------------------------
-    //setar url para download da logo
     cellHeader.logoLoja.activityIndicatorStyle = UIActivityIndicatorViewStyleWhiteLarge;
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://107.170.189.125/vitrini/default/download/db/%@", _actualStore.imageName]];
-    cellHeader.logoLoja.imageURL = url;
-    //-------------------------------------
+    cellHeader.logoLoja.imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://107.170.189.125/vitrini/default/download/db/%@", _storeWithCompleteInfo.imageName]];
     
     cellHeader.descricaoLoja.text = _storeWithCompleteInfo.resume;
     cellHeader.descricaoLoja.font = [UIFont fontWithName:@"Helvetica Neue" size:13];
