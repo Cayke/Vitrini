@@ -15,6 +15,9 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionVIew;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
+@property (nonatomic) BOOL isLoading;
+@property (nonatomic) int categoryOnFilter;
+
 
 -(void) getLikesWithCategory:(int) categoryID;
 
