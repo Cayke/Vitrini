@@ -275,6 +275,14 @@ static NSString * const reuseIdentifier = @"Cell";
     }
 }
 
+#pragma mark UIStatusBarStyle
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
+
 #pragma mark Global Menu
 
 -(UIImage *)itemMenuIcon
