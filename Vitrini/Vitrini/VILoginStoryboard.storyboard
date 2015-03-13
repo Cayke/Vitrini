@@ -43,6 +43,7 @@
                                                 </imageView>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="AN8-NH-DON">
                                                     <rect key="frame" x="60" y="12" width="307" height="35"/>
+                                                    <color key="tintColor" red="0.79215686269999996" green="0.78039215689999997" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="textColor" red="0.792156862745098" green="0.7803921568627451" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="CoolveticaRg-Regular" family="Coolvetica" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
@@ -65,24 +66,34 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QXH-4C-CRy">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="200" id="rfM-NY-VVE"/>
+                                                        <constraint firstAttribute="height" constant="200" id="psc-Uv-XzF"/>
+                                                        <constraint firstAttribute="width" constant="375" id="ycL-HO-vjb"/>
                                                     </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="psc-Uv-XzF"/>
+                                                        </mask>
+                                                    </variation>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CZy-99-DXH">
                                                     <rect key="frame" x="130" y="42" width="115" height="115"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="115" id="MnW-qi-QoP"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="115" id="OPD-yS-IZB"/>
                                                         <constraint firstAttribute="width" constant="115" id="XEG-gu-URG"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="115" id="ogP-au-1F8"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="QXH-4C-CRy" secondAttribute="trailing" constant="-8" id="34v-2L-8Sn"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="QXH-4C-CRy" secondAttribute="bottom" constant="-8" id="HnL-fO-poH"/>
-                                                <constraint firstItem="QXH-4C-CRy" firstAttribute="top" secondItem="ZEu-fQ-Zs0" secondAttribute="topMargin" constant="-8" id="S89-Uw-3jH"/>
-                                                <constraint firstItem="QXH-4C-CRy" firstAttribute="leading" secondItem="ZEu-fQ-Zs0" secondAttribute="leadingMargin" constant="-8" id="Y99-Fb-WOC"/>
-                                                <constraint firstAttribute="centerY" secondItem="CZy-99-DXH" secondAttribute="centerY" id="pR8-kN-k4Z"/>
-                                                <constraint firstAttribute="centerX" secondItem="CZy-99-DXH" secondAttribute="centerX" id="pcK-Dg-8gK"/>
+                                                <constraint firstItem="CZy-99-DXH" firstAttribute="top" secondItem="ZEu-fQ-Zs0" secondAttribute="top" constant="42" id="ELT-wP-sFi"/>
+                                                <constraint firstAttribute="trailing" secondItem="QXH-4C-CRy" secondAttribute="trailing" id="NQ7-T0-Ckh"/>
+                                                <constraint firstItem="QXH-4C-CRy" firstAttribute="top" secondItem="ZEu-fQ-Zs0" secondAttribute="top" id="RS0-JH-pcR"/>
+                                                <constraint firstItem="QXH-4C-CRy" firstAttribute="leading" secondItem="ZEu-fQ-Zs0" secondAttribute="leading" id="TFM-y4-P5L"/>
+                                                <constraint firstAttribute="trailing" secondItem="CZy-99-DXH" secondAttribute="trailing" constant="130" id="lq8-AK-3eU"/>
+                                                <constraint firstAttribute="bottom" secondItem="CZy-99-DXH" secondAttribute="bottom" constant="42.5" id="nxf-BW-cMT"/>
+                                                <constraint firstAttribute="bottom" secondItem="QXH-4C-CRy" secondAttribute="bottom" constant="-0.5" id="rp0-4d-TR7"/>
+                                                <constraint firstItem="CZy-99-DXH" firstAttribute="leading" secondItem="ZEu-fQ-Zs0" secondAttribute="leading" constant="130" id="tmb-Qw-EHw"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
