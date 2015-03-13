@@ -181,21 +181,6 @@ static NSString * const reuseIdentifier = @"Cell";
     
     [cell mountWithProduct:product];
     
-    
-    
-    /*
-    UIImageView *roupas = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,124,124)];
-    roupas.image = [UIImage imageNamed: [self.dataArray objectAtIndex:indexPath.row]];
-    
-//    [cell addSubview:roupas];
-    
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setFrame:CGRectMake(0, 0, 124, 124)];
-    [button setBackgroundColor: [UIColor clearColor]];
-    [button addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    button.tag = indexPath.row;
-    [cell addSubview:button];*/
-    
     return cell;
 }
 
