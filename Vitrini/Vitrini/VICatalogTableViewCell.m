@@ -29,4 +29,14 @@
     _labelName.text = category.name;
 }
 
+-(void)mountWithStore:(VIStore *)store
+{
+    _iconImageView.activityIndicatorStyle = UIActivityIndicatorViewStyleWhite;
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://107.170.189.125/vitrini/default/download/db/%@", store.imageName]];
+    _iconImageView.imageURL = url;
+    
+    _labelName.text = store.name;
+}
+
+
 @end

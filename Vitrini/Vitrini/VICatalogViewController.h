@@ -17,5 +17,7 @@
 
 
 @property (nonatomic) NSArray *arrayCategorys;
+@property (nonatomic) NSArray *arrayStores;
+
 
 @end

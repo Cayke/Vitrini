@@ -13,6 +13,7 @@
 #import "VICategory.h"
 #import "VIStorage.h"
 #import "VIProductsFromCategoryViewController.h"
+#import "VIStoreProfileViewController.h"
 
 @interface VICatalogViewController ()
 
@@ -38,20 +39,24 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     
-    //inicializar array com categorias
-    _arrayCategorys = [[VIStorage sharedStorage]returnCategories];
+    //inicializar array com categorias e as lojas
+    [self initData];
     
     [self.segControl addTarget:self action:@selector(segmentControlChangeState:) forControlEvents:UIControlEventValueChanged];
-    
-    
-    
-    //botar status bar branca
-    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) initData
+{
+    //inicializar array com categorias e as lojas
+    _arrayCategorys = [[VIStorage sharedStorage]returnCategories];
+    _arrayStores = [[VIStorage sharedStorage]returnStoresWithPage:0];
+    
+    [_tableView reloadData];
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
@@ -66,31 +71,55 @@
 
 -(NSString *)itemMenuTitle
 {
-    return @"Catálogo";
+    return @"Explorar";
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [_arrayCategorys count];
+    if (_segControl.selectedSegmentIndex == 0) {
+        return [_arrayCategorys count];
+    }
+    else if (_segControl.selectedSegmentIndex == 1) {
+        return [_arrayStores count];
+    }
+    else {
+        return 0;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    VICatalogTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VICatalogTableViewCell"];
+            VICatalogTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VICatalogTableViewCell"];
     
-    VICategory *cat = [_arrayCategorys objectAtIndex:indexPath.row];
-    [cell mountWithCategory:cat];
+    if (_segControl.selectedSegmentIndex == 0) {
+        VICategory *cat = [_arrayCategorys objectAtIndex:indexPath.row];
+        [cell mountWithCategory:cat];
+    }
+    else {
+        VIStore *store = [_arrayStores objectAtIndex:indexPath.row];
+        [cell mountWithStore:store];
+    }
+    
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
-    
     
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIStoryboard *store = [UIStoryboard storyboardWithName:@"Catalog" bundle:nil];
-    VIProductsFromCategoryViewController *products = (VIProductsFromCategoryViewController *) [store instantiateViewControllerWithIdentifier:@"VIProductsFromCategoryViewController"];
+    if (_segControl.selectedSegmentIndex == 0) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Catalog" bundle:nil];
+        VIProductsFromCategoryViewController *products = (VIProductsFromCategoryViewController *) [storyboard instantiateViewControllerWithIdentifier:@"VIProductsFromCategoryViewController"];
         products.category = [_arrayCategorys objectAtIndex:indexPath.row];
-    [self presentViewController:products animated:YES completion:nil];
+        [self presentViewController:products animated:YES completion:nil];
+    }
+    else if (_segControl.selectedSegmentIndex == 1) {
+        UIStoryboard *storeSB = [UIStoryboard storyboardWithName:@"VIStoreProfile" bundle:nil];
+        VIStoreProfileViewController *storeVC = (VIStoreProfileViewController *) [storeSB instantiateInitialViewController];
+        storeVC.actualStore = [_arrayStores objectAtIndex:indexPath.row];
+        
+        [self presentViewController:storeVC animated:YES completion:nil];
+    }
+
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
@@ -102,14 +131,15 @@
 
 -(void) segmentControlChangeState:(id)sender
 {
-    UISegmentedControl *segControl = sender;
-    if (segControl.selectedSegmentIndex == 0) {
-        NSLog(@"produtos");
-    }
-    else
-    {
-        NSLog(@"lojas");
-    }
+    //    UISegmentedControl *segControl = sender;
+    //    if (segControl.selectedSegmentIndex == 0) {
+    //        NSLog(@"produtos");
+    //    }
+    //    else
+    //    {
+    //        NSLog(@"lojas");
+    //    }
+    [_tableView reloadData];
 }
 
 @end

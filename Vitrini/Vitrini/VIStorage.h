@@ -50,6 +50,7 @@
 //////  catalogo   /////
 ////////////////////////
 -(NSArray *)createProductsWithResponse:(VIResponse *) response;
+-(NSArray *) returnStoresWithPage:(int) page;
 
 
 @end

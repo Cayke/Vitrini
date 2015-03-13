@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "VICategory.h"
+#import "VIStore.h"
 #import "AsyncImageView.h"
 
 @interface VICatalogTableViewCell : UITableViewCell
@@ -17,5 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelName;
 
 -(void) mountWithCategory:(VICategory *) category;
+-(void) mountWithStore: (VIStore *) store;
+
 
 @end

@@ -170,4 +170,15 @@
     return [NSArray arrayWithArray:returnArray];
 }
 
+-(NSArray *) returnStoresWithPage:(int)page {
+    VIResponse *response = [server getStoresToPage:page];
+    
+    NSMutableArray *mArray = [[NSMutableArray alloc]init];
+    for (NSDictionary *dic in response.value) {
+        VIStore *store = [[VIStore alloc]initWithDictionary:dic];
+        [mArray addObject:store];
+    }
+    
+    return [NSArray arrayWithArray:mArray];
+}
 @end
