@@ -141,20 +141,20 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"CLICOU: %ld \n OBJETO: %@", (long)indexPath.row, [self.storeWithCompleteInfo.products objectAtIndex:indexPath.row]);
-    [self goToStoreProduct: [[self.storeWithCompleteInfo.products objectAtIndex:indexPath.row] name]];
+    [self goToStoreProduct: [self.storeWithCompleteInfo.products objectAtIndex:indexPath.row]];
 }
 
 #pragma mark Go To Store Product
 
-- (void)goToStoreProduct:(NSString *)title
+- (void)goToStoreProduct:(VIProduct *)produto
 {
     NSLog(@"goToStoreProduct");
     
     UIStoryboard *product = [UIStoryboard storyboardWithName:@"VIStoreShowProduct" bundle:nil];
     VIStoreShowProductViewController *productVC = (VIStoreShowProductViewController *) [product instantiateViewControllerWithIdentifier:@"VIStoreShowProductViewControllerID"];
     
-    productVC.view.backgroundColor = [UIColor redColor];
-    productVC.navigationBar.topItem.title = title;
+    productVC.view.backgroundColor = [UIColor grayColor];
+    productVC.navigationBar.topItem.title = produto.name;
     
     [self presentViewController:productVC animated:YES completion:nil];
 }
@@ -281,7 +281,6 @@ static NSString * const reuseIdentifier = @"Cell";
 {
     return UIStatusBarStyleLightContent;
 }
-
 
 #pragma mark Global Menu
 
