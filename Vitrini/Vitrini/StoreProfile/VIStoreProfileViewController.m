@@ -187,14 +187,7 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"CLICOU %ld", (long)indexPath.row);
-}
-
-- (void)buttonPressed:(UIButton *)button
-{
-//    [self performSegueWithIdentifier: @"showProductOnStoreProfile" sender:[self.dataArray objectAtIndex:button.tag]];
-    NSLog(@"ImageOfArray: %ld\n%@", (long)button.tag, [self.dataArray objectAtIndex:button.tag]);
-    
-    [self goToStoreProduct: [self.dataArray objectAtIndex:button.tag]];
+    [self goToStoreProduct: [self.dataArray objectAtIndex:indexPath.row]];
 }
 
 - (void)goToStoreProduct:(NSString *)title
