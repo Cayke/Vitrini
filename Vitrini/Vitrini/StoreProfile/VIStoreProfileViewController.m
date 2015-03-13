@@ -146,15 +146,15 @@ static NSString * const reuseIdentifier = @"Cell";
 
 #pragma mark Go To Store Product
 
-- (void)goToStoreProduct:(VIProduct *)produto
+- (void)goToStoreProduct:(VIProduct *)product
 {
     NSLog(@"goToStoreProduct");
     
-    UIStoryboard *product = [UIStoryboard storyboardWithName:@"VIStoreShowProduct" bundle:nil];
-    VIStoreShowProductViewController *productVC = (VIStoreShowProductViewController *) [product instantiateViewControllerWithIdentifier:@"VIStoreShowProductViewControllerID"];
+    UIStoryboard *storeShowProduct = [UIStoryboard storyboardWithName:@"VIStoreShowProduct" bundle:nil];
+    VIStoreShowProductViewController *productVC = (VIStoreShowProductViewController *) [storeShowProduct instantiateViewControllerWithIdentifier:@"VIStoreShowProductViewControllerID"];
     
     productVC.view.backgroundColor = [UIColor grayColor];
-    productVC.navigationBar.topItem.title = produto.name;
+    productVC.navigationBar.topItem.title = product.name;
     
     [self presentViewController:productVC animated:YES completion:nil];
 }
