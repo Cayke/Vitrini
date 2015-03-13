@@ -39,4 +39,11 @@
 }
 */
 
+#pragma mark UIStatusBarStyle
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 @end
