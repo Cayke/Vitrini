@@ -65,6 +65,21 @@ static NSString * const reuseIdentifier = @"Cell";
     self.navigationBar.topItem.title = @"Lojas Zara";
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark Back Button Pressed - dismiss ViewController
+
+- (IBAction)backButtonPressed:(id)sender
+{
+    _backgroundHeader.alpha = 0;
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark Get Complete Store Info
+
 -(void) getCompleteStoreInfo
 {
     //todo
@@ -107,27 +122,6 @@ static NSString * const reuseIdentifier = @"Cell";
     });
 }
 
-- (IBAction)backButtonPressed:(id)sender
-{
-    _backgroundHeader.alpha = 0;
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
-
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -158,6 +152,8 @@ static NSString * const reuseIdentifier = @"Cell";
     [self goToStoreProduct: [self.dataArray objectAtIndex:indexPath.row]];
 }
 
+#pragma mark Go To Store Product
+
 - (void)goToStoreProduct:(NSString *)title
 {
     NSLog(@"goToStoreProduct");
@@ -169,11 +165,6 @@ static NSString * const reuseIdentifier = @"Cell";
     productVC.navigationBar.topItem.title = title;
     
     [self presentViewController:productVC animated:YES completion:nil];
-}
-
-- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
-{
-    return YES;
 }
 
 #pragma mark <UICollectionViewDelegate>
