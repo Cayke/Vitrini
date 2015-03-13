@@ -23,12 +23,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self getLikesWithCategory:0];
+    _isLoading = NO;
+    _categoryOnFilter = 0;
+    [self getLikesWithCategory:_categoryOnFilter];
     [self setupStatusAndFilter];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-//    [self getLikesWithCategory:0];
+    [self getLikesWithCategory:_categoryOnFilter];
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
@@ -95,34 +97,39 @@
 
 -(void) getLikesWithCategory:(int) categoryID
 {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    [_activityIndicator startAnimating];
-    //---------------------------------
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        //Call your function or whatever work that needs to be done
-        //Code in this part is run on a background thread
-        VIServer *server = [[VIServer alloc]init];
-        VIResponse *response = [server getProductsLikedsForUser:[VIStorage sharedStorage].user.email withGender:@"M" andCategory:categoryID];
-        
-        dispatch_async(dispatch_get_main_queue(), ^(void) {
-            //Stop your activity indicator or anything else with the GUI
-            //Code here is run on the main thread
-            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-            [_activityIndicator stopAnimating];
+    if (!_isLoading)
+    {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        [_activityIndicator startAnimating];
+        //---------------------------------
+        _isLoading = YES;
+        _categoryOnFilter = categoryID;
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            //Call your function or whatever work that needs to be done
+            //Code in this part is run on a background thread
+            VIServer *server = [[VIServer alloc]init];
+            VIResponse *response = [server getProductsLikedsForUser:[VIStorage sharedStorage].user.email withGender:@"M" andCategory:categoryID];
             
-            //tratar algo se precisar
-            if (response.status == VIRequestSuccess) {
-                _arrayWithProducts = [[VIStorage sharedStorage]createLikesProductsWithResponse:response];
-                [_collectionVIew reloadData];
-            }
-            else {
-                UIAlertView *alerta = [[UIAlertView alloc]initWithTitle:@"Erro de conexao" message:@"Conecte-se a internet e tente novamente" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-                [alerta show];
-            }
-            
+            dispatch_async(dispatch_get_main_queue(), ^(void) {
+                //Stop your activity indicator or anything else with the GUI
+                //Code here is run on the main thread
+                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                [_activityIndicator stopAnimating];
+                
+                //tratar algo se precisar
+                if (response.status == VIRequestSuccess) {
+                    _arrayWithProducts = [[VIStorage sharedStorage]createLikesProductsWithResponse:response];
+                    [_collectionVIew reloadData];
+                }
+                else {
+                    UIAlertView *alerta = [[UIAlertView alloc]initWithTitle:@"Erro de conexao" message:@"Conecte-se a internet e tente novamente" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                    [alerta show];
+                }
+                _isLoading = NO;
+                
+            });
         });
-    });
+    }
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
