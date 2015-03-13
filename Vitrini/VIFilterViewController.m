@@ -77,7 +77,14 @@
 
 -(void) getCategories
 {
-    _arrayWithCategories = [[VIStorage sharedStorage]returnCategories];
+    VICategory *categoryAll = [[VICategory alloc]init];
+    categoryAll.idCategory = 0;
+    categoryAll.name = @"Todos";
+    
+    NSMutableArray *mArray = [[NSMutableArray alloc]init];
+    [mArray addObject:categoryAll];
+    [mArray addObjectsFromArray:[[VIStorage sharedStorage]returnCategories]];
+    _arrayWithCategories = [NSArray arrayWithArray:mArray];
     
 }
 
