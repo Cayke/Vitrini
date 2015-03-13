@@ -15,7 +15,9 @@
 #import "VIFeedViewController.h"
 #import "VIProfileViewController.h"
 
+//tests
 #import "VIStoreProfileViewController.h"
+#import "VIStoreShowProductViewController.h"
 
 @implementation VIMainViewController
 
@@ -28,12 +30,15 @@
 //    [self performSelector:@selector(goToStoreProfile) withObject:nil afterDelay:1.0];
 }
 
-- (void)goToStoreProfile
+- (void)goToTests
 {
     UIStoryboard *store = [UIStoryboard storyboardWithName:@"VIStoreProfile" bundle:nil];
-    VIStoreProfileViewController *storeVC = (VIStoreProfileViewController *) [store instantiateInitialViewController];
+    __unused VIStoreProfileViewController *storeVC = (VIStoreProfileViewController *) [store instantiateInitialViewController];
+    
+    UIStoryboard *product = [UIStoryboard storyboardWithName:@"VIStoreShowProduct" bundle:nil];
+    __unused VIStoreShowProductViewController *productVC = (VIStoreShowProductViewController *) [product instantiateInitialViewController];
    
-    [self presentViewController:storeVC animated:YES completion:nil];
+    [self presentViewController:productVC animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

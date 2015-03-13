@@ -29,10 +29,6 @@
                    andPassword:(NSString *) pass
                  andFacebookID:(NSString *) facebookID;
 
-//manda os likes(facebook) de um usuario
--(VIResponse *) sendUser:(NSString *) email
-              likesArray:(NSArray *) likes;
-
 ////////////////////////////
 ///     tela vitrini     ///
 ////////////////////////////
@@ -94,9 +90,6 @@
                           andCity:(NSString *) city
                       andBirthday:(NSString *) birthday
                         andGender:(NSString *) gender;
-
--(VIResponse*)getFilter;
-
 
 ////////////////////////////
 ///     tela perfil      ///
