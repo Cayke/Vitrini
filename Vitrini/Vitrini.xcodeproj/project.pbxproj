@@ -111,6 +111,12 @@
 		B32B2CCD1A8CDF34004BCDD9 /* yesSign.png in Resources */ = {isa = PBXBuildFile; fileRef = B32B2CC71A8CDF34004BCDD9 /* yesSign.png */; };
 		B32B2CCE1A8CDF34004BCDD9 /* yesSign@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B32B2CC81A8CDF34004BCDD9 /* yesSign@2x.png */; };
 		B32B2CCF1A8CDF34004BCDD9 /* yesSign@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B32B2CC91A8CDF34004BCDD9 /* yesSign@3x.png */; };
+		B36115171AB46E3400B5AF70 /* calendar179.png in Resources */ = {isa = PBXBuildFile; fileRef = B36115131AB46E3400B5AF70 /* calendar179.png */; };
+		B36115181AB46E3400B5AF70 /* email103.png in Resources */ = {isa = PBXBuildFile; fileRef = B36115141AB46E3400B5AF70 /* email103.png */; };
+		B36115191AB46E3400B5AF70 /* pointer16.png in Resources */ = {isa = PBXBuildFile; fileRef = B36115151AB46E3400B5AF70 /* pointer16.png */; };
+		B361151A1AB46E3400B5AF70 /* profile27.png in Resources */ = {isa = PBXBuildFile; fileRef = B36115161AB46E3400B5AF70 /* profile27.png */; };
+		B361151D1AB46E8C00B5AF70 /* iconProfile.png in Resources */ = {isa = PBXBuildFile; fileRef = B361151B1AB46E8C00B5AF70 /* iconProfile.png */; };
+		B361151E1AB46E8C00B5AF70 /* profilePhotoBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = B361151C1AB46E8C00B5AF70 /* profilePhotoBackground.png */; };
 		B3B6CF351A44B91900C07383 /* VIProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B6CF341A44B91900C07383 /* VIProduct.m */; };
 		B3B6CF381A44BAC600C07383 /* VICardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B6CF371A44BAC600C07383 /* VICardsViewController.m */; };
 		B3B6CF3B1A44BBAA00C07383 /* VIDraggableCardsView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B6CF3A1A44BBAA00C07383 /* VIDraggableCardsView.m */; };
@@ -316,6 +322,12 @@
 		B32B2CC71A8CDF34004BCDD9 /* yesSign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yesSign.png; path = yesNoBtns/yesSign.png; sourceTree = "<group>"; };
 		B32B2CC81A8CDF34004BCDD9 /* yesSign@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "yesSign@2x.png"; path = "yesNoBtns/yesSign@2x.png"; sourceTree = "<group>"; };
 		B32B2CC91A8CDF34004BCDD9 /* yesSign@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "yesSign@3x.png"; path = "yesNoBtns/yesSign@3x.png"; sourceTree = "<group>"; };
+		B36115131AB46E3400B5AF70 /* calendar179.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar179.png; sourceTree = "<group>"; };
+		B36115141AB46E3400B5AF70 /* email103.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email103.png; sourceTree = "<group>"; };
+		B36115151AB46E3400B5AF70 /* pointer16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pointer16.png; sourceTree = "<group>"; };
+		B36115161AB46E3400B5AF70 /* profile27.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile27.png; sourceTree = "<group>"; };
+		B361151B1AB46E8C00B5AF70 /* iconProfile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconProfile.png; sourceTree = "<group>"; };
+		B361151C1AB46E8C00B5AF70 /* profilePhotoBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profilePhotoBackground.png; sourceTree = "<group>"; };
 		B3B6CF331A44B91900C07383 /* VIProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIProduct.h; sourceTree = "<group>"; };
 		B3B6CF341A44B91900C07383 /* VIProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIProduct.m; sourceTree = "<group>"; };
 		B3B6CF361A44BAC600C07383 /* VICardsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VICardsViewController.h; path = Vitrini/VICardsViewController.h; sourceTree = "<group>"; };
@@ -496,6 +508,7 @@
 		27A8B8791A824AE300226278 /* Profile/Settings */ = {
 			isa = PBXGroup;
 			children = (
+				B36115121AB46E2800B5AF70 /* imgs */,
 				2714F5791A8CD3E000C3C240 /* Vitrini_Config_icon.png */,
 				27A8B87A1A824B4200226278 /* VIProfileViewController.h */,
 				27A8B87B1A824B4200226278 /* VIProfileViewController.m */,
@@ -625,6 +638,19 @@
 				92891CF41A28D80F002F6678 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B36115121AB46E2800B5AF70 /* imgs */ = {
+			isa = PBXGroup;
+			children = (
+				B361151B1AB46E8C00B5AF70 /* iconProfile.png */,
+				B361151C1AB46E8C00B5AF70 /* profilePhotoBackground.png */,
+				B36115131AB46E3400B5AF70 /* calendar179.png */,
+				B36115141AB46E3400B5AF70 /* email103.png */,
+				B36115151AB46E3400B5AF70 /* pointer16.png */,
+				B36115161AB46E3400B5AF70 /* profile27.png */,
+			);
+			name = imgs;
 			sourceTree = "<group>";
 		};
 		B3B6CF301A44A8DA00C07383 /* Cartoes */ = {
@@ -866,6 +892,7 @@
 				B32B2CCB1A8CDF34004BCDD9 /* noSign@2x.png in Resources */,
 				B3B6CF541A44C41A00C07383 /* notBtn@3x.png in Resources */,
 				B3B6CF851A48FCAE00C07383 /* Vitrini@2x.png in Resources */,
+				B361151D1AB46E8C00B5AF70 /* iconProfile.png in Resources */,
 				B32B2CCE1A8CDF34004BCDD9 /* yesSign@2x.png in Resources */,
 				5CE349BC1A2CF42100F1DC17 /* UserOnboard.storyboard in Resources */,
 				B3B6CF531A44C41A00C07383 /* notBtn@2x.png in Resources */,
@@ -885,6 +912,7 @@
 				B32B2CCD1A8CDF34004BCDD9 /* yesSign.png in Resources */,
 				279A81771A706D54003E50D7 /* fundo vitrini.png in Resources */,
 				277B37191A816B710081C796 /* profile_feed_temp3.png in Resources */,
+				B361151A1AB46E3400B5AF70 /* profile27.png in Resources */,
 				B3B6CF661A44C45C00C07383 /* img7.jpg in Resources */,
 				2714F5781A8CD34E00C3C240 /* Vitrini_catalogos_icon.png in Resources */,
 				B3B6CF8E1A49003F00C07383 /* CloseMenu@2x.png in Resources */,
@@ -920,16 +948,20 @@
 				0B57295D1AB00FF700B76187 /* tumbStore12.png in Resources */,
 				B3B6CFA01A4D19E600C07383 /* degrade.png in Resources */,
 				9266A4F91AB3B20800D6F692 /* imagemParaReferenciaDeTamanho.png in Resources */,
+				B36115181AB46E3400B5AF70 /* email103.png in Resources */,
 				B3B6CF641A44C45C00C07383 /* img5.png in Resources */,
 				B3B6CF9D1A4C4A8500C07383 /* img11.png in Resources */,
 				0B57295B1AB00FF700B76187 /* tumbStore7.png in Resources */,
 				9266A4FA1AB3B20800D6F692 /* viewBackground.png in Resources */,
 				2781FF2A1A6F0D81009FFAA5 /* Vitrini_Login__0007_Conta.png in Resources */,
 				277B37171A816B4C0081C796 /* profile_feed_temp2.png in Resources */,
+				B36115191AB46E3400B5AF70 /* pointer16.png in Resources */,
 				B3B6CF9C1A4C4A8500C07383 /* img10.png in Resources */,
 				B3B6CF621A44C45C00C07383 /* img3.png in Resources */,
 				B32B2CCA1A8CDF34004BCDD9 /* noSign.png in Resources */,
+				B361151E1AB46E8C00B5AF70 /* profilePhotoBackground.png in Resources */,
 				B3B6CF631A44C45C00C07383 /* img4.png in Resources */,
+				B36115171AB46E3400B5AF70 /* calendar179.png in Resources */,
 				2714F5721A8CD19D00C3C240 /* Vitrini_Vitrini_icon.png in Resources */,
 				2714F5741A8CD24E00C3C240 /* Vitrini_novidades_icon.png in Resources */,
 				2781FF231A6ED803009FFAA5 /* Vitrini_Login__0002_Icom.png in Resources */,
