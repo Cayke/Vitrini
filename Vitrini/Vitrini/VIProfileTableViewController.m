@@ -20,9 +20,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIView *auxView = [[UIView alloc]initWithFrame:self.view.frame];
+    [auxView addSubview:self.view];
+    self.view = auxView;
+    
     UIView *statusBarColor = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.height, 20)];
     statusBarColor.backgroundColor = [VIColor whiteVIColor];
-    [self.view addSubview:statusBarColor];
+    [auxView addSubview:statusBarColor];
     
     VIUser *user = [VIStorage sharedStorage].user;
     if (!user) {
@@ -68,6 +72,9 @@
     } else {
         [VIStorage sharedStorage].user.filterGender = @"M";
     }
+}
+- (IBAction)pressLogout:(UIButton *)sender {
+    NSLog(@"sair");
 }
 
 @end
