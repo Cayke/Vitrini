@@ -13,7 +13,7 @@
 #import "VILikesViewController.h"
 #import "VICatalogViewController.h"
 #import "VIFeedViewController.h"
-#import "VIProfileViewController.h"
+#import "VIProfileTableViewController.h"
 
 //tests
 #import "VIStoreProfileViewController.h"
@@ -121,7 +121,7 @@
     VIFeedViewController *feedVC = (VIFeedViewController *) [feed instantiateInitialViewController];
     
     UIStoryboard *profile = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
-    VIProfileViewController *profileVC = (VIProfileViewController *) [profile instantiateInitialViewController];
+    VIProfileTableViewController *profileVC = (VIProfileTableViewController *) [profile instantiateInitialViewController];
     
     self.viewControllers = @[vc1, likesVC, catalogVC, feedVC, profileVC];
 }
