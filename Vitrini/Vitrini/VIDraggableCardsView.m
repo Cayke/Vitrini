@@ -211,6 +211,10 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
     [self addSubview:waitingCardsAnim];
 }
 
+-(void)viewWillAppear{
+    
+}
+
 -(void)animatBinoculus{
     NSLog(@"anim");
     CGFloat squareSize = 160.0;

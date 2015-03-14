@@ -22,6 +22,8 @@
         _birthday = [dicUser objectForKey:symbPack.birthday];
         _city = [dicUser objectForKey:symbPack.city];
         _image = [dicUser objectForKey:symbPack.image];
+        
+        [self mountFilterGender];
     }
     return self;
 }
@@ -49,10 +51,18 @@
         self.birthday = birthday;
         self.city = city;
         self.pass = pass;
+        
+        [self mountFilterGender];
     }
     return self;
 }
 
-
+-(void)mountFilterGender{
+    if ([_gender isEqualToString:@"male"] || [_gender isEqualToString:@"M"]) {
+        _filterGender = @"M";
+    } else{
+        _filterGender = @"F";
+    }
+}
 
 @end
