@@ -853,7 +853,7 @@
 					};
 					92891CEE1A28D80F002F6678 = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = UT4W7MMEML;
+						DevelopmentTeam = DU8V3EWF65;
 						TestTargetID = 92891CD51A28D80F002F6678;
 					};
 				};
