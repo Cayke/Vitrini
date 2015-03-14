@@ -52,11 +52,27 @@
 
 -(void) initData
 {
-    //inicializar array com categorias e as lojas
-    _arrayCategorys = [[VIStorage sharedStorage]returnCategories];
-    _arrayStores = [[VIStorage sharedStorage]returnStoresWithPage:0];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
-    [_tableView reloadData];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //Call your function or whatever work that needs to be done
+        //Code in this part is run on a background thread
+        
+        //inicializar array com categorias e as lojas
+        _arrayCategorys = [[VIStorage sharedStorage]returnCategories];
+        _arrayStores = [[VIStorage sharedStorage]returnStoresWithPage:0];
+        
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            //Stop your activity indicator or anything else with the GUI
+            //Code here is run on the main thread
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            
+            
+            //tratar algo se precisar
+            [_tableView reloadData];
+            
+        });
+    });
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
@@ -88,7 +104,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-            VICatalogTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VICatalogTableViewCell"];
+    VICatalogTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VICatalogTableViewCell"];
     
     if (_segControl.selectedSegmentIndex == 0) {
         VICategory *cat = [_arrayCategorys objectAtIndex:indexPath.row];
@@ -119,7 +135,7 @@
         
         [self presentViewController:storeVC animated:YES completion:nil];
     }
-
+    
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
