@@ -92,6 +92,8 @@
 		5CE3DE411A81022900F0CC92 /* VIStoreProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE3DE401A81022900F0CC92 /* VIStoreProfile.storyboard */; };
 		9265DC811AB0706100AD1724 /* VIRegisterPhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9265DC801AB0706100AD1724 /* VIRegisterPhotoTableViewCell.m */; };
 		9265DC831AB0794000AD1724 /* Patricia-Beck.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9265DC821AB0794000AD1724 /* Patricia-Beck.jpg */; };
+		9266A4F91AB3B20800D6F692 /* imagemParaReferenciaDeTamanho.png in Resources */ = {isa = PBXBuildFile; fileRef = 9266A4F71AB3B20800D6F692 /* imagemParaReferenciaDeTamanho.png */; };
+		9266A4FA1AB3B20800D6F692 /* viewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 9266A4F81AB3B20800D6F692 /* viewBackground.png */; };
 		926DB6081AB29C3700BAA0E6 /* VIRegisterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 926DB6071AB29C3700BAA0E6 /* VIRegisterTableViewController.m */; };
 		926E75241AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 926E75231AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.m */; };
 		92891CDC1A28D80F002F6678 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CDB1A28D80F002F6678 /* main.m */; };
@@ -284,6 +286,8 @@
 		9265DC7F1AB0706100AD1724 /* VIRegisterPhotoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIRegisterPhotoTableViewCell.h; sourceTree = "<group>"; };
 		9265DC801AB0706100AD1724 /* VIRegisterPhotoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIRegisterPhotoTableViewCell.m; sourceTree = "<group>"; };
 		9265DC821AB0794000AD1724 /* Patricia-Beck.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Patricia-Beck.jpg"; sourceTree = "<group>"; };
+		9266A4F71AB3B20800D6F692 /* imagemParaReferenciaDeTamanho.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagemParaReferenciaDeTamanho.png; sourceTree = "<group>"; };
+		9266A4F81AB3B20800D6F692 /* viewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = viewBackground.png; sourceTree = "<group>"; };
 		926DB6061AB29C3700BAA0E6 /* VIRegisterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIRegisterTableViewController.h; sourceTree = "<group>"; };
 		926DB6071AB29C3700BAA0E6 /* VIRegisterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIRegisterTableViewController.m; sourceTree = "<group>"; };
 		926E75221AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIRegisterSingleInputTableViewCell.h; sourceTree = "<group>"; };
@@ -422,6 +426,7 @@
 		2781FF161A6ED427009FFAA5 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				9266A4F61AB3B1E800D6F692 /* register */,
 				27CA10501A9B74BA00429F37 /* User.png */,
 				2714F57E1A8CD9CC00C3C240 /* Vitrini_NewAccountpart2_icon.png */,
 				2714F57C1A8CD9C600C3C240 /* Vitrini_NewAccountpart1_icon.png */,
@@ -534,6 +539,15 @@
 				B3C4EBDB1AB0888100A833B0 /* VIProductsCollectionCell.m */,
 			);
 			name = StoreProfile;
+			sourceTree = "<group>";
+		};
+		9266A4F61AB3B1E800D6F692 /* register */ = {
+			isa = PBXGroup;
+			children = (
+				9266A4F71AB3B20800D6F692 /* imagemParaReferenciaDeTamanho.png */,
+				9266A4F81AB3B20800D6F692 /* viewBackground.png */,
+			);
+			name = register;
 			sourceTree = "<group>";
 		};
 		92891CCD1A28D80F002F6678 = {
@@ -905,9 +919,11 @@
 				B3B6CF9B1A4C4A8500C07383 /* img9.png in Resources */,
 				0B57295D1AB00FF700B76187 /* tumbStore12.png in Resources */,
 				B3B6CFA01A4D19E600C07383 /* degrade.png in Resources */,
+				9266A4F91AB3B20800D6F692 /* imagemParaReferenciaDeTamanho.png in Resources */,
 				B3B6CF641A44C45C00C07383 /* img5.png in Resources */,
 				B3B6CF9D1A4C4A8500C07383 /* img11.png in Resources */,
 				0B57295B1AB00FF700B76187 /* tumbStore7.png in Resources */,
+				9266A4FA1AB3B20800D6F692 /* viewBackground.png in Resources */,
 				2781FF2A1A6F0D81009FFAA5 /* Vitrini_Login__0007_Conta.png in Resources */,
 				277B37171A816B4C0081C796 /* profile_feed_temp2.png in Resources */,
 				B3B6CF9C1A4C4A8500C07383 /* img10.png in Resources */,
