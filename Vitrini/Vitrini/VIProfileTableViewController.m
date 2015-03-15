@@ -75,6 +75,26 @@
 }
 - (IBAction)pressLogout:(UIButton *)sender {
     NSLog(@"sair");
+    //    UIActionSheet *ac = [[UIActionSheet alloc]initWithTitle:@"Tem certeza que deseja sair?" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Sair", nil];
+    //    [ac showFromTabBar:self.tabBarController.tabBar];
+    //Add a comment to this line
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Tem certeza que deseja sair?" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *logout = [UIAlertAction actionWithTitle:@"Sair" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        [self logOut];
+    }];
+    [actionSheet addAction:logout];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancelar" style:UIAlertActionStyleCancel handler:nil];
+    [actionSheet addAction:cancel];
+    
+    [self presentViewController:actionSheet animated:YES completion:nil];
+}
+
+
+-(void)logOut{
+    //apagar user do Storage e da plist
+    [[VIStorage sharedStorage]logOutUser];
 }
 
 @end

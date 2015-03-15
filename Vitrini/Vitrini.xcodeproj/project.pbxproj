@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B20E62C1AB4E744003BC68A /* productDislike@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B20E6291AB4E744003BC68A /* productDislike@2x.png */; };
+		0B20E62D1AB4E744003BC68A /* productLike@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B20E62A1AB4E744003BC68A /* productLike@2x.png */; };
+		0B20E62E1AB4E744003BC68A /* productBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B20E62B1AB4E744003BC68A /* productBackground@2x.png */; };
+		0B20E6311AB505C3003BC68A /* shareButtonSystem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B20E62F1AB505C3003BC68A /* shareButtonSystem@2x.png */; };
+		0B20E6321AB505C3003BC68A /* locationButtonSystem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B20E6301AB505C3003BC68A /* locationButtonSystem@2x.png */; };
 		0B5728FC1AAF2B8400B76187 /* VIStoreProfileNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5728FB1AAF2B8400B76187 /* VIStoreProfileNavigationBar.m */; };
 		0B5728FE1AAF34D100B76187 /* VIStoreProfileNavigationBarBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5728FD1AAF34D100B76187 /* VIStoreProfileNavigationBarBackButton@2x.png */; };
 		0B5729021AAFFE3A00B76187 /* zaraLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5729011AAFFE3A00B76187 /* zaraLogo.png */; };
@@ -166,6 +171,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B20E6291AB4E744003BC68A /* productDislike@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "productDislike@2x.png"; sourceTree = "<group>"; };
+		0B20E62A1AB4E744003BC68A /* productLike@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "productLike@2x.png"; sourceTree = "<group>"; };
+		0B20E62B1AB4E744003BC68A /* productBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "productBackground@2x.png"; sourceTree = "<group>"; };
+		0B20E62F1AB505C3003BC68A /* shareButtonSystem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shareButtonSystem@2x.png"; sourceTree = "<group>"; };
+		0B20E6301AB505C3003BC68A /* locationButtonSystem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "locationButtonSystem@2x.png"; sourceTree = "<group>"; };
 		0B5728FA1AAF2B8400B76187 /* VIStoreProfileNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VIStoreProfileNavigationBar.h; path = StoreProfile/VIStoreProfileNavigationBar.h; sourceTree = "<group>"; };
 		0B5728FB1AAF2B8400B76187 /* VIStoreProfileNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VIStoreProfileNavigationBar.m; path = StoreProfile/VIStoreProfileNavigationBar.m; sourceTree = "<group>"; };
 		0B5728FD1AAF34D100B76187 /* VIStoreProfileNavigationBarBackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VIStoreProfileNavigationBarBackButton@2x.png"; sourceTree = "<group>"; };
@@ -543,6 +553,11 @@
 			children = (
 				0B5729051AB00F4F00B76187 /* tumbs */,
 				0B92C9931AB1CC7600D0CFC6 /* VIStoreShowProduct.storyboard */,
+				0B20E62F1AB505C3003BC68A /* shareButtonSystem@2x.png */,
+				0B20E6301AB505C3003BC68A /* locationButtonSystem@2x.png */,
+				0B20E6291AB4E744003BC68A /* productDislike@2x.png */,
+				0B20E62A1AB4E744003BC68A /* productLike@2x.png */,
+				0B20E62B1AB4E744003BC68A /* productBackground@2x.png */,
 				0B92C9951AB1CEB800D0CFC6 /* VIStoreShowProductViewController.h */,
 				0B92C9961AB1CEB800D0CFC6 /* VIStoreShowProductViewController.m */,
 				0B5729031AAFFFB800B76187 /* zaraBack.png */,
@@ -914,6 +929,7 @@
 				B361151A1AB46E3400B5AF70 /* profile27.png in Resources */,
 				B3B6CF661A44C45C00C07383 /* img7.jpg in Resources */,
 				2714F5781A8CD34E00C3C240 /* Vitrini_catalogos_icon.png in Resources */,
+				0B20E62C1AB4E744003BC68A /* productDislike@2x.png in Resources */,
 				B3B6CF8E1A49003F00C07383 /* CloseMenu@2x.png in Resources */,
 				B3B6CF8D1A49003F00C07383 /* CloseMenu@1x.png in Resources */,
 				B32B2CCF1A8CDF34004BCDD9 /* yesSign@3x.png in Resources */,
@@ -923,8 +939,10 @@
 				0B57295F1AB00FF700B76187 /* tumbStore8.png in Resources */,
 				B32B2CCC1A8CDF34004BCDD9 /* noSign@3x.png in Resources */,
 				0B92C9941AB1CC7600D0CFC6 /* VIStoreShowProduct.storyboard in Resources */,
+				0B20E6311AB505C3003BC68A /* shareButtonSystem@2x.png in Resources */,
 				B3CE202C1AA7492E00B3836F /* looking.png in Resources */,
 				0B57295E1AB00FF700B76187 /* tumbStore3.png in Resources */,
+				0B20E62D1AB4E744003BC68A /* productLike@2x.png in Resources */,
 				278AFBCF1A83A9DA0002BB23 /* Filter.storyboard in Resources */,
 				92891CE71A28D80F002F6678 /* Images.xcassets in Resources */,
 				279A81711A706553003E50D7 /* Icon_meuslikes_Menu.png in Resources */,
@@ -935,6 +953,7 @@
 				2781FF261A6EDBFA009FFAA5 /* Vitrini_Login__0001_Logo.png in Resources */,
 				0B5729021AAFFE3A00B76187 /* zaraLogo.png in Resources */,
 				278AFBD41A83ABDE0002BB23 /* Icom_marcacao_filtro.png in Resources */,
+				0B20E6321AB505C3003BC68A /* locationButtonSystem@2x.png in Resources */,
 				B3B6CF601A44C45C00C07383 /* img1.png in Resources */,
 				2793021C1AAF8B2900708EB7 /* categoriasBackground.png in Resources */,
 				B3B6CF4F1A44C41A00C07383 /* infoBtn.png in Resources */,
@@ -970,6 +989,7 @@
 				B3B6CF831A48FCAE00C07383 /* Vitrini.png in Resources */,
 				2714F57D1A8CD9C600C3C240 /* Vitrini_NewAccountpart1_icon.png in Resources */,
 				B3B6CF841A48FCAE00C07383 /* Vitrini@1x.png in Resources */,
+				0B20E62E1AB4E744003BC68A /* productBackground@2x.png in Resources */,
 				B3B6CF651A44C45C00C07383 /* img6.jpg in Resources */,
 				2714F5761A8CD2D200C3C240 /* Vitrini_meuslikes_icon.png in Resources */,
 				27CA10511A9B74BA00429F37 /* User.png in Resources */,

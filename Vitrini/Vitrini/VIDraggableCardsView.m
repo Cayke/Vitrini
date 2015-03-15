@@ -223,6 +223,7 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
         [[VIProductStore sharedStore] changeCategoryID:0];
         [self mountCards];
         inDispatch = NO;
+        lastGenderFilter = [VIStorage sharedStorage].user.filterGender;
     }
 }
 
