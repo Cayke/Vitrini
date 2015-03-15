@@ -24,14 +24,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
     
     pageControlBeingUsed = YES;
     
     self.tittleProduct.text = self.infors[@"title"];
     self.priceProduct.text = self.infors[@"price"];
-//    self.descProduct.text = self.infors[@"desc"];
+    self.descProduct.text = self.infors[@"desc"];
     self.photos = self.infors[@"photos"];
+    
+    //solves the problem of TextView's appearance, programmatically.
+    self.descProduct.font = [UIFont fontWithName:@"Helvetica Neue" size:15];
+    self.descProduct.textColor = [UIColor whiteColor];
+    self.descProduct.tintColor = [UIColor whiteColor];
+    self.descProduct.scrollEnabled = YES;
+    self.descProduct.pagingEnabled = NO;
+    self.descProduct.editable = NO;
     
     self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width * self.photos.count, self.scrollView.frame.size.height);
     self.pageControl.currentPage = 0;

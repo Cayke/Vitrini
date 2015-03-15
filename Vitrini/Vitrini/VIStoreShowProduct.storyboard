@@ -216,8 +216,8 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="sNn-Uh-j2P"/>
                                         <exclude reference="23P-Lt-gjm"/>
+                                        <exclude reference="sNn-Uh-j2P"/>
                                     </mask>
                                 </variation>
                             </view>
