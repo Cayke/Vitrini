@@ -152,9 +152,13 @@ static NSString * const reuseIdentifier = @"Cell";
     
     UIStoryboard *storeShowProduct = [UIStoryboard storyboardWithName:@"VIStoreShowProduct" bundle:nil];
     VIStoreShowProductViewController *productVC = (VIStoreShowProductViewController *) [storeShowProduct instantiateViewControllerWithIdentifier:@"VIStoreShowProductViewControllerID"];
-    
-    productVC.view.backgroundColor = [UIColor grayColor];
-    productVC.navigationBar.topItem.title = product.name;
+
+    productVC.infors = @{
+                         @"title" : @"Titulo do Produto",
+                         @"price" : @"R$131",
+                         @"desc" : @"Descrição do Produto.",
+                         @"photos" : @[@"img3", @"img2", @"img4", @"img1"],
+                         };
     
     [self presentViewController:productVC animated:YES completion:nil];
 }
