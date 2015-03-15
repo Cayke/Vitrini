@@ -120,7 +120,7 @@
 
 -(BOOL)loadCards{
     VIServer *server = [[VIServer alloc]init];
-    VIResponse *response = [server productsToReviewWithEmail:[VIStorage sharedStorage].user.email andCategoryID:category_id andGender:@"M"];
+    VIResponse *response = [server productsToReviewWithEmail:[VIStorage sharedStorage].user.email andCategoryID:category_id andGender:[VIStorage sharedStorage].user.filterGender];
     
     NSDictionary *productsDictionaryFromJSON = [response.value objectForKey:@"products"];
     if ([productsDictionaryFromJSON count] == 0) {

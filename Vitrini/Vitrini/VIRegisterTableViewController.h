@@ -14,7 +14,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *photo;
 @property (weak, nonatomic) IBOutlet UIImageView *background;
 @property (weak, nonatomic) IBOutlet UITextField *inputName;
-@property (weak, nonatomic) IBOutlet UITextField *inputGender;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *genderSC;
+- (IBAction)changeGender:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UITextField *inputBirthday;
 @property (weak, nonatomic) IBOutlet UITextField *inputCity;
 
@@ -33,4 +35,5 @@
 @property (nonatomic) NSString *pass;
 @property (nonatomic) NSString *confirmPass;
 
+@property (nonatomic) NSString *placeholder;
 @end

@@ -34,4 +34,6 @@
 
 -(void)reviewProduct:(VIProduct*)product withLiked:(BOOL)isLiked;
 
+-(void)viewWillAppear;
+
 @end

@@ -29,39 +29,56 @@
     
     UIView *status = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
     status.backgroundColor = [VIColor whiteVIColor];
-    
     [self.view addSubview:status];
     
-    //colocar botar para voltar na navigation bar
-    //todo arrumar esse voltar (botar design correto e tal)
-    UIBarButtonItem *voltar = [[UIBarButtonItem alloc]initWithTitle:@"< Voltar" style:UIBarButtonItemStylePlain target:self action:@selector(voltar)];
-    [voltar setTintColor:[VIColor whiteVIColor]];
-    self.navigationItem.leftBarButtonItem = voltar;
-    
-    UIBarButtonItem *createButton = [[UIBarButtonItem alloc]initWithTitle:@"Criar" style:UIBarButtonItemStylePlain target:self action:@selector(registerUser)];
-    self.navigationItem.rightBarButtonItem = createButton;
-    
+    ///Navigation Bar
     self.navigationController.navigationBar.backgroundColor = [VIColor blueVIColor];
+
     
+    UIBarButtonItem *voltar = [[UIBarButtonItem alloc]initWithTitle:@"voltar" style:UIBarButtonItemStylePlain target:self action:@selector(voltar)];
+    [voltar setTintColor:[VIColor darkWhiteVIColor]];
+    self.navigationItem.leftBarButtonItem = voltar;
+
+    UIBarButtonItem *adicionar = [[UIBarButtonItem alloc]
+                               initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                               target:self action:@selector(registerUser)];
+    
+    [adicionar setTintColor:[VIColor darkWhiteVIColor]];
+    self.navigationItem.rightBarButtonItem = adicionar;
+    
+    //Title
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [VIColor darkWhiteVIColor]};
     self.navigationItem.title = @"Criar Conta";
-        
+    self.navigationController.navigationBar.items = [NSArray arrayWithObject:self.navigationItem];
+
     //Create
     
-    createButton.tintColor = [UIColor whiteColor];
     
+    ///Imagem da tableviewcontroller
+    
+    self.navigationController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"viewBackground.png"]];    
     
     //Deixar Table View Transparente
     self.tableView.backgroundColor = [UIColor clearColor];
     
     //delegates
     _inputName.delegate = self;
-    _inputGender.delegate = self;
     _inputBirthday.delegate = self;
     _inputEmail.delegate = self;
     _inputPass.delegate = self;
     _inputConfirmPass.delegate = self;
     _inputCity.delegate = self;
     
+    self.genderSC = 0;
+    
+    
+    [_inputName setValue:[VIColor darkWhiteVIColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [_inputBirthday setValue:[VIColor darkWhiteVIColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [_inputEmail setValue:[VIColor darkWhiteVIColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [_inputPass setValue:[VIColor darkWhiteVIColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [_inputConfirmPass setValue:[VIColor darkWhiteVIColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [_inputCity setValue:[VIColor darkWhiteVIColor] forKeyPath:@"_placeholderLabel.textColor"];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -125,7 +142,6 @@
 
 -(BOOL)canCreateUser{
     self.name = self.inputName.text;
-    self.gender = self.inputGender.text;
     self.birthday = self.inputBirthday.text;
     self.city = self.inputCity.text;
     self.email = self.inputEmail.text;
@@ -138,11 +154,6 @@
         return YES;
     } else if (![self.email  isEqualToString: @""]) {
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:@"Email não preenchido" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-        [alert show];
-        return YES;
-        
-    } else if (![self.gender  isEqualToString: @""]) {
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:@"Gênero não preenchido" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
         return YES;
         
@@ -173,21 +184,18 @@
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     if (textField.tag == 1) {
-        [self.inputGender becomeFirstResponder];
-    } else if (textField.tag == 2) {
         [self.inputBirthday becomeFirstResponder];
-    } else if (textField.tag == 3) {
+    } else if (textField.tag == 2) {
         [self.inputCity becomeFirstResponder];
-    } else if (textField.tag == 4) {
+    } else if (textField.tag == 3) {
         [self.inputEmail becomeFirstResponder];
-    } else if (textField.tag == 5) {
+    } else if (textField.tag == 4) {
         [self.inputPass becomeFirstResponder];
-    } else if (textField.tag == 6) {
+    } else if (textField.tag == 5) {
         [self.inputConfirmPass becomeFirstResponder];
-    } else if (textField.tag == 7) {
+    } else if (textField.tag == 6) {
         [_inputConfirmPass resignFirstResponder];
         [self canCreateUser];
-
     }
     
     return YES;
@@ -208,7 +216,6 @@
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [_inputName endEditing:YES];
-    [_inputGender endEditing:YES];
     [_inputBirthday endEditing:YES];
     [_inputCity endEditing:YES];
     [_inputEmail endEditing:YES];
@@ -218,78 +225,18 @@
     [super touchesBegan:touches withEvent:event];
 }
 
-
-
-
-
-
-
-//#pragma mark - Table view data source
-//
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Potentially incomplete method implementation.
-//    // Return the number of sections.
-//    return 1;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete method implementation.
-//    // Return the number of rows in the section.
-//    return 1;
-//}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+- (IBAction)changeGender:(id)sender {
     
-    // Configure the cell...
-    
-    return cell;
+    switch (self.genderSC.selectedSegmentIndex)
+    {
+        case 0:
+            self.gender = @"M";
+            break;
+        case 1:
+            self.gender = @"F";
+            break;
+        default:
+            break;
+    }
 }
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

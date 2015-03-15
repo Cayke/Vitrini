@@ -108,7 +108,7 @@
             //Call your function or whatever work that needs to be done
             //Code in this part is run on a background thread
             VIServer *server = [[VIServer alloc]init];
-            VIResponse *response = [server getProductsLikedsForUser:[VIStorage sharedStorage].user.email withGender:@"M" andCategory:categoryID];
+            VIResponse *response = [server getProductsLikedsForUser:[VIStorage sharedStorage].user.email withGender:[VIStorage sharedStorage].user.filterGender andCategory:categoryID];
             
             dispatch_async(dispatch_get_main_queue(), ^(void) {
                 //Stop your activity indicator or anything else with the GUI
