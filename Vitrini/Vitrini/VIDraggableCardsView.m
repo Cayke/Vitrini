@@ -252,6 +252,7 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
 {
     UIStoryboard *cards = [UIStoryboard storyboardWithName:@"Cards" bundle:nil];
     VICardInfoViewController *info = [cards instantiateViewControllerWithIdentifier:@"VICardInfoViewControllerID"];
+    info.product = [self presentedCard].product;
     [self.VICardsVC presentViewController:info animated:YES completion:nil];
 }
 
@@ -331,7 +332,7 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
 
 -(void)reviewProduct:(VIProduct*)product withLiked:(BOOL)isLiked{
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [[VIProductStore sharedStore]reviewProductID:product.ID withLiked:isLiked];
+        [[VIProductStore sharedStore]reviewProductID:product.idProduct withLiked:isLiked];
     });
 }
 

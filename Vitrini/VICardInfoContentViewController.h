@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AsyncImageView.h"
 
 @interface VICardInfoContentViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
+@property (weak, nonatomic) IBOutlet AsyncImageView *photoImageView;
 
 
 @property int pageIndex;

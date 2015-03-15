@@ -13,6 +13,7 @@
 #import "VIStorage.h"
 #import "VILikesCollectionViewCell.h"
 #import "VIFilterViewController.h"
+#import "VICardInfoViewController.h"
 
 @interface VILikesViewController ()
 
@@ -146,7 +147,10 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"clicou num produto dos likes");
+    UIStoryboard *cards = [UIStoryboard storyboardWithName:@"Cards" bundle:nil];
+    VICardInfoViewController *info = [cards instantiateViewControllerWithIdentifier:@"VICardInfoViewControllerID"];
+    info.product = [_arrayWithProducts objectAtIndex:indexPath.row];
+    [self presentViewController:info animated:YES completion:nil];
 }
 
 @end
