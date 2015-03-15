@@ -51,34 +51,6 @@
         [myImageView setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.scrollView.frame.size.height)];
         myImageView.userInteractionEnabled = YES;
         [subview addSubview:myImageView];
-        
-        /* for Zoom
-        UIScrollView *forZoom = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.scrollView.frame.size.height)];
-        // calculate minimum scale to perfectly fit image width, and begin at that scale
-        float minimumScale = [forZoom frame].size.width  / [myImageView frame].size.width;
-        [forZoom setMinimumZoomScale:minimumScale];
-        [forZoom setZoomScale:1];
-        [forZoom setMaximumZoomScale:10];
-        [forZoom setContentSize:CGSizeMake(myImageView.frame.size.width, myImageView.frame.size.height)];
-        [forZoom setScrollEnabled:YES];
-        [forZoom setUserInteractionEnabled:YES];
-        forZoom.clipsToBounds = YES;
-        forZoom.bounces = FALSE;
-        forZoom.bouncesZoom = FALSE;
-        
-        [forZoom setContentMode:UIViewContentModeScaleAspectFit];
-        [myImageView sizeToFit];
-        [forZoom setContentSize:CGSizeMake(myImageView.frame.size.width, myImageView.frame.size.height)];
-
-        forZoom.delegate = self;
-        
-        [forZoom addSubview:myImageView];
-        [subview addSubview:forZoom];
-        
-        
-        NSLog(@"\nself.scrollView.frame.size.width: %f\nself.view.frame.size.width: %f", self.scrollView.frame.size.width,
-              self.view.frame.size.width);
-         */
     }
 }
 
