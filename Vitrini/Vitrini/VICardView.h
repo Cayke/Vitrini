@@ -25,6 +25,7 @@
 -(void)cancelSwiping;
 
 -(void)resetBackCard;
+-(void)pressedOnCard;
 
 @end
 

@@ -12,7 +12,7 @@
 #import "VIResponse.h"
 #import "VIStorage.h"
 #import "VIColor.h"
-
+#import "VICardInfoViewController.h"
 #define sectionHeight 45
 
 @interface VIFeedViewController ()
@@ -116,8 +116,14 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"ir para foto/produto");
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UIStoryboard *cards = [UIStoryboard storyboardWithName:@"Cards" bundle:nil];
+    VICardInfoViewController *info = [cards instantiateViewControllerWithIdentifier:@"VICardInfoViewControllerID"];
+
+    VIProduct *auxProduct = [[VIProduct alloc]initWithProductFromServer:[_feed objectAtIndex:(long)indexPath.section]];
+    info.product = auxProduct;
+    [self presentViewController:info animated:YES completion:nil];
+    
+    //[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 -(void)refreshFeed{
@@ -137,6 +143,7 @@
             VIServer *server = [[VIServer alloc]init];
             VIResponse *response;
             @try {
+                NSLog(@"%d",page);
                 response = [server getFeedForUser:[VIStorage sharedStorage].user.email andPage:page];
             }
             @catch (NSException *exception) {
