@@ -50,13 +50,44 @@
 
 -(void) getProductInfo
 {
-    VIServer *server = [[VIServer alloc]init];
-    VIResponse *response = [server getAllInfoFromProduct:self.product.idProduct];
-    if (response.status == VIRequestSuccess) {
-        VIProduct *product = [[VIProduct alloc]initToCardWithDict:response.value];
-        _product = product;
-            [self reloadInfo];
-    }
+    //***********************************************
+    //aqui botamos as coisas na tela
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    //------- botar alerta com carregando
+//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Carregando..." message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
+//    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+//    indicator.color = [UIColor orangeColor];
+//    [indicator startAnimating];
+//    [alertView setValue:indicator forKey:@"accessoryView"];
+//    [alertView show];
+    //---------------------------------
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //Call your function or whatever work that needs to be done
+        //Code in this part is run on a background thread
+        VIServer *server = [[VIServer alloc]init];
+        VIResponse *response = [server getAllInfoFromProduct:self.product.idProduct];
+        
+        
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            //Stop your activity indicator or anything else with the GUI
+            //Code here is run on the main thread
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            //[alertView dismissWithClickedButtonIndex:0 animated:YES];
+            
+            //tratar algo se precisar
+            if (response.status == VIRequestSuccess) {
+                VIProduct *product = [[VIProduct alloc]initToCardWithDict:response.value];
+                _product = product;
+                [self reloadInfo];
+            }
+            
+        });
+    });
+    //****************************************************
+    
+
+
 }
 
 -(void) handleGestureLeft:(id) sender
