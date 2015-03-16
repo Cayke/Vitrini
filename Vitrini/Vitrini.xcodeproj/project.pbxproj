@@ -71,6 +71,8 @@
 		278AFBD41A83ABDE0002BB23 /* Icom_marcacao_filtro.png in Resources */ = {isa = PBXBuildFile; fileRef = 278AFBD21A83ABDE0002BB23 /* Icom_marcacao_filtro.png */; };
 		278AFBD51A83ABDE0002BB23 /* Icom_caixa_foltro.png in Resources */ = {isa = PBXBuildFile; fileRef = 278AFBD31A83ABDE0002BB23 /* Icom_caixa_foltro.png */; };
 		278AFBD81A83EF290002BB23 /* VIFilterCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 278AFBD71A83EF290002BB23 /* VIFilterCollectionViewCell.m */; };
+		278E29C91AB658F900D0F397 /* VIProductNameAndPriceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 278E29C81AB658F900D0F397 /* VIProductNameAndPriceTableViewCell.m */; };
+		278E29CC1AB6617900D0F397 /* VIProductTextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 278E29CB1AB6617900D0F397 /* VIProductTextViewTableViewCell.m */; };
 		2793021C1AAF8B2900708EB7 /* categoriasBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 2793021B1AAF8B2900708EB7 /* categoriasBackground.png */; };
 		279A816D1A706366003E50D7 /* VICatalogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279A816C1A706366003E50D7 /* VICatalogViewController.m */; };
 		279A81711A706553003E50D7 /* Icon_meuslikes_Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 279A81701A706553003E50D7 /* Icon_meuslikes_Menu.png */; };
@@ -80,7 +82,6 @@
 		279B4BB21A9767B300470FC9 /* VIStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 279B4BB11A9767B300470FC9 /* VIStorage.m */; };
 		279B4BB51A9767CD00470FC9 /* VIUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 279B4BB41A9767CD00470FC9 /* VIUser.m */; };
 		27A8B87E1A824BB100226278 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27A8B87D1A824BB100226278 /* Profile.storyboard */; };
-		27B1F6851AB4DF2400D1FBAE /* VIViewPassTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B1F6841AB4DF2400D1FBAE /* VIViewPassTouch.m */; };
 		27CA104C1A9B63D600429F37 /* VIStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CA104B1A9B63D600429F37 /* VIStore.m */; };
 		27CA104F1A9B648D00429F37 /* VILocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CA104E1A9B648D00429F37 /* VILocation.m */; };
 		27CA10511A9B74BA00429F37 /* User.png in Resources */ = {isa = PBXBuildFile; fileRef = 27CA10501A9B74BA00429F37 /* User.png */; };
@@ -257,6 +258,10 @@
 		278AFBD31A83ABDE0002BB23 /* Icom_caixa_foltro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icom_caixa_foltro.png; sourceTree = "<group>"; };
 		278AFBD61A83EF290002BB23 /* VIFilterCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIFilterCollectionViewCell.h; sourceTree = "<group>"; };
 		278AFBD71A83EF290002BB23 /* VIFilterCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIFilterCollectionViewCell.m; sourceTree = "<group>"; };
+		278E29C71AB658F900D0F397 /* VIProductNameAndPriceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIProductNameAndPriceTableViewCell.h; sourceTree = "<group>"; };
+		278E29C81AB658F900D0F397 /* VIProductNameAndPriceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIProductNameAndPriceTableViewCell.m; sourceTree = "<group>"; };
+		278E29CA1AB6617900D0F397 /* VIProductTextViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIProductTextViewTableViewCell.h; sourceTree = "<group>"; };
+		278E29CB1AB6617900D0F397 /* VIProductTextViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIProductTextViewTableViewCell.m; sourceTree = "<group>"; };
 		2793021B1AAF8B2900708EB7 /* categoriasBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = categoriasBackground.png; sourceTree = "<group>"; };
 		279A816B1A706366003E50D7 /* VICatalogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VICatalogViewController.h; sourceTree = "<group>"; };
 		279A816C1A706366003E50D7 /* VICatalogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VICatalogViewController.m; sourceTree = "<group>"; };
@@ -270,8 +275,6 @@
 		279B4BB31A9767CD00470FC9 /* VIUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIUser.h; sourceTree = "<group>"; };
 		279B4BB41A9767CD00470FC9 /* VIUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIUser.m; sourceTree = "<group>"; };
 		27A8B87D1A824BB100226278 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
-		27B1F6831AB4DF2400D1FBAE /* VIViewPassTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIViewPassTouch.h; sourceTree = "<group>"; };
-		27B1F6841AB4DF2400D1FBAE /* VIViewPassTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIViewPassTouch.m; sourceTree = "<group>"; };
 		27CA104A1A9B63D600429F37 /* VIStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIStore.h; sourceTree = "<group>"; };
 		27CA104B1A9B63D600429F37 /* VIStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIStore.m; sourceTree = "<group>"; };
 		27CA104D1A9B648D00429F37 /* VILocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VILocation.h; sourceTree = "<group>"; };
@@ -425,8 +428,10 @@
 			children = (
 				92D96E661A80FCB8009BC061 /* VICardInfoViewController.h */,
 				92D96E671A80FCB8009BC061 /* VICardInfoViewController.m */,
-				27B1F6831AB4DF2400D1FBAE /* VIViewPassTouch.h */,
-				27B1F6841AB4DF2400D1FBAE /* VIViewPassTouch.m */,
+				278E29C71AB658F900D0F397 /* VIProductNameAndPriceTableViewCell.h */,
+				278E29C81AB658F900D0F397 /* VIProductNameAndPriceTableViewCell.m */,
+				278E29CA1AB6617900D0F397 /* VIProductTextViewTableViewCell.h */,
+				278E29CB1AB6617900D0F397 /* VIProductTextViewTableViewCell.m */,
 				277A5E9C1A84F40600C14619 /* VICardInfoContentViewController.h */,
 				277A5E9D1A84F40600C14619 /* VICardInfoContentViewController.m */,
 				92D96E601A7FEBF6009BC061 /* Cards.storyboard */,
@@ -1015,7 +1020,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27B1F6851AB4DF2400D1FBAE /* VIViewPassTouch.m in Sources */,
 				B30866361AADD7E3006803CE /* VIServer.m in Sources */,
 				2781FF2D1A6F2C0C009FFAA5 /* VIRegisterViewController.m in Sources */,
 				2761A5101A96101C0009395C /* VIResponse.m in Sources */,
@@ -1037,6 +1041,8 @@
 				276B3A5F1AAFC4250039544B /* VIProductsFromCategoryViewController.m in Sources */,
 				B3C4EBDC1AB0888100A833B0 /* VIProductsCollectionCell.m in Sources */,
 				27CA104F1A9B648D00429F37 /* VILocation.m in Sources */,
+				278E29CC1AB6617900D0F397 /* VIProductTextViewTableViewCell.m in Sources */,
+				278E29C91AB658F900D0F397 /* VIProductNameAndPriceTableViewCell.m in Sources */,
 				279B4BB21A9767B300470FC9 /* VIStorage.m in Sources */,
 				B3B6CF411A44BCA600C07383 /* VISignView.m in Sources */,
 				2761A5071A960FE90009395C /* VIResponseType.m in Sources */,

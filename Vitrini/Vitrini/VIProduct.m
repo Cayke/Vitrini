@@ -20,7 +20,7 @@
         _idProduct = [[pdict objectForKey:@"ID"]intValue];
         _gender = [pdict objectForKey:@"gender"];
         //_oldPrice = [[pdict objectForKey:@"oldPrice"]floatValue];
-        //_price = [[pdict objectForKey:@"price"]floatValue];
+        _price = [[pdict objectForKey:@"price"]floatValue];
         _resume = [pdict objectForKey:@"resume"];
         _images = [pdict objectForKey:@"photo"];
         _name = [pdict objectForKey:@"name"];

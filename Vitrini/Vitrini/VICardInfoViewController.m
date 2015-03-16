@@ -11,7 +11,8 @@
 #import "VIColor.h"
 #import "VIResponse.h"
 #import "VIServer.h"
-#import "VIViewPassTouch.h"
+#import "VIProductNameAndPriceTableViewCell.h"
+#import "VIProductTextViewTableViewCell.h"
 
 @interface VICardInfoViewController ()
 
@@ -19,14 +20,38 @@
 
 @implementation VICardInfoViewController
 
+-(instancetype)init
+{
+    @throw [NSException exceptionWithName:@"use outro init" reason:nil userInfo:nil];
+}
+
+- (instancetype)initWithProduct:(VIProduct *)product
+{
+    self = [super init];
+    if (self) {
+        _product = product;
+    }
+    return self;
+}
+
+- (IBAction)locationButton:(id)sender {
+}
+
+- (IBAction)shareButton:(id)sender {
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _photoHeight = self.view.frame.size.width + 40;
+    _textViewHeight = 0;
+    _tableHeaderHeight = self.view.frame.size.width;
+    _pageViewControlllerHeight = _tableHeaderHeight + 37;
+
     
-    //todo : botar as informacoes a partir do objeto _product
-    
-    //_pageImages = [[NSArray alloc]initWithObjects:@"img1",@"img2",@"img3",@"img4", nil];
+    //colocar botar para voltar na navigation bar
+    UIBarButtonItem *concluido = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"VIStoreProfileNavigationBarBackButton.png"] style:UIBarButtonItemStylePlain target:self action:@selector(voltar)];
+    [concluido setTintColor:[VIColor whiteVIColor]];
+    self.navigationItem.leftBarButtonItem = concluido;
     
     //baixar produto
     [self getProductInfo];
@@ -46,9 +71,6 @@
         _product = product;
             [self reloadInfo];
     }
-    
-    
-    
 }
 
 -(void) handleGestureLeft:(id) sender
@@ -104,8 +126,18 @@
 
 -(void) reloadInfo
 {
+    //ver o tamanho que ocupara a textView
+    UILabel *textView = [[UILabel alloc]init];
+    textView.numberOfLines = 100;
+    textView.text = _product.resume;
+    [textView setFont:[UIFont fontWithName:@"HelveticaNeue-Regular" size:15.0]];
+    
+    CGSize size = [textView sizeThatFits:CGSizeMake(self.view.frame.size.width, FLT_MAX)];
+    _textViewHeight = size.height;
+
+    
     //criar o header da table view
-    UIView *tableHeader = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, _photoHeight - 40)];
+    UIView *tableHeader = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, _tableHeaderHeight)];
     tableHeader.backgroundColor = [UIColor clearColor];
     
     //adicionar gesture a view
@@ -116,7 +148,6 @@
     UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleGestureRight:)];
     swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
     [tableHeader addGestureRecognizer:swipeRight];
-    
     
     
     //tableview
@@ -131,16 +162,12 @@
     NSArray *viewControllers = @[startingVC];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
-    self.pageViewController.view.frame = CGRectMake(0, 64, self.view.frame.size.width, _photoHeight);
+    self.pageViewController.view.frame = CGRectMake(0, 64, self.view.frame.size.width, _pageViewControlllerHeight);
     
     [self addChildViewController:_pageViewController];
     [self.view insertSubview:_pageViewController.view belowSubview:_tableView];
     [self.pageViewController didMoveToParentViewController:self];
     
-    //colocar botar para voltar na navigation bar
-    UIBarButtonItem *concluido = [[UIBarButtonItem alloc]initWithTitle:@"Concluído" style:UIBarButtonItemStylePlain target:self action:@selector(voltar)];
-    [concluido setTintColor:[VIColor whiteVIColor]];
-    self.navigationItem.leftBarButtonItem = concluido;
     //todo
     //ver se a pessoa ja curtiu o produto ou nao
     //    if (_product.liked == NO) {
@@ -148,14 +175,15 @@
     //        UIBarButtonItem *dislike = [UIBarButtonItem alloc]initWithImage:<#(UIImage *)#> landscapeImagePhone:<#(UIImage *)#> style:<#(UIBarButtonItemStyle)#> target:<#(id)#> action:<#(SEL)#>];
     //        self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:like, dislike, nil];
     //    }
+    
     self.customNavigationBar.items = [NSArray arrayWithObject:self.navigationItem];
     
-    //criar linha de baixo
-    CALayer *borderBotton = [CALayer layer];
-    borderBotton.borderColor = [VIColor blueVIColor].CGColor;
-    borderBotton.borderWidth = 1;
-    borderBotton.frame = CGRectMake(0, _customNavigationBar.frame.size.height-1, self.view.frame.size.width, 1);
-    [_customNavigationBar.layer addSublayer:borderBotton];
+//    //criar linha de baixo da navigation
+//    CALayer *borderBotton = [CALayer layer];
+//    borderBotton.borderColor = [VIColor whiteVIColor].CGColor;
+//    borderBotton.borderWidth = 1;
+//    borderBotton.frame = CGRectMake(0, _customNavigationBar.frame.size.height-1, self.view.frame.size.width, 1);
+//    [_customNavigationBar.layer addSublayer:borderBotton];
     
     //esconder a pagecontrol do pageviewcontroller
     UIPageControl *pageControl = [UIPageControl appearance];
@@ -167,10 +195,11 @@
     _pageControlNB.pageIndicatorTintColor = [VIColor grayVIColor];
     _pageControlNB.currentPageIndicatorTintColor = [VIColor whiteVIColor];
     _pageControlNB.backgroundColor = [UIColor clearColor];
-    
     _pageControlNB.numberOfPages = [_product.images count];
     
     
+    
+    [_tableView reloadData];
 }
 
 -(UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
@@ -241,9 +270,21 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [[UITableViewCell alloc]init];
-    cell.backgroundColor = [UIColor clearColor];
-    return cell;
+    if (indexPath.row == 0) {
+        VIProductNameAndPriceTableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"VIProductNameAndPriceTableViewCell"];
+        [cell mountWithName:_product.name andPrice:_product.price];
+        return cell;
+    }
+    else {
+        VIProductTextViewTableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"VIProductTextViewTableViewCell"];
+        [cell mountWithDescription:_product.resume];
+        return cell;
+    }
+}
+
+-(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return nil;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -253,31 +294,41 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 20;
+    return 2;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0) {
+        return 55;
+    }
+    else
+    {
+        return _textViewHeight;
+    }
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat scrollOffset = scrollView.contentOffset.y;
-    CGRect headerFrame = self.pageViewController.view.frame;
+    CGRect pageFrame = self.pageViewController.view.frame;
     
     if (scrollOffset < 0) {
         //puxou pra baixo
         NSLog(@"%f", scrollOffset);
-        headerFrame.size.height = _photoHeight - scrollOffset; // - com - da +, na real estou somando o offset ao header height
+        pageFrame.size.height = _pageViewControlllerHeight - scrollOffset; // - com - da +, na real estou somando o offset ao header height
     }
     else
     {
         //puxou pra cima
         NSLog(@"%f", scrollOffset);
-        //headerFrame.origin.y = 64 - scrollOffset;
-        if (scrollOffset <= _photoHeight) {
-                    headerFrame.size.height = _photoHeight - scrollOffset;
+        if (scrollOffset <= _pageViewControlllerHeight) {
+                    pageFrame.size.height = _pageViewControlllerHeight - scrollOffset;
         }
     
     }
     
-    self.pageViewController.view.frame = headerFrame;
+    self.pageViewController.view.frame = pageFrame;
 }
 
 

@@ -31,7 +31,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    [self getLikesWithCategory:_categoryOnFilter];
+    //[self getLikesWithCategory:_categoryOnFilter];
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle

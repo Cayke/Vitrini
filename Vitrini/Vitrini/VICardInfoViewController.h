@@ -16,7 +16,6 @@
 //produto a ser mostrado
 @property (nonatomic) VIProduct *product;
 
-
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) UIPageViewController *pageViewController;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControlNB;
@@ -24,7 +23,13 @@
 @property (weak, nonatomic) IBOutlet VIStoreProfileNavigationBar *customNavigationBar;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *pageControlCenter;
 
-@property (nonatomic) float photoHeight;
+@property (nonatomic) float tableHeaderHeight;
+@property (nonatomic) float pageViewControlllerHeight;
+@property (nonatomic) float textViewHeight;
 
+//inicar view por esse metodo
+-(instancetype) initWithProduct:(VIProduct *) product;
+- (IBAction)locationButton:(id)sender;
+- (IBAction)shareButton:(id)sender;
 
 @end
