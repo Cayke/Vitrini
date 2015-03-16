@@ -29,6 +29,10 @@
     [self setupStatusAndFilter];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [draggableBackground viewWillAppear];
+}
+
 -(UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;

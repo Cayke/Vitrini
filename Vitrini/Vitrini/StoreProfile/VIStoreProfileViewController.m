@@ -152,9 +152,21 @@ static NSString * const reuseIdentifier = @"Cell";
     
     UIStoryboard *storeShowProduct = [UIStoryboard storyboardWithName:@"VIStoreShowProduct" bundle:nil];
     VIStoreShowProductViewController *productVC = (VIStoreShowProductViewController *) [storeShowProduct instantiateViewControllerWithIdentifier:@"VIStoreShowProductViewControllerID"];
+   
+    productVC.infors = @{
+                         @"title" : @"Titulo do Produto", // add product.name
+                         @"price" : @"R$119,00", // product.price
+                         @"desc" : @"Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", // product.descricao
+                         @"photos" : @[@"img3", @"img2", @"img4", @"img1"], // product.images
+                         };
     
-    productVC.view.backgroundColor = [UIColor grayColor];
-    productVC.navigationBar.topItem.title = product.name;
+    //falta colocar os dados no servidor...
+//    productVC.infors = @{
+//                         @"title" : product.name,
+//                         @"price" : [NSString stringWithFormat:@"R$%f.2", product.price],
+//                         @"desc" : product.descricao,
+//                         @"photos" : product.images,
+//                         };
     
     [self presentViewController:productVC animated:YES completion:nil];
 }

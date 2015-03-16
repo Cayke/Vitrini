@@ -21,6 +21,8 @@
 
 @property (nonatomic) NSData *image;
 
+@property (nonatomic) NSString *filterGender;
+
 -(NSDictionary *) getDictionary;
 -(instancetype) initWithDictionary:(NSDictionary *)dicUser;
 -(instancetype) initWithName:(NSString *)name

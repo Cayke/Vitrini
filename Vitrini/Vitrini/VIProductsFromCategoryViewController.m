@@ -12,6 +12,7 @@
 #import "VIColor.h"
 #import "VIStorage.h"
 #import "VILikesCollectionViewCell.h"
+#import "VIStoreShowProductViewController.h"
 
 @interface VIProductsFromCategoryViewController ()
 
@@ -87,7 +88,9 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"clicou num produto dos likes");
+    UIStoryboard *product = [UIStoryboard storyboardWithName:@"VIStoreShowProduct" bundle:nil];
+    VIStoreShowProductViewController *info = [product instantiateInitialViewController];
+    [self presentViewController:info animated:YES completion:nil];
 }
 
 - (IBAction)backButton:(id)sender {

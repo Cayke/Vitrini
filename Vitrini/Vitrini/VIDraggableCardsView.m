@@ -10,6 +10,7 @@
 #import "VIProductStore.h"
 #import "VIColor.h"
 #import "VICardInfoViewController.h"
+#import "VIStorage.h"
 
 #define PARALLAX_BACK_VALUE 10
 
@@ -28,10 +29,12 @@
     
     UIImageView *waitingCardsAnim;
     BOOL animationOn;
+    UIView *loadingAnim;
     
     UIView *cardsLayer;
     
     BOOL inDispatch;
+    NSString *lastGenderFilter;
 }
 //this makes it so only two cards are loaded at a time to
 //avoid performance and memory costs
@@ -211,6 +214,19 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
     [self addSubview:waitingCardsAnim];
 }
 
+-(void)viewWillAppear{
+    if (!lastGenderFilter) {
+        lastGenderFilter = [VIStorage sharedStorage].user.filterGender;
+    }
+    if (![lastGenderFilter isEqualToString:[VIStorage sharedStorage].user.filterGender]) {
+        [self clearCards];
+        [[VIProductStore sharedStore] changeCategoryID:0];
+        [self mountCards];
+        inDispatch = NO;
+        lastGenderFilter = [VIStorage sharedStorage].user.filterGender;
+    }
+}
+
 -(void)animatBinoculus{
     NSLog(@"anim");
     CGFloat squareSize = 160.0;
@@ -237,6 +253,7 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
 {
     UIStoryboard *cards = [UIStoryboard storyboardWithName:@"Cards" bundle:nil];
     VICardInfoViewController *info = [cards instantiateViewControllerWithIdentifier:@"VICardInfoViewControllerID"];
+    info.product = [self presentedCard].product;
     [self.VICardsVC presentViewController:info animated:YES completion:nil];
 }
 
@@ -276,7 +293,7 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         
         [self hiddeControlls];
-        waitingCardsAnim.hidden = NO;
+        [self showLoadingCards];
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             BOOL readed = NO;
@@ -305,7 +322,7 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
                         [self loadCards];
                         
                         // esconder binoculo
-                        waitingCardsAnim.hidden = YES;
+                        [self hideLoadingCards];
                         [self showControlls];
                     }
                 }
@@ -316,7 +333,7 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
 
 -(void)reviewProduct:(VIProduct*)product withLiked:(BOOL)isLiked{
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [[VIProductStore sharedStore]reviewProductID:product.ID withLiked:isLiked];
+        [[VIProductStore sharedStore]reviewProductID:product.idProduct withLiked:isLiked];
     });
 }
 
@@ -511,6 +528,27 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
     self.waitingNewProducts = YES;
     [self hiddeControlls];
     [self mountCards];
+}
+
+-(void)showLoadingCards{
+    waitingCardsAnim.hidden = NO;
+    if(!loadingAnim){
+        NSLog(@"TODO: animar carregando produtos...");
+    }
+}
+
+-(void)hideLoadingCards{
+    waitingCardsAnim.hidden = YES;
+}
+
+// todo: animar carregando
+-(void)mountLoadingAnim{
+    CGFloat widthSize = 80.0f;
+    CGFloat heightSize = 44.0f;
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(self.frame.size.width/2 - widthSize/2, self.frame.size.height/2, widthSize, heightSize)];
+    
+    UIView *boll1 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
+    [view addSubview:boll1];
 }
 
 -(void)hiddeControlls{

@@ -17,12 +17,13 @@
 {
     self = [super init];
     if (self) {
-        _ID = [[pdict objectForKey:@"ID"]intValue];
+        _idProduct = [[pdict objectForKey:@"ID"]intValue];
         _gender = [pdict objectForKey:@"gender"];
         //_oldPrice = [[pdict objectForKey:@"oldPrice"]floatValue];
-        //_price = [[pdict objectForKey:@"price"]floatValue];
+        _price = [[pdict objectForKey:@"price"]floatValue];
         _resume = [pdict objectForKey:@"resume"];
         _images = [pdict objectForKey:@"photo"];
+        _name = [pdict objectForKey:@"name"];
         
         _store = [[VIStore alloc]init];
         _store.imageName = [[pdict objectForKey:@"store"]objectForKey:@"image"];

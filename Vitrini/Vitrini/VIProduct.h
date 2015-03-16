@@ -13,7 +13,7 @@
 
 @interface VIProduct : NSObject
 
-@property (nonatomic) int ID;
+//@property (nonatomic) int ID;
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSString *descricao;
 @property (nonatomic) double Valor;

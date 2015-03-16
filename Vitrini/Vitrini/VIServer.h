@@ -50,7 +50,7 @@
 //aqiu viria todos os filtros dizendo se ta ativo ou nao?
 
 //clicando numa foto
-//-(VIResponse *) getAllInfoFromProduct:(int) productID;
+-(VIResponse *) getAllInfoFromProduct:(int) productID;
 
 ////////////////////////////
 ///    tela catalogo     ///

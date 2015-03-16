@@ -13,6 +13,7 @@
 #import "VIStorage.h"
 #import "VILikesCollectionViewCell.h"
 #import "VIFilterViewController.h"
+#import "VICardInfoViewController.h"
 
 @interface VILikesViewController ()
 
@@ -30,7 +31,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    [self getLikesWithCategory:_categoryOnFilter];
+    //[self getLikesWithCategory:_categoryOnFilter];
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
@@ -108,7 +109,7 @@
             //Call your function or whatever work that needs to be done
             //Code in this part is run on a background thread
             VIServer *server = [[VIServer alloc]init];
-            VIResponse *response = [server getProductsLikedsForUser:[VIStorage sharedStorage].user.email withGender:@"M" andCategory:categoryID];
+            VIResponse *response = [server getProductsLikedsForUser:[VIStorage sharedStorage].user.email withGender:[VIStorage sharedStorage].user.filterGender andCategory:categoryID];
             
             dispatch_async(dispatch_get_main_queue(), ^(void) {
                 //Stop your activity indicator or anything else with the GUI
@@ -146,7 +147,10 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"clicou num produto dos likes");
+    UIStoryboard *cards = [UIStoryboard storyboardWithName:@"Cards" bundle:nil];
+    VICardInfoViewController *info = [cards instantiateViewControllerWithIdentifier:@"VICardInfoViewControllerID"];
+    info.product = [_arrayWithProducts objectAtIndex:indexPath.row];
+    [self presentViewController:info animated:YES completion:nil];
 }
 
 @end

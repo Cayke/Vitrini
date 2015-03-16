@@ -13,11 +13,7 @@
 #import "VILikesViewController.h"
 #import "VICatalogViewController.h"
 #import "VIFeedViewController.h"
-#import "VIProfileViewController.h"
-
-//tests
-#import "VIStoreProfileViewController.h"
-#import "VIStoreShowProductViewController.h"
+#import "VIProfileTableViewController.h"
 
 @implementation VIMainViewController
 
@@ -26,19 +22,6 @@
     // inicializar views controllers
     [self initViewControllers];
     [self setupMenu];
-    
-//    [self performSelector:@selector(goToStoreProfile) withObject:nil afterDelay:1.0];
-}
-
-- (void)goToTests
-{
-    UIStoryboard *store = [UIStoryboard storyboardWithName:@"VIStoreProfile" bundle:nil];
-    __unused VIStoreProfileViewController *storeVC = (VIStoreProfileViewController *) [store instantiateInitialViewController];
-    
-    UIStoryboard *product = [UIStoryboard storyboardWithName:@"VIStoreShowProduct" bundle:nil];
-    __unused VIStoreShowProductViewController *productVC = (VIStoreShowProductViewController *) [product instantiateInitialViewController];
-   
-    [self presentViewController:productVC animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -123,7 +106,7 @@
     VIFeedViewController *feedVC = (VIFeedViewController *) [feed instantiateInitialViewController];
     
     UIStoryboard *profile = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
-    VIProfileViewController *profileVC = (VIProfileViewController *) [profile instantiateInitialViewController];
+    VIProfileTableViewController *profileVC = (VIProfileTableViewController *) [profile instantiateInitialViewController];
     
     self.viewControllers = @[vc1, likesVC, catalogVC, feedVC, profileVC];
 }
