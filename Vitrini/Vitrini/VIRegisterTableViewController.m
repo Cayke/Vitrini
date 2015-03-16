@@ -27,6 +27,8 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    [self setNeedsStatusBarAppearanceUpdate];
+    
     UIView *status = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
     status.backgroundColor = [VIColor whiteVIColor];
     [self.view addSubview:status];
@@ -51,7 +53,6 @@
     self.navigationItem.title = @"Criar Conta";
     self.navigationController.navigationBar.items = [NSArray arrayWithObject:self.navigationItem];
 
-    //Create
     
     
     ///Imagem da tableviewcontroller
@@ -69,7 +70,11 @@
     _inputConfirmPass.delegate = self;
     _inputCity.delegate = self;
     
-    self.genderSC = 0;
+    if (self.genderSC.selectedSegmentIndex == 0) {
+        self.gender = @"M";
+    }
+    
+    
     
     
     [_inputName setValue:[VIColor darkWhiteVIColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -78,7 +83,28 @@
     [_inputPass setValue:[VIColor darkWhiteVIColor] forKeyPath:@"_placeholderLabel.textColor"];
     [_inputConfirmPass setValue:[VIColor darkWhiteVIColor] forKeyPath:@"_placeholderLabel.textColor"];
     [_inputCity setValue:[VIColor darkWhiteVIColor] forKeyPath:@"_placeholderLabel.textColor"];
+    
+    //Verificar Se tem camera
+    
+    [self roundImage];
+    
+//    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+//        
+//        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Erro"
+//                                                              message:@"Sem camera"
+//                                                             delegate:nil
+//                                                    cancelButtonTitle:@"OK"
+//                                                    otherButtonTitles: nil];
+//        
+//        [myAlertView show];
+//        
+//    }
+//    
 
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -94,8 +120,8 @@
 
 -(void) registerUser
 {
+    NSLog(@"Oi");
     if ([self canCreateUser]) {
-        
         
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         //[_activityIndicator startAnimating];
@@ -127,14 +153,19 @@
             });
         });
         
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Erro" message:@"Existem dados a serem preenchidos" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
     }
+
+    
+
 }
 
 - (BOOL) verifyPass {
-    if (![self.pass isEqualToString:self.confirmPass]) {
+    if ([self.pass isEqualToString:self.confirmPass]) {
         return NO;
     }
-    
     
     return YES;
 }
@@ -148,38 +179,36 @@
     self.pass = self.inputPass.text;
     self.confirmPass = self.inputConfirmPass.text;
     
-    if (![self.name  isEqualToString: @""]) {
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:@"Nome não preenchido" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    if ([self.name  isEqualToString: @""]) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:@"Nome deve ser preenchido" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
-        return YES;
-    } else if (![self.email  isEqualToString: @""]) {
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:@"Email não preenchido" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    } else if ([self.birthday  isEqualToString: @""]) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:@"Data de nascimento deve ser preenchido" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
-        return YES;
         
-    } else if (![self.birthday  isEqualToString: @""]) {
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:@"Data de nascimento não preenchido" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    } else if ([self.city  isEqualToString: @""]) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:@"Cidade deve ser preenchida" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
-        return YES;
         
-    } else if (![self.city  isEqualToString: @""]) {
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:@"Cidade não preenchida" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    } else if ([self.email  isEqualToString: @""]) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:@"Email deve ser preenchido" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
-        return YES;
         
-    } else if (![self.pass  isEqualToString: @""]) {
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:@"Senha não preenchida" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    } else if ([self.pass  isEqualToString: @""]) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:@"Senha deve ser preenchida" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
-        return YES;
-    } else if (![self verifyPass]) {
+    } else if ([self.confirmPass  isEqualToString: @""]) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:@"Confirmar deve ser  preenchida" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+    } else if ([self verifyPass]) {
         
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:@"Senhas não conferem" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
-        return YES;
     }
     
-    return NO;
+    return YES;
 }
+
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
@@ -239,4 +268,86 @@
             break;
     }
 }
+
+- (void) roundImage {
+    self.photo.layer.cornerRadius = self.photo.frame.size.width / 2;
+    self.photo.clipsToBounds = YES;
+}
+
+
+- (IBAction)changePhoto:(id)sender {
+    
+    UIActionSheet *popup = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:
+                            @"Tirar Foto",
+                            @"Escolher Foto Existente",
+                            nil];
+    popup.tag = 1;
+    [popup showInView:[UIApplication sharedApplication].keyWindow];
+
+}
+
+- (void)actionSheet:(UIActionSheet *)popup clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    switch (popup.tag) {
+        case 1: {
+            switch (buttonIndex) {
+                case 0:
+                    [self takePhoto];
+                    [self insertImageInBundle];
+                    break;
+                case 1:
+                    [self choosePhoto];
+                    [self insertImageInBundle];
+                    break;
+                default:
+                    break;
+            }
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+- (void) takePhoto {
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
+}
+
+- (void) choosePhoto {
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
+}
+
+- (void) insertImageInBundle {
+    
+}
+
+
+
+#pragma mark - Image Picker Controller delegate methods
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    self.photo.image = chosenImage;
+    [self roundImage];
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+
 @end

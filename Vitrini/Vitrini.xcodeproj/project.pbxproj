@@ -95,6 +95,8 @@
 		5CE349BE1A2CF42100F1DC17 /* UserOnboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE349BB1A2CF42100F1DC17 /* UserOnboardViewController.m */; };
 		5CE3DE3F1A81021A00F0CC92 /* VIStoreProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE3DE3E1A81021A00F0CC92 /* VIStoreProfileViewController.m */; };
 		5CE3DE411A81022900F0CC92 /* VIStoreProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE3DE401A81022900F0CC92 /* VIStoreProfile.storyboard */; };
+		924FD1781AB773940017A65F /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 924FD1771AB773940017A65F /* camera.png */; };
+		924FD17A1AB7793A0017A65F /* user_create.png in Resources */ = {isa = PBXBuildFile; fileRef = 924FD1791AB7793A0017A65F /* user_create.png */; };
 		9265DC811AB0706100AD1724 /* VIRegisterPhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9265DC801AB0706100AD1724 /* VIRegisterPhotoTableViewCell.m */; };
 		9265DC831AB0794000AD1724 /* Patricia-Beck.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9265DC821AB0794000AD1724 /* Patricia-Beck.jpg */; };
 		9266A4F91AB3B20800D6F692 /* imagemParaReferenciaDeTamanho.png in Resources */ = {isa = PBXBuildFile; fileRef = 9266A4F71AB3B20800D6F692 /* imagemParaReferenciaDeTamanho.png */; };
@@ -298,6 +300,8 @@
 		5CE3DE3D1A81021A00F0CC92 /* VIStoreProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VIStoreProfileViewController.h; path = StoreProfile/VIStoreProfileViewController.h; sourceTree = "<group>"; };
 		5CE3DE3E1A81021A00F0CC92 /* VIStoreProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VIStoreProfileViewController.m; path = StoreProfile/VIStoreProfileViewController.m; sourceTree = "<group>"; };
 		5CE3DE401A81022900F0CC92 /* VIStoreProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = VIStoreProfile.storyboard; path = StoreProfile/VIStoreProfile.storyboard; sourceTree = "<group>"; };
+		924FD1771AB773940017A65F /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		924FD1791AB7793A0017A65F /* user_create.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_create.png; sourceTree = "<group>"; };
 		9265DC7F1AB0706100AD1724 /* VIRegisterPhotoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIRegisterPhotoTableViewCell.h; sourceTree = "<group>"; };
 		9265DC801AB0706100AD1724 /* VIRegisterPhotoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIRegisterPhotoTableViewCell.m; sourceTree = "<group>"; };
 		9265DC821AB0794000AD1724 /* Patricia-Beck.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Patricia-Beck.jpg"; sourceTree = "<group>"; };
@@ -475,6 +479,8 @@
 				926E75231AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.m */,
 				9265DC7F1AB0706100AD1724 /* VIRegisterPhotoTableViewCell.h */,
 				9265DC801AB0706100AD1724 /* VIRegisterPhotoTableViewCell.m */,
+				924FD1771AB773940017A65F /* camera.png */,
+				924FD1791AB7793A0017A65F /* user_create.png */,
 				926DB6061AB29C3700BAA0E6 /* VIRegisterTableViewController.h */,
 				926DB6071AB29C3700BAA0E6 /* VIRegisterTableViewController.m */,
 				2781FF241A6EDA5E009FFAA5 /* images */,
@@ -910,6 +916,7 @@
 				279A81751A70671A003E50D7 /* Catalog.storyboard in Resources */,
 				B32B2CCB1A8CDF34004BCDD9 /* noSign@2x.png in Resources */,
 				B3B6CF541A44C41A00C07383 /* notBtn@3x.png in Resources */,
+				924FD17A1AB7793A0017A65F /* user_create.png in Resources */,
 				B3B6CF851A48FCAE00C07383 /* Vitrini@2x.png in Resources */,
 				B361151D1AB46E8C00B5AF70 /* iconProfile.png in Resources */,
 				B32B2CCE1A8CDF34004BCDD9 /* yesSign@2x.png in Resources */,
@@ -956,6 +963,7 @@
 				5CE3DE411A81022900F0CC92 /* VIStoreProfile.storyboard in Resources */,
 				B3B6CF551A44C41A00C07383 /* yesBtn.png in Resources */,
 				2781FF261A6EDBFA009FFAA5 /* Vitrini_Login__0001_Logo.png in Resources */,
+				924FD1781AB773940017A65F /* camera.png in Resources */,
 				0B5729021AAFFE3A00B76187 /* zaraLogo.png in Resources */,
 				278AFBD41A83ABDE0002BB23 /* Icom_marcacao_filtro.png in Resources */,
 				0B20E6321AB505C3003BC68A /* locationButtonSystem@2x.png in Resources */,

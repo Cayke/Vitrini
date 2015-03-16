@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "VIUser.h"
 
-@interface VIRegisterTableViewController : UITableViewController <UITextFieldDelegate>
+@interface VIRegisterTableViewController : UITableViewController <UITextFieldDelegate,UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *photo;
 @property (weak, nonatomic) IBOutlet UIImageView *background;
@@ -23,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *inputEmail;
 @property (weak, nonatomic) IBOutlet UITextField *inputPass;
 @property (weak, nonatomic) IBOutlet UITextField *inputConfirmPass;
+- (IBAction)changePhoto:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *buttonChangePhoto;
 
 
 @property (nonatomic) VIUser *auxUser;
