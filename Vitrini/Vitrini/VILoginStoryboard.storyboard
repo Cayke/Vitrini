@@ -255,23 +255,38 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HJh-gv-VMa" id="bWm-HR-ruQ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zLI-fs-9Mz">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagemParaReferenciaDeTamanho.png" translatesAutoresizingMaskIntoConstraints="NO" id="GV8-LX-hkx">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User.png" translatesAutoresizingMaskIntoConstraints="NO" id="zLI-fs-9Mz">
                                                     <rect key="frame" x="130" y="42" width="115" height="115"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="115" id="i1y-xh-SM4"/>
                                                         <constraint firstAttribute="height" constant="115" id="vdK-Pw-ih5"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagemParaReferenciaDeTamanho.png" translatesAutoresizingMaskIntoConstraints="NO" id="GV8-LX-hkx">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
-                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWs-fQ-Mvk">
+                                                    <rect key="frame" x="323" y="147" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="SuR-B4-dCD"/>
+                                                        <constraint firstAttribute="width" constant="44" id="Z8D-Ry-0qX"/>
+                                                    </constraints>
+                                                    <state key="normal" image="camera.png">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="changePhoto:" destination="S2q-GN-PHo" eventType="touchUpInside" id="3GD-BN-ldX"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="zLI-fs-9Mz" firstAttribute="top" secondItem="bWm-HR-ruQ" secondAttribute="top" constant="42" id="0bF-27-Tn3"/>
                                                 <constraint firstItem="GV8-LX-hkx" firstAttribute="leading" secondItem="bWm-HR-ruQ" secondAttribute="leading" id="7ie-Wd-HT3"/>
                                                 <constraint firstAttribute="trailing" secondItem="GV8-LX-hkx" secondAttribute="trailing" id="O3t-5o-Npq"/>
                                                 <constraint firstAttribute="trailing" secondItem="zLI-fs-9Mz" secondAttribute="trailing" constant="130" id="RaH-3G-BCd"/>
+                                                <constraint firstAttribute="bottom" secondItem="AWs-fQ-Mvk" secondAttribute="bottom" constant="8.5" id="UJo-Xc-3NB"/>
                                                 <constraint firstItem="GV8-LX-hkx" firstAttribute="top" secondItem="bWm-HR-ruQ" secondAttribute="top" id="WJk-Il-T0O"/>
+                                                <constraint firstAttribute="trailing" secondItem="AWs-fQ-Mvk" secondAttribute="trailing" constant="8" id="hzd-Ft-jNv"/>
                                                 <constraint firstAttribute="bottom" secondItem="zLI-fs-9Mz" secondAttribute="bottom" constant="42.5" id="lmL-2T-UDX"/>
                                                 <constraint firstItem="zLI-fs-9Mz" firstAttribute="leading" secondItem="bWm-HR-ruQ" secondAttribute="leading" constant="130" id="nAF-SM-eRB"/>
                                                 <constraint firstAttribute="bottom" secondItem="GV8-LX-hkx" secondAttribute="bottom" constant="-0.5" id="vNj-Rt-zM7"/>
@@ -426,9 +441,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="KYC-xF-DSO"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="background" destination="GV8-LX-hkx" id="wBt-MZ-UM9"/>
+                        <outlet property="buttonChangePhoto" destination="AWs-fQ-Mvk" id="IX2-Ny-ZLI"/>
                         <outlet property="genderSC" destination="kr8-hR-peM" id="QMq-9B-540"/>
                         <outlet property="inputBirthday" destination="1LV-Zc-PYr" id="xaV-8R-dCO"/>
                         <outlet property="inputCity" destination="OqP-M1-W9n" id="l6L-8p-9hw"/>
@@ -451,7 +468,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TVF-Co-T0C">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -464,11 +481,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="User.png" width="100" height="100"/>
         <image name="Vitrini_Login__0001_Logo.png" width="164" height="32"/>
         <image name="Vitrini_Login__0002_Icom.png" width="207" height="267"/>
         <image name="Vitrini_Login__0008_BG.png" width="536" height="952"/>
         <image name="Vitrini_NewAccountpart1_icon.png" width="364" height="133"/>
         <image name="Vitrini_NewAccountpart2_icon.png" width="364" height="133"/>
+        <image name="camera.png" width="100" height="100"/>
         <image name="imagemParaReferenciaDeTamanho.png" width="750" height="440"/>
     </resources>
 </document>
