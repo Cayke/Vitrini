@@ -13,6 +13,7 @@
 #import "VIStorage.h"
 #import "VILikesCollectionViewCell.h"
 #import "VIStoreShowProductViewController.h"
+#import "VICardInfoViewController.h"
 
 @interface VIProductsFromCategoryViewController ()
 
@@ -88,9 +89,14 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIStoryboard *product = [UIStoryboard storyboardWithName:@"VIStoreShowProduct" bundle:nil];
-    VIStoreShowProductViewController *info = [product instantiateInitialViewController];
+    UIStoryboard *cards = [UIStoryboard storyboardWithName:@"Cards" bundle:nil];
+    VICardInfoViewController *info = [cards instantiateViewControllerWithIdentifier:@"VICardInfoViewControllerID"];
+    info.product = [_arrayWithProducts objectAtIndex:indexPath.row];
     [self presentViewController:info animated:YES completion:nil];
+    
+//    UIStoryboard *product = [UIStoryboard storyboardWithName:@"VIStoreShowProduct" bundle:nil];
+//    VIStoreShowProductViewController *info = [product instantiateInitialViewController];
+//    [self presentViewController:info animated:YES completion:nil];
 }
 
 - (IBAction)backButton:(id)sender {
