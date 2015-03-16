@@ -27,8 +27,6 @@
 @property (nonatomic) float pageViewControlllerHeight;
 @property (nonatomic) float textViewHeight;
 
-//inicar view por esse metodo
--(instancetype) initWithProduct:(VIProduct *) product;
 - (IBAction)locationButton:(id)sender;
 - (IBAction)shareButton:(id)sender;
 

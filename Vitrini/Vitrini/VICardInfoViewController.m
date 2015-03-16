@@ -20,20 +20,6 @@
 
 @implementation VICardInfoViewController
 
--(instancetype)init
-{
-    @throw [NSException exceptionWithName:@"use outro init" reason:nil userInfo:nil];
-}
-
-- (instancetype)initWithProduct:(VIProduct *)product
-{
-    self = [super init];
-    if (self) {
-        _product = product;
-    }
-    return self;
-}
-
 - (IBAction)locationButton:(id)sender {
 }
 
