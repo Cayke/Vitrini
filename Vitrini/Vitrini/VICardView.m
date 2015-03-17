@@ -81,6 +81,7 @@
 
 -(void)clicou:(UITapGestureRecognizer*)gestureRecognizer{
     NSLog(@"clicou");
+    [self.delegate pressedOnCard];
 }
 
 -(void)mountWithProduct{

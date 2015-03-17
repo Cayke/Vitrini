@@ -249,6 +249,10 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
                      }];
 }
 
+-(void)pressedOnCard{
+    [self goToInfo];
+}
+
 -(void) goToInfo
 {
     UIStoryboard *cards = [UIStoryboard storyboardWithName:@"Cards" bundle:nil];
