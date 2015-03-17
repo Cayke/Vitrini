@@ -48,10 +48,16 @@
                                     <outlet property="delegate" destination="LNq-BO-aPi" id="0sT-jY-VjK"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="bkc-Vf-mKS">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="0.074509803920000006" green="0.13725490200000001" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="d0s-Tg-Gzs" firstAttribute="leading" secondItem="hvB-RF-T93" secondAttribute="leadingMargin" constant="-16" id="5ZI-Nx-AgV"/>
+                            <constraint firstAttribute="centerY" secondItem="bkc-Vf-mKS" secondAttribute="centerY" id="73O-K3-h4U"/>
+                            <constraint firstAttribute="centerX" secondItem="bkc-Vf-mKS" secondAttribute="centerX" id="74b-Uz-O7T"/>
                             <constraint firstItem="d0s-Tg-Gzs" firstAttribute="top" secondItem="hvB-RF-T93" secondAttribute="topMargin" constant="20" id="BcV-90-z1A"/>
                             <constraint firstItem="i4S-g4-nHw" firstAttribute="top" secondItem="d0s-Tg-Gzs" secondAttribute="bottom" id="IPq-GR-Asw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="d0s-Tg-Gzs" secondAttribute="trailing" constant="-16" id="jGZ-b3-lVa"/>
@@ -59,6 +65,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="acitivityIndicator" destination="bkc-Vf-mKS" id="rbY-5R-cHr"/>
                         <outlet property="tableView" destination="d0s-Tg-Gzs" id="3ad-22-P4k"/>
                     </connections>
                 </viewController>

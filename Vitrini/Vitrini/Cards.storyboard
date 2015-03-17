@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OSp-4g-yTT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OSp-4g-yTT">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -125,12 +125,18 @@
                                     <outlet property="delegate" destination="OSp-4g-yTT" id="uQe-tt-hh2"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Umi-53-XYW">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Fin-Ij-Azb" firstAttribute="leading" secondItem="4rW-wX-l1q" secondAttribute="leading" id="7nA-se-lOZ"/>
+                            <constraint firstAttribute="centerY" secondItem="Umi-53-XYW" secondAttribute="centerY" id="7zk-gN-Mik"/>
                             <constraint firstAttribute="centerX" secondItem="4P6-TC-FE9" secondAttribute="centerX" id="AAe-qf-Ia9"/>
                             <constraint firstAttribute="trailing" secondItem="2dp-O6-lbE" secondAttribute="trailing" id="OU0-4v-svj"/>
                             <constraint firstAttribute="trailing" secondItem="Fin-Ij-Azb" secondAttribute="trailing" id="TBC-Ae-DEp"/>
+                            <constraint firstAttribute="centerX" secondItem="Umi-53-XYW" secondAttribute="centerX" id="TGc-6t-cEc"/>
                             <constraint firstItem="N0x-xV-GA3" firstAttribute="top" secondItem="Fin-Ij-Azb" secondAttribute="bottom" constant="44" id="UrQ-Fc-nIh"/>
                             <constraint firstItem="N0x-xV-GA3" firstAttribute="top" secondItem="2dp-O6-lbE" secondAttribute="bottom" id="WgZ-Az-KVL"/>
                             <constraint firstItem="Fin-Ij-Azb" firstAttribute="top" secondItem="e1X-n3-UHM" secondAttribute="bottom" id="isW-Nc-FMc"/>
@@ -143,6 +149,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Umi-53-XYW" id="uQZ-Z5-vZb"/>
                         <outlet property="customNavigationBar" destination="e1X-n3-UHM" id="Rig-ZY-d9e"/>
                         <outlet property="pageControlCenter" destination="AAe-qf-Ia9" id="DFN-6V-OQa"/>
                         <outlet property="pageControlNB" destination="4P6-TC-FE9" id="EG7-kI-jOl"/>
@@ -151,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1f6-q0-bfx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-860.5" y="-291"/>
+            <point key="canvasLocation" x="-917.5" y="-305.5"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="qj9-P7-Ihc">

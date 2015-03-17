@@ -29,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _productDidLoad = NO;
     _textViewHeight = 0;
     _tableHeaderHeight = self.view.frame.size.width;
     _pageViewControlllerHeight = _tableHeaderHeight + 37;
@@ -38,6 +39,10 @@
     UIBarButtonItem *concluido = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"VIStoreProfileNavigationBarBackButton.png"] style:UIBarButtonItemStylePlain target:self action:@selector(voltar)];
     [concluido setTintColor:[VIColor whiteVIColor]];
     self.navigationItem.leftBarButtonItem = concluido;
+    self.customNavigationBar.items = [NSArray arrayWithObject:self.navigationItem];
+    
+    //page control
+    _pageControlNB.numberOfPages = 0;
     
     //baixar produto
     [self getProductInfo];
@@ -50,13 +55,41 @@
 
 -(void) getProductInfo
 {
-    VIServer *server = [[VIServer alloc]init];
-    VIResponse *response = [server getAllInfoFromProduct:self.product.idProduct];
-    if (response.status == VIRequestSuccess) {
-        VIProduct *product = [[VIProduct alloc]initToCardWithDict:response.value];
-        _product = product;
-            [self reloadInfo];
-    }
+    //***********************************************
+    //aqui botamos as coisas na tela
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    [_activityIndicator startAnimating];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //Call your function or whatever work that needs to be done
+        //Code in this part is run on a background thread
+        VIServer *server = [[VIServer alloc]init];
+        VIResponse *response = [server getAllInfoFromProduct:self.product.idProduct];
+        
+        
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            //Stop your activity indicator or anything else with the GUI
+            //Code here is run on the main thread
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            [_activityIndicator stopAnimating];
+            
+            //tratar algo se precisar
+            if (response.status == VIRequestSuccess) {
+                VIProduct *product = [[VIProduct alloc]initToCardWithDict:response.value];
+                _product = product;
+                _productDidLoad = YES;
+                [self reloadInfo];
+            }
+            else {
+                UIAlertView *alerta = [[UIAlertView alloc]initWithTitle:@"Erro de conexao" message:@"Conecte-se a internet e tente novamente" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                [alerta show];
+            }
+        });
+    });
+    //****************************************************
+    
+
+
 }
 
 -(void) handleGestureLeft:(id) sender
@@ -162,7 +195,7 @@
     //        self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:like, dislike, nil];
     //    }
     
-    self.customNavigationBar.items = [NSArray arrayWithObject:self.navigationItem];
+//    self.customNavigationBar.items = [NSArray arrayWithObject:self.navigationItem];
     
 //    //criar linha de baixo da navigation
 //    CALayer *borderBotton = [CALayer layer];
@@ -172,17 +205,20 @@
 //    [_customNavigationBar.layer addSublayer:borderBotton];
     
     //esconder a pagecontrol do pageviewcontroller
-    UIPageControl *pageControl = [UIPageControl appearance];
-    pageControl.pageIndicatorTintColor = [UIColor clearColor];
-    pageControl.currentPageIndicatorTintColor = [UIColor clearColor];
-    pageControl.backgroundColor = [UIColor clearColor];
+    NSArray *subviews = self.pageViewController.view.subviews;
+    UIPageControl *thisControl = nil;
+    for (int i=0; i<[subviews count]; i++) {
+        if ([[subviews objectAtIndex:i] isKindOfClass:[UIPageControl class]]) {
+            thisControl = (UIPageControl *)[subviews objectAtIndex:i];
+            thisControl.hidden = YES;
+        }
+    }
     
     //trocar cor da page control
+    _pageControlNB.numberOfPages = [_product.images count];
     _pageControlNB.pageIndicatorTintColor = [VIColor grayVIColor];
     _pageControlNB.currentPageIndicatorTintColor = [VIColor whiteVIColor];
     _pageControlNB.backgroundColor = [UIColor clearColor];
-    _pageControlNB.numberOfPages = [_product.images count];
-    
     
     
     [_tableView reloadData];
@@ -280,7 +316,10 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    if (_productDidLoad) {
+        return 2;
+    }
+    return 0;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

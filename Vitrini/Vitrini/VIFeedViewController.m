@@ -138,6 +138,7 @@
         feedIsLoading = YES;
         //***********************************************
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        [_acitivityIndicator startAnimating];
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             VIServer *server = [[VIServer alloc]init];
@@ -153,6 +154,7 @@
             
             dispatch_async(dispatch_get_main_queue(), ^(void) {
                 [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                [_acitivityIndicator stopAnimating];
                 [_refresh endRefreshing];
                 if (!response){
                     // alerta

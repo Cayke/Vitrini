@@ -15,10 +15,12 @@
 
 //produto a ser mostrado
 @property (nonatomic) VIProduct *product;
+@property  (nonatomic) BOOL productDidLoad;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) UIPageViewController *pageViewController;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControlNB;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @property (weak, nonatomic) IBOutlet VIStoreProfileNavigationBar *customNavigationBar;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *pageControlCenter;
