@@ -63,7 +63,6 @@
 		2781FF261A6EDBFA009FFAA5 /* Vitrini_Login__0001_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2781FF251A6EDBFA009FFAA5 /* Vitrini_Login__0001_Logo.png */; };
 		2781FF281A6F0D7C009FFAA5 /* Vitrini_Login__0006_Facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 2781FF271A6F0D7C009FFAA5 /* Vitrini_Login__0006_Facebook.png */; };
 		2781FF2A1A6F0D81009FFAA5 /* Vitrini_Login__0007_Conta.png in Resources */ = {isa = PBXBuildFile; fileRef = 2781FF291A6F0D81009FFAA5 /* Vitrini_Login__0007_Conta.png */; };
-		2781FF2D1A6F2C0C009FFAA5 /* VIRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2781FF2C1A6F2C0C009FFAA5 /* VIRegisterViewController.m */; };
 		2781FF2F1A6F30BC009FFAA5 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2781FF2E1A6F30BC009FFAA5 /* FacebookSDK.framework */; };
 		278AFBCD1A83A9CD0002BB23 /* VIFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 278AFBCC1A83A9CD0002BB23 /* VIFilterViewController.m */; };
 		278AFBCF1A83A9DA0002BB23 /* Filter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 278AFBCE1A83A9DA0002BB23 /* Filter.storyboard */; };
@@ -97,12 +96,10 @@
 		5CE3DE411A81022900F0CC92 /* VIStoreProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE3DE401A81022900F0CC92 /* VIStoreProfile.storyboard */; };
 		924FD1781AB773940017A65F /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 924FD1771AB773940017A65F /* camera.png */; };
 		924FD17A1AB7793A0017A65F /* user_create.png in Resources */ = {isa = PBXBuildFile; fileRef = 924FD1791AB7793A0017A65F /* user_create.png */; };
-		9265DC811AB0706100AD1724 /* VIRegisterPhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9265DC801AB0706100AD1724 /* VIRegisterPhotoTableViewCell.m */; };
 		9265DC831AB0794000AD1724 /* Patricia-Beck.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9265DC821AB0794000AD1724 /* Patricia-Beck.jpg */; };
 		9266A4F91AB3B20800D6F692 /* imagemParaReferenciaDeTamanho.png in Resources */ = {isa = PBXBuildFile; fileRef = 9266A4F71AB3B20800D6F692 /* imagemParaReferenciaDeTamanho.png */; };
 		9266A4FA1AB3B20800D6F692 /* viewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 9266A4F81AB3B20800D6F692 /* viewBackground.png */; };
 		926DB6081AB29C3700BAA0E6 /* VIRegisterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 926DB6071AB29C3700BAA0E6 /* VIRegisterTableViewController.m */; };
-		926E75241AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 926E75231AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.m */; };
 		92891CDC1A28D80F002F6678 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CDB1A28D80F002F6678 /* main.m */; };
 		92891CDF1A28D80F002F6678 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CDE1A28D80F002F6678 /* AppDelegate.m */; };
 		92891CE71A28D80F002F6678 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92891CE61A28D80F002F6678 /* Images.xcassets */; };
@@ -249,8 +246,6 @@
 		2781FF251A6EDBFA009FFAA5 /* Vitrini_Login__0001_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vitrini_Login__0001_Logo.png; sourceTree = "<group>"; };
 		2781FF271A6F0D7C009FFAA5 /* Vitrini_Login__0006_Facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vitrini_Login__0006_Facebook.png; sourceTree = "<group>"; };
 		2781FF291A6F0D81009FFAA5 /* Vitrini_Login__0007_Conta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vitrini_Login__0007_Conta.png; sourceTree = "<group>"; };
-		2781FF2B1A6F2C0C009FFAA5 /* VIRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIRegisterViewController.h; sourceTree = "<group>"; };
-		2781FF2C1A6F2C0C009FFAA5 /* VIRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIRegisterViewController.m; sourceTree = "<group>"; };
 		2781FF2E1A6F30BC009FFAA5 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		278AFBCB1A83A9CD0002BB23 /* VIFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIFilterViewController.h; sourceTree = "<group>"; };
 		278AFBCC1A83A9CD0002BB23 /* VIFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIFilterViewController.m; sourceTree = "<group>"; };
@@ -302,15 +297,11 @@
 		5CE3DE401A81022900F0CC92 /* VIStoreProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = VIStoreProfile.storyboard; path = StoreProfile/VIStoreProfile.storyboard; sourceTree = "<group>"; };
 		924FD1771AB773940017A65F /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		924FD1791AB7793A0017A65F /* user_create.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_create.png; sourceTree = "<group>"; };
-		9265DC7F1AB0706100AD1724 /* VIRegisterPhotoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIRegisterPhotoTableViewCell.h; sourceTree = "<group>"; };
-		9265DC801AB0706100AD1724 /* VIRegisterPhotoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIRegisterPhotoTableViewCell.m; sourceTree = "<group>"; };
 		9265DC821AB0794000AD1724 /* Patricia-Beck.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Patricia-Beck.jpg"; sourceTree = "<group>"; };
 		9266A4F71AB3B20800D6F692 /* imagemParaReferenciaDeTamanho.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagemParaReferenciaDeTamanho.png; sourceTree = "<group>"; };
 		9266A4F81AB3B20800D6F692 /* viewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = viewBackground.png; sourceTree = "<group>"; };
 		926DB6061AB29C3700BAA0E6 /* VIRegisterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIRegisterTableViewController.h; sourceTree = "<group>"; };
 		926DB6071AB29C3700BAA0E6 /* VIRegisterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIRegisterTableViewController.m; sourceTree = "<group>"; };
-		926E75221AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIRegisterSingleInputTableViewCell.h; sourceTree = "<group>"; };
-		926E75231AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIRegisterSingleInputTableViewCell.m; sourceTree = "<group>"; };
 		92891CD61A28D80F002F6678 /* Vitrini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vitrini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92891CDA1A28D80F002F6678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92891CDB1A28D80F002F6678 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -473,12 +464,6 @@
 				2781FF1E1A6ED6E6009FFAA5 /* VILoginStoryboard.storyboard */,
 				2781FF171A6ED47F009FFAA5 /* VILoginViewController.h */,
 				2781FF181A6ED47F009FFAA5 /* VILoginViewController.m */,
-				2781FF2B1A6F2C0C009FFAA5 /* VIRegisterViewController.h */,
-				2781FF2C1A6F2C0C009FFAA5 /* VIRegisterViewController.m */,
-				926E75221AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.h */,
-				926E75231AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.m */,
-				9265DC7F1AB0706100AD1724 /* VIRegisterPhotoTableViewCell.h */,
-				9265DC801AB0706100AD1724 /* VIRegisterPhotoTableViewCell.m */,
 				924FD1771AB773940017A65F /* camera.png */,
 				924FD1791AB7793A0017A65F /* user_create.png */,
 				926DB6061AB29C3700BAA0E6 /* VIRegisterTableViewController.h */,
@@ -1029,7 +1014,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B30866361AADD7E3006803CE /* VIServer.m in Sources */,
-				2781FF2D1A6F2C0C009FFAA5 /* VIRegisterViewController.m in Sources */,
 				2761A5101A96101C0009395C /* VIResponse.m in Sources */,
 				277A5E9E1A84F40600C14619 /* VICardInfoContentViewController.m in Sources */,
 				279A816D1A706366003E50D7 /* VICatalogViewController.m in Sources */,
@@ -1055,7 +1039,6 @@
 				B3B6CF411A44BCA600C07383 /* VISignView.m in Sources */,
 				2761A5071A960FE90009395C /* VIResponseType.m in Sources */,
 				272C6EF31AA6012000063CCF /* VILikesViewController.m in Sources */,
-				926E75241AA91338009D4BD3 /* VIRegisterSingleInputTableViewCell.m in Sources */,
 				5C2878631A28E39700CC7DD2 /* CustomSegueTransition.m in Sources */,
 				5CE349BE1A2CF42100F1DC17 /* UserOnboardViewController.m in Sources */,
 				5CE349BD1A2CF42100F1DC17 /* UserOnboardContentViewController.m in Sources */,
@@ -1072,7 +1055,6 @@
 				92891CDC1A28D80F002F6678 /* main.m in Sources */,
 				5C83EA8A1A409EE1007988AA /* VIInitControl.m in Sources */,
 				5C83EA7A1A407008007988AA /* VIMainViewController.m in Sources */,
-				9265DC811AB0706100AD1724 /* VIRegisterPhotoTableViewCell.m in Sources */,
 				2761A50A1A9610030009395C /* VISymbolsPackage.m in Sources */,
 				279A817A1A7085C6003E50D7 /* VICatalogTableViewCell.m in Sources */,
 				B3B6CF3B1A44BBAA00C07383 /* VIDraggableCardsView.m in Sources */,

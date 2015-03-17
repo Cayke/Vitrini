@@ -7,7 +7,6 @@
 //
 
 #import "VILoginViewController.h"
-#import "VIRegisterViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import "VIUser.h"
 #import "VIStorage.h"

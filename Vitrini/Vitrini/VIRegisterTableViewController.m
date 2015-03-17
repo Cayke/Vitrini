@@ -37,8 +37,7 @@
     [auxView addSubview:statusBarColor];
     
     ///Navigation Bar
-    self.navigationController.navigationBar.backgroundColor = [VIColor blueVIColor];
-
+    self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
     
     UIBarButtonItem *voltar = [[UIBarButtonItem alloc]initWithTitle:@"voltar" style:UIBarButtonItemStylePlain target:self action:@selector(voltar)];
     [voltar setTintColor:[VIColor darkWhiteVIColor]];
