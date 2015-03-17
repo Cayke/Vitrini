@@ -15,7 +15,6 @@
 
 //@property (nonatomic) int ID;
 @property (nonatomic) NSString *name;
-@property (nonatomic) NSString *descricao;
 @property (nonatomic) double Valor;
 @property (nonatomic) NSArray *images;
 @property (nonatomic) BOOL liked;

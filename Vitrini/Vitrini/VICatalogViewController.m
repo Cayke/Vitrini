@@ -67,9 +67,14 @@
             //Code here is run on the main thread
             [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
             
-            
-            //tratar algo se precisar
-            [_tableView reloadData];
+            if (_arrayCategorys && _arrayStores) {
+                    [_tableView reloadData];
+            }
+            else
+            {
+                [self initData];
+            }
+
             
         });
     });

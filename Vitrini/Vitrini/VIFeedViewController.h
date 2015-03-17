@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) UIRefreshControl *refresh;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *acitivityIndicator;
 
 //array com VIProducts
 @property (nonatomic) NSMutableArray *feed;

@@ -13,7 +13,7 @@
 #import "VIServer.h"
 #import "VIStorage.h"
 #import "VIProduct.h"
-
+#import "VICardInfoViewController.h"
 
 @interface VIStoreProfileViewController ()
 
@@ -148,18 +148,23 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)goToStoreProduct:(VIProduct *)product
 {
-    NSLog(@"goToStoreProduct");
+    UIStoryboard *cards = [UIStoryboard storyboardWithName:@"Cards" bundle:nil];
+    VICardInfoViewController *info = [cards instantiateViewControllerWithIdentifier:@"VICardInfoViewControllerID"];
+    info.product = product;
+    [self presentViewController:info animated:YES completion:nil];
     
-    UIStoryboard *storeShowProduct = [UIStoryboard storyboardWithName:@"VIStoreShowProduct" bundle:nil];
-    VIStoreShowProductViewController *productVC = (VIStoreShowProductViewController *) [storeShowProduct instantiateViewControllerWithIdentifier:@"VIStoreShowProductViewControllerID"];
-   
-    productVC.infors = @{
-                         @"title" : @"Titulo do Produto", // add product.name
-                         @"price" : @"R$119,00", // product.price
-                         @"desc" : @"Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", // product.descricao
-                         @"photos" : @[@"img3", @"img2", @"img4", @"img1"], // product.images
-                         };
-    
+//    NSLog(@"goToStoreProduct");
+//    
+//    UIStoryboard *storeShowProduct = [UIStoryboard storyboardWithName:@"VIStoreShowProduct" bundle:nil];
+//    VIStoreShowProductViewController *productVC = (VIStoreShowProductViewController *) [storeShowProduct instantiateViewControllerWithIdentifier:@"VIStoreShowProductViewControllerID"];
+//   
+//    productVC.infors = @{
+//                         @"title" : @"Titulo do Produto", // add product.name
+//                         @"price" : @"R$119,00", // product.price
+//                         @"desc" : @"Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", // product.descricao
+//                         @"photos" : @[@"img3", @"img2", @"img4", @"img1"], // product.images
+//                         };
+//    
     //falta colocar os dados no servidor...
 //    productVC.infors = @{
 //                         @"title" : product.name,
@@ -168,7 +173,7 @@ static NSString * const reuseIdentifier = @"Cell";
 //                         @"photos" : product.images,
 //                         };
     
-    [self presentViewController:productVC animated:YES completion:nil];
+//    [self presentViewController:productVC animated:YES completion:nil];
 }
 
 #pragma mark UICollectionReusableView

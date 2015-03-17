@@ -18,7 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view
     
-    _photoImageView.activityIndicatorStyle = UIActivityIndicatorViewStyleWhiteLarge;
+    _photoImageView.activityIndicatorStyle = UIActivityIndicatorViewStyleGray;
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://107.170.189.125/vitrini/default/download/db/%@", _imageFile]];
     _photoImageView.imageURL = url;
     
