@@ -27,11 +27,14 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    [self setNeedsStatusBarAppearanceUpdate];
+    UIView *auxView = [[UIView alloc]initWithFrame:self.view.frame];
+    [auxView addSubview:self.view];
+    self.view = auxView;
     
-    UIView *status = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
-    status.backgroundColor = [VIColor whiteVIColor];
-    [self.view addSubview:status];
+    
+    UIView *statusBarColor = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.height, 20)];
+    statusBarColor.backgroundColor = [VIColor whiteVIColor];
+    [auxView addSubview:statusBarColor];
     
     ///Navigation Bar
     self.navigationController.navigationBar.backgroundColor = [VIColor blueVIColor];
@@ -103,9 +106,7 @@
 
 }
 
--(UIStatusBarStyle)preferredStatusBarStyle{
-    return UIStatusBarStyleLightContent;
-}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
