@@ -104,6 +104,8 @@ static NSString * const reuseIdentifier = @"Cell";
                 //todo: jogar na tela as paradas
                 [_collectionView reloadData];
                 
+                
+                
             }
             else {
                 UIAlertView *alerta = [[UIAlertView alloc]initWithTitle:@"Erro de conexao" message:@"Conecte-se a internet e tente novamente" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
@@ -189,6 +191,8 @@ static NSString * const reuseIdentifier = @"Cell";
     
     cellHeader.logoLoja.activityIndicatorStyle = UIActivityIndicatorViewStyleWhiteLarge;
     cellHeader.logoLoja.imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://107.170.189.125/vitrini/default/download/db/%@", _storeWithCompleteInfo.imageName]];
+    cellHeader.logoLoja.clipsToBounds = YES;
+    cellHeader.logoLoja.layer.cornerRadius = 62.0f;
     
     cellHeader.descricaoLoja.text = _storeWithCompleteInfo.resume;
     cellHeader.descricaoLoja.font = [UIFont fontWithName:@"Helvetica Neue" size:13];
@@ -201,8 +205,10 @@ static NSString * const reuseIdentifier = @"Cell";
     
     if (_storeWithCompleteInfo.isFollowing) {
         NSLog(@"Estou Seguindo a Loja");
+        [cellHeader.seguirLoja setTitle:@"Seguindo" forState:UIControlStateNormal];
     } else {
         NSLog(@">> NÃO estou seguindo a loja");
+        [cellHeader.seguirLoja setTitle:@"Seguir" forState:UIControlStateNormal];
     }
     
     [cellHeader.seguirLoja addTarget:self action:@selector(seguirAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -215,18 +221,46 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)seguirAction:(UIButton *)botao
 {
-    NSLog(@"seguirAction");
     if ([[botao.titleLabel text] isEqual: @"Seguir"]) {
+        [self goFollow:YES];
         [botao setTitle:@"Seguindo" forState:UIControlStateNormal];
     } else {
+        [self goFollow:NO];
         [botao setTitle:@"Seguir" forState:UIControlStateNormal];
     }
+}
+
+-(void)goFollow:(BOOL)boolToFollow{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        VIServer *server = [[VIServer alloc]init];
+        VIResponse *response;
+        @try {
+            response = [server user:[VIStorage sharedStorage].user.email willFollow:boolToFollow store:_actualStore.storeID];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"Erro de conexão");
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            
+            if (response.status == VIRequestSuccess) {
+                NSLog(@"operacao feita com sucesso");
+            }
+            
+        });
+    });
 }
 
 #pragma mark Location Action Button
 
 - (void)localizacaoAction{
     NSLog(@"localizacaoAction");
+    NSString *addr = @"https://www.google.com.br/maps/dir/-15.824093,-47.9185864/BL+H+-+Asa+Sul,+Bras%C3%ADlia,+DF/@-15.8245498,-47.9211879,17z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x935a3aaaef8fd49b:0x656c98d08a8aeedd!2m2!1d-47.9199637!2d-15.8245526?hl=pt-BR";
+    NSURL *URL = [NSURL URLWithString:addr];
+    [[UIApplication sharedApplication] openURL:URL];
 }
 
 #pragma mark  UICollectionViewDelegate Extra Methods

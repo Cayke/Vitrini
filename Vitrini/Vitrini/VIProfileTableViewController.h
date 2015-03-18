@@ -20,6 +20,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *titlePhoto;
 @property (weak, nonatomic) IBOutlet UIImageView *photo;
+@property (weak, nonatomic) IBOutlet UIImageView *backPhoto;
+@property (weak, nonatomic) IBOutlet UIView *layerBlurBackPhoto;
 
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControll;

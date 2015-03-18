@@ -375,17 +375,17 @@
 //        SEGUIR OU DEIXAR DE SEGUIR LOJA
 //
 /////////////////////////////////////////////////////////////////
--(VIResponse *)user:(NSString *)email willFollow:(BOOL)follow store:(int)storeID
+-(VIResponse *)user:(NSString *)email willFollow:(BOOL)bfollow store:(int)storeID
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
-    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/getFeed",[self serverAddress]]]];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/followUnfollowStore",[self serverAddress]]]];
     
     // CRIAR STRING DE DADOS PARA REALIZAR POST
     NSString *post;
     [self incrementPost:&post WithName:symbPack.email andValue:email];
     [self incrementPost:&post WithName:symbPack.storeID andValue:[NSString stringWithFormat:@"%d", storeID]];
     
-    if (follow) {
+    if (bfollow) {
         [self incrementPost:&post WithName:symbPack.follow andValue:symbPack.follow];
     } else {
         [self incrementPost:&post WithName:symbPack.follow andValue:symbPack.unfollow];

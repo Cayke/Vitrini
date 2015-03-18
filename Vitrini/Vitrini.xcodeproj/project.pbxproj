@@ -158,6 +158,8 @@
 		B3C4EBDC1AB0888100A833B0 /* VIProductsCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C4EBDB1AB0888100A833B0 /* VIProductsCollectionCell.m */; };
 		B3CE202C1AA7492E00B3836F /* looking.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CE202B1AA7492E00B3836F /* looking.png */; };
 		B3CE20441AA74B5A00B3836F /* VIBrand.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CE20431AA74B5A00B3836F /* VIBrand.m */; };
+		B3F8DF8B1AB9B47C00844032 /* icon-categorias-top.png in Resources */ = {isa = PBXBuildFile; fileRef = B3F8DF8A1AB9B47C00844032 /* icon-categorias-top.png */; };
+		B3F8DF8E1AB9C48800844032 /* VIAllocFilterIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F8DF8D1AB9C48800844032 /* VIAllocFilterIcon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -378,6 +380,9 @@
 		B3CE202B1AA7492E00B3836F /* looking.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = looking.png; sourceTree = "<group>"; };
 		B3CE20421AA74B5A00B3836F /* VIBrand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIBrand.h; sourceTree = "<group>"; };
 		B3CE20431AA74B5A00B3836F /* VIBrand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIBrand.m; sourceTree = "<group>"; };
+		B3F8DF8A1AB9B47C00844032 /* icon-categorias-top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-categorias-top.png"; sourceTree = "<group>"; };
+		B3F8DF8C1AB9C48800844032 /* VIAllocFilterIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIAllocFilterIcon.h; sourceTree = "<group>"; };
+		B3F8DF8D1AB9C48800844032 /* VIAllocFilterIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIAllocFilterIcon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -488,6 +493,7 @@
 		278AFBCA1A83A9920002BB23 /* FIltro */ = {
 			isa = PBXGroup;
 			children = (
+				B3F8DF8A1AB9B47C00844032 /* icon-categorias-top.png */,
 				278AFBD21A83ABDE0002BB23 /* Icom_marcacao_filtro.png */,
 				278AFBD31A83ABDE0002BB23 /* Icom_caixa_foltro.png */,
 				278AFBD01A83ABD40002BB23 /* backgroundFilter.png */,
@@ -560,12 +566,12 @@
 				0B5729011AAFFE3A00B76187 /* zaraLogo.png */,
 				0B5728FD1AAF34D100B76187 /* VIStoreProfileNavigationBarBackButton@2x.png */,
 				5CE3DE401A81022900F0CC92 /* VIStoreProfile.storyboard */,
+				5CE3DE3D1A81021A00F0CC92 /* VIStoreProfileViewController.h */,
+				5CE3DE3E1A81021A00F0CC92 /* VIStoreProfileViewController.m */,
 				0B5728FA1AAF2B8400B76187 /* VIStoreProfileNavigationBar.h */,
 				0B5728FB1AAF2B8400B76187 /* VIStoreProfileNavigationBar.m */,
 				5C83351E1A9B2E5B006B3294 /* VIStoreProfileHeaderCollectionReusableView.h */,
 				5C83351F1A9B2E5B006B3294 /* VIStoreProfileHeaderCollectionReusableView.m */,
-				5CE3DE3D1A81021A00F0CC92 /* VIStoreProfileViewController.h */,
-				5CE3DE3E1A81021A00F0CC92 /* VIStoreProfileViewController.m */,
 				B3C4EBDA1AB0888100A833B0 /* VIProductsCollectionCell.h */,
 				B3C4EBDB1AB0888100A833B0 /* VIProductsCollectionCell.m */,
 			);
@@ -731,6 +737,8 @@
 				272C6EFB1AA64DA300063CCF /* AsyncImageView.m */,
 				B3CE20421AA74B5A00B3836F /* VIBrand.h */,
 				B3CE20431AA74B5A00B3836F /* VIBrand.m */,
+				B3F8DF8C1AB9C48800844032 /* VIAllocFilterIcon.h */,
+				B3F8DF8D1AB9C48800844032 /* VIAllocFilterIcon.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -927,6 +935,7 @@
 				B3B6CF661A44C45C00C07383 /* img7.jpg in Resources */,
 				2714F5781A8CD34E00C3C240 /* Vitrini_catalogos_icon.png in Resources */,
 				0B20E62C1AB4E744003BC68A /* productDislike@2x.png in Resources */,
+				B3F8DF8B1AB9B47C00844032 /* icon-categorias-top.png in Resources */,
 				B3B6CF8E1A49003F00C07383 /* CloseMenu@2x.png in Resources */,
 				B3B6CF8D1A49003F00C07383 /* CloseMenu@1x.png in Resources */,
 				B32B2CCF1A8CDF34004BCDD9 /* yesSign@3x.png in Resources */,
@@ -1013,6 +1022,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3F8DF8E1AB9C48800844032 /* VIAllocFilterIcon.m in Sources */,
 				B30866361AADD7E3006803CE /* VIServer.m in Sources */,
 				2761A5101A96101C0009395C /* VIResponse.m in Sources */,
 				277A5E9E1A84F40600C14619 /* VICardInfoContentViewController.m in Sources */,

@@ -14,6 +14,7 @@
 #import "VILikesCollectionViewCell.h"
 #import "VIFilterViewController.h"
 #import "VICardInfoViewController.h"
+#import "VIAllocFilterIcon.h"
 
 @interface VILikesViewController ()
 
@@ -60,6 +61,8 @@
     singleTapView.numberOfTapsRequired = 1;
     [filter setUserInteractionEnabled:YES];
     [filter addGestureRecognizer:singleTapView];
+    
+    [VIAllocFilterIcon chargeIconOnView:filter];
     
     // status
     UIView *status = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
