@@ -142,14 +142,14 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HJh-gv-VMa" id="bWm-HR-ruQ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imagemParaReferenciaDeTamanho.png" translatesAutoresizingMaskIntoConstraints="NO" id="GV8-LX-hkx">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="188"/>
+                                                </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profilePhotoBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="0Z4-eV-p8V">
                                                     <rect key="frame" x="100" y="6" width="175" height="175"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="User.png" translatesAutoresizingMaskIntoConstraints="NO" id="zLI-fs-9Mz">
                                                     <rect key="frame" x="115" y="21" width="145" height="145"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imagemParaReferenciaDeTamanho.png" translatesAutoresizingMaskIntoConstraints="NO" id="GV8-LX-hkx">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="188"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWs-fQ-Mvk">
                                                     <rect key="frame" x="323" y="135" width="44" height="44"/>
