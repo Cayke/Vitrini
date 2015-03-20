@@ -142,13 +142,17 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HJh-gv-VMa" id="bWm-HR-ruQ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imagemParaReferenciaDeTamanho.png" translatesAutoresizingMaskIntoConstraints="NO" id="GV8-LX-hkx">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagemParaReferenciaDeTamanho.png" translatesAutoresizingMaskIntoConstraints="NO" id="GV8-LX-hkx">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="188"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="375" id="0TC-49-rsB"/>
+                                                        <constraint firstAttribute="height" constant="188" id="ePG-9p-cti"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profilePhotoBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="0Z4-eV-p8V">
                                                     <rect key="frame" x="100" y="6" width="175" height="175"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="User.png" translatesAutoresizingMaskIntoConstraints="NO" id="zLI-fs-9Mz">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="User.png" translatesAutoresizingMaskIntoConstraints="NO" id="zLI-fs-9Mz">
                                                     <rect key="frame" x="115" y="21" width="145" height="145"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWs-fQ-Mvk">
@@ -161,6 +165,12 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GV8-LX-hkx" firstAttribute="top" secondItem="bWm-HR-ruQ" secondAttribute="top" id="8bU-LM-aoB"/>
+                                                <constraint firstAttribute="trailing" secondItem="GV8-LX-hkx" secondAttribute="trailing" id="T4u-6j-lSB"/>
+                                                <constraint firstItem="GV8-LX-hkx" firstAttribute="leading" secondItem="bWm-HR-ruQ" secondAttribute="leading" id="cXd-cg-fQW"/>
+                                                <constraint firstAttribute="bottom" secondItem="GV8-LX-hkx" secondAttribute="bottom" constant="-0.5" id="diM-xN-3Jm"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
@@ -199,7 +209,7 @@
                                                         <segment title="Masculino"/>
                                                         <segment title="Feminino"/>
                                                     </segments>
-                                                    <color key="tintColor" red="0.79215686269999996" green="0.78039215689999997" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <connections>
                                                         <action selector="changeGender:" destination="S2q-GN-PHo" eventType="valueChanged" id="ELT-Vy-69g"/>
                                                     </connections>
@@ -271,7 +281,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0TG-QJ-0p2" id="Qnv-Bv-cJf">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6pC-Oi-46K">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Password-Text-128.png" translatesAutoresizingMaskIntoConstraints="NO" id="6pC-Oi-46K">
                                                     <rect key="frame" x="20" y="4" width="35" height="35"/>
                                                 </imageView>
                                                 <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Senha" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zkc-Ke-AHs">
@@ -289,7 +299,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YeZ-BI-Qth" id="Z7G-CA-oBV">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b56-9W-Bel">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b56-9W-Bel">
                                                     <rect key="frame" x="21" y="5" width="35" height="35"/>
                                                 </imageView>
                                                 <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirmar Senha" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dTv-EA-jJF">
@@ -350,6 +360,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Password-Text-128.png" width="128" height="128"/>
         <image name="User.png" width="100" height="100"/>
         <image name="Vitrini_Login__0001_Logo.png" width="164" height="32"/>
         <image name="Vitrini_Login__0002_Icom.png" width="207" height="267"/>
