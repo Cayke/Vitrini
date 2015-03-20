@@ -26,6 +26,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tableView.contentInset = UIEdgeInsetsMake(-1.0f, 0.0f, 0.0f, 0.0);
     
     UIView *auxView = [[UIView alloc]initWithFrame:self.view.frame];
     [auxView addSubview:self.view];
@@ -39,19 +40,19 @@
     ///Navigation Bar
     self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
     
-    UIBarButtonItem *voltar = [[UIBarButtonItem alloc]initWithTitle:@"voltar" style:UIBarButtonItemStylePlain target:self action:@selector(voltar)];
-    [voltar setTintColor:[VIColor darkWhiteVIColor]];
+    UIBarButtonItem *voltar = [[UIBarButtonItem alloc]initWithTitle:@"Cancelar" style:UIBarButtonItemStylePlain target:self action:@selector(voltar)];
+    [voltar setTintColor:[VIColor whiteVIColor]];
     self.navigationItem.leftBarButtonItem = voltar;
 
     UIBarButtonItem *adicionar = [[UIBarButtonItem alloc]
                                initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                target:self action:@selector(registerUser)];
     
-    [adicionar setTintColor:[VIColor darkWhiteVIColor]];
+    [adicionar setTintColor:[VIColor whiteVIColor]];
     self.navigationItem.rightBarButtonItem = adicionar;
     
     //Title
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [VIColor darkWhiteVIColor]};
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [VIColor whiteVIColor]};
     self.navigationItem.title = @"Criar Conta";
     self.navigationController.navigationBar.items = [NSArray arrayWithObject:self.navigationItem];
 
@@ -79,12 +80,12 @@
     
     
     
-    [_inputName setValue:[VIColor darkWhiteVIColor] forKeyPath:@"_placeholderLabel.textColor"];
-    [_inputBirthday setValue:[VIColor darkWhiteVIColor] forKeyPath:@"_placeholderLabel.textColor"];
-    [_inputEmail setValue:[VIColor darkWhiteVIColor] forKeyPath:@"_placeholderLabel.textColor"];
-    [_inputPass setValue:[VIColor darkWhiteVIColor] forKeyPath:@"_placeholderLabel.textColor"];
-    [_inputConfirmPass setValue:[VIColor darkWhiteVIColor] forKeyPath:@"_placeholderLabel.textColor"];
-    [_inputCity setValue:[VIColor darkWhiteVIColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [_inputName setValue:[VIColor whiteVIColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [_inputBirthday setValue:[VIColor whiteVIColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [_inputEmail setValue:[VIColor whiteVIColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [_inputPass setValue:[VIColor whiteVIColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [_inputConfirmPass setValue:[VIColor whiteVIColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [_inputCity setValue:[VIColor whiteVIColor] forKeyPath:@"_placeholderLabel.textColor"];
     
     //Verificar Se tem camera
     
@@ -232,7 +233,7 @@
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
     [UIView animateWithDuration:0.30 animations:^{
-        self.view.frame = CGRectMake(0, -120, self.view.frame.size.width, self.view.frame.size.height);
+        self.view.frame = CGRectMake(0, -200, self.view.frame.size.width, self.view.frame.size.height);
     }];
 }
 
@@ -293,11 +294,9 @@
             switch (buttonIndex) {
                 case 0:
                     [self takePhoto];
-                    [self insertImageInBundle];
                     break;
                 case 1:
                     [self choosePhoto];
-                    [self insertImageInBundle];
                     break;
                 default:
                     break;
@@ -327,9 +326,6 @@
     [self presentViewController:picker animated:YES completion:NULL];
 }
 
-- (void) insertImageInBundle {
-    
-}
 
 
 
@@ -340,6 +336,10 @@
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
     self.photo.image = chosenImage;
     [self roundImage];
+    self.background.image = self.photo.image;
+    
+    //todo blur background photo (Coloquei uma transparencia enquanto isso)
+    [self blurPhotoBackground];
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
 }
@@ -348,6 +348,29 @@
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (section == 0)
+        return 15.0f;
+    return 32.0f;
+}
+
+- (NSString*) tableView:(UITableView *) tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return nil;
+    } else {
+        
+    }
+    
+    return nil;
+}
+
+- (void) blurPhotoBackground {
+    [self.background setAlpha:0.7f];
+
 }
 
 @end
