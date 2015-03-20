@@ -10,6 +10,7 @@
 #import "VIDraggableCardsView.h"
 #import "VIColor.h"
 #import "VIFilterViewController.h"
+#import "VIAllocFilterIcon.h"
 
 @interface VICardsViewController ()
 @end
@@ -59,6 +60,8 @@
     singleTapView.numberOfTapsRequired = 1;
     [filter setUserInteractionEnabled:YES];
     [filter addGestureRecognizer:singleTapView];
+    
+    [VIAllocFilterIcon chargeIconOnView:filter];
     
     // status
     UIView *status = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];

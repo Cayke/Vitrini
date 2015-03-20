@@ -39,6 +39,8 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     
+    _tableView.contentInset = UIEdgeInsetsMake(0, 0, 70, 0);
+    
     //inicializar array com categorias e as lojas
     [self initData];
     

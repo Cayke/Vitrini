@@ -37,8 +37,26 @@
         _label3.text = user.birthday;
         _label4.text = user.city;
         
-        _photo.hidden = YES;
+        if (user.image) {
+            UIImage *image = [UIImage imageWithData:user.image];
+            _photo.image = image;
+            _backPhoto.image = image;
+            
+            
+            UIBlurEffect *blurEffect;
+            blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+            UIVisualEffectView *visualEffectView;
+            visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+            visualEffectView.frame = CGRectMake(_layerBlurBackPhoto.frame.origin.x, _layerBlurBackPhoto.frame.origin.y, self.view.frame.size.width, _layerBlurBackPhoto.frame.size.height);
+            [_layerBlurBackPhoto addSubview:visualEffectView];
+            
+        } else {
+            _photo.hidden = YES;
+        }
     }
+    
+    _photo.clipsToBounds = YES;
+    _photo.layer.cornerRadius = 72.0f;
     
     UIImageView *backView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     backView.image = [UIImage imageNamed:@"viewBackground"];

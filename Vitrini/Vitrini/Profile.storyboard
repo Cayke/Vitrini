@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bYG-HG-aE0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bYG-HG-aE0">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -23,9 +23,13 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yW1-A5-HIy" id="G9d-uS-t6u">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagemParaReferenciaDeTamanho.png" translatesAutoresizingMaskIntoConstraints="NO" id="8aT-ti-hkS">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagemParaReferenciaDeTamanho.png" translatesAutoresizingMaskIntoConstraints="NO" id="8aT-ti-hkS">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="189"/>
                                                 </imageView>
+                                                <view alpha="0.97999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zN5-iY-wsK">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="189"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePhotoBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="Abv-ZC-Dp8">
                                                     <rect key="frame" x="73" y="7" width="175" height="175"/>
                                                     <constraints>
@@ -43,7 +47,7 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="056BC371-006E-414A-82EB-7973024F3EF4" translatesAutoresizingMaskIntoConstraints="NO" id="mDb-Ba-uhQ">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3CF77B1E-1E0A-4C46-A87A-02E9D494C277" translatesAutoresizingMaskIntoConstraints="NO" id="mDb-Ba-uhQ">
                                                     <rect key="frame" x="88" y="22" width="145" height="145"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="145" id="06P-CO-MOS"/>
@@ -52,15 +56,19 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="zN5-iY-wsK" firstAttribute="top" secondItem="G9d-uS-t6u" secondAttribute="topMargin" constant="-8" id="5hE-dI-Jkd"/>
                                                 <constraint firstAttribute="centerX" secondItem="Abv-ZC-Dp8" secondAttribute="centerX" id="8UV-Au-zCm"/>
                                                 <constraint firstAttribute="centerX" secondItem="pHi-3L-Huj" secondAttribute="centerX" id="A2e-dC-xsX"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="8aT-ti-hkS" secondAttribute="bottom" constant="-8" id="Cih-QU-sOA"/>
                                                 <constraint firstAttribute="centerY" secondItem="mDb-Ba-uhQ" secondAttribute="centerY" id="DCv-fX-rMY"/>
                                                 <constraint firstAttribute="centerY" secondItem="Abv-ZC-Dp8" secondAttribute="centerY" id="Ibu-ke-TOK"/>
+                                                <constraint firstItem="zN5-iY-wsK" firstAttribute="leading" secondItem="G9d-uS-t6u" secondAttribute="leadingMargin" constant="-8" id="JAK-gV-I6L"/>
                                                 <constraint firstItem="8aT-ti-hkS" firstAttribute="top" secondItem="G9d-uS-t6u" secondAttribute="topMargin" constant="-8" id="K36-rX-6u7"/>
                                                 <constraint firstItem="8aT-ti-hkS" firstAttribute="leading" secondItem="G9d-uS-t6u" secondAttribute="leadingMargin" constant="-8" id="U3C-r6-mhA"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="8aT-ti-hkS" secondAttribute="trailing" constant="-8" id="bvs-zb-siP"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="zN5-iY-wsK" secondAttribute="trailing" constant="-8" id="ixi-Tx-fAc"/>
                                                 <constraint firstAttribute="centerX" secondItem="mDb-Ba-uhQ" secondAttribute="centerX" id="pzB-p2-3Bc"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="zN5-iY-wsK" secondAttribute="bottom" constant="-8" id="s7j-1z-LZI"/>
                                                 <constraint firstAttribute="centerY" secondItem="pHi-3L-Huj" secondAttribute="centerY" id="xtg-08-hmF"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -226,10 +234,12 @@
                     </tableView>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="backPhoto" destination="8aT-ti-hkS" id="3dd-I2-Jfl"/>
                         <outlet property="label1" destination="7VF-A6-TsB" id="GSC-3E-8f4"/>
                         <outlet property="label2" destination="0ka-xG-iQb" id="wX6-KQ-Ews"/>
                         <outlet property="label3" destination="3oI-gq-97L" id="amk-Un-Y01"/>
                         <outlet property="label4" destination="VVQ-Nw-elc" id="1Pj-tH-RVt"/>
+                        <outlet property="layerBlurBackPhoto" destination="zN5-iY-wsK" id="9Nz-CF-aXw"/>
                         <outlet property="photo" destination="mDb-Ba-uhQ" id="DEm-gY-RR1"/>
                         <outlet property="segmentControll" destination="Str-sZ-5WA" id="w2v-Vh-wRs"/>
                         <outlet property="titlePhoto" destination="pHi-3L-Huj" id="3eQ-dv-CQR"/>
@@ -241,7 +251,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="056BC371-006E-414A-82EB-7973024F3EF4" width="250" height="250">
+        <image name="3CF77B1E-1E0A-4C46-A87A-02E9D494C277" width="250" height="250">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

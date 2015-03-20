@@ -12,6 +12,7 @@
 #import "VIFilterCollectionFooterCollectionReusableView.h"
 #import "VIStorage.h"
 #import "VICategory.h"
+#import "VIAllocFilterIcon.h"
 
 @interface VIFilterViewController ()
 
@@ -43,6 +44,8 @@
     singleTapView.numberOfTapsRequired = 1;
     [filter setUserInteractionEnabled:YES];
     [filter addGestureRecognizer:singleTapView];
+    
+    [VIAllocFilterIcon chargeIconOnView:filter];
     
     // status
     UIView *status = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
