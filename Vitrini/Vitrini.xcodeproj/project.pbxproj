@@ -104,6 +104,7 @@
 		92891CDF1A28D80F002F6678 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CDE1A28D80F002F6678 /* AppDelegate.m */; };
 		92891CE71A28D80F002F6678 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92891CE61A28D80F002F6678 /* Images.xcassets */; };
 		92891CF61A28D80F002F6678 /* VitriniTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CF51A28D80F002F6678 /* VitriniTests.m */; };
+		92D0DB431ABC70FA00736F2A /* Password-Text-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 92D0DB421ABC70FA00736F2A /* Password-Text-128.png */; };
 		92D96E611A7FEBF6009BC061 /* Cards.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92D96E601A7FEBF6009BC061 /* Cards.storyboard */; };
 		92D96E681A80FCB8009BC061 /* VICardInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D96E671A80FCB8009BC061 /* VICardInfoViewController.m */; };
 		B30866361AADD7E3006803CE /* VIServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2761A50C1A96100E0009395C /* VIServer.m */; };
@@ -314,6 +315,7 @@
 		92891CEF1A28D80F002F6678 /* VitriniTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VitriniTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92891CF41A28D80F002F6678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92891CF51A28D80F002F6678 /* VitriniTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VitriniTests.m; sourceTree = "<group>"; };
+		92D0DB421ABC70FA00736F2A /* Password-Text-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Password-Text-128.png"; sourceTree = "<group>"; };
 		92D96E601A7FEBF6009BC061 /* Cards.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Cards.storyboard; path = Vitrini/Cards.storyboard; sourceTree = "<group>"; };
 		92D96E661A80FCB8009BC061 /* VICardInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VICardInfoViewController.h; path = Vitrini/VICardInfoViewController.h; sourceTree = "<group>"; };
 		92D96E671A80FCB8009BC061 /* VICardInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VICardInfoViewController.m; path = Vitrini/VICardInfoViewController.m; sourceTree = "<group>"; };
@@ -472,6 +474,7 @@
 				2781FF171A6ED47F009FFAA5 /* VILoginViewController.h */,
 				2781FF181A6ED47F009FFAA5 /* VILoginViewController.m */,
 				924FD1771AB773940017A65F /* camera.png */,
+				92D0DB421ABC70FA00736F2A /* Password-Text-128.png */,
 				924FD1791AB7793A0017A65F /* user_create.png */,
 				926DB6061AB29C3700BAA0E6 /* VIRegisterTableViewController.h */,
 				926DB6071AB29C3700BAA0E6 /* VIRegisterTableViewController.m */,
@@ -1008,6 +1011,7 @@
 				2781FF1F1A6ED6E6009FFAA5 /* VILoginStoryboard.storyboard in Resources */,
 				277B37151A815D720081C796 /* feed_temp.png in Resources */,
 				277BD8921A80055A00AC887A /* Feed.storyboard in Resources */,
+				92D0DB431ABC70FA00736F2A /* Password-Text-128.png in Resources */,
 				B3B6CF511A44C41A00C07383 /* infoBtn@3x.png in Resources */,
 				277B37111A8103D10081C796 /* profile_feed_temp.png in Resources */,
 			);
