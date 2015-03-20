@@ -44,6 +44,8 @@
     
     _longitude = [[dict objectForKey:symbPack.longitude] doubleValue];
     _latitude = [[dict objectForKey:symbPack.latitude]doubleValue];
+    
+    _coverName = [dict objectForKey:symbPack.cover];
 }
 
 @end

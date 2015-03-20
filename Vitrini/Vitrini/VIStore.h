@@ -16,6 +16,7 @@
 @property (nonatomic) VILocation *location;
 @property (nonatomic) NSArray * products;
 @property (nonatomic) NSString *imageName;
+@property (nonatomic) NSString *coverName;
 @property (nonatomic) int storeID;
 @property (nonatomic) BOOL isFollowing;
 @property (nonatomic) NSString *resume;

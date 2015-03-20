@@ -190,7 +190,7 @@ static NSString * const reuseIdentifier = @"Cell";
     self.navigationBar.topItem.title = _storeWithCompleteInfo.name;
     
     cellHeader.backgroundLoja.activityIndicatorStyle = UIActivityIndicatorViewStyleWhiteLarge;
-    cellHeader.backgroundLoja.imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://107.170.189.125/vitrini/default/download/db/%@", _storeWithCompleteInfo.imageName]];
+    cellHeader.backgroundLoja.imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://107.170.189.125/vitrini/default/download/db/%@", _storeWithCompleteInfo.coverName]];
     
     cellHeader.logoLoja.activityIndicatorStyle = UIActivityIndicatorViewStyleWhiteLarge;
     cellHeader.logoLoja.imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://107.170.189.125/vitrini/default/download/db/%@", _storeWithCompleteInfo.imageName]];
