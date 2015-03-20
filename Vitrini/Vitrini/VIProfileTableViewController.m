@@ -20,13 +20,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 30, 0);
+    
     UIView *auxView = [[UIView alloc]initWithFrame:self.view.frame];
     [auxView addSubview:self.view];
     self.view = auxView;
-    
-    UIView *statusBarColor = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.height, 20)];
-    statusBarColor.backgroundColor = [VIColor whiteVIColor];
-    [auxView addSubview:statusBarColor];
     
     VIUser *user = [VIStorage sharedStorage].user;
     if (!user) {
@@ -44,7 +42,7 @@
             
             
             UIBlurEffect *blurEffect;
-            blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+            blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
             UIVisualEffectView *visualEffectView;
             visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
             visualEffectView.frame = CGRectMake(_layerBlurBackPhoto.frame.origin.x, _layerBlurBackPhoto.frame.origin.y, self.view.frame.size.width, _layerBlurBackPhoto.frame.size.height);
@@ -62,11 +60,6 @@
     backView.image = [UIImage imageNamed:@"viewBackground"];
     [self.view insertSubview:backView atIndex:0];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -92,10 +85,6 @@
     }
 }
 - (IBAction)pressLogout:(UIButton *)sender {
-    NSLog(@"sair");
-    //    UIActionSheet *ac = [[UIActionSheet alloc]initWithTitle:@"Tem certeza que deseja sair?" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Sair", nil];
-    //    [ac showFromTabBar:self.tabBarController.tabBar];
-    //Add a comment to this line
     UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Tem certeza que deseja sair?" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
     UIAlertAction *logout = [UIAlertAction actionWithTitle:@"Sair" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
@@ -113,6 +102,11 @@
 -(void)logOut{
     //apagar user do Storage e da plist
     [[VIStorage sharedStorage]logOutUser];
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 @end
