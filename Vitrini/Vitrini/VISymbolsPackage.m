@@ -49,6 +49,8 @@
         _following 		= @"following";
         _follow 			= @"follow";
         _unfollow 		= @"unfollow";
+        _latitude = @"latitude";
+        _longitude = @"longitude";
     }
     return self;
 }

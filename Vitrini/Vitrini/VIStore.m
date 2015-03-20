@@ -8,32 +8,42 @@
 
 #import "VIStore.h"
 
+#import "VISymbolsPackage.h"
+
 @implementation VIStore
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict
 {
     self = [super init];
     if (self) {
-        _name = [dict objectForKey:@"name"];
-        if ([[dict objectForKey:@"storeID"]intValue] > 0) {
-                    _storeID = [[dict objectForKey:@"storeID"]intValue];
-        }
-        else{
-                    _storeID = [[dict objectForKey:@"ID"]intValue];
-        }
-        if ([dict objectForKey:@"image"]) {
-                    _imageName = [dict objectForKey:@"image"];
-        }
-        else
-        {
-                    _imageName = [dict objectForKey:@"photo"];
-        }
-        _address = [dict objectForKey:@"address"];
-        _isFollowing = [[dict objectForKey:@"following"]boolValue];
-        _resume = [dict objectForKey:@"resume"];
-        
+        [self mountWithDict:dict];
     }
     return self;
+}
+
+-(void)mountWithDict:(NSDictionary *)dict{
+    VISymbolsPackage *symbPack = [[VISymbolsPackage alloc]init];
+    
+    _name = [dict objectForKey:@"name"];
+    if ([[dict objectForKey:@"storeID"]intValue] > 0) {
+        _storeID = [[dict objectForKey:@"storeID"]intValue];
+    }
+    else{
+        _storeID = [[dict objectForKey:@"ID"]intValue];
+    }
+    if ([dict objectForKey:@"image"]) {
+        _imageName = [dict objectForKey:@"image"];
+    }
+    else
+    {
+        _imageName = [dict objectForKey:@"photo"];
+    }
+    _address = [dict objectForKey:@"address"];
+    _isFollowing = [[dict objectForKey:@"following"]boolValue];
+    _resume = [dict objectForKey:@"resume"];
+    
+    _longitude = [[dict objectForKey:symbPack.longitude] doubleValue];
+    _latitude = [[dict objectForKey:symbPack.latitude]doubleValue];
 }
 
 @end
