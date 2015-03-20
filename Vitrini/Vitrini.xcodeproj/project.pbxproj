@@ -30,6 +30,7 @@
 		0B5729651AB00FF700B76187 /* tumbStore11.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5729591AB00FF700B76187 /* tumbStore11.png */; };
 		0B7BD53E1ABCC97E0001B68C /* icon-like.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B7BD53D1ABCC97E0001B68C /* icon-like.png */; };
 		0B7BD5401ABCC9FA0001B68C /* icon-categorias-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B7BD53F1ABCC9FA0001B68C /* icon-categorias-menu.png */; };
+		0B7BD5421ABCCB9C0001B68C /* feed_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B7BD5411ABCCB9C0001B68C /* feed_menu.png */; };
 		0B92C9941AB1CC7600D0CFC6 /* VIStoreShowProduct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B92C9931AB1CC7600D0CFC6 /* VIStoreShowProduct.storyboard */; };
 		0B92C9971AB1CEB800D0CFC6 /* VIStoreShowProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B92C9961AB1CEB800D0CFC6 /* VIStoreShowProductViewController.m */; };
 		270BF8761A84288F00D261A1 /* VIFilterCollectionFooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 270BF8751A84288F00D261A1 /* VIFilterCollectionFooterCollectionReusableView.m */; };
@@ -201,6 +202,7 @@
 		0B5729591AB00FF700B76187 /* tumbStore11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tumbStore11.png; sourceTree = "<group>"; };
 		0B7BD53D1ABCC97E0001B68C /* icon-like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-like.png"; sourceTree = "<group>"; };
 		0B7BD53F1ABCC9FA0001B68C /* icon-categorias-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-categorias-menu.png"; sourceTree = "<group>"; };
+		0B7BD5411ABCCB9C0001B68C /* feed_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feed_menu.png; sourceTree = "<group>"; };
 		0B92C9931AB1CC7600D0CFC6 /* VIStoreShowProduct.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VIStoreShowProduct.storyboard; sourceTree = "<group>"; };
 		0B92C9951AB1CEB800D0CFC6 /* VIStoreShowProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VIStoreShowProductViewController.h; path = StoreProfile/VIStoreShowProductViewController.h; sourceTree = "<group>"; };
 		0B92C9961AB1CEB800D0CFC6 /* VIStoreShowProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VIStoreShowProductViewController.m; path = StoreProfile/VIStoreShowProductViewController.m; sourceTree = "<group>"; };
@@ -451,6 +453,7 @@
 		277BD88D1A80037300AC887A /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				0B7BD5411ABCCB9C0001B68C /* feed_menu.png */,
 				277B37181A816B710081C796 /* profile_feed_temp3.png */,
 				277B37161A816B4C0081C796 /* profile_feed_temp2.png */,
 				277B37101A8103D10081C796 /* profile_feed_temp.png */,
@@ -932,6 +935,7 @@
 				B3B6CF561A44C41A00C07383 /* yesBtn@2x.png in Resources */,
 				0B57295A1AB00FF700B76187 /* tumbStore9.png in Resources */,
 				0B5729601AB00FF700B76187 /* tumbStore4.png in Resources */,
+				0B7BD5421ABCCB9C0001B68C /* feed_menu.png in Resources */,
 				B3B6CF501A44C41A00C07383 /* infoBtn@2x.png in Resources */,
 				278AFBD11A83ABD40002BB23 /* backgroundFilter.png in Resources */,
 				0B5728FE1AAF34D100B76187 /* VIStoreProfileNavigationBarBackButton@2x.png in Resources */,
