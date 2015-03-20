@@ -15,6 +15,9 @@
 #import "VIProduct.h"
 #import "VICardInfoViewController.h"
 
+#import <MapKit/MapKit.h>
+@import AddressBook;
+
 @interface VIStoreProfileViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *statuBarBackground;
@@ -187,7 +190,7 @@ static NSString * const reuseIdentifier = @"Cell";
     self.navigationBar.topItem.title = _storeWithCompleteInfo.name;
     
     cellHeader.backgroundLoja.activityIndicatorStyle = UIActivityIndicatorViewStyleWhiteLarge;
-    cellHeader.backgroundLoja.imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://107.170.189.125/vitrini/default/download/db/%@", _storeWithCompleteInfo.imageName]];
+    cellHeader.backgroundLoja.imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://107.170.189.125/vitrini/default/download/db/%@", _storeWithCompleteInfo.coverName]];
     
     cellHeader.logoLoja.activityIndicatorStyle = UIActivityIndicatorViewStyleWhiteLarge;
     cellHeader.logoLoja.imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://107.170.189.125/vitrini/default/download/db/%@", _storeWithCompleteInfo.imageName]];
@@ -258,9 +261,22 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)localizacaoAction{
     NSLog(@"localizacaoAction");
-    NSString *addr = @"https://www.google.com.br/maps/dir/-15.824093,-47.9185864/BL+H+-+Asa+Sul,+Bras%C3%ADlia,+DF/@-15.8245498,-47.9211879,17z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x935a3aaaef8fd49b:0x656c98d08a8aeedd!2m2!1d-47.9199637!2d-15.8245526?hl=pt-BR";
-    NSURL *URL = [NSURL URLWithString:addr];
-    [[UIApplication sharedApplication] openURL:URL];
+    
+    if (_storeWithCompleteInfo) {
+        if (_storeWithCompleteInfo.latitude == 0 && _storeWithCompleteInfo.longitude == 0) {
+            NSString *addr = [NSString stringWithFormat:@"https://www.google.com.br/maps/search/%@",_storeWithCompleteInfo.address];
+            NSURL *URL = [NSURL URLWithString:addr];
+            [[UIApplication sharedApplication] openURL:URL];
+        } else {
+            CLLocationCoordinate2D cordinate = CLLocationCoordinate2DMake(_storeWithCompleteInfo.latitude, _storeWithCompleteInfo.longitude);
+            MKPlacemark *placemark = [[MKPlacemark alloc]initWithCoordinate:cordinate
+                                                          addressDictionary:@{
+                                                                              [NSString stringWithFormat:@"%@",kABPersonAddressStreetKey]: _storeWithCompleteInfo.address
+                                                                              }];
+            MKMapItem *mapApp = [[MKMapItem alloc]initWithPlacemark:placemark];
+            [mapApp openInMapsWithLaunchOptions:nil];
+        }
+    }
 }
 
 #pragma mark  UICollectionViewDelegate Extra Methods
