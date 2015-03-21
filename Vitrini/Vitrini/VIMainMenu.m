@@ -94,17 +94,42 @@
 }
 
 -(void)installIconsOnMenu{
+    CGFloat superWidth = 120.0f;
     // menu icon
     CGFloat menuIconWidth, menuIconHeight;
     
-    menuIconWidth = 40.0f;
-    menuIconHeight = 40.0f;
+    menuIconWidth = 32.0f;
+    menuIconHeight = 32.0f;
     
-    menuIconFrame = CGRectMake(40, 14, menuIconWidth, menuIconHeight);
-    menuIconFrameOut = CGRectMake(40, 80, menuIconWidth, menuIconHeight);
+    menuIconFrame = CGRectMake(superWidth/2-menuIconWidth/2, superWidth/4 - menuIconHeight/2 + 4, menuIconWidth, menuIconHeight);
+    menuIconFrameOut = CGRectMake(superWidth/2-menuIconWidth/2, 80, menuIconWidth, menuIconHeight);
     menuIcon = [[UIImageView alloc]initWithFrame:menuIconFrameOut];
     menuIcon.image = [UIImage imageNamed:@"CloseMenu.png"];
     menuIcon.alpha = 1.0;
+    
+    menuIcon.contentMode = UIViewContentModeScaleAspectFit;
+    menuIcon.autoresizingMask =
+    ( UIViewAutoresizingFlexibleBottomMargin
+     | UIViewAutoresizingFlexibleHeight
+     | UIViewAutoresizingFlexibleLeftMargin
+     | UIViewAutoresizingFlexibleRightMargin
+     | UIViewAutoresizingFlexibleTopMargin
+     | UIViewAutoresizingFlexibleWidth
+     | UIViewContentModeScaleAspectFit);
+    
+    actualVcIcon.contentMode = UIViewContentModeScaleAspectFit;
+    actualVcIcon.autoresizingMask =
+    ( UIViewAutoresizingFlexibleBottomMargin
+     | UIViewAutoresizingFlexibleHeight
+     | UIViewAutoresizingFlexibleLeftMargin
+     | UIViewAutoresizingFlexibleRightMargin
+     | UIViewAutoresizingFlexibleTopMargin
+     | UIViewAutoresizingFlexibleWidth
+     | UIViewContentModeScaleAspectFit);
+    
+    menuIcon.backgroundColor = [UIColor redColor];
+    actualVcIcon.backgroundColor = [UIColor greenColor];
+    
     [self.viTabBarVC.menuView addSubview:menuIcon];
     
     actualVcIcon = [[UIImageView alloc]initWithFrame:menuIconFrame];
