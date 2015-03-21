@@ -98,7 +98,7 @@
     // menu icon
     CGFloat menuIconWidth, menuIconHeight;
     
-    menuIconWidth = 32.0f;
+    menuIconWidth = 40.0f;
     menuIconHeight = 32.0f;
     
     menuIconFrame = CGRectMake(superWidth/2-menuIconWidth/2, superWidth/4 - menuIconHeight/2 + 4, menuIconWidth, menuIconHeight);
@@ -163,7 +163,7 @@
     _table.viewForBaselineLayout.backgroundColor = [UIColor clearColor];
     
     // inicia a table view no meio
-    UIEdgeInsets inset = UIEdgeInsetsMake((self.frame.size.height/2), 0, 100, 0);
+    UIEdgeInsets inset = UIEdgeInsetsMake((self.frame.size.height/3), 0, 100, 0);
     _table.contentInset = inset;
 }
 
