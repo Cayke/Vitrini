@@ -10,7 +10,7 @@
 #import "VIUser.h"
 
 
-@interface VIRegisterTableViewController : UITableViewController <UITextFieldDelegate,UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface VIRegisterTableViewController_DEPRECATED : UITableViewController <UITextFieldDelegate,UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *photo;
 @property (weak, nonatomic) IBOutlet UIImageView *background;

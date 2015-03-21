@@ -6,17 +6,17 @@
 //  Copyright (c) 2015 Willian Pinho. All rights reserved.
 //
 
-#import "VIRegisterTableViewController.h"
+#import "VIRegisterTableViewController_DEPRECATED.h"
 #import "VIColor.h"
 #import "VIServer.h"
 #import "VIStorage.h"
 #import "VIInitControl.h"
 
-@interface VIRegisterTableViewController ()
+@interface VIRegisterTableViewController_DEPRECATED ()
 
 @end
 
-@implementation VIRegisterTableViewController
+@implementation VIRegisterTableViewController_DEPRECATED
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -141,7 +141,7 @@
                 //            [_activityIndicator stopAnimating];
                 
                 if (response.status == VIRequestSuccess) {
-                    VIUser *user = [[VIUser alloc]initWithName:self.name andEmail:self.email andGender:self.gender andBirthday:self.birthday andCity:self.city andPass:self.pass];
+                    VIUser *user = [[VIUser alloc]initWithName:self.name andEmail:self.email andGender:self.gender andBirthday:self.birthday andCity:self.city andPass:self.pass andImage:nil];
                     [[VIStorage sharedStorage]setUser:user];
                     [VIInitControl goToMainApp];
                 }

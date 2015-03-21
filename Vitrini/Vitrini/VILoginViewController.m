@@ -12,7 +12,8 @@
 #import "VIStorage.h"
 #import "VIServer.h"
 #import "VIResponse.h"
-#import "VIRegisterTableViewController.h"
+#import "VIRegisterViewController.h"
+
 
 @interface VILoginViewController ()
 
@@ -136,7 +137,7 @@
     NSLog(@"tap plus");
     
     UIStoryboard *loginStoryboard = [UIStoryboard storyboardWithName:@"VILoginStoryboard" bundle:nil];
-    VIRegisterTableViewController *registerVC = (VIRegisterTableViewController *) [loginStoryboard instantiateViewControllerWithIdentifier:@"RegisterVCID"];
+    VIRegisterViewController *registerVC = (VIRegisterViewController *) [loginStoryboard instantiateViewControllerWithIdentifier:@"VIRegisterViewController"];
     [self presentViewController:registerVC animated:YES completion:nil];
     
     

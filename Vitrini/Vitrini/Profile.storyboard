@@ -47,7 +47,7 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DEEEB68D-F51B-46BA-AB39-7AF8808EB8DC" translatesAutoresizingMaskIntoConstraints="NO" id="mDb-Ba-uhQ">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0C1DC7CC-20A7-4218-9E6E-0FA2AE41981D" translatesAutoresizingMaskIntoConstraints="NO" id="mDb-Ba-uhQ">
                                                     <rect key="frame" x="88" y="22" width="145" height="145"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="145" id="06P-CO-MOS"/>
@@ -243,7 +243,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="DEEEB68D-F51B-46BA-AB39-7AF8808EB8DC" width="250" height="250">
+        <image name="0C1DC7CC-20A7-4218-9E6E-0FA2AE41981D" width="250" height="250">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

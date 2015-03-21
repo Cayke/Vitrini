@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Vitrini/VIRegisterViewController.m"
-            timestampString = "447342702.426168"
+            timestampString = "448588223.621996"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "-registerUser"
-            landmarkType = "5">
+            startingLineNumber = "555"
+            endingLineNumber = "555"
+            landmarkName = "@implementation VIRegisterViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

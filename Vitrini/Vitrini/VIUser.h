@@ -30,6 +30,8 @@
                    andGender:(NSString *)gender
                  andBirthday:(NSString *)birthday
                      andCity:(NSString *)city
-                     andPass:(NSString *)pass;
+                     andPass:(NSString *)pass
+                    andImage:(NSData *) image;
+-(void)mountFilterGender;
 
 @end
