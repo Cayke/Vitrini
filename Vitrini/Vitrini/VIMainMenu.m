@@ -98,7 +98,7 @@
     // menu icon
     CGFloat menuIconWidth, menuIconHeight;
     
-    menuIconWidth = 32.0f;
+    menuIconWidth = 40.0f;
     menuIconHeight = 32.0f;
     
     menuIconFrame = CGRectMake(superWidth/2-menuIconWidth/2, superWidth/4 - menuIconHeight/2 + 4, menuIconWidth, menuIconHeight);
