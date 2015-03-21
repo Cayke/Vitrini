@@ -42,7 +42,7 @@
     return [NSDictionary dictionaryWithDictionary:dic];
 }
 
-- (instancetype)initWithName:(NSString *)name andEmail:(NSString *)email andGender:(NSString *)gender andBirthday:(NSString *)birthday andCity:(NSString *)city andPass:(NSString *)pass {
+- (instancetype)initWithName:(NSString *)name andEmail:(NSString *)email andGender:(NSString *)gender andBirthday:(NSString *)birthday andCity:(NSString *)city andPass:(NSString *)pass andImage:(NSData *)image{
     self = [super init];
     if (self) {
         self.name = name;
@@ -51,6 +51,7 @@
         self.birthday = birthday;
         self.city = city;
         self.pass = pass;
+        self.image = image;
         
         [self mountFilterGender];
     }

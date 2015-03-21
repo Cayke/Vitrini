@@ -42,6 +42,10 @@
 		2714F57D1A8CD9C600C3C240 /* Vitrini_NewAccountpart1_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2714F57C1A8CD9C600C3C240 /* Vitrini_NewAccountpart1_icon.png */; };
 		2714F57F1A8CD9CC00C3C240 /* Vitrini_NewAccountpart2_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2714F57E1A8CD9CC00C3C240 /* Vitrini_NewAccountpart2_icon.png */; };
 		271A20791AA4B034000D9815 /* VICategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 271A20781AA4B034000D9815 /* VICategory.m */; };
+		271E33311ABCBA2300963EB7 /* VIRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 271E33301ABCBA2300963EB7 /* VIRegisterViewController.m */; };
+		271E33341ABCBEE300963EB7 /* VIPhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 271E33331ABCBEE300963EB7 /* VIPhotoTableViewCell.m */; };
+		271E33371ABCBEEC00963EB7 /* ViSegControlTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 271E33361ABCBEEC00963EB7 /* ViSegControlTableViewCell.m */; };
+		271E333A1ABCBEF700963EB7 /* VIImageAndLabelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 271E33391ABCBEF700963EB7 /* VIImageAndLabelTableViewCell.m */; };
 		272C6EF01AA5FF9C00063CCF /* Likes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272C6EEF1AA5FF9C00063CCF /* Likes.storyboard */; };
 		272C6EF31AA6012000063CCF /* VILikesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 272C6EF21AA6012000063CCF /* VILikesViewController.m */; };
 		272C6EF61AA6015F00063CCF /* VILikesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 272C6EF51AA6015F00063CCF /* VILikesCollectionViewCell.m */; };
@@ -86,7 +90,6 @@
 		27A8B87E1A824BB100226278 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27A8B87D1A824BB100226278 /* Profile.storyboard */; };
 		27CA104C1A9B63D600429F37 /* VIStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CA104B1A9B63D600429F37 /* VIStore.m */; };
 		27CA104F1A9B648D00429F37 /* VILocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CA104E1A9B648D00429F37 /* VILocation.m */; };
-		27CA10511A9B74BA00429F37 /* User.png in Resources */ = {isa = PBXBuildFile; fileRef = 27CA10501A9B74BA00429F37 /* User.png */; };
 		5C2878631A28E39700CC7DD2 /* CustomSegueTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2878621A28E39700CC7DD2 /* CustomSegueTransition.m */; };
 		5C8335201A9B2E5B006B3294 /* VIStoreProfileHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C83351F1A9B2E5B006B3294 /* VIStoreProfileHeaderCollectionReusableView.m */; };
 		5C83EA7A1A407008007988AA /* VIMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C83EA791A407008007988AA /* VIMainViewController.m */; };
@@ -102,12 +105,11 @@
 		9265DC831AB0794000AD1724 /* Patricia-Beck.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9265DC821AB0794000AD1724 /* Patricia-Beck.jpg */; };
 		9266A4F91AB3B20800D6F692 /* imagemParaReferenciaDeTamanho.png in Resources */ = {isa = PBXBuildFile; fileRef = 9266A4F71AB3B20800D6F692 /* imagemParaReferenciaDeTamanho.png */; };
 		9266A4FA1AB3B20800D6F692 /* viewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 9266A4F81AB3B20800D6F692 /* viewBackground.png */; };
-		926DB6081AB29C3700BAA0E6 /* VIRegisterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 926DB6071AB29C3700BAA0E6 /* VIRegisterTableViewController.m */; };
 		92891CDC1A28D80F002F6678 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CDB1A28D80F002F6678 /* main.m */; };
 		92891CDF1A28D80F002F6678 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CDE1A28D80F002F6678 /* AppDelegate.m */; };
 		92891CE71A28D80F002F6678 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92891CE61A28D80F002F6678 /* Images.xcassets */; };
 		92891CF61A28D80F002F6678 /* VitriniTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CF51A28D80F002F6678 /* VitriniTests.m */; };
-		92D0DB431ABC70FA00736F2A /* Password-Text-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 92D0DB421ABC70FA00736F2A /* Password-Text-128.png */; };
+		92D0DB431ABC70FA00736F2A /* Password.png in Resources */ = {isa = PBXBuildFile; fileRef = 92D0DB421ABC70FA00736F2A /* Password.png */; };
 		92D96E611A7FEBF6009BC061 /* Cards.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92D96E601A7FEBF6009BC061 /* Cards.storyboard */; };
 		92D96E681A80FCB8009BC061 /* VICardInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D96E671A80FCB8009BC061 /* VICardInfoViewController.m */; };
 		B30866361AADD7E3006803CE /* VIServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2761A50C1A96100E0009395C /* VIServer.m */; };
@@ -217,6 +219,14 @@
 		2714F57E1A8CD9CC00C3C240 /* Vitrini_NewAccountpart2_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vitrini_NewAccountpart2_icon.png; sourceTree = "<group>"; };
 		271A20771AA4B034000D9815 /* VICategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VICategory.h; sourceTree = "<group>"; };
 		271A20781AA4B034000D9815 /* VICategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VICategory.m; sourceTree = "<group>"; };
+		271E332F1ABCBA2300963EB7 /* VIRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIRegisterViewController.h; sourceTree = "<group>"; };
+		271E33301ABCBA2300963EB7 /* VIRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIRegisterViewController.m; sourceTree = "<group>"; };
+		271E33321ABCBEE300963EB7 /* VIPhotoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPhotoTableViewCell.h; sourceTree = "<group>"; };
+		271E33331ABCBEE300963EB7 /* VIPhotoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPhotoTableViewCell.m; sourceTree = "<group>"; };
+		271E33351ABCBEEC00963EB7 /* ViSegControlTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViSegControlTableViewCell.h; sourceTree = "<group>"; };
+		271E33361ABCBEEC00963EB7 /* ViSegControlTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViSegControlTableViewCell.m; sourceTree = "<group>"; };
+		271E33381ABCBEF700963EB7 /* VIImageAndLabelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIImageAndLabelTableViewCell.h; sourceTree = "<group>"; };
+		271E33391ABCBEF700963EB7 /* VIImageAndLabelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIImageAndLabelTableViewCell.m; sourceTree = "<group>"; };
 		272C6EEF1AA5FF9C00063CCF /* Likes.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Likes.storyboard; sourceTree = "<group>"; };
 		272C6EF11AA6012000063CCF /* VILikesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VILikesViewController.h; sourceTree = "<group>"; };
 		272C6EF21AA6012000063CCF /* VILikesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VILikesViewController.m; sourceTree = "<group>"; };
@@ -285,7 +295,6 @@
 		27CA104B1A9B63D600429F37 /* VIStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIStore.m; sourceTree = "<group>"; };
 		27CA104D1A9B648D00429F37 /* VILocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VILocation.h; sourceTree = "<group>"; };
 		27CA104E1A9B648D00429F37 /* VILocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VILocation.m; sourceTree = "<group>"; };
-		27CA10501A9B74BA00429F37 /* User.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = User.png; sourceTree = "<group>"; };
 		5C2878611A28E39700CC7DD2 /* CustomSegueTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSegueTransition.h; sourceTree = "<group>"; };
 		5C2878621A28E39700CC7DD2 /* CustomSegueTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSegueTransition.m; sourceTree = "<group>"; };
 		5C83351E1A9B2E5B006B3294 /* VIStoreProfileHeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VIStoreProfileHeaderCollectionReusableView.h; path = StoreProfile/VIStoreProfileHeaderCollectionReusableView.h; sourceTree = "<group>"; };
@@ -309,8 +318,6 @@
 		9265DC821AB0794000AD1724 /* Patricia-Beck.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Patricia-Beck.jpg"; sourceTree = "<group>"; };
 		9266A4F71AB3B20800D6F692 /* imagemParaReferenciaDeTamanho.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagemParaReferenciaDeTamanho.png; sourceTree = "<group>"; };
 		9266A4F81AB3B20800D6F692 /* viewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = viewBackground.png; sourceTree = "<group>"; };
-		926DB6061AB29C3700BAA0E6 /* VIRegisterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIRegisterTableViewController.h; sourceTree = "<group>"; };
-		926DB6071AB29C3700BAA0E6 /* VIRegisterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIRegisterTableViewController.m; sourceTree = "<group>"; };
 		92891CD61A28D80F002F6678 /* Vitrini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vitrini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92891CDA1A28D80F002F6678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92891CDB1A28D80F002F6678 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -320,7 +327,7 @@
 		92891CEF1A28D80F002F6678 /* VitriniTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VitriniTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92891CF41A28D80F002F6678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92891CF51A28D80F002F6678 /* VitriniTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VitriniTests.m; sourceTree = "<group>"; };
-		92D0DB421ABC70FA00736F2A /* Password-Text-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Password-Text-128.png"; sourceTree = "<group>"; };
+		92D0DB421ABC70FA00736F2A /* Password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Password.png; sourceTree = "<group>"; };
 		92D96E601A7FEBF6009BC061 /* Cards.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Cards.storyboard; path = Vitrini/Cards.storyboard; sourceTree = "<group>"; };
 		92D96E661A80FCB8009BC061 /* VICardInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VICardInfoViewController.h; path = Vitrini/VICardInfoViewController.h; sourceTree = "<group>"; };
 		92D96E671A80FCB8009BC061 /* VICardInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VICardInfoViewController.m; path = Vitrini/VICardInfoViewController.m; sourceTree = "<group>"; };
@@ -471,18 +478,17 @@
 		2781FF161A6ED427009FFAA5 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				9266A4F61AB3B1E800D6F692 /* register */,
-				27CA10501A9B74BA00429F37 /* User.png */,
-				2714F57E1A8CD9CC00C3C240 /* Vitrini_NewAccountpart2_icon.png */,
-				2714F57C1A8CD9C600C3C240 /* Vitrini_NewAccountpart1_icon.png */,
 				2781FF1E1A6ED6E6009FFAA5 /* VILoginStoryboard.storyboard */,
 				2781FF171A6ED47F009FFAA5 /* VILoginViewController.h */,
 				2781FF181A6ED47F009FFAA5 /* VILoginViewController.m */,
-				924FD1771AB773940017A65F /* camera.png */,
-				92D0DB421ABC70FA00736F2A /* Password-Text-128.png */,
-				924FD1791AB7793A0017A65F /* user_create.png */,
-				926DB6061AB29C3700BAA0E6 /* VIRegisterTableViewController.h */,
-				926DB6071AB29C3700BAA0E6 /* VIRegisterTableViewController.m */,
+				271E332F1ABCBA2300963EB7 /* VIRegisterViewController.h */,
+				271E33301ABCBA2300963EB7 /* VIRegisterViewController.m */,
+				271E33321ABCBEE300963EB7 /* VIPhotoTableViewCell.h */,
+				271E33331ABCBEE300963EB7 /* VIPhotoTableViewCell.m */,
+				271E33351ABCBEEC00963EB7 /* ViSegControlTableViewCell.h */,
+				271E33361ABCBEEC00963EB7 /* ViSegControlTableViewCell.m */,
+				271E33381ABCBEF700963EB7 /* VIImageAndLabelTableViewCell.h */,
+				271E33391ABCBEF700963EB7 /* VIImageAndLabelTableViewCell.m */,
 				2781FF241A6EDA5E009FFAA5 /* images */,
 			);
 			name = Login;
@@ -491,6 +497,13 @@
 		2781FF241A6EDA5E009FFAA5 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				2714F57E1A8CD9CC00C3C240 /* Vitrini_NewAccountpart2_icon.png */,
+				2714F57C1A8CD9C600C3C240 /* Vitrini_NewAccountpart1_icon.png */,
+				9266A4F71AB3B20800D6F692 /* imagemParaReferenciaDeTamanho.png */,
+				9266A4F81AB3B20800D6F692 /* viewBackground.png */,
+				924FD1771AB773940017A65F /* camera.png */,
+				92D0DB421ABC70FA00736F2A /* Password.png */,
+				924FD1791AB7793A0017A65F /* user_create.png */,
 				2781FF291A6F0D81009FFAA5 /* Vitrini_Login__0007_Conta.png */,
 				2781FF271A6F0D7C009FFAA5 /* Vitrini_Login__0006_Facebook.png */,
 				2781FF251A6EDBFA009FFAA5 /* Vitrini_Login__0001_Logo.png */,
@@ -587,15 +600,6 @@
 				B3C4EBDB1AB0888100A833B0 /* VIProductsCollectionCell.m */,
 			);
 			name = StoreProfile;
-			sourceTree = "<group>";
-		};
-		9266A4F61AB3B1E800D6F692 /* register */ = {
-			isa = PBXGroup;
-			children = (
-				9266A4F71AB3B20800D6F692 /* imagemParaReferenciaDeTamanho.png */,
-				9266A4F81AB3B20800D6F692 /* viewBackground.png */,
-			);
-			name = register;
 			sourceTree = "<group>";
 		};
 		92891CCD1A28D80F002F6678 = {
@@ -885,11 +889,11 @@
 				TargetAttributes = {
 					92891CD51A28D80F002F6678 = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = UT4W7MMEML;
+						DevelopmentTeam = DU8V3EWF65;
 					};
 					92891CEE1A28D80F002F6678 = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = UT4W7MMEML;
+						DevelopmentTeam = DU8V3EWF65;
 						TestTargetID = 92891CD51A28D80F002F6678;
 					};
 				};
@@ -1015,11 +1019,10 @@
 				0B20E62E1AB4E744003BC68A /* productBackground@2x.png in Resources */,
 				B3B6CF651A44C45C00C07383 /* img6.jpg in Resources */,
 				2714F5761A8CD2D200C3C240 /* Vitrini_meuslikes_icon.png in Resources */,
-				27CA10511A9B74BA00429F37 /* User.png in Resources */,
 				2781FF1F1A6ED6E6009FFAA5 /* VILoginStoryboard.storyboard in Resources */,
 				277B37151A815D720081C796 /* feed_temp.png in Resources */,
 				277BD8921A80055A00AC887A /* Feed.storyboard in Resources */,
-				92D0DB431ABC70FA00736F2A /* Password-Text-128.png in Resources */,
+				92D0DB431ABC70FA00736F2A /* Password.png in Resources */,
 				B3B6CF511A44C41A00C07383 /* infoBtn@3x.png in Resources */,
 				277B37111A8103D10081C796 /* profile_feed_temp.png in Resources */,
 			);
@@ -1055,6 +1058,8 @@
 				272C6EFC1AA64DA300063CCF /* AsyncImageView.m in Sources */,
 				5C83EA7D1A4071A1007988AA /* VIMainMenu.m in Sources */,
 				272C6EF61AA6015F00063CCF /* VILikesCollectionViewCell.m in Sources */,
+				271E33311ABCBA2300963EB7 /* VIRegisterViewController.m in Sources */,
+				271E33341ABCBEE300963EB7 /* VIPhotoTableViewCell.m in Sources */,
 				5C8335201A9B2E5B006B3294 /* VIStoreProfileHeaderCollectionReusableView.m in Sources */,
 				277BD8951A80089600AC887A /* VIFeedTableViewCell.m in Sources */,
 				276B3A5F1AAFC4250039544B /* VIProductsFromCategoryViewController.m in Sources */,
@@ -1070,13 +1075,13 @@
 				5CE349BE1A2CF42100F1DC17 /* UserOnboardViewController.m in Sources */,
 				5CE349BD1A2CF42100F1DC17 /* UserOnboardContentViewController.m in Sources */,
 				0B92C9971AB1CEB800D0CFC6 /* VIStoreShowProductViewController.m in Sources */,
-				926DB6081AB29C3700BAA0E6 /* VIRegisterTableViewController.m in Sources */,
 				B3CE20441AA74B5A00B3836F /* VIBrand.m in Sources */,
 				5CE3DE3F1A81021A00F0CC92 /* VIStoreProfileViewController.m in Sources */,
 				27CA104C1A9B63D600429F37 /* VIStore.m in Sources */,
 				278AFBCD1A83A9CD0002BB23 /* VIFilterViewController.m in Sources */,
 				B3B6CF441A44C21A00C07383 /* VIProductStore.m in Sources */,
 				92891CDF1A28D80F002F6678 /* AppDelegate.m in Sources */,
+				271E333A1ABCBEF700963EB7 /* VIImageAndLabelTableViewCell.m in Sources */,
 				B3B6CF6F1A487A9600C07383 /* VIProtocol.m in Sources */,
 				B3B6CF381A44BAC600C07383 /* VICardsViewController.m in Sources */,
 				92891CDC1A28D80F002F6678 /* main.m in Sources */,
@@ -1085,6 +1090,7 @@
 				2761A50A1A9610030009395C /* VISymbolsPackage.m in Sources */,
 				279A817A1A7085C6003E50D7 /* VICatalogTableViewCell.m in Sources */,
 				B3B6CF3B1A44BBAA00C07383 /* VIDraggableCardsView.m in Sources */,
+				271E33371ABCBEEC00963EB7 /* ViSegControlTableViewCell.m in Sources */,
 				271A20791AA4B034000D9815 /* VICategory.m in Sources */,
 				B3B6CF881A48FDD300C07383 /* VIColor.m in Sources */,
 				B36115211AB47CC400B5AF70 /* VIProfileTableViewController.m in Sources */,

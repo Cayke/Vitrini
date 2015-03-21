@@ -12,7 +12,8 @@
 #import "VIStorage.h"
 #import "VIServer.h"
 #import "VIResponse.h"
-#import "VIRegisterTableViewController.h"
+#import "VIRegisterViewController.h"
+
 
 @interface VILoginViewController ()
 
@@ -136,7 +137,7 @@
     NSLog(@"tap plus");
     
     UIStoryboard *loginStoryboard = [UIStoryboard storyboardWithName:@"VILoginStoryboard" bundle:nil];
-    VIRegisterTableViewController *registerVC = (VIRegisterTableViewController *) [loginStoryboard instantiateViewControllerWithIdentifier:@"RegisterVCID"];
+    VIRegisterViewController *registerVC = (VIRegisterViewController *) [loginStoryboard instantiateViewControllerWithIdentifier:@"VIRegisterViewController"];
     [self presentViewController:registerVC animated:YES completion:nil];
     
     
@@ -145,6 +146,7 @@
 -(void) tapFacebook
 {
     NSLog(@"tap facebook");
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     // If the session state is any of the two "open" states when the button is clicked
     if (FBSession.activeSession.state == FBSessionStateOpen
