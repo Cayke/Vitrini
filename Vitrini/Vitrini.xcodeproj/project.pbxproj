@@ -105,7 +105,6 @@
 		9265DC831AB0794000AD1724 /* Patricia-Beck.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9265DC821AB0794000AD1724 /* Patricia-Beck.jpg */; };
 		9266A4F91AB3B20800D6F692 /* imagemParaReferenciaDeTamanho.png in Resources */ = {isa = PBXBuildFile; fileRef = 9266A4F71AB3B20800D6F692 /* imagemParaReferenciaDeTamanho.png */; };
 		9266A4FA1AB3B20800D6F692 /* viewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 9266A4F81AB3B20800D6F692 /* viewBackground.png */; };
-		926DB6081AB29C3700BAA0E6 /* VIRegisterTableViewController_DEPRECATED.m in Sources */ = {isa = PBXBuildFile; fileRef = 926DB6071AB29C3700BAA0E6 /* VIRegisterTableViewController_DEPRECATED.m */; };
 		92891CDC1A28D80F002F6678 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CDB1A28D80F002F6678 /* main.m */; };
 		92891CDF1A28D80F002F6678 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92891CDE1A28D80F002F6678 /* AppDelegate.m */; };
 		92891CE71A28D80F002F6678 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92891CE61A28D80F002F6678 /* Images.xcassets */; };
@@ -320,8 +319,6 @@
 		9265DC821AB0794000AD1724 /* Patricia-Beck.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Patricia-Beck.jpg"; sourceTree = "<group>"; };
 		9266A4F71AB3B20800D6F692 /* imagemParaReferenciaDeTamanho.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagemParaReferenciaDeTamanho.png; sourceTree = "<group>"; };
 		9266A4F81AB3B20800D6F692 /* viewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = viewBackground.png; sourceTree = "<group>"; };
-		926DB6061AB29C3700BAA0E6 /* VIRegisterTableViewController_DEPRECATED.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIRegisterTableViewController_DEPRECATED.h; sourceTree = "<group>"; };
-		926DB6071AB29C3700BAA0E6 /* VIRegisterTableViewController_DEPRECATED.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIRegisterTableViewController_DEPRECATED.m; sourceTree = "<group>"; };
 		92891CD61A28D80F002F6678 /* Vitrini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vitrini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92891CDA1A28D80F002F6678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92891CDB1A28D80F002F6678 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -494,8 +491,6 @@
 				271E33361ABCBEEC00963EB7 /* ViSegControlTableViewCell.m */,
 				271E33381ABCBEF700963EB7 /* VIImageAndLabelTableViewCell.h */,
 				271E33391ABCBEF700963EB7 /* VIImageAndLabelTableViewCell.m */,
-				926DB6061AB29C3700BAA0E6 /* VIRegisterTableViewController_DEPRECATED.h */,
-				926DB6071AB29C3700BAA0E6 /* VIRegisterTableViewController_DEPRECATED.m */,
 				2781FF241A6EDA5E009FFAA5 /* images */,
 			);
 			name = Login;
@@ -1083,7 +1078,6 @@
 				5CE349BE1A2CF42100F1DC17 /* UserOnboardViewController.m in Sources */,
 				5CE349BD1A2CF42100F1DC17 /* UserOnboardContentViewController.m in Sources */,
 				0B92C9971AB1CEB800D0CFC6 /* VIStoreShowProductViewController.m in Sources */,
-				926DB6081AB29C3700BAA0E6 /* VIRegisterTableViewController_DEPRECATED.m in Sources */,
 				B3CE20441AA74B5A00B3836F /* VIBrand.m in Sources */,
 				5CE3DE3F1A81021A00F0CC92 /* VIStoreProfileViewController.m in Sources */,
 				27CA104C1A9B63D600429F37 /* VIStore.m in Sources */,
