@@ -24,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _isLoading = NO;
     
     _tableView.backgroundColor = [UIColor clearColor];
     
@@ -54,6 +55,8 @@
 
 -(void) initData
 {
+    if (!_isLoading) {
+        _isLoading = YES;
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -67,6 +70,7 @@
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             //Stop your activity indicator or anything else with the GUI
             //Code here is run on the main thread
+            _isLoading = NO;
             [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
             
             if (_arrayCategorys && _arrayStores) {
@@ -80,6 +84,7 @@
             
         });
     });
+    }
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle

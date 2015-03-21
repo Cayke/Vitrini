@@ -114,7 +114,7 @@
 - (IBAction)pular:(id)sender {
     
 //    [self dismissViewControllerAnimated:YES completion:nil];
-    NSLog(@"Vou pra uma outra controller");
+    //NSLog(@"Vou pra uma outra controller");
     
     [VIInitControl goToLogin];
     

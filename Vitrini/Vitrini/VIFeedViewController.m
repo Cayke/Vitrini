@@ -144,12 +144,12 @@
             VIServer *server = [[VIServer alloc]init];
             VIResponse *response;
             @try {
-                NSLog(@"%d",page);
+                //NSLog(@"%d",page);
                 response = [server getFeedForUser:[VIStorage sharedStorage].user.email andPage:page];
             }
             @catch (NSException *exception) {
                 response = nil;
-                NSLog(@"colocar alerta");
+                //NSLog(@"colocar alerta");
             }
             
             dispatch_async(dispatch_get_main_queue(), ^(void) {
@@ -158,11 +158,12 @@
                 [_refresh endRefreshing];
                 if (!response){
                     // alerta
-                    
+                    UIAlertView *alerta = [[UIAlertView alloc]initWithTitle:@"Erro de conexao" message:@"Conecte-se a internet e tente novamente" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                    [alerta show];
                 } else if (response.status == VIRequestSuccess) {
                     page++;
                     NSArray *newFeeds = [NSArray arrayWithArray:response.value];
-                    NSLog(@"nf: %@",newFeeds);
+                    //NSLog(@"nf: %@",newFeeds);
                     [_feed addObjectsFromArray:newFeeds];
                     [_tableView reloadData];
                     

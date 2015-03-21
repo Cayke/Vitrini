@@ -61,12 +61,12 @@
 }
 
 -(void)successToLoadImage:(id)some{
-    NSLog(@"%@",some);
+    //NSLog(@"%@",some);
     _product.photo = some;
     [self mountWithProduct];
 }
 -(void)failToLoadImahe:(id)some{
-    NSLog(@"%@",some);
+   // NSLog(@"%@",some);
 }
 
 -(void)startView{
@@ -80,7 +80,7 @@
 }
 
 -(void)clicou:(UITapGestureRecognizer*)gestureRecognizer{
-    NSLog(@"clicou");
+    //NSLog(@"clicou");
     [self.delegate pressedOnCard];
 }
 

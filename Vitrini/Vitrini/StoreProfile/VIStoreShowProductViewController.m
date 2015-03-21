@@ -100,22 +100,22 @@
 
 - (IBAction)likeButton:(id)sender
 {
-    NSLog(@"Like Button");
+    //NSLog(@"Like Button");
 }
 
 - (IBAction)dislikeButton:(id)sender
 {
-    NSLog(@"Dislike Button");
+    //NSLog(@"Dislike Button");
 }
 
 - (IBAction)locationButton:(id)sender
 {
-    NSLog(@"Location Button");
+    //NSLog(@"Location Button");
 }
 
 - (IBAction)shareButton:(id)sender
 {
-    NSLog(@"Share Button");
+    //NSLog(@"Share Button");
 }
 
 /*

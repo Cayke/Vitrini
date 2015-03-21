@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segControl;
 
+@property (nonatomic) BOOL isLoading;
+
 
 @property (nonatomic) NSArray *arrayCategorys;
 @property (nonatomic) NSArray *arrayStores;

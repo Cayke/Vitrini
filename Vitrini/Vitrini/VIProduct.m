@@ -26,9 +26,9 @@
         _name = [pdict objectForKey:@"name"];
         
         _store = [[VIStore alloc]init];
-        _store.imageName = [[pdict objectForKey:@"store"]objectForKey:@"image"];
+        _store.imageName = [[pdict objectForKey:@"store"]objectForKey:@"photo"];
         _store.name = [[pdict objectForKey:@"store"]objectForKey:@"name"];
-        _store.address = [[pdict objectForKey:@"store"]objectForKey:@"address"];
+        _store.storeID = [[[pdict objectForKey:@"store"]objectForKey:@"storeID"]intValue];
         
         _brand = [[VIBrand alloc]init];
         _brand.imageName = [[pdict objectForKey:@"brand"]objectForKey:@"image"];
@@ -38,7 +38,7 @@
 }
 
 -(void)dealloc{
-    NSLog(@"desalocou");
+    //NSLog(@"desalocou");
 }
 
 -(instancetype)initWithProductFromServer:(NSDictionary *)dict

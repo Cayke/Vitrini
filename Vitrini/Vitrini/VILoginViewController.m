@@ -122,19 +122,19 @@
 
 -(void) tapSenha
 {
-    NSLog(@"tap senha");
+    //NSLog(@"tap senha");
     [_textFieldSenha becomeFirstResponder];
 }
 
 -(void) tapEmail
 {
-    NSLog(@"tap email");
+    //NSLog(@"tap email");
     [_textFieldEmail becomeFirstResponder];
 }
 
 -(void) tapPlus
 {
-    NSLog(@"tap plus");
+   // NSLog(@"tap plus");
     
     UIStoryboard *loginStoryboard = [UIStoryboard storyboardWithName:@"VILoginStoryboard" bundle:nil];
     VIRegisterViewController *registerVC = (VIRegisterViewController *) [loginStoryboard instantiateViewControllerWithIdentifier:@"VIRegisterViewController"];
@@ -145,7 +145,7 @@
 
 -(void) tapFacebook
 {
-    NSLog(@"tap facebook");
+    //NSLog(@"tap facebook");
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     // If the session state is any of the two "open" states when the button is clicked
@@ -251,21 +251,21 @@
 {
     // If the session was opened successfully
     if (!error && state == FBSessionStateOpen){
-        NSLog(@"Session opened");
+       // NSLog(@"Session opened");
         // Show the user the logged-in UI
         [self userLoggedIn];
         return;
     }
     if (state == FBSessionStateClosed || state == FBSessionStateClosedLoginFailed){
         // If the session is closed
-        NSLog(@"Session closed");
+        //NSLog(@"Session closed");
         // Show the user the logged-out UI
         [self userLoggedOut];
     }
     
     // Handle errors
     if (error){
-        NSLog(@"Error");
+       // NSLog(@"Error");
         NSString *alertText;
         NSString *alertTitle;
         // If the error requires people using an app to make an action outside of the app in order to recover
@@ -277,7 +277,7 @@
             
             // If the user cancelled login, do nothing
             if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryUserCancelled) {
-                NSLog(@"User cancelled login");
+                //NSLog(@"User cancelled login");
                 
                 // Handle session closures that happen outside of the app
             } else if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryAuthenticationReopenSession){
@@ -409,7 +409,7 @@
 
 -(void) userLoggedOut
 {
-    NSLog(@"deslogou");
+    //NSLog(@"deslogou");
 }
 
 -(void) showMessage:(NSString *)alertText withTitle:(NSString *)alertTitle{

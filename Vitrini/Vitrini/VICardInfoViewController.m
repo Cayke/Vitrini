@@ -13,6 +13,7 @@
 #import "VIServer.h"
 #import "VIProductNameAndPriceTableViewCell.h"
 #import "VIProductTextViewTableViewCell.h"
+#import "VIStoreProfileViewController.h"
 
 @interface VICardInfoViewController ()
 
@@ -21,6 +22,12 @@
 @implementation VICardInfoViewController
 
 - (IBAction)locationButton:(id)sender {
+    //open store
+    UIStoryboard *storeSB = [UIStoryboard storyboardWithName:@"VIStoreProfile" bundle:nil];
+    VIStoreProfileViewController *storeVC = (VIStoreProfileViewController *) [storeSB instantiateInitialViewController];
+    storeVC.actualStore = _product.store;
+    
+    [self presentViewController:storeVC animated:YES completion:nil];
 }
 
 - (IBAction)shareButton:(id)sender {
@@ -340,13 +347,13 @@
     
     if (scrollOffset < 0) {
         //puxou pra baixo
-        NSLog(@"%f", scrollOffset);
+        //NSLog(@"%f", scrollOffset);
         pageFrame.size.height = _pageViewControlllerHeight - scrollOffset; // - com - da +, na real estou somando o offset ao header height
     }
     else
     {
         //puxou pra cima
-        NSLog(@"%f", scrollOffset);
+        //NSLog(@"%f", scrollOffset);
         if (scrollOffset <= _pageViewControlllerHeight) {
                     pageFrame.size.height = _pageViewControlllerHeight - scrollOffset;
         }

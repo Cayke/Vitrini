@@ -41,7 +41,7 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    NSLog(@"Memory Warning");
+    //NSLog(@"Memory Warning");
 }
 
 -(void)setupStatusAndFilter{

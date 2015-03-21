@@ -145,7 +145,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"CLICOU: %ld \n OBJETO: %@", (long)indexPath.row, [self.storeWithCompleteInfo.products objectAtIndex:indexPath.row]);
+    //NSLog(@"CLICOU: %ld \n OBJETO: %@", (long)indexPath.row, [self.storeWithCompleteInfo.products objectAtIndex:indexPath.row]);
     [self goToStoreProduct: [self.storeWithCompleteInfo.products objectAtIndex:indexPath.row]];
 }
 
@@ -207,10 +207,10 @@ static NSString * const reuseIdentifier = @"Cell";
     cellHeader.descricaoLoja.editable = NO;
     
     if (_storeWithCompleteInfo.isFollowing) {
-        NSLog(@"Estou Seguindo a Loja");
+       // NSLog(@"Estou Seguindo a Loja");
         [cellHeader.seguirLoja setTitle:@"Seguindo" forState:UIControlStateNormal];
     } else {
-        NSLog(@">> NÃO estou seguindo a loja");
+       // NSLog(@">> NÃO estou seguindo a loja");
         [cellHeader.seguirLoja setTitle:@"Seguir" forState:UIControlStateNormal];
     }
     
@@ -243,14 +243,14 @@ static NSString * const reuseIdentifier = @"Cell";
             response = [server user:[VIStorage sharedStorage].user.email willFollow:boolToFollow store:_actualStore.storeID];
         }
         @catch (NSException *exception) {
-            NSLog(@"Erro de conexão");
+           // NSLog(@"Erro de conexão");
         }
         
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
             
             if (response.status == VIRequestSuccess) {
-                NSLog(@"operacao feita com sucesso");
+               // NSLog(@"operacao feita com sucesso");
             }
             
         });
@@ -260,7 +260,7 @@ static NSString * const reuseIdentifier = @"Cell";
 #pragma mark Location Action Button
 
 - (void)localizacaoAction{
-    NSLog(@"localizacaoAction");
+   // NSLog(@"localizacaoAction");
     
     if (_storeWithCompleteInfo) {
         if (_storeWithCompleteInfo.latitude == 0 && _storeWithCompleteInfo.longitude == 0) {

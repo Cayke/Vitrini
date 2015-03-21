@@ -228,7 +228,7 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
 }
 
 -(void)animatBinoculus{
-    NSLog(@"anim");
+    //NSLog(@"anim");
     CGFloat squareSize = 160.0;
     __unused CGRect frame1 = CGRectMake(self.frame.size.width/2 - squareSize/2, self.frame.size.height - squareSize/2, squareSize, squareSize);
     squareSize = 140.0;
@@ -445,7 +445,7 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
         [[self presentedCard]normalize];
         [self presentedCard].alpha = 1.0;
     } else {
-        NSLog(@"show loading...");
+        //NSLog(@"show loading...");
     }
     
     //    if (cardsLoadedIndex < [allCards count]) { //%%% if we haven't reached the end of all cards, put another into the loaded cards
@@ -537,7 +537,7 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
 -(void)showLoadingCards{
     waitingCardsAnim.hidden = NO;
     if(!loadingAnim){
-        NSLog(@"TODO: animar carregando produtos...");
+        //NSLog(@"TODO: animar carregando produtos...");
     }
 }
 

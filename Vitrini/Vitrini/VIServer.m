@@ -324,7 +324,7 @@
     }
     [self incrementPost:&post WithName:symbPack.email andValue:email];
     
-    NSLog(@"%@",post);
+    //NSLog(@"%@",post);
     
     // REALIZAR CONEXÃO
     return [self createResponseFromData:[self makeRequest:request withPost:post]];

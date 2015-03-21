@@ -29,6 +29,8 @@
     _categoryOnFilter = 0;
     [self getLikesWithCategory:_categoryOnFilter];
     [self setupStatusAndFilter];
+    
+    _collectionVIew.contentInset = UIEdgeInsetsMake(0, 0, 70, 0);
 }
 
 -(void)viewWillAppear:(BOOL)animated{

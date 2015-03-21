@@ -135,7 +135,7 @@
     for (NSDictionary *pdict in productsDictionaryFromJSON) {
         auxProduct = [[VIProduct alloc]initToCardWithDict:pdict];
         [_products addObject:auxProduct];
-        NSLog(@"%d",auxProduct.idProduct);
+       // NSLog(@"%d",auxProduct.idProduct);
     }
     return YES;
 }
