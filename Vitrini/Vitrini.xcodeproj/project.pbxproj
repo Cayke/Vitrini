@@ -164,7 +164,6 @@
 		B3CE20441AA74B5A00B3836F /* VIBrand.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CE20431AA74B5A00B3836F /* VIBrand.m */; };
 		B3F8DF8B1AB9B47C00844032 /* icon-categorias-top.png in Resources */ = {isa = PBXBuildFile; fileRef = B3F8DF8A1AB9B47C00844032 /* icon-categorias-top.png */; };
 		B3F8DF8E1AB9C48800844032 /* VIAllocFilterIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F8DF8D1AB9C48800844032 /* VIAllocFilterIcon.m */; };
-		B3FEC73A1ABC628800BFD0D8 /* key162.png in Resources */ = {isa = PBXBuildFile; fileRef = B3FEC7391ABC628800BFD0D8 /* key162.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -392,7 +391,6 @@
 		B3F8DF8A1AB9B47C00844032 /* icon-categorias-top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-categorias-top.png"; sourceTree = "<group>"; };
 		B3F8DF8C1AB9C48800844032 /* VIAllocFilterIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIAllocFilterIcon.h; sourceTree = "<group>"; };
 		B3F8DF8D1AB9C48800844032 /* VIAllocFilterIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIAllocFilterIcon.m; sourceTree = "<group>"; };
-		B3FEC7391ABC628800BFD0D8 /* key162.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = key162.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -594,7 +592,6 @@
 		9266A4F61AB3B1E800D6F692 /* register */ = {
 			isa = PBXGroup;
 			children = (
-				B3FEC7391ABC628800BFD0D8 /* key162.png */,
 				9266A4F71AB3B20800D6F692 /* imagemParaReferenciaDeTamanho.png */,
 				9266A4F81AB3B20800D6F692 /* viewBackground.png */,
 			);
@@ -967,7 +964,6 @@
 				0B20E6311AB505C3003BC68A /* shareButtonSystem@2x.png in Resources */,
 				B3CE202C1AA7492E00B3836F /* looking.png in Resources */,
 				0B57295E1AB00FF700B76187 /* tumbStore3.png in Resources */,
-				B3FEC73A1ABC628800BFD0D8 /* key162.png in Resources */,
 				0B20E62D1AB4E744003BC68A /* productLike@2x.png in Resources */,
 				278AFBCF1A83A9DA0002BB23 /* Filter.storyboard in Resources */,
 				92891CE71A28D80F002F6678 /* Images.xcassets in Resources */,
