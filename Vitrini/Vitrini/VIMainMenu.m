@@ -108,32 +108,14 @@
     menuIcon.alpha = 1.0;
     
     menuIcon.contentMode = UIViewContentModeScaleAspectFit;
-    menuIcon.autoresizingMask =
-    ( UIViewAutoresizingFlexibleBottomMargin
-     | UIViewAutoresizingFlexibleHeight
-     | UIViewAutoresizingFlexibleLeftMargin
-     | UIViewAutoresizingFlexibleRightMargin
-     | UIViewAutoresizingFlexibleTopMargin
-     | UIViewAutoresizingFlexibleWidth
-     | UIViewContentModeScaleAspectFit);
-    
-    actualVcIcon.contentMode = UIViewContentModeScaleAspectFit;
-    actualVcIcon.autoresizingMask =
-    ( UIViewAutoresizingFlexibleBottomMargin
-     | UIViewAutoresizingFlexibleHeight
-     | UIViewAutoresizingFlexibleLeftMargin
-     | UIViewAutoresizingFlexibleRightMargin
-     | UIViewAutoresizingFlexibleTopMargin
-     | UIViewAutoresizingFlexibleWidth
-     | UIViewContentModeScaleAspectFit);
-    
-    menuIcon.backgroundColor = [UIColor redColor];
-    actualVcIcon.backgroundColor = [UIColor greenColor];
     
     [self.viTabBarVC.menuView addSubview:menuIcon];
     
     actualVcIcon = [[UIImageView alloc]initWithFrame:menuIconFrame];
     [self setActualViewControllerMenuImageItem];
+    
+    actualVcIcon.contentMode = UIViewContentModeScaleAspectFit;
+    
     [_viTabBarVC.menuView addSubview:actualVcIcon];
 }
 
