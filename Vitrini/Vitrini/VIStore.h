@@ -15,11 +15,15 @@
 @property (nonatomic) NSString *usuario;
 @property (nonatomic) VILocation *location;
 @property (nonatomic) NSArray * products;
-@property (nonatomic) NSString *address;
 @property (nonatomic) NSString *imageName;
+@property (nonatomic) NSString *coverName;
 @property (nonatomic) int storeID;
 @property (nonatomic) BOOL isFollowing;
 @property (nonatomic) NSString *resume;
+
+@property (nonatomic) NSString *address;
+@property (nonatomic) double latitude;
+@property (nonatomic) double longitude;
 
 -(instancetype) initWithDictionary:(NSDictionary *) dict;
 

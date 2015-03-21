@@ -45,6 +45,8 @@
 *resume,
 *following,
 *follow,
-*unfollow;
+*unfollow,
+*latitude,
+*longitude;
 
 @end
