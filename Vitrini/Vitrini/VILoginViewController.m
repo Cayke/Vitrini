@@ -13,6 +13,7 @@
 #import "VIServer.h"
 #import "VIResponse.h"
 #import "VIRegisterViewController.h"
+#import "VIColor.h"
 
 
 @interface VILoginViewController ()
@@ -210,7 +211,7 @@
     //------- botar alerta com carregando
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Carregando..." message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
     UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    indicator.color = [UIColor redColor];
+    indicator.color = [VIColor redVIColor];
     [indicator startAnimating];
     [alertView setValue:indicator forKey:@"accessoryView"];
     [alertView show];
@@ -233,7 +234,7 @@
                 //salvar user na storage e ir para o app
                 [[VIStorage sharedStorage]initUserFromServer:response.value];
                 
-                [VIInitControl goToMainApp];
+                [VIInitControl start];
             }
             else
             {
@@ -319,7 +320,7 @@
     //------- botar alerta com carregando
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Carregando..." message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
     UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    indicator.color = [UIColor redColor];
+    indicator.color = [VIColor redVIColor];
     [indicator startAnimating];
     [alertView setValue:indicator forKey:@"accessoryView"];
     [alertView show];
@@ -346,7 +347,7 @@
                 [[VIStorage sharedStorage]saveUser];
                 
                 //INICAR O APP
-                [VIInitControl goToMainApp];
+                [VIInitControl start];
             }
             else
             {
@@ -366,7 +367,7 @@
     //------- botar alerta com carregando
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Carregando..." message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
     UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    indicator.color = [UIColor redColor];
+    indicator.color = [VIColor redVIColor];
     [indicator startAnimating];
     [alertView setValue:indicator forKey:@"accessoryView"];
     [alertView show];
@@ -393,7 +394,7 @@
                 [[VIStorage sharedStorage]saveUser];
                 
                 //INICAR O APP
-                [VIInitControl goToMainApp];
+                [VIInitControl start];
             }
             else
             {
@@ -490,79 +491,79 @@
     
 }
 
--(void) getLikes
-{
-    [FBRequestConnection startWithGraphPath:@"/me/likes"
-                                 parameters:nil
-                                 HTTPMethod:@"GET"
-                          completionHandler:^(
-                                              FBRequestConnection *connection,
-                                              NSDictionary *result,
-                                              NSError *error
-                                              ) {
-                              /* handle the result */
-                              
-                              dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                                  //Call your function or whatever work that needs to be done
-                                  //Code in this part is run on a background thread
-                                  [self seeIfThereIsMoreLikes:result];
-                                  
-                              });
-                              //****************************************************
-                          }];
-    
-}
-
--(void) seeIfThereIsMoreLikes:(NSDictionary *) result
-{
-    //analisar os likes desse result
-    NSArray *arrayWithLikesData = [result objectForKey:@"data"];
-    [self analyzeUserLikes:arrayWithLikesData];
-    
-    //ver se tem mais likes... se tiver faz tudo de novo
-    NSDictionary *dicPaging = [result objectForKey:@"paging"];
-    NSString *nextPage = [dicPaging objectForKey:@"next"];
-    
-    if (nextPage)
-    {
-        //criar novo dicionario e chamar essa funcao novamente
-        NSURL *url = [[NSURL alloc]initWithString:nextPage];
-        
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
-        [request setURL:url];
-        [request setTimeoutInterval:30];
-        
-        NSURLResponse *response;
-        NSError *error;
-        
-        NSData *dataFromConnection = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-        
-        
-        if (!error && dataFromConnection) {
-            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:dataFromConnection options:0 error:&error];
-            if (!error) {
-                [self seeIfThereIsMoreLikes:dic];
-            }
-        }
-        
-        
-    }
-}
-
--(void) analyzeUserLikes:(NSArray *) arrayWithLikesData
-{
-    //get likes from categorys Clothing and Jewelry/watches
-    for (NSDictionary *dic in arrayWithLikesData) {
-        if ([[dic objectForKey:@"category"] isEqualToString:@"Clothing"] || [[dic objectForKey:@"category"] isEqualToString:@"Jewelry/watches"]) {
-            
-            //salvar os que achou e mandar pro servidor
-            if (!_arrayWithLikes) {
-                _arrayWithLikes = [[NSMutableArray alloc]init];
-            }
-            [_arrayWithLikes addObject:[dic objectForKey:@"name"]];
-        }
-    }
-}
+//-(void) getLikes
+//{
+//    [FBRequestConnection startWithGraphPath:@"/me/likes"
+//                                 parameters:nil
+//                                 HTTPMethod:@"GET"
+//                          completionHandler:^(
+//                                              FBRequestConnection *connection,
+//                                              NSDictionary *result,
+//                                              NSError *error
+//                                              ) {
+//                              /* handle the result */
+//                              
+//                              dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//                                  //Call your function or whatever work that needs to be done
+//                                  //Code in this part is run on a background thread
+//                                  [self seeIfThereIsMoreLikes:result];
+//                                  
+//                              });
+//                              //****************************************************
+//                          }];
+//    
+//}
+//
+//-(void) seeIfThereIsMoreLikes:(NSDictionary *) result
+//{
+//    //analisar os likes desse result
+//    NSArray *arrayWithLikesData = [result objectForKey:@"data"];
+//    [self analyzeUserLikes:arrayWithLikesData];
+//    
+//    //ver se tem mais likes... se tiver faz tudo de novo
+//    NSDictionary *dicPaging = [result objectForKey:@"paging"];
+//    NSString *nextPage = [dicPaging objectForKey:@"next"];
+//    
+//    if (nextPage)
+//    {
+//        //criar novo dicionario e chamar essa funcao novamente
+//        NSURL *url = [[NSURL alloc]initWithString:nextPage];
+//        
+//        NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
+//        [request setURL:url];
+//        [request setTimeoutInterval:30];
+//        
+//        NSURLResponse *response;
+//        NSError *error;
+//        
+//        NSData *dataFromConnection = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+//        
+//        
+//        if (!error && dataFromConnection) {
+//            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:dataFromConnection options:0 error:&error];
+//            if (!error) {
+//                [self seeIfThereIsMoreLikes:dic];
+//            }
+//        }
+//        
+//        
+//    }
+//}
+//
+//-(void) analyzeUserLikes:(NSArray *) arrayWithLikesData
+//{
+//    //get likes from categorys Clothing and Jewelry/watches
+//    for (NSDictionary *dic in arrayWithLikesData) {
+//        if ([[dic objectForKey:@"category"] isEqualToString:@"Clothing"] || [[dic objectForKey:@"category"] isEqualToString:@"Jewelry/watches"]) {
+//            
+//            //salvar os que achou e mandar pro servidor
+//            if (!_arrayWithLikes) {
+//                _arrayWithLikes = [[NSMutableArray alloc]init];
+//            }
+//            [_arrayWithLikes addObject:[dic objectForKey:@"name"]];
+//        }
+//    }
+//}
 
 #pragma mark UIStatusBarStyle
 

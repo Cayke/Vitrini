@@ -8,6 +8,7 @@
 
 #import "VISymbolsPackage.h"
 #import "VIUser.h"
+#import <UIKit/UIKit.h>
 
 @implementation VIUser
 
@@ -21,7 +22,7 @@
         _gender = [dicUser objectForKey:symbPack.gender];
         _birthday = [dicUser objectForKey:symbPack.birthday];
         _city = [dicUser objectForKey:symbPack.city];
-        _image = [dicUser objectForKey:symbPack.image];
+        _image = UIImagePNGRepresentation([UIImage imageNamed:@"user_create"]);
         
         [self mountFilterGender];
     }

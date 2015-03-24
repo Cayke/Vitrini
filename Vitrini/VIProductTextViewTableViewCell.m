@@ -7,6 +7,7 @@
 //
 
 #import "VIProductTextViewTableViewCell.h"
+#import "VIColor.h"
 
 @implementation VIProductTextViewTableViewCell
 
@@ -24,7 +25,7 @@
 {
     _productDescription.text = productDescription;
     [_productDescription setFont:[UIFont fontWithName:@"HelveticaNeue-Regular" size:15.0]];
-    [_productDescription setTextColor:[UIColor whiteColor]];
+    [_productDescription setTextColor:[VIColor whiteVIColor]];
 
 }
 

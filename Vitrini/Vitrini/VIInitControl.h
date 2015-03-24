@@ -11,8 +11,6 @@
 
 @interface VIInitControl : NSObject
 
-@property(nonatomic, weak)AppDelegate *appDelegate;
-
 + (void)start;
 + (void)goToLogin;
 + (void)goToMainApp;

@@ -8,6 +8,7 @@
 
 #import "VIStoreShowProductViewController.h"
 #import "AsyncImageView.h"
+#import "VIColor.h"
 
 @interface VIStoreShowProductViewController ()
 
@@ -36,8 +37,8 @@
     
     //solves the problem of TextView's appearance, programmatically.
     self.descProduct.font = [UIFont fontWithName:@"Helvetica Neue" size:15];
-    self.descProduct.textColor = [UIColor whiteColor];
-    self.descProduct.tintColor = [UIColor whiteColor];
+    self.descProduct.textColor = [VIColor whiteVIColor];
+    self.descProduct.tintColor = [VIColor whiteVIColor];
     self.descProduct.scrollEnabled = YES;
     self.descProduct.pagingEnabled = NO;
     self.descProduct.editable = NO;

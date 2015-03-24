@@ -52,7 +52,10 @@
     _pageControlNB.numberOfPages = 0;
     
     //baixar produto
-    [self getProductInfo];
+    //[self getProductInfo];
+    
+    _productDidLoad = YES;
+    [self reloadInfo];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,21 +67,28 @@
 {
     //***********************************************
     //aqui botamos as coisas na tela
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    [_activityIndicator startAnimating];
+    //------- botar alerta com carregando
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Carregando..." message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
+    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    indicator.color = [VIColor blueVIColor];
+    [indicator startAnimating];
+    [alertView setValue:indicator forKey:@"accessoryView"];
+    [alertView show];
+    
+//    VIServer *server = [[VIServer alloc]init];
+//    VIResponse *response = [server getAllInfoFromProduct:self.product.idProduct];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         //Call your function or whatever work that needs to be done
         //Code in this part is run on a background thread
+        
         VIServer *server = [[VIServer alloc]init];
         VIResponse *response = [server getAllInfoFromProduct:self.product.idProduct];
-        
         
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             //Stop your activity indicator or anything else with the GUI
             //Code here is run on the main thread
-            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-            [_activityIndicator stopAnimating];
+            [alertView dismissWithClickedButtonIndex:0 animated:YES];
             
             //tratar algo se precisar
             if (response.status == VIRequestSuccess) {
@@ -94,9 +104,6 @@
         });
     });
     //****************************************************
-    
-
-
 }
 
 -(void) handleGestureLeft:(id) sender
@@ -193,17 +200,7 @@
     [self addChildViewController:_pageViewController];
     [self.view insertSubview:_pageViewController.view belowSubview:_tableView];
     [self.pageViewController didMoveToParentViewController:self];
-    
-    //todo
-    //ver se a pessoa ja curtiu o produto ou nao
-    //    if (_product.liked == NO) {
-    //        UIBarButtonItem *like = [UIBarButtonItem alloc]initWithImage:<#(UIImage *)#> landscapeImagePhone:<#(UIImage *)#> style:<#(UIBarButtonItemStyle)#> target:<#(id)#> action:<#(SEL)#>];
-    //        UIBarButtonItem *dislike = [UIBarButtonItem alloc]initWithImage:<#(UIImage *)#> landscapeImagePhone:<#(UIImage *)#> style:<#(UIBarButtonItemStyle)#> target:<#(id)#> action:<#(SEL)#>];
-    //        self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:like, dislike, nil];
-    //    }
-    
-//    self.customNavigationBar.items = [NSArray arrayWithObject:self.navigationItem];
-    
+
 //    //criar linha de baixo da navigation
 //    CALayer *borderBotton = [CALayer layer];
 //    borderBotton.borderColor = [VIColor whiteVIColor].CGColor;
@@ -273,7 +270,10 @@
 }
 
 -(NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController{
+    if (_product.images) {
     return [_product.images count];
+    }
+    return 0;
 }
 
 -(NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController

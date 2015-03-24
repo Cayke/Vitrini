@@ -11,6 +11,8 @@
 #import "VIColor.h"
 #import "VICardInfoViewController.h"
 #import "VIStorage.h"
+#import "VIServer.h"
+#import "VIResponse.h"
 
 #define PARALLAX_BACK_VALUE 10
 
@@ -255,11 +257,50 @@ static float CARD_WIDTH = 290; //%%% width of the draggable card
 
 -(void) goToInfo
 {
-    UIStoryboard *cards = [UIStoryboard storyboardWithName:@"Cards" bundle:nil];
-    VICardInfoViewController *info = [cards instantiateViewControllerWithIdentifier:@"VICardInfoViewControllerID"];
-    info.product = [self presentedCard].product;
-    [self.VICardsVC presentViewController:info animated:YES completion:nil];
+    [self getProductInfo:[self presentedCard].product];
 }
+
+-(void) getProductInfo:(VIProduct *) product
+{
+    //***********************************************
+    //------- botar alerta com carregando
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Carregando..." message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
+    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    indicator.color = [VIColor blueVIColor];
+    [indicator startAnimating];
+    [alertView setValue:indicator forKey:@"accessoryView"];
+    [alertView show];
+    
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //Call your function or whatever work that needs to be done
+        //Code in this part is run on a background thread
+        
+        VIServer *server = [[VIServer alloc]init];
+        VIResponse *response = [server getAllInfoFromProduct:product.idProduct];
+        
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            //Stop your activity indicator or anything else with the GUI
+            //Code here is run on the main thread
+            [alertView dismissWithClickedButtonIndex:0 animated:YES];
+            
+            //tratar algo se precisar
+            if (response.status == VIRequestSuccess) {
+                VIProduct *product = [[VIProduct alloc]initToCardWithDict:response.value];
+                UIStoryboard *cards = [UIStoryboard storyboardWithName:@"Cards" bundle:nil];
+                VICardInfoViewController *info = [cards instantiateViewControllerWithIdentifier:@"VICardInfoViewControllerID"];
+                info.product = product;
+                [self.VICardsVC presentViewController:info animated:YES completion:nil];
+            }
+            else {
+                UIAlertView *alerta = [[UIAlertView alloc]initWithTitle:@"Erro de conexao" message:@"Conecte-se a internet e tente novamente" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                [alerta show];
+            }
+        });
+    });
+    //****************************************************
+}
+
 
 //%%% creates a card and returns it.
 // use "index" to indicate where the information should be pulled.  If this doesn't apply to you, feel free

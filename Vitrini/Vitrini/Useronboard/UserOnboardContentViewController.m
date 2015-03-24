@@ -7,6 +7,7 @@
 //
 
 #import "UserOnboardContentViewController.h"
+#import "VIColor.h"
 
 @interface UserOnboardContentViewController ()
 
@@ -19,9 +20,9 @@
     // Do any additional setup after loading the view.
     
     UIPageControl *pageControl = [UIPageControl appearance];
-    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
-    pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
-    pageControl.backgroundColor = [UIColor whiteColor];
+    pageControl.pageIndicatorTintColor = [VIColor lightGrayVIColor];
+    pageControl.currentPageIndicatorTintColor = [VIColor blackVIColor];
+    pageControl.backgroundColor = [VIColor whiteVIColor];
     
 //    _imageView.backgroundColor = [UIColor blackColor];
     self.imageView.image = [UIImage imageNamed:self.imageName];

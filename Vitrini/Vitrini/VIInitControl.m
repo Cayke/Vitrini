@@ -18,7 +18,6 @@
 +(void)start {
     if ([[VIStorage sharedStorage]initUserFromDevice]) {
         [self goToMainApp];
-        [[VIStorage sharedStorage]startCategories];
     }
     else
     {
@@ -31,13 +30,14 @@
     VIMainViewController *mainTabBarVC = [[VIMainViewController alloc]init];
     AppDelegate *appDelegate = (AppDelegate *) [UIApplication sharedApplication].delegate;
     [appDelegate.window setRootViewController:mainTabBarVC];
+    [[VIStorage sharedStorage]startCategories];
 }
 
 + (void)goToUserOnBoard
 {
     
     UIStoryboard *userOnboard = [UIStoryboard storyboardWithName:@"UserOnboard" bundle:nil];
-    UserOnboardViewController *userOnboardViewController = (UserOnboardViewController *)[userOnboard instantiateViewControllerWithIdentifier:@"UserOnboardViewControllerID"];
+    UserOnboardViewController *userOnboardViewController = (UserOnboardViewController *)[userOnboard instantiateViewControllerWithIdentifier:@"UserOnboardViewControllerID"];   
     
     AppDelegate *appDelegate = (AppDelegate *) [UIApplication sharedApplication].delegate;
     [appDelegate.window setRootViewController:userOnboardViewController];

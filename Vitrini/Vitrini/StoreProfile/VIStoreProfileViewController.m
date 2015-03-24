@@ -14,6 +14,7 @@
 #import "VIStorage.h"
 #import "VIProduct.h"
 #import "VICardInfoViewController.h"
+#import "VIColor.h"
 
 #import <MapKit/MapKit.h>
 @import AddressBook;
@@ -50,7 +51,7 @@ static NSString * const reuseIdentifier = @"Cell";
     
     self.statuBarBackground.backgroundColor = [UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:0.2f];
     self.statuBarBackground.alpha = 0.0f;
-    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.backgroundColor = [VIColor whiteVIColor];
     
     _backgroundHeader = [[UIView alloc] initWithFrame:CGRectMake(0, -400, self.view.frame.size.width, 400)];
     [_backgroundHeader setBackgroundColor:[UIColor colorWithRed:22/255.0f green:22/255.0f blue:25/255.0f alpha:1.0f]];
@@ -146,7 +147,8 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     //NSLog(@"CLICOU: %ld \n OBJETO: %@", (long)indexPath.row, [self.storeWithCompleteInfo.products objectAtIndex:indexPath.row]);
-    [self goToStoreProduct: [self.storeWithCompleteInfo.products objectAtIndex:indexPath.row]];
+    //[self goToStoreProduct: [self.storeWithCompleteInfo.products objectAtIndex:indexPath.row]];
+    [self getProductInfo:[self.storeWithCompleteInfo.products objectAtIndex:indexPath.row]];
 }
 
 #pragma mark Go To Store Product
@@ -181,6 +183,48 @@ static NSString * const reuseIdentifier = @"Cell";
 //    [self presentViewController:productVC animated:YES completion:nil];
 }
 
+-(void) getProductInfo:(VIProduct *) product
+{
+    //***********************************************
+    //------- botar alerta com carregando
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Carregando..." message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
+    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    indicator.color = [VIColor blueVIColor];
+    [indicator startAnimating];
+    [alertView setValue:indicator forKey:@"accessoryView"];
+    [alertView show];
+    
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //Call your function or whatever work that needs to be done
+        //Code in this part is run on a background thread
+        
+        VIServer *server = [[VIServer alloc]init];
+        VIResponse *response = [server getAllInfoFromProduct:product.idProduct];
+        
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            //Stop your activity indicator or anything else with the GUI
+            //Code here is run on the main thread
+            [alertView dismissWithClickedButtonIndex:0 animated:YES];
+            
+            //tratar algo se precisar
+            if (response.status == VIRequestSuccess) {
+                VIProduct *product = [[VIProduct alloc]initToCardWithDict:response.value];
+                UIStoryboard *cards = [UIStoryboard storyboardWithName:@"Cards" bundle:nil];
+                VICardInfoViewController *info = [cards instantiateViewControllerWithIdentifier:@"VICardInfoViewControllerID"];
+                info.product = product;
+                [self presentViewController:info animated:YES completion:nil];
+            }
+            else {
+                UIAlertView *alerta = [[UIAlertView alloc]initWithTitle:@"Erro de conexao" message:@"Conecte-se a internet e tente novamente" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                [alerta show];
+            }
+        });
+    });
+    //****************************************************
+}
+
+
 #pragma mark UICollectionReusableView
 
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
@@ -200,8 +244,8 @@ static NSString * const reuseIdentifier = @"Cell";
     cellHeader.descricaoLoja.text = _storeWithCompleteInfo.resume;
     cellHeader.descricaoLoja.font = [UIFont fontWithName:@"Helvetica Neue" size:13];
     cellHeader.descricaoLoja.font = [UIFont boldSystemFontOfSize:13];
-    cellHeader.descricaoLoja.textColor = [UIColor whiteColor];
-    cellHeader.descricaoLoja.tintColor = [UIColor whiteColor];
+    cellHeader.descricaoLoja.textColor = [VIColor whiteVIColor];
+    cellHeader.descricaoLoja.tintColor = [VIColor whiteVIColor];
     cellHeader.descricaoLoja.scrollEnabled = NO;
     cellHeader.descricaoLoja.pagingEnabled = NO;
     cellHeader.descricaoLoja.editable = NO;
