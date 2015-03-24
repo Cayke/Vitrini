@@ -43,7 +43,7 @@
     status.backgroundColor = [VIColor blueVIColor];
     
     [self.view addSubview:status];
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -118,7 +118,7 @@
 {
     UIStoryboard *cards = [UIStoryboard storyboardWithName:@"Cards" bundle:nil];
     VICardInfoViewController *info = [cards instantiateViewControllerWithIdentifier:@"VICardInfoViewControllerID"];
-
+    
     VIProduct *auxProduct = [[VIProduct alloc]initWithProductFromServer:[_feed objectAtIndex:(long)indexPath.section]];
     info.product = auxProduct;
     [self presentViewController:info animated:YES completion:nil];
@@ -139,6 +139,9 @@
         //***********************************************
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         [_acitivityIndicator startAnimating];
+        
+        //bloquear scroll para evitar crashar o app
+        _tableView.userInteractionEnabled = NO;
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             VIServer *server = [[VIServer alloc]init];
@@ -167,11 +170,10 @@
                     [_feed addObjectsFromArray:newFeeds];
                     [_tableView reloadData];
                     
-                    feedIsLoading = NO;
-                } else {
-                    feedIsLoading = NO;
                 }
                 
+                feedIsLoading = NO;
+                _tableView.userInteractionEnabled = YES;
             });
         });
         //****************************************************

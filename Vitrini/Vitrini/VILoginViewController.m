@@ -463,10 +463,19 @@
                                                         _user.facebookID = _fbId;
                                                         _user.name = _fbName;
                                                         _user.email = _fbEmail;
-                                                        _user.gender = _fbGender;
                                                         _user.birthday = _fbBirthday;
                                                         _user.city = _fbCidade;
                                                         _user.image = [NSData dataWithContentsOfURL:[NSURL URLWithString:_fbPictureUrl]];
+                                                        
+                                                        if ([_fbGender isEqualToString:@"male"]) {
+                                                            _user.gender = @"M";
+                                                            _user.filterGender = @"M";
+                                                        }
+                                                        else
+                                                        {
+                                                            _user.gender = @"F";
+                                                            _user.filterGender = @"F";
+                                                        }
                                                         
                                                         [self logUserWithFacebookID];
                                                         
