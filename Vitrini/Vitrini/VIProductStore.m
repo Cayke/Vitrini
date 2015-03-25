@@ -15,7 +15,6 @@
 
 @implementation VIProductStore {
     int counterRN;
-    int category_id;
 }
 
 - (instancetype)init
@@ -32,7 +31,7 @@
         _loading = NO;
         _products = [[NSMutableArray alloc]init];
         counterRN = 0;
-        category_id = 0;
+        _category_id = 0;
     }
     return self;
 }
@@ -114,13 +113,13 @@
 
 -(void) changeCategoryID:(int)newCategoryID{
     [self restartCounter];
-    category_id = newCategoryID;
+    _category_id = newCategoryID;
     [_products removeAllObjects];
 }
 
 -(BOOL)loadCards{
     VIServer *server = [[VIServer alloc]init];
-    VIResponse *response = [server productsToReviewWithEmail:[VIStorage sharedStorage].user.email andCategoryID:category_id andGender:[VIStorage sharedStorage].user.filterGender];
+    VIResponse *response = [server productsToReviewWithEmail:[VIStorage sharedStorage].user.email andCategoryID:_category_id andGender:[VIStorage sharedStorage].user.filterGender];
     
     NSDictionary *productsDictionaryFromJSON = [response.value objectForKey:@"products"];
     if ([productsDictionaryFromJSON count] == 0) {

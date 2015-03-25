@@ -79,6 +79,7 @@
     UIStoryboard *filter = [UIStoryboard storyboardWithName:@"Filter" bundle:nil];
     VIFilterViewController *filterVC = (VIFilterViewController *)[filter instantiateInitialViewController];
     filterVC.likesVC = self;
+    filterVC.categoryOnFilter = _categoryOnFilter;
     
     //comando para botar a view por cima e poder ver a debaixo ainda...
     filterVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;

@@ -25,4 +25,6 @@
 @property (weak, nonatomic) VILikesViewController *likesVC;
 @property (nonatomic) NSObject *vcDelegate;
 
+@property (nonatomic) int categoryOnFilter;
+
 @end

@@ -16,6 +16,7 @@
 @property (nonatomic) NSMutableArray *products;
 @property (nonatomic, weak) VIDraggableCardsView *backgroundCardsView;
 @property (nonatomic) BOOL loading;
+@property (nonatomic) int category_id;
 
 +(instancetype)sharedStore;
 

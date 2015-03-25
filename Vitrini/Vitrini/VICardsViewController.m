@@ -11,6 +11,7 @@
 #import "VIColor.h"
 #import "VIFilterViewController.h"
 #import "VIAllocFilterIcon.h"
+#import "VIProductStore.h"
 
 @interface VICardsViewController ()
 @end
@@ -85,7 +86,7 @@
 {
     UIStoryboard *filter = [UIStoryboard storyboardWithName:@"Filter" bundle:nil];
     VIFilterViewController *filterVC = (VIFilterViewController *)[filter instantiateInitialViewController];
-    
+    filterVC.categoryOnFilter =  [VIProductStore sharedStore].category_id;
     filterVC.vcDelegate = draggableBackground;
     
     //comando para botar a view por cima e poder ver a debaixo ainda...

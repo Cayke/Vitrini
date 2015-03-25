@@ -114,7 +114,6 @@
     
     [self dismissViewControllerAnimated:NO completion:nil];
     
-    //todo : criar uma maneira de mandar pro servidor apenas os filtros selecionados
     VICategory *category = [_arrayWithCategories objectAtIndex:indexPathRow];
     if (_likesVC) {
         [_likesVC getLikesWithCategory:category.idCategory];
@@ -142,11 +141,11 @@
     
     VICategory *cat = [_arrayWithCategories objectAtIndex:indexPath.row];
     cell.labelName.text = cat.name;
-    if (cat.active == NO) {
-        cell.photoOnOff.image = nil;
+    if (cat.idCategory == self.categoryOnFilter) {
+        cell.photoOnOff.image = [UIImage imageNamed:@"Icom_marcacao_filtro"];
     }
     else{
-        cell.photoOnOff.image = [UIImage imageNamed:@"Icom_marcacao_filtro"];
+        cell.photoOnOff.image = nil;
     }
     return cell;
 }
