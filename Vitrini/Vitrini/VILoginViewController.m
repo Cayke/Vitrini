@@ -18,6 +18,8 @@
 
 @interface VILoginViewController ()
 
+@property (nonatomic) VIUser *user;
+
 @end
 
 @implementation VILoginViewController
@@ -135,10 +137,11 @@
 
 -(void) tapPlus
 {
-   // NSLog(@"tap plus");
+    // NSLog(@"tap plus");
     
     UIStoryboard *loginStoryboard = [UIStoryboard storyboardWithName:@"VILoginStoryboard" bundle:nil];
     VIRegisterViewController *registerVC = (VIRegisterViewController *) [loginStoryboard instantiateViewControllerWithIdentifier:@"VIRegisterViewController"];
+    registerVC.login = self;
     [self presentViewController:registerVC animated:YES completion:nil];
     
     
@@ -231,10 +234,14 @@
             
             //tratar algo se precisar
             if (response.status == VIRequestSuccess) {
-                //salvar user na storage e ir para o app
+                //salvar user
                 [[VIStorage sharedStorage]initUserFromServer:response.value];
                 
+                [self cleanClass];
+                
+                //INICAR O APP
                 [VIInitControl start];
+                [self dismissViewControllerAnimated:NO completion:nil];
             }
             else
             {
@@ -252,7 +259,7 @@
 {
     // If the session was opened successfully
     if (!error && state == FBSessionStateOpen){
-       // NSLog(@"Session opened");
+        // NSLog(@"Session opened");
         // Show the user the logged-in UI
         [self userLoggedIn];
         return;
@@ -266,7 +273,7 @@
     
     // Handle errors
     if (error){
-       // NSLog(@"Error");
+        // NSLog(@"Error");
         NSString *alertText;
         NSString *alertTitle;
         // If the error requires people using an app to make an action outside of the app in order to recover
@@ -342,12 +349,15 @@
             //tratar algo se precisar
             if (response.status == VIRequestSuccess) {
                 //NAO PRECISO DE NADA, USER JA EXISTE NO SERVER
+                
                 //salvar user
                 [[VIStorage sharedStorage]setUser:_user];
-                [[VIStorage sharedStorage]saveUser];
+                
+                [self cleanClass];
                 
                 //INICAR O APP
                 [VIInitControl start];
+                [self dismissViewControllerAnimated:NO completion:nil];
             }
             else
             {
@@ -388,13 +398,14 @@
             
             //tratar algo se precisar
             if (response.status == VIRequestSuccess) {
-                //NAO PRECISO DE NADA, USER JA EXISTE NO SERVER
                 //salvar user
                 [[VIStorage sharedStorage]setUser:_user];
-                [[VIStorage sharedStorage]saveUser];
+                
+                [self cleanClass];
                 
                 //INICAR O APP
                 [VIInitControl start];
+                [self dismissViewControllerAnimated:NO completion:nil];
             }
             else
             {
@@ -502,16 +513,16 @@
 //                                              NSError *error
 //                                              ) {
 //                              /* handle the result */
-//                              
+//
 //                              dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 //                                  //Call your function or whatever work that needs to be done
 //                                  //Code in this part is run on a background thread
 //                                  [self seeIfThereIsMoreLikes:result];
-//                                  
+//
 //                              });
 //                              //****************************************************
 //                          }];
-//    
+//
 //}
 //
 //-(void) seeIfThereIsMoreLikes:(NSDictionary *) result
@@ -519,34 +530,34 @@
 //    //analisar os likes desse result
 //    NSArray *arrayWithLikesData = [result objectForKey:@"data"];
 //    [self analyzeUserLikes:arrayWithLikesData];
-//    
+//
 //    //ver se tem mais likes... se tiver faz tudo de novo
 //    NSDictionary *dicPaging = [result objectForKey:@"paging"];
 //    NSString *nextPage = [dicPaging objectForKey:@"next"];
-//    
+//
 //    if (nextPage)
 //    {
 //        //criar novo dicionario e chamar essa funcao novamente
 //        NSURL *url = [[NSURL alloc]initWithString:nextPage];
-//        
+//
 //        NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
 //        [request setURL:url];
 //        [request setTimeoutInterval:30];
-//        
+//
 //        NSURLResponse *response;
 //        NSError *error;
-//        
+//
 //        NSData *dataFromConnection = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-//        
-//        
+//
+//
 //        if (!error && dataFromConnection) {
 //            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:dataFromConnection options:0 error:&error];
 //            if (!error) {
 //                [self seeIfThereIsMoreLikes:dic];
 //            }
 //        }
-//        
-//        
+//
+//
 //    }
 //}
 //
@@ -555,7 +566,7 @@
 //    //get likes from categorys Clothing and Jewelry/watches
 //    for (NSDictionary *dic in arrayWithLikesData) {
 //        if ([[dic objectForKey:@"category"] isEqualToString:@"Clothing"] || [[dic objectForKey:@"category"] isEqualToString:@"Jewelry/watches"]) {
-//            
+//
 //            //salvar os que achou e mandar pro servidor
 //            if (!_arrayWithLikes) {
 //                _arrayWithLikes = [[NSMutableArray alloc]init];
@@ -570,6 +581,40 @@
 -(UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
+}
+
+-(void)dealloc
+{
+    NSLog(@"desalocou login");
+}
+
+-(void) cleanClass
+{
+    _user = nil;
+    _fbName = nil;
+    _fbId = nil;
+    _fbEmail = nil;
+    _fbBirthday = nil;
+    _fbCidade = nil;
+    _fbGender = nil;
+    _fbPictureUrl = nil;
+    _arrayWithLikes = nil;
+    
+//    _textFieldEmail = nil;
+//    _textFieldSenha = nil;
+//    _imageViewBackground = nil;
+//    _buttonForgotPass = nil;
+//    _constraintVerticalSpaceLoginFB = nil;
+//    _buttonLogFace = nil;
+//    _buttonLogNewAcc = nil;
+    
+    [FBSession.activeSession closeAndClearTokenInformation];
+}
+
+-(void)dismiss
+{
+    [self cleanClass];
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 @end

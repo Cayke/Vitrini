@@ -22,7 +22,12 @@
         _gender = [dicUser objectForKey:symbPack.gender];
         _birthday = [dicUser objectForKey:symbPack.birthday];
         _city = [dicUser objectForKey:symbPack.city];
-        _image = UIImagePNGRepresentation([UIImage imageNamed:@"user_create"]);
+        _image = [dicUser objectForKey:symbPack.image];
+        
+        if (!_image)
+        {
+            _image = UIImagePNGRepresentation([UIImage imageNamed:@"user_create"]);
+        }
         
         [self mountFilterGender];
     }

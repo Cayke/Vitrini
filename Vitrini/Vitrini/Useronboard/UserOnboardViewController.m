@@ -112,14 +112,12 @@
 */
 
 - (IBAction)pular:(id)sender {
-    
-//    [self dismissViewControllerAnimated:YES completion:nil];
-    //NSLog(@"Vou pra uma outra controller");
-    
+    [self dismissViewControllerAnimated:NO completion:nil];
     [VIInitControl goToLogin];
-    
-//    VIMainViewController *mainTabBarVC = [[VIMainViewController alloc]init];
-//    [self.window setRootViewController:mainTabBarVC];
-    
+}
+
+-(void)dealloc
+{
+    NSLog( @"desalocou useronboard");
 }
 @end

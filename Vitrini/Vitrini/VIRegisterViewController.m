@@ -129,7 +129,9 @@
                 if (response.status == VIRequestSuccess) {
                     VIUser *user = [[VIUser alloc]initWithName:self.name andEmail:self.email andGender:gender andBirthday:self.date andCity:self.city andPass:self.pass andImage:_image];
                     [[VIStorage sharedStorage]setUser:user];
-                    [VIInitControl goToMainApp];
+                    [self dismissViewControllerAnimated:NO completion:nil];
+                    [self.login dismiss];
+                    [VIInitControl start];
                 }
                 
                 else
@@ -447,6 +449,11 @@
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
+}
+
+-(void)dealloc
+{
+    NSLog(@"retirou a tela de registro");
 }
 
 

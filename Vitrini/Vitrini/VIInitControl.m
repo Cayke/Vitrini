@@ -29,7 +29,7 @@
 {
     VIMainViewController *mainTabBarVC = [[VIMainViewController alloc]init];
     AppDelegate *appDelegate = (AppDelegate *) [UIApplication sharedApplication].delegate;
-    [appDelegate.window setRootViewController:mainTabBarVC];
+    appDelegate.window.rootViewController =  mainTabBarVC;
     [[VIStorage sharedStorage]startCategories];
 }
 
@@ -40,16 +40,16 @@
     UserOnboardViewController *userOnboardViewController = (UserOnboardViewController *)[userOnboard instantiateViewControllerWithIdentifier:@"UserOnboardViewControllerID"];   
     
     AppDelegate *appDelegate = (AppDelegate *) [UIApplication sharedApplication].delegate;
-    [appDelegate.window setRootViewController:userOnboardViewController];
+    appDelegate.window.rootViewController = userOnboardViewController;
 }
 
 + (void)goToLogin
 {
     UIStoryboard *login = [UIStoryboard storyboardWithName:@"VILoginStoryboard" bundle:nil];
-    VILoginViewController *loginVC = (VILoginViewController *) [login instantiateInitialViewController];
+    VILoginViewController *loginVC = (VILoginViewController *) [login instantiateViewControllerWithIdentifier:@"VILoginStoryboardID"];
     
     AppDelegate *appDelegate = (AppDelegate *) [UIApplication sharedApplication].delegate;
-    [appDelegate.window setRootViewController:loginVC];
+    appDelegate.window.rootViewController = loginVC;
     
 }
 

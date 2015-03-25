@@ -22,6 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [VIColor whiteVIColor];
+    
     draggableBackground = [[VIDraggableCardsView alloc]initWithFrame:self.view.frame];
     draggableBackground.VICardsVC = self;
     [self.view addSubview:draggableBackground];

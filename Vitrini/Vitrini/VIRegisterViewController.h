@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "VIStoreProfileNavigationBar.h"
+#import "VILoginViewController.h"
 
 @interface VIRegisterViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 
 @property (weak, nonatomic) IBOutlet VIStoreProfileNavigationBar *customNavBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (weak, nonatomic) VILoginViewController *login;
 
 
 

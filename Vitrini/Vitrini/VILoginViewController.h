@@ -32,10 +32,9 @@
 @property (nonatomic) NSString *fbGender;
 @property (nonatomic) NSString *fbPictureUrl;
 
-@property (nonatomic) VIUser *user;
-
 @property (nonatomic) NSMutableArray *arrayWithLikes;
 
+-(void) dismiss;
 
 
 @end

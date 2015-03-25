@@ -94,8 +94,7 @@
 -(void)initUserFromServer:(NSDictionary *)dicUser
 {
     VIUser *user = [[VIUser alloc]initWithDictionary:dicUser];
-    _user = user;
-    [self saveUser];
+    [self setUser:user];
 }
 
 /////////////////////////////////
