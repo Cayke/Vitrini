@@ -50,6 +50,7 @@
 		272C6EF31AA6012000063CCF /* VILikesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 272C6EF21AA6012000063CCF /* VILikesViewController.m */; };
 		272C6EF61AA6015F00063CCF /* VILikesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 272C6EF51AA6015F00063CCF /* VILikesCollectionViewCell.m */; };
 		272C6EFC1AA64DA300063CCF /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 272C6EFB1AA64DA300063CCF /* AsyncImageView.m */; };
+		2761A23B1AC4280300BA4D47 /* Shop-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 2761A23A1AC4280300BA4D47 /* Shop-50.png */; };
 		2761A5071A960FE90009395C /* VIResponseType.m in Sources */ = {isa = PBXBuildFile; fileRef = 2761A5061A960FE90009395C /* VIResponseType.m */; };
 		2761A50A1A9610030009395C /* VISymbolsPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2761A5091A9610030009395C /* VISymbolsPackage.m */; };
 		2761A5101A96101C0009395C /* VIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 2761A50F1A96101C0009395C /* VIResponse.m */; };
@@ -234,6 +235,7 @@
 		272C6EF51AA6015F00063CCF /* VILikesCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VILikesCollectionViewCell.m; sourceTree = "<group>"; };
 		272C6EFA1AA64DA300063CCF /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
 		272C6EFB1AA64DA300063CCF /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
+		2761A23A1AC4280300BA4D47 /* Shop-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shop-50.png"; sourceTree = "<group>"; };
 		2761A5051A960FE90009395C /* VIResponseType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIResponseType.h; sourceTree = "<group>"; };
 		2761A5061A960FE90009395C /* VIResponseType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIResponseType.m; sourceTree = "<group>"; };
 		2761A5081A9610030009395C /* VISymbolsPackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISymbolsPackage.h; sourceTree = "<group>"; };
@@ -441,6 +443,7 @@
 		273FFECE1AB4B37E0024E819 /* Info Produto */ = {
 			isa = PBXGroup;
 			children = (
+				2761A23A1AC4280300BA4D47 /* Shop-50.png */,
 				92D96E661A80FCB8009BC061 /* VICardInfoViewController.h */,
 				92D96E671A80FCB8009BC061 /* VICardInfoViewController.m */,
 				278E29C71AB658F900D0F397 /* VIProductNameAndPriceTableViewCell.h */,
@@ -923,6 +926,7 @@
 			files = (
 				0B5729041AAFFFB800B76187 /* zaraBack.png in Resources */,
 				279A81751A70671A003E50D7 /* Catalog.storyboard in Resources */,
+				2761A23B1AC4280300BA4D47 /* Shop-50.png in Resources */,
 				B32B2CCB1A8CDF34004BCDD9 /* noSign@2x.png in Resources */,
 				B3B6CF541A44C41A00C07383 /* notBtn@3x.png in Resources */,
 				924FD17A1AB7793A0017A65F /* user_create.png in Resources */,

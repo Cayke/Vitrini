@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OSp-4g-yTT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OSp-4g-yTT">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -38,18 +38,10 @@
                                     <constraint firstAttribute="height" constant="44" id="mBm-d2-cJk"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vO1-ov-LMW">
-                                <rect key="frame" x="340" y="630" width="19" height="27"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" image="shareButtonSystem.png"/>
-                                <connections>
-                                    <action selector="shareButton:" destination="OSp-4g-yTT" eventType="touchUpInside" id="cfA-mo-qdP"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2A-4X-XN8">
                                 <rect key="frame" x="10" y="634" width="22" height="22"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" image="locationButtonSystem.png"/>
+                                <state key="normal" image="Shop-50.png"/>
                                 <connections>
                                     <action selector="locationButton:" destination="OSp-4g-yTT" eventType="touchUpInside" id="DuY-Pk-XN6"/>
                                 </connections>
@@ -205,8 +197,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="locationButtonSystem.png" width="22" height="22"/>
+        <image name="Shop-50.png" width="50" height="50"/>
         <image name="productBackground.png" width="375" height="667"/>
-        <image name="shareButtonSystem.png" width="19" height="26"/>
     </resources>
 </document>
